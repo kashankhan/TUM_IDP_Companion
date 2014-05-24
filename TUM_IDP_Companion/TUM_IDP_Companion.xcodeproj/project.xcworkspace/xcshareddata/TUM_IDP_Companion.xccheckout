@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A8A846F9-5E43-4A57-B475-6BE515406BBC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TUM_IDP_Companion</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E93B2BC8-11AF-441F-9420-C2C572B035F0</key>
+		<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TUM_IDP_Companion/TUM_IDP_Companion.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E93B2BC8-11AF-441F-9420-C2C572B035F0</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E93B2BC8-11AF-441F-9420-C2C572B035F0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E93B2BC8-11AF-441F-9420-C2C572B035F0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TUM_IDP_Companion</string>
+		</dict>
+	</array>
+</dict>
+</plist>

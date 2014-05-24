@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
+		C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0119310CDF00222D73 /* CoreGraphics.framework */; };
+		C098DB0419310CDF00222D73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0319310CDF00222D73 /* UIKit.framework */; };
+		C098DB0619310CDF00222D73 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0519310CDF00222D73 /* CoreData.framework */; };
+		C098DB0C19310CDF00222D73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C098DB0A19310CDF00222D73 /* InfoPlist.strings */; };
+		C098DB0E19310CDF00222D73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB0D19310CDF00222D73 /* main.m */; };
+		C098DB1519310CDF00222D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098DB1319310CDF00222D73 /* Main.storyboard */; };
+		C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */; };
+		C098DB2019310CDF00222D73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C098DB1F19310CDF00222D73 /* Images.xcassets */; };
+		C098DB2719310CDF00222D73 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB2619310CDF00222D73 /* XCTest.framework */; };
+		C098DB2819310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
+		C098DB2919310CDF00222D73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0319310CDF00222D73 /* UIKit.framework */; };
+		C098DB2A19310CE000222D73 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0519310CDF00222D73 /* CoreData.framework */; };
+		C098DB3219310CE000222D73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C098DB3019310CE000222D73 /* InfoPlist.strings */; };
+		C098DB3419310CE000222D73 /* TUM_IDP_CompanionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3319310CE000222D73 /* TUM_IDP_CompanionTests.m */; };
+		C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3F19310DBB00222D73 /* AppDelegate.m */; };
+		C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4519310DBB00222D73 /* DetailViewController.m */; };
+		C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4719310DBB00222D73 /* MasterViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C098DB2B19310CE000222D73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C098DAF419310CDF00222D73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C098DAFB19310CDF00222D73;
+			remoteInfo = TUM_IDP_Companion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUM_IDP_Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C098DAFF19310CDF00222D73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C098DB0119310CDF00222D73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C098DB0319310CDF00222D73 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C098DB0519310CDF00222D73 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C098DB0919310CDF00222D73 /* TUM_IDP_Companion-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TUM_IDP_Companion-Info.plist"; sourceTree = "<group>"; };
+		C098DB0B19310CDF00222D73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C098DB0D19310CDF00222D73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUM_IDP_Companion-Prefix.pch"; sourceTree = "<group>"; };
+		C098DB1419310CDF00222D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C098DB1719310CDF00222D73 /* TUM_IDP_Companion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TUM_IDP_Companion.xcdatamodel; sourceTree = "<group>"; };
+		C098DB1F19310CDF00222D73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C098DB2519310CDF00222D73 /* TUM_IDP_CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TUM_IDP_CompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C098DB2619310CDF00222D73 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C098DB2F19310CE000222D73 /* TUM_IDP_CompanionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TUM_IDP_CompanionTests-Info.plist"; sourceTree = "<group>"; };
+		C098DB3119310CE000222D73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C098DB3319310CE000222D73 /* TUM_IDP_CompanionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUM_IDP_CompanionTests.m; sourceTree = "<group>"; };
+		C098DB3E19310DBB00222D73 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C098DB3F19310DBB00222D73 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C098DB4419310DBB00222D73 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C098DB4519310DBB00222D73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C098DB4619310DBB00222D73 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C098DB4719310DBB00222D73 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C098DAF919310CDF00222D73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */,
+				C098DB0619310CDF00222D73 /* CoreData.framework in Frameworks */,
+				C098DB0419310CDF00222D73 /* UIKit.framework in Frameworks */,
+				C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C098DB2219310CDF00222D73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB2719310CDF00222D73 /* XCTest.framework in Frameworks */,
+				C098DB2A19310CE000222D73 /* CoreData.framework in Frameworks */,
+				C098DB2919310CDF00222D73 /* UIKit.framework in Frameworks */,
+				C098DB2819310CDF00222D73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C098DAF319310CDF00222D73 = {
+			isa = PBXGroup;
+			children = (
+				C098DB0719310CDF00222D73 /* TUM_IDP_Companion */,
+				C098DB2D19310CE000222D73 /* TUM_IDP_CompanionTests */,
+				C098DAFE19310CDF00222D73 /* Frameworks */,
+				C098DAFD19310CDF00222D73 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C098DAFD19310CDF00222D73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */,
+				C098DB2519310CDF00222D73 /* TUM_IDP_CompanionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C098DAFE19310CDF00222D73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C098DAFF19310CDF00222D73 /* Foundation.framework */,
+				C098DB0119310CDF00222D73 /* CoreGraphics.framework */,
+				C098DB0319310CDF00222D73 /* UIKit.framework */,
+				C098DB0519310CDF00222D73 /* CoreData.framework */,
+				C098DB2619310CDF00222D73 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C098DB0719310CDF00222D73 /* TUM_IDP_Companion */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB3D19310DBB00222D73 /* Classes */,
+				C098DB1319310CDF00222D73 /* Main.storyboard */,
+				C098DB1F19310CDF00222D73 /* Images.xcassets */,
+				C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */,
+				C098DB0819310CDF00222D73 /* Supporting Files */,
+			);
+			path = TUM_IDP_Companion;
+			sourceTree = "<group>";
+		};
+		C098DB0819310CDF00222D73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB0919310CDF00222D73 /* TUM_IDP_Companion-Info.plist */,
+				C098DB0A19310CDF00222D73 /* InfoPlist.strings */,
+				C098DB0D19310CDF00222D73 /* main.m */,
+				C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C098DB2D19310CE000222D73 /* TUM_IDP_CompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB3319310CE000222D73 /* TUM_IDP_CompanionTests.m */,
+				C098DB2E19310CE000222D73 /* Supporting Files */,
+			);
+			path = TUM_IDP_CompanionTests;
+			sourceTree = "<group>";
+		};
+		C098DB2E19310CE000222D73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB2F19310CE000222D73 /* TUM_IDP_CompanionTests-Info.plist */,
+				C098DB3019310CE000222D73 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C098DB3D19310DBB00222D73 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB3E19310DBB00222D73 /* AppDelegate.h */,
+				C098DB3F19310DBB00222D73 /* AppDelegate.m */,
+				C098DB4019310DBB00222D73 /* Backend */,
+				C098DB4119310DBB00222D73 /* Externals */,
+				C098DB4219310DBB00222D73 /* UI */,
+				C098DB4919310DBB00222D73 /* Utilites */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C098DB4019310DBB00222D73 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		C098DB4119310DBB00222D73 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		C098DB4219310DBB00222D73 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB4319310DBB00222D73 /* Controllers */,
+				C098DB4819310DBB00222D73 /* TableViewCell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C098DB4319310DBB00222D73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB4419310DBB00222D73 /* DetailViewController.h */,
+				C098DB4519310DBB00222D73 /* DetailViewController.m */,
+				C098DB4619310DBB00222D73 /* MasterViewController.h */,
+				C098DB4719310DBB00222D73 /* MasterViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C098DB4819310DBB00222D73 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C098DB4919310DBB00222D73 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C098DAFB19310CDF00222D73 /* TUM_IDP_Companion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C098DB3719310CE000222D73 /* Build configuration list for PBXNativeTarget "TUM_IDP_Companion" */;
+			buildPhases = (
+				C098DAF819310CDF00222D73 /* Sources */,
+				C098DAF919310CDF00222D73 /* Frameworks */,
+				C098DAFA19310CDF00222D73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TUM_IDP_Companion;
+			productName = TUM_IDP_Companion;
+			productReference = C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C098DB2419310CDF00222D73 /* TUM_IDP_CompanionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C098DB3A19310CE000222D73 /* Build configuration list for PBXNativeTarget "TUM_IDP_CompanionTests" */;
+			buildPhases = (
+				C098DB2119310CDF00222D73 /* Sources */,
+				C098DB2219310CDF00222D73 /* Frameworks */,
+				C098DB2319310CDF00222D73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C098DB2C19310CE000222D73 /* PBXTargetDependency */,
+			);
+			name = TUM_IDP_CompanionTests;
+			productName = TUM_IDP_CompanionTests;
+			productReference = C098DB2519310CDF00222D73 /* TUM_IDP_CompanionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C098DAF419310CDF00222D73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Kashan Khan";
+				TargetAttributes = {
+					C098DB2419310CDF00222D73 = {
+						TestTargetID = C098DAFB19310CDF00222D73;
+					};
+				};
+			};
+			buildConfigurationList = C098DAF719310CDF00222D73 /* Build configuration list for PBXProject "TUM_IDP_Companion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C098DAF319310CDF00222D73;
+			productRefGroup = C098DAFD19310CDF00222D73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C098DAFB19310CDF00222D73 /* TUM_IDP_Companion */,
+				C098DB2419310CDF00222D73 /* TUM_IDP_CompanionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C098DAFA19310CDF00222D73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB2019310CDF00222D73 /* Images.xcassets in Resources */,
+				C098DB0C19310CDF00222D73 /* InfoPlist.strings in Resources */,
+				C098DB1519310CDF00222D73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C098DB2319310CDF00222D73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB3219310CE000222D73 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C098DAF819310CDF00222D73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB0E19310CDF00222D73 /* main.m in Sources */,
+				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
+				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
+				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
+				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C098DB2119310CDF00222D73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C098DB3419310CE000222D73 /* TUM_IDP_CompanionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C098DB2C19310CE000222D73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C098DAFB19310CDF00222D73 /* TUM_IDP_Companion */;
+			targetProxy = C098DB2B19310CE000222D73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C098DB0A19310CDF00222D73 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C098DB0B19310CDF00222D73 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C098DB1319310CDF00222D73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C098DB1419310CDF00222D73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C098DB3019310CE000222D73 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C098DB3119310CE000222D73 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C098DB3519310CE000222D73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C098DB3619310CE000222D73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C098DB3819310CE000222D73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
+				INFOPLIST_FILE = "TUM_IDP_Companion/TUM_IDP_Companion-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C098DB3919310CE000222D73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
+				INFOPLIST_FILE = "TUM_IDP_Companion/TUM_IDP_Companion-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C098DB3B19310CE000222D73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TUM_IDP_Companion.app/TUM_IDP_Companion";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TUM_IDP_CompanionTests/TUM_IDP_CompanionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C098DB3C19310CE000222D73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TUM_IDP_Companion.app/TUM_IDP_Companion";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
+				INFOPLIST_FILE = "TUM_IDP_CompanionTests/TUM_IDP_CompanionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C098DAF719310CDF00222D73 /* Build configuration list for PBXProject "TUM_IDP_Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C098DB3519310CE000222D73 /* Debug */,
+				C098DB3619310CE000222D73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C098DB3719310CE000222D73 /* Build configuration list for PBXNativeTarget "TUM_IDP_Companion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C098DB3819310CE000222D73 /* Debug */,
+				C098DB3919310CE000222D73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C098DB3A19310CE000222D73 /* Build configuration list for PBXNativeTarget "TUM_IDP_CompanionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C098DB3B19310CE000222D73 /* Debug */,
+				C098DB3C19310CE000222D73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C098DB1719310CDF00222D73 /* TUM_IDP_Companion.xcdatamodel */,
+			);
+			currentVersion = C098DB1719310CDF00222D73 /* TUM_IDP_Companion.xcdatamodel */;
+			path = TUM_IDP_Companion.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C098DAF419310CDF00222D73 /* Project object */;
+}
