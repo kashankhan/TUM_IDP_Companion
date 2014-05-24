@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A8A846F9-5E43-4A57-B475-6BE515406BBC</string>
+	<string>74709870-37DB-4178-9A19-B5B8CAD405EE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TUM_IDP_Companion</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TUM_IDP_Companion/TUM_IDP_Companion.xcodeproj/project.xcworkspace</string>
+	<string>TUM_IDP_Companion.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>E93B2BC8-11AF-441F-9420-C2C572B035F0</key>
-		<string>../../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
