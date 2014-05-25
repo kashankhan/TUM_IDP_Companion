@@ -10,6 +10,9 @@
 
 #import "DetailViewController.h"
 
+#import "RequestHandler.h"
+
+
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
@@ -55,6 +58,15 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    
+    
+    RequestHandler *requestHandler = [RequestHandler new];
+    [requestHandler sendRequest:RequestTypeAccessFacebookAccount handler:^(id response, NSError *error) {
+        
+        NSLog(@" response : %@", response);
+        NSLog(@" error : %@", [error description]);
+
+    } ];
 }
 
 #pragma mark - Table View

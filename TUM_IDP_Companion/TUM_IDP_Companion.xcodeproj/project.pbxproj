@@ -25,6 +25,13 @@
 		C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3F19310DBB00222D73 /* AppDelegate.m */; };
 		C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4519310DBB00222D73 /* DetailViewController.m */; };
 		C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4719310DBB00222D73 /* MasterViewController.m */; };
+		C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB4D19313D5500222D73 /* Twitter.framework */; };
+		C098DB631931539800222D73 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB621931539800222D73 /* RequestHandler.m */; };
+		C098DB66193153C400222D73 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB65193153C400222D73 /* RequestBAL.m */; };
+		C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB681931540500222D73 /* FacebookRequestBAL.m */; };
+		C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB6B1931542200222D73 /* TwitterRequestBAL.m */; };
+		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
+		C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB761931636100222D73 /* SocialAccountRequestBAL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,19 @@
 		C098DB4519310DBB00222D73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C098DB4619310DBB00222D73 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		C098DB4719310DBB00222D73 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C098DB4D19313D5500222D73 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		C098DB611931539800222D73 /* RequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandler.h; sourceTree = "<group>"; };
+		C098DB621931539800222D73 /* RequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHandler.m; sourceTree = "<group>"; };
+		C098DB64193153C400222D73 /* RequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBAL.h; sourceTree = "<group>"; };
+		C098DB65193153C400222D73 /* RequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBAL.m; sourceTree = "<group>"; };
+		C098DB671931540500222D73 /* FacebookRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookRequestBAL.h; sourceTree = "<group>"; };
+		C098DB681931540500222D73 /* FacebookRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequestBAL.m; sourceTree = "<group>"; };
+		C098DB6A1931542200222D73 /* TwitterRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterRequestBAL.h; sourceTree = "<group>"; };
+		C098DB6B1931542200222D73 /* TwitterRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterRequestBAL.m; sourceTree = "<group>"; };
+		C098DB721931581D00222D73 /* RequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestQueue.h; sourceTree = "<group>"; };
+		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
+		C098DB751931636100222D73 /* SocialAccountRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccountRequestBAL.h; sourceTree = "<group>"; };
+		C098DB761931636100222D73 /* SocialAccountRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAccountRequestBAL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */,
 				C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */,
 				C098DB0619310CDF00222D73 /* CoreData.framework in Frameworks */,
 				C098DB0419310CDF00222D73 /* UIKit.framework in Frameworks */,
@@ -111,6 +132,7 @@
 		C098DAFE19310CDF00222D73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C098DB4D19313D5500222D73 /* Twitter.framework */,
 				C098DAFF19310CDF00222D73 /* Foundation.framework */,
 				C098DB0119310CDF00222D73 /* CoreGraphics.framework */,
 				C098DB0319310CDF00222D73 /* UIKit.framework */,
@@ -177,6 +199,9 @@
 		C098DB4019310DBB00222D73 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				C098DB4F19313DAB00222D73 /* BAL */,
+				C098DB5019313DAB00222D73 /* DAL */,
+				C098DB5119313DAB00222D73 /* Parser */,
 			);
 			path = Backend;
 			sourceTree = "<group>";
@@ -184,6 +209,7 @@
 		C098DB4119310DBB00222D73 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				C098DB711931581D00222D73 /* RequestQueue */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -220,6 +246,46 @@
 			children = (
 			);
 			path = Utilites;
+			sourceTree = "<group>";
+		};
+		C098DB4F19313DAB00222D73 /* BAL */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB611931539800222D73 /* RequestHandler.h */,
+				C098DB621931539800222D73 /* RequestHandler.m */,
+				C098DB64193153C400222D73 /* RequestBAL.h */,
+				C098DB65193153C400222D73 /* RequestBAL.m */,
+				C098DB751931636100222D73 /* SocialAccountRequestBAL.h */,
+				C098DB761931636100222D73 /* SocialAccountRequestBAL.m */,
+				C098DB671931540500222D73 /* FacebookRequestBAL.h */,
+				C098DB681931540500222D73 /* FacebookRequestBAL.m */,
+				C098DB6A1931542200222D73 /* TwitterRequestBAL.h */,
+				C098DB6B1931542200222D73 /* TwitterRequestBAL.m */,
+			);
+			path = BAL;
+			sourceTree = "<group>";
+		};
+		C098DB5019313DAB00222D73 /* DAL */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DAL;
+			sourceTree = "<group>";
+		};
+		C098DB5119313DAB00222D73 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C098DB711931581D00222D73 /* RequestQueue */ = {
+			isa = PBXGroup;
+			children = (
+				C098DB721931581D00222D73 /* RequestQueue.h */,
+				C098DB731931581D00222D73 /* RequestQueue.m */,
+			);
+			path = RequestQueue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,9 +386,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C098DB0E19310CDF00222D73 /* main.m in Sources */,
+				C098DB66193153C400222D73 /* RequestBAL.m in Sources */,
+				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
+				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
+				C098DB631931539800222D73 /* RequestHandler.m in Sources */,
+				C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */,
 				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
+				C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */,
 				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
