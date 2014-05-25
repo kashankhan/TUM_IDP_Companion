@@ -32,6 +32,20 @@
 		C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB6B1931542200222D73 /* TwitterRequestBAL.m */; };
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB761931636100222D73 /* SocialAccountRequestBAL.m */; };
+		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
+		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
+		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
+		C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963541932392E000AE466 /* SlideMenuTableViewController.m */; };
+		C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */; };
+		C0E9635C19323BB3000AE466 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E9635E19323BB3000AE466 /* Localization.strings */; };
+		C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963631932844A000AE466 /* AccountsTableViewController.m */; };
+		C0E963671932846D000AE466 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963661932846D000AE466 /* MapViewController.m */; };
+		C0E9636A19328496000AE466 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9636919328496000AE466 /* HomeViewController.m */; };
+		C0E9636E193285EB000AE466 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E9636C193285EB000AE466 /* menu.png */; };
+		C0E9636F193285EB000AE466 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E9636D193285EB000AE466 /* menu@2x.png */; };
+		C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9637119328D94000AE466 /* ContactsTableViewController.m */; };
+		C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637319329577000AE466 /* CoreLocation.framework */; };
+		C0E9637619329581000AE466 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637519329581000AE466 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +95,29 @@
 		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
 		C098DB751931636100222D73 /* SocialAccountRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccountRequestBAL.h; sourceTree = "<group>"; };
 		C098DB761931636100222D73 /* SocialAccountRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAccountRequestBAL.m; sourceTree = "<group>"; };
+		C0E9634A19322565000AE466 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		C0E9634B19322565000AE466 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		C0E96350193228C7000AE466 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C0E96351193228C7000AE466 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C0E963531932392E000AE466 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuTableViewController.h; sourceTree = "<group>"; };
+		C0E963541932392E000AE466 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
+		C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		C0E9636019323C0F000AE466 /* LocalizationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
+		C0E9636119323D5F000AE466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		C0E963621932844A000AE466 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
+		C0E963631932844A000AE466 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
+		C0E963651932846D000AE466 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C0E963661932846D000AE466 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C0E9636819328496000AE466 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C0E9636919328496000AE466 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C0E9636C193285EB000AE466 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		C0E9636D193285EB000AE466 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
+		C0E9637019328D94000AE466 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		C0E9637119328D94000AE466 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		C0E9637319329577000AE466 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C0E9637519329581000AE466 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E9637619329581000AE466 /* MapKit.framework in Frameworks */,
+				C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */,
 				C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */,
 				C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */,
 				C098DB0619310CDF00222D73 /* CoreData.framework in Frameworks */,
@@ -132,6 +171,8 @@
 		C098DAFE19310CDF00222D73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0E9637519329581000AE466 /* MapKit.framework */,
+				C0E9637319329577000AE466 /* CoreLocation.framework */,
 				C098DB4D19313D5500222D73 /* Twitter.framework */,
 				C098DAFF19310CDF00222D73 /* Foundation.framework */,
 				C098DB0119310CDF00222D73 /* CoreGraphics.framework */,
@@ -149,6 +190,7 @@
 				C098DB1319310CDF00222D73 /* Main.storyboard */,
 				C098DB1F19310CDF00222D73 /* Images.xcassets */,
 				C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */,
+				C0E9636B193285EB000AE466 /* Images */,
 				C098DB0819310CDF00222D73 /* Supporting Files */,
 			);
 			path = TUM_IDP_Companion;
@@ -161,6 +203,7 @@
 				C098DB0A19310CDF00222D73 /* InfoPlist.strings */,
 				C098DB0D19310CDF00222D73 /* main.m */,
 				C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */,
+				C0E9635E19323BB3000AE466 /* Localization.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -209,6 +252,8 @@
 		C098DB4119310DBB00222D73 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				C0E9634F193228C7000AE466 /* SWRevealSlider */,
+				C0E9634919322565000AE466 /* ProgressHUD */,
 				C098DB711931581D00222D73 /* RequestQueue */,
 			);
 			path = Externals;
@@ -230,6 +275,16 @@
 				C098DB4519310DBB00222D73 /* DetailViewController.m */,
 				C098DB4619310DBB00222D73 /* MasterViewController.h */,
 				C098DB4719310DBB00222D73 /* MasterViewController.m */,
+				C0E963531932392E000AE466 /* SlideMenuTableViewController.h */,
+				C0E963541932392E000AE466 /* SlideMenuTableViewController.m */,
+				C0E963621932844A000AE466 /* AccountsTableViewController.h */,
+				C0E963631932844A000AE466 /* AccountsTableViewController.m */,
+				C0E963651932846D000AE466 /* MapViewController.h */,
+				C0E963661932846D000AE466 /* MapViewController.m */,
+				C0E9636819328496000AE466 /* HomeViewController.h */,
+				C0E9636919328496000AE466 /* HomeViewController.m */,
+				C0E9637019328D94000AE466 /* ContactsTableViewController.h */,
+				C0E9637119328D94000AE466 /* ContactsTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -244,6 +299,8 @@
 		C098DB4919310DBB00222D73 /* Utilites */ = {
 			isa = PBXGroup;
 			children = (
+				C0E96356193239BA000AE466 /* Catagories */,
+				C0E9636019323C0F000AE466 /* LocalizationHeader.h */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -286,6 +343,44 @@
 				C098DB731931581D00222D73 /* RequestQueue.m */,
 			);
 			path = RequestQueue;
+			sourceTree = "<group>";
+		};
+		C0E9634919322565000AE466 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C0E9634A19322565000AE466 /* ProgressHUD.bundle */,
+				C0E9634B19322565000AE466 /* ProgressHUD.h */,
+				C0E9634C19322565000AE466 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
+		C0E9634F193228C7000AE466 /* SWRevealSlider */ = {
+			isa = PBXGroup;
+			children = (
+				C0E96350193228C7000AE466 /* SWRevealViewController.h */,
+				C0E96351193228C7000AE466 /* SWRevealViewController.m */,
+			);
+			name = SWRevealSlider;
+			path = TUM_IDP_Companion/Classes/Externals/SWRevealSlider;
+			sourceTree = SOURCE_ROOT;
+		};
+		C0E96356193239BA000AE466 /* Catagories */ = {
+			isa = PBXGroup;
+			children = (
+				C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */,
+				C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */,
+			);
+			path = Catagories;
+			sourceTree = "<group>";
+		};
+		C0E9636B193285EB000AE466 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C0E9636C193285EB000AE466 /* menu.png */,
+				C0E9636D193285EB000AE466 /* menu@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,7 +459,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */,
+				C0E9636F193285EB000AE466 /* menu@2x.png in Resources */,
 				C098DB2019310CDF00222D73 /* Images.xcassets in Resources */,
+				C0E9636E193285EB000AE466 /* menu.png in Resources */,
+				C0E9635C19323BB3000AE466 /* Localization.strings in Resources */,
 				C098DB0C19310CDF00222D73 /* InfoPlist.strings in Resources */,
 				C098DB1519310CDF00222D73 /* Main.storyboard in Resources */,
 			);
@@ -385,17 +484,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */,
+				C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */,
 				C098DB0E19310CDF00222D73 /* main.m in Sources */,
 				C098DB66193153C400222D73 /* RequestBAL.m in Sources */,
 				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
+				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
+				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C098DB631931539800222D73 /* RequestHandler.m in Sources */,
+				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */,
 				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
+				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,
 				C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */,
 				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
+				C0E963671932846D000AE466 /* MapViewController.m in Sources */,
+				C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +547,14 @@
 				C098DB3119310CE000222D73 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C0E9635E19323BB3000AE466 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C0E9636119323D5F000AE466 /* en */,
+			);
+			name = Localization.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
