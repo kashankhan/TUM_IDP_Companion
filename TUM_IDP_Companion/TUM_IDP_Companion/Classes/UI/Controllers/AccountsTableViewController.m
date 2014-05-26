@@ -45,8 +45,9 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-
     [self configureNavigationBarItems];
+    
+    _items = [@[NSLocalizedString(@"FACEBOOK", nil), NSLocalizedString(@"TWITTER", nil)] mutableCopy];
 }
 
 - (void)configureNavigationBarItems {
@@ -59,33 +60,34 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
+
+    return _items[indexPath.row];
+}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_items count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentifierDefaultCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [self objectAtIndexPath:indexPath];
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

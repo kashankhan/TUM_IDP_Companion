@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountsTableViewController : UITableViewController
+@interface AccountsTableViewController : UITableViewController {
+
+    NSMutableArray *_items;
+}
 
 @end

@@ -13,7 +13,6 @@
 		C098DB0619310CDF00222D73 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0519310CDF00222D73 /* CoreData.framework */; };
 		C098DB0C19310CDF00222D73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C098DB0A19310CDF00222D73 /* InfoPlist.strings */; };
 		C098DB0E19310CDF00222D73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB0D19310CDF00222D73 /* main.m */; };
-		C098DB1519310CDF00222D73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C098DB1319310CDF00222D73 /* Main.storyboard */; };
 		C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */; };
 		C098DB2019310CDF00222D73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C098DB1F19310CDF00222D73 /* Images.xcassets */; };
 		C098DB2719310CDF00222D73 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB2619310CDF00222D73 /* XCTest.framework */; };
@@ -37,7 +36,6 @@
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
 		C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963541932392E000AE466 /* SlideMenuTableViewController.m */; };
 		C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */; };
-		C0E9635C19323BB3000AE466 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E9635E19323BB3000AE466 /* Localization.strings */; };
 		C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963631932844A000AE466 /* AccountsTableViewController.m */; };
 		C0E963671932846D000AE466 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963661932846D000AE466 /* MapViewController.m */; };
 		C0E9636A19328496000AE466 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9636919328496000AE466 /* HomeViewController.m */; };
@@ -46,6 +44,15 @@
 		C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9637119328D94000AE466 /* ContactsTableViewController.m */; };
 		C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637319329577000AE466 /* CoreLocation.framework */; };
 		C0E9637619329581000AE466 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637519329581000AE466 /* MapKit.framework */; };
+		C0E963781932A0D4000AE466 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963771932A0D4000AE466 /* AddressBookUI.framework */; };
+		C0E9638819337770000AE466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E9638A19337770000AE466 /* Localizable.strings */; };
+		C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9638D1933788F000AE466 /* BaseDAL.m */; };
+		C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96390193378C0000AE466 /* ContactsDAL.m */; };
+		C0E963B819339F06000AE466 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963B719339F06000AE466 /* AddressBook.framework */; };
+		C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D41933B7F9000AE466 /* ABContact.m */; };
+		C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D61933B7F9000AE466 /* ABContactsHelper.m */; };
+		C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D81933B7F9000AE466 /* ABGroup.m */; };
+		C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963DA1933B7F9000AE466 /* ABStandin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +75,6 @@
 		C098DB0B19310CDF00222D73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C098DB0D19310CDF00222D73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TUM_IDP_Companion-Prefix.pch"; sourceTree = "<group>"; };
-		C098DB1419310CDF00222D73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C098DB1719310CDF00222D73 /* TUM_IDP_Companion.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TUM_IDP_Companion.xcdatamodel; sourceTree = "<group>"; };
 		C098DB1F19310CDF00222D73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C098DB2519310CDF00222D73 /* TUM_IDP_CompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TUM_IDP_CompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,7 +111,6 @@
 		C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		C0E9636019323C0F000AE466 /* LocalizationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
-		C0E9636119323D5F000AE466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		C0E963621932844A000AE466 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
 		C0E963631932844A000AE466 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
 		C0E963651932846D000AE466 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -118,6 +123,23 @@
 		C0E9637119328D94000AE466 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		C0E9637319329577000AE466 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C0E9637519329581000AE466 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C0E963771932A0D4000AE466 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		C0E9638919337770000AE466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0E9638B1933778B000AE466 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C0E9638C1933788F000AE466 /* BaseDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDAL.h; sourceTree = "<group>"; };
+		C0E9638D1933788F000AE466 /* BaseDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDAL.m; sourceTree = "<group>"; };
+		C0E9638F193378C0000AE466 /* ContactsDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsDAL.h; sourceTree = "<group>"; };
+		C0E96390193378C0000AE466 /* ContactsDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsDAL.m; sourceTree = "<group>"; };
+		C0E963B719339F06000AE466 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C0E963D31933B7F9000AE466 /* ABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContact.h; sourceTree = "<group>"; };
+		C0E963D41933B7F9000AE466 /* ABContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContact.m; sourceTree = "<group>"; };
+		C0E963D51933B7F9000AE466 /* ABContactsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABContactsHelper.h; sourceTree = "<group>"; };
+		C0E963D61933B7F9000AE466 /* ABContactsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABContactsHelper.m; sourceTree = "<group>"; };
+		C0E963D71933B7F9000AE466 /* ABGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGroup.h; sourceTree = "<group>"; };
+		C0E963D81933B7F9000AE466 /* ABGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGroup.m; sourceTree = "<group>"; };
+		C0E963D91933B7F9000AE466 /* ABStandin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABStandin.h; sourceTree = "<group>"; };
+		C0E963DA1933B7F9000AE466 /* ABStandin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABStandin.m; sourceTree = "<group>"; };
+		C0E963DB1933B7F9000AE466 /* ABWrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABWrappers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E963B819339F06000AE466 /* AddressBook.framework in Frameworks */,
+				C0E963781932A0D4000AE466 /* AddressBookUI.framework in Frameworks */,
 				C0E9637619329581000AE466 /* MapKit.framework in Frameworks */,
 				C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */,
 				C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */,
@@ -171,6 +195,8 @@
 		C098DAFE19310CDF00222D73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0E963B719339F06000AE466 /* AddressBook.framework */,
+				C0E963771932A0D4000AE466 /* AddressBookUI.framework */,
 				C0E9637519329581000AE466 /* MapKit.framework */,
 				C0E9637319329577000AE466 /* CoreLocation.framework */,
 				C098DB4D19313D5500222D73 /* Twitter.framework */,
@@ -187,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				C098DB3D19310DBB00222D73 /* Classes */,
-				C098DB1319310CDF00222D73 /* Main.storyboard */,
 				C098DB1F19310CDF00222D73 /* Images.xcassets */,
 				C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */,
 				C0E9636B193285EB000AE466 /* Images */,
@@ -203,7 +228,7 @@
 				C098DB0A19310CDF00222D73 /* InfoPlist.strings */,
 				C098DB0D19310CDF00222D73 /* main.m */,
 				C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */,
-				C0E9635E19323BB3000AE466 /* Localization.strings */,
+				C0E9638A19337770000AE466 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -252,6 +277,7 @@
 		C098DB4119310DBB00222D73 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				C0E963D21933B7F9000AE466 /* AddressBook */,
 				C0E9634F193228C7000AE466 /* SWRevealSlider */,
 				C0E9634919322565000AE466 /* ProgressHUD */,
 				C098DB711931581D00222D73 /* RequestQueue */,
@@ -325,6 +351,10 @@
 		C098DB5019313DAB00222D73 /* DAL */ = {
 			isa = PBXGroup;
 			children = (
+				C0E9638C1933788F000AE466 /* BaseDAL.h */,
+				C0E9638D1933788F000AE466 /* BaseDAL.m */,
+				C0E9638F193378C0000AE466 /* ContactsDAL.h */,
+				C0E96390193378C0000AE466 /* ContactsDAL.m */,
 			);
 			path = DAL;
 			sourceTree = "<group>";
@@ -381,6 +411,22 @@
 				C0E9636D193285EB000AE466 /* menu@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		C0E963D21933B7F9000AE466 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				C0E963D31933B7F9000AE466 /* ABContact.h */,
+				C0E963D41933B7F9000AE466 /* ABContact.m */,
+				C0E963D51933B7F9000AE466 /* ABContactsHelper.h */,
+				C0E963D61933B7F9000AE466 /* ABContactsHelper.m */,
+				C0E963D71933B7F9000AE466 /* ABGroup.h */,
+				C0E963D81933B7F9000AE466 /* ABGroup.m */,
+				C0E963D91933B7F9000AE466 /* ABStandin.h */,
+				C0E963DA1933B7F9000AE466 /* ABStandin.m */,
+				C0E963DB1933B7F9000AE466 /* ABWrappers.h */,
+			);
+			path = AddressBook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +488,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = C098DAF319310CDF00222D73;
 			productRefGroup = C098DAFD19310CDF00222D73 /* Products */;
@@ -460,12 +507,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */,
+				C0E9638819337770000AE466 /* Localizable.strings in Resources */,
 				C0E9636F193285EB000AE466 /* menu@2x.png in Resources */,
 				C098DB2019310CDF00222D73 /* Images.xcassets in Resources */,
 				C0E9636E193285EB000AE466 /* menu.png in Resources */,
-				C0E9635C19323BB3000AE466 /* Localization.strings in Resources */,
 				C098DB0C19310CDF00222D73 /* InfoPlist.strings in Resources */,
-				C098DB1519310CDF00222D73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,19 +534,25 @@
 				C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */,
 				C098DB0E19310CDF00222D73 /* main.m in Sources */,
 				C098DB66193153C400222D73 /* RequestBAL.m in Sources */,
+				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
+				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
 				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
+				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
+				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C098DB631931539800222D73 /* RequestHandler.m in Sources */,
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */,
 				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
+				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
 				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,
 				C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */,
 				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
+				C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */,
 				C0E963671932846D000AE466 /* MapViewController.m in Sources */,
 				C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */,
 			);
@@ -533,14 +585,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C098DB1319310CDF00222D73 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C098DB1419310CDF00222D73 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C098DB3019310CE000222D73 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,12 +593,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C0E9635E19323BB3000AE466 /* Localization.strings */ = {
+		C0E9638A19337770000AE466 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C0E9636119323D5F000AE466 /* en */,
+				C0E9638919337770000AE466 /* en */,
+				C0E9638B1933778B000AE466 /* de */,
 			);
-			name = Localization.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

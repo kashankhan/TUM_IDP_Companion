@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactsTableViewController : UITableViewController
+@class ContactsDAL;
+
+@interface ContactsTableViewController : UITableViewController {
+
+    ContactsDAL *_contactDal;
+    NSMutableArray *_items;
+}
 
 @end

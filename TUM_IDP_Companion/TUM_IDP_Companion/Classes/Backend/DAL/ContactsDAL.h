@@ -7,7 +7,9 @@
 //
 
 #import "BaseDAL.h"
+#import "ABWrappers.h"
 
 @interface ContactsDAL : BaseDAL
 
+- (NSArray *)addressBook;
 @end

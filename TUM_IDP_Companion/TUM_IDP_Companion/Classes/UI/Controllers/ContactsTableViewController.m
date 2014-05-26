@@ -8,6 +8,7 @@
 
 #import "ContactsTableViewController.h"
 #import "SWRevealViewController.h"
+#import "ContactsDAL.h"
 
 @interface ContactsTableViewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
@@ -47,7 +48,12 @@
 - (void)configureViewSettings {
     
     [self configureNavigationBarItems];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadContacts) name:kAuthorizationUpdateNotification object:nil];
+    [self loadContacts];
+   
 }
+
 
 - (void)configureNavigationBarItems {
     
@@ -58,32 +64,49 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
+
+- (void)loadContacts {
+
+    if (!_contactDal) {
+        _contactDal = [ContactsDAL new];
+    }
+    _items = [[_contactDal addressBook] mutableCopy];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_items count];
 }
 
-/*
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return _items[indexPath.row];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentifierDefaultCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+
+    ABContact *contact =  [self objectAtIndexPath:indexPath];
+    cell.textLabel.text = contact.firstname;
+    cell.imageView.image = contact.image;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
