@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class RequestQueue;
+#import "RequestQueue.h"
 
 // Completion block for performRequestWithHandler.
 typedef void(^RequestBALHandler)(id response, NSError *error);
-
 
 
 typedef NS_ENUM(NSUInteger, RequestContentType) {
@@ -27,5 +25,8 @@ typedef NS_ENUM(NSUInteger, RequestContentType) {
     
 }
 
-- (void)sendRequest:(NSURL *)url parameters:(NSDictionary *)parameters handler:(RequestBALHandler)handler;
+- (void)cancelAllOperations;
+- (void)addOperation:(RQOperation *)operation;
+
+- (void)sendRequest:(NSURLRequest *)request handler:(RequestBALHandler)handler;
 @end

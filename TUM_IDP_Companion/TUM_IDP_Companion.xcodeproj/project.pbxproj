@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AAF193B573D001DBC3B /* GreenNavBAL.m */; };
+		C03D0AB3193B5C51001DBC3B /* UrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AB2193B5C51001DBC3B /* UrlRequest.m */; };
+		C03D0AB6193B5C6F001DBC3B /* GreenNavUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AB5193B5C6F001DBC3B /* GreenNavUrlRequest.m */; };
 		C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
 		C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0119310CDF00222D73 /* CoreGraphics.framework */; };
 		C098DB0419310CDF00222D73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0319310CDF00222D73 /* UIKit.framework */; };
@@ -66,6 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C03D0AAE193B573D001DBC3B /* GreenNavBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenNavBAL.h; sourceTree = "<group>"; };
+		C03D0AAF193B573D001DBC3B /* GreenNavBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavBAL.m; sourceTree = "<group>"; };
+		C03D0AB1193B5C51001DBC3B /* UrlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlRequest.h; sourceTree = "<group>"; };
+		C03D0AB2193B5C51001DBC3B /* UrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlRequest.m; sourceTree = "<group>"; };
+		C03D0AB4193B5C6F001DBC3B /* GreenNavUrlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenNavUrlRequest.h; sourceTree = "<group>"; };
+		C03D0AB5193B5C6F001DBC3B /* GreenNavUrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavUrlRequest.m; sourceTree = "<group>"; };
 		C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUM_IDP_Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098DAFF19310CDF00222D73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C098DB0119310CDF00222D73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -344,6 +353,12 @@
 				C098DB681931540500222D73 /* FacebookRequestBAL.m */,
 				C098DB6A1931542200222D73 /* TwitterRequestBAL.h */,
 				C098DB6B1931542200222D73 /* TwitterRequestBAL.m */,
+				C03D0AAE193B573D001DBC3B /* GreenNavBAL.h */,
+				C03D0AAF193B573D001DBC3B /* GreenNavBAL.m */,
+				C03D0AB1193B5C51001DBC3B /* UrlRequest.h */,
+				C03D0AB2193B5C51001DBC3B /* UrlRequest.m */,
+				C03D0AB4193B5C6F001DBC3B /* GreenNavUrlRequest.h */,
+				C03D0AB5193B5C6F001DBC3B /* GreenNavUrlRequest.m */,
 			);
 			path = BAL;
 			sourceTree = "<group>";
@@ -535,10 +550,12 @@
 				C098DB0E19310CDF00222D73 /* main.m in Sources */,
 				C098DB66193153C400222D73 /* RequestBAL.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
+				C03D0AB6193B5C6F001DBC3B /* GreenNavUrlRequest.m in Sources */,
 				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
+				C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */,
 				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
 				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
@@ -547,6 +564,7 @@
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */,
 				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
+				C03D0AB3193B5C51001DBC3B /* UrlRequest.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
 				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,

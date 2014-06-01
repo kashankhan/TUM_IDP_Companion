@@ -10,11 +10,32 @@
 #import "RequestBAL.h"
 #import "TwitterRequestBAL.h"
 #import "FacebookRequestBAL.h"
+#import "GreenNavBAL.h"
+
+@interface RequestHandler() {
+
+    GreenNavBAL *_greenNavBAL;
+    TwitterRequestBAL *_twitterRequestBAL;
+    FacebookRequestBAL *_facebookRequestBAL;
+
+}
+
+@end
+
 
 @implementation RequestHandler
 
+- (instancetype)init {
+    
+    self  = [super init];
+    
+    _facebookRequestBAL = [FacebookRequestBAL new];
+    _twitterRequestBAL = [TwitterRequestBAL new];
+    _greenNavBAL =  [GreenNavBAL new];
+    
+    return self;
+}
 - (void)sendRequest:(RequestType)requestType handler:(RequestBALHandler)handler {
-
     
     switch (requestType) {
 
@@ -27,6 +48,8 @@
          [self sendFacebookRequest:requestType handler:handler];
             break;
             
+            case RequestTypeAccessGreenNavTest:
+            [self sendRequestGreenNav:requestType handler:handler];
         default:
             break;
     }
@@ -34,11 +57,10 @@
 
 - (void)sendTwitterRequest:(RequestType)requestType handler:(RequestBALHandler)handler  {
 
-    TwitterRequestBAL *requestBal = [TwitterRequestBAL new];
    
     switch (requestType) {
         case RequestTypeAccessTwitterAccount:
-            [requestBal accessAccountWithHandler:handler];
+            [_twitterRequestBAL accessAccountWithHandler:handler];
             
             break;
             
@@ -48,20 +70,31 @@
 
 }
 
-
 - (void)sendFacebookRequest:(RequestType)requestType handler:(RequestBALHandler)handler  {
-    
-    FacebookRequestBAL *requestBal = [FacebookRequestBAL new];
     
     switch (requestType) {
         case RequestTypeAccessFacebookAccount:
-            [requestBal accessAccountWithHandler:handler];
+            [_facebookRequestBAL accessAccountWithHandler:handler];
             
             break;
             
         default:
             break;
     }
+    
+}
+
+- (void)sendRequestGreenNav:(RequestType)requestType handler:(RequestBALHandler)handler {
+    
+    switch (requestType) {
+        default:
+            //[_greenNavBAL sendTestVerticeSerivce:handler];
+            //[_greenNavBAL sendTestVerticeNearestSerivce:handler];
+            //[_greenNavBAL sendTestVehicles:handler];
+            [_greenNavBAL sendTestVehiclesSam:handler];
+            break;
+    }
+
     
 }
 @end

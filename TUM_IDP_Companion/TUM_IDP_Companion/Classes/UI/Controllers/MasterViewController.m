@@ -7,11 +7,7 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
-
-#import "RequestHandler.h"
-
 
 @interface MasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -59,14 +55,6 @@
         abort();
     }
     
-    
-    RequestHandler *requestHandler = [RequestHandler new];
-    [requestHandler sendRequest:RequestTypeAccessFacebookAccount handler:^(id response, NSError *error) {
-        
-        NSLog(@" response : %@", response);
-        NSLog(@" error : %@", [error description]);
-
-    } ];
 }
 
 #pragma mark - Table View
