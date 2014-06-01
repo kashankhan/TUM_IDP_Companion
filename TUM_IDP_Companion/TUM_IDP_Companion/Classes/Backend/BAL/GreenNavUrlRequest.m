@@ -49,4 +49,22 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
 }
+
+- (NSURLRequest*)urlRequestForTestVehiclesSamRoutes {
+    
+    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles/Sam/routes/188633982600-182440800/opt/energy?battery=100"];
+    NSURL *url = [NSURL URLWithString:uri];
+    NSData *requestData = nil;
+    
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+}
+
+- (NSURLRequest*)urlRequestForTestVehiclesSamRoutesRate {
+    
+    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles/Sam/ranges/188633982600?battery=2"];
+    NSURL *url = [NSURL URLWithString:uri];
+    NSData *requestData = nil;
+    
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+}
 @end

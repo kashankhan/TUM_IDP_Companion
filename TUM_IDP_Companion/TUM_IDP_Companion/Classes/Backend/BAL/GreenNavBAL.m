@@ -31,6 +31,11 @@
    [self sendRequest:[_urlRequest urlRequestForTestVerticeSerivce] handler:handler];
 }
 
+- (void)sendTestVerticeNearestSerivce:(RequestBALHandler)handler {
+    
+    [self sendRequest:[_urlRequest urlRequestForTestVerticeNearestSerivce] handler:handler];
+}
+
 - (void)sendTestVehicles:(RequestBALHandler)handler {
     
     [self sendRequest:[_urlRequest urlRequestForTestVehicles] handler:handler];
@@ -39,5 +44,15 @@
 - (void)sendTestVehiclesSam:(RequestBALHandler)handler {
 
     [self sendRequest:[_urlRequest urlRequestForTestVehiclesSam] handler:handler];
+}
+
+- (void)sendTestVehiclesSamRoutes:(RequestBALHandler)handler {
+
+    [self sendRequest:[_urlRequest urlRequestForTestVehiclesSam] handler:handler];
+}
+
+- (void)sendTestVehiclesSamRoutesRate:(RequestBALHandler)handler {
+
+    [self sendRequest:[_urlRequest urlRequestForTestVehiclesSamRoutesRate] handler:handler];
 }
 @end

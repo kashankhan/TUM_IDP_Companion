@@ -14,5 +14,7 @@
 - (void)sendTestVerticeNearestSerivce:(RequestBALHandler)handler;
 - (void)sendTestVehicles:(RequestBALHandler)handler;
 - (void)sendTestVehiclesSam:(RequestBALHandler)handler;
+- (void)sendTestVehiclesSamRoutes:(RequestBALHandler)handler;
+- (void)sendTestVehiclesSamRoutesRate:(RequestBALHandler)handler;
 
 @end

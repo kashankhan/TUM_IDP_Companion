@@ -14,4 +14,6 @@
 - (NSURLRequest*)urlRequestForTestVerticeNearestSerivce;
 - (NSURLRequest*)urlRequestForTestVehicles;
 - (NSURLRequest*)urlRequestForTestVehiclesSam;
+- (NSURLRequest*)urlRequestForTestVehiclesSamRoutes;
+- (NSURLRequest*)urlRequestForTestVehiclesSamRoutesRate;
 @end
