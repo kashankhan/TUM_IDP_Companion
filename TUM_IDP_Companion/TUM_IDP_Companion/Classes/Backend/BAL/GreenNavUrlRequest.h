@@ -16,4 +16,10 @@
 - (NSURLRequest*)urlRequestForTestVehiclesSam;
 - (NSURLRequest*)urlRequestForTestVehiclesSamRoutes;
 - (NSURLRequest*)urlRequestForTestVehiclesSamRoutesRate;
+
+- (NSURLRequest*)urlRequestForNearestVerticeWithLatitude:(long)latitude longituide:(long)longituide;
+- (NSURLRequest*)urlRequestForVehicles;
+- (NSURLRequest*)urlRequestForVehiclesType:(NSString *)vehicleType;
+- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle toRoute:(long)toRoute forRoute:(long)forRoute optimization:(NSString *)optimization battery:(NSUInteger)battery;
+- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle range:(long)range battery:(NSUInteger)battery;
 @end
