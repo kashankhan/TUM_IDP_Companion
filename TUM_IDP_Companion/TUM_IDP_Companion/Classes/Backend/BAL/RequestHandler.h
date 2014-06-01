@@ -12,7 +12,7 @@
 typedef NS_ENUM(NSUInteger, RequestType) {
     RequestTypeAccessTwitterAccount,
     RequestTypeAccessFacebookAccount,
-     RequestTypeAccessGreenNavTest
+    RequestTypeAccessGreenNavTest
 };
 
 @interface RequestHandler : NSObject

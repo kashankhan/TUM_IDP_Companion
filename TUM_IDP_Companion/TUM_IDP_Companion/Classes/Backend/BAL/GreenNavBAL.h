@@ -8,6 +8,20 @@
 
 #import "RequestBAL.h"
 
+typedef NS_ENUM(NSUInteger, GreenNavTurnType) {
+    
+    GreenNavTurnTypeNoTurn              = 0,
+    GreenNavTurnTypeStraight            = 1,
+    GreenNavTurnTypeLeftTurn            = 2,
+    GreenNavTurnTypeRightTurn           = 3,
+    GreenNavTurnTypeSlightLeftTurn      = 4,
+    GreenNavTurnTypeSlightRightTurn     = 5,
+    GreenNavTurnTypeSharpLeftTurn       = 6,
+    GreenNavTurnTypeSharpRightTurn      = 7,
+    GreenNavTurnTypeRoundAbout          = 20,
+    GreenNavTurnTypeLeaveAbout          = 21
+};
+
 @interface GreenNavBAL : RequestBAL
 
 - (void)sendTestVerticeSerivce:(RequestBALHandler)handler;
