@@ -88,11 +88,11 @@
     
     switch (requestType) {
         default:
-            //[_greenNavBAL sendTestVerticeSerivce:handler];
-            //[_greenNavBAL sendTestVerticeNearestSerivce:handler];
-            //[_greenNavBAL sendTestVehicles:handler];
-            //[_greenNavBAL sendTestVehiclesSam:handler];
-            //[_greenNavBAL sendTestVehiclesSamRoutes:handler];
+            [_greenNavBAL sendTestVerticeSerivce:handler];
+            [_greenNavBAL sendTestVerticeNearestSerivce:handler];
+            [_greenNavBAL sendTestVehicles:handler];
+            [_greenNavBAL sendTestVehiclesSam:handler];
+            [_greenNavBAL sendTestVehiclesSamRoutes:handler];
             [_greenNavBAL sendTestVehiclesSamRoutesRate:handler];
             break;
     }

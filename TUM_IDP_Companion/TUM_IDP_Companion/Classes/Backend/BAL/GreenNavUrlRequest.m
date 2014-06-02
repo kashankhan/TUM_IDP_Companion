@@ -15,57 +15,33 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
 
 - (NSURLRequest*)urlRequestForTestVerticeSerivce {
     
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vertices/nearest?lat=48.23&lon=11.68"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForNearestVerticeWithLatitude:48.23 longituide:11.68];
 }
 
 - (NSURLRequest*)urlRequestForTestVerticeNearestSerivce {
     
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vertices/nearest?lat=48.25&lon=11.65"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForNearestVerticeWithLatitude:48.25 longituide:11.65];
 }
 
 - (NSURLRequest*)urlRequestForTestVehicles {
-    
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+
+   return [self urlRequestForVehicles];
 }
 
 
 - (NSURLRequest*)urlRequestForTestVehiclesSam {
     
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles/Sam"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForVehiclesType:@"Sam"];
 }
 
 - (NSURLRequest*)urlRequestForTestVehiclesSamRoutes {
-    
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles/Sam/routes/188633982600-182440800/opt/energy?battery=100"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+
+    return [self urlRequestForVehicleRoutes:@"Sam" toRoute:188633982600 forRoute:182440800 optimization:@"energy" battery:100];
 }
 
 - (NSURLRequest*)urlRequestForTestVehiclesSamRoutesRate {
-    
-    NSString *uri = [kBaseURL stringByAppendingString:@"/vehicles/Sam/ranges/188633982600?battery=2"];
-    NSURL *url = [NSURL URLWithString:uri];
-    NSData *requestData = nil;
-    
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+     
+    return [self urlRequestForVehicleRoutes:@"Sam" range:188633982600 battery:100];
 }
 
 /**
@@ -102,10 +78,10 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
 }
 
-- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle toRoute:(long)toRoute forRoute:(long)forRoute optimization:(NSString *)optimization battery:(NSUInteger)battery {
+- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle toRoute:(long long)toRoute forRoute:(long long)forRoute optimization:(NSString *)optimization battery:(NSUInteger)battery {
     
     //@"/vehicles/Sam/routes/188633982600-182440800/opt/energy?battery=100
-    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/routes/%ld-%ld/opt/%@?battery=%d", vehicle, toRoute, forRoute, optimization, battery];
+    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/routes/%lld-%lld/opt/%@?battery=%d", vehicle, toRoute, forRoute, optimization, battery];
     uri = [kBaseURL stringByAppendingString:uri];
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
@@ -113,10 +89,10 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
 }
 
-- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle range:(long)range battery:(NSUInteger)battery  {
+- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle range:(long long)range battery:(NSUInteger)battery  {
     
     //@"/vehicles/Sam/ranges/188633982600?battery=2
-    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/ranges/%ld?battery=%d",vehicle, range, battery];
+    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/ranges/%lld?battery=%d",vehicle, range, battery];
     uri = [kBaseURL stringByAppendingString:uri];
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
