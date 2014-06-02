@@ -12,38 +12,6 @@
 
 static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav";
 
-
-- (NSURLRequest*)urlRequestForTestVerticeSerivce {
-    
-    return [self urlRequestForNearestVerticeWithLatitude:48.23 longituide:11.68];
-}
-
-- (NSURLRequest*)urlRequestForTestVerticeNearestSerivce {
-    
-    return [self urlRequestForNearestVerticeWithLatitude:48.25 longituide:11.65];
-}
-
-- (NSURLRequest*)urlRequestForTestVehicles {
-
-   return [self urlRequestForVehicles];
-}
-
-
-- (NSURLRequest*)urlRequestForTestVehiclesSam {
-    
-    return [self urlRequestForVehiclesType:@"Sam"];
-}
-
-- (NSURLRequest*)urlRequestForTestVehiclesSamRoutes {
-
-    return [self urlRequestForVehicleRoutes:@"Sam" toRoute:188633982600 forRoute:182440800 optimization:@"energy" battery:100];
-}
-
-- (NSURLRequest*)urlRequestForTestVehiclesSamRoutesRate {
-     
-    return [self urlRequestForVehicleRoutes:@"Sam" range:188633982600 battery:100];
-}
-
 /**
  *  ///
  */
@@ -89,7 +57,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
 }
 
-- (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle range:(long long)range battery:(NSUInteger)battery  {
+- (NSURLRequest*)urlRequestForVehicleRange:(NSString *)vehicle range:(long long)range battery:(NSUInteger)battery  {
     
     //@"/vehicles/Sam/ranges/188633982600?battery=2
     NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/ranges/%lld?battery=%d",vehicle, range, battery];

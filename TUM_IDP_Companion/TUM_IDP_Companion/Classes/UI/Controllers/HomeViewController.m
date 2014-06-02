@@ -84,7 +84,7 @@
     static RequestHandler *requestHandler = nil;
     requestHandler = [RequestHandler new];
 
-    [requestHandler sendRequest:RequestTypeAccessGreenNavTest handler:^(id response, NSError *error) {
+    [requestHandler sendRequest:RequestTypeAccessGreenNavTest params:nil handler:^(id response, NSError *error) {
         
         NSLog(@" response : %@", response);
         NSLog(@" error : %@", [error description]);

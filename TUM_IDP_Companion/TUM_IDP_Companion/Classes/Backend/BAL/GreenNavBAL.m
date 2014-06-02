@@ -26,33 +26,52 @@
     return self;
 }
 
-- (void)sendTestVerticeSerivce:(RequestBALHandler)handler {
 
-   [self sendRequest:[_urlRequest urlRequestForTestVerticeSerivce] handler:handler];
+- (void)sendRequestForNearestVertice:(NSDictionary *)params handler:(RequestBALHandler)handler {
+
+    long latitude = 48.23;
+    long longitude = 11.68;
+    NSURLRequest *urlRequest = [_urlRequest urlRequestForNearestVerticeWithLatitude:latitude longituide:longitude];
+    [self sendRequest:urlRequest handler:handler];
 }
 
-- (void)sendTestVerticeNearestSerivce:(RequestBALHandler)handler {
+
+- (void)sendRequestForVehicles:(RequestBALHandler)handler {
+
+    NSURLRequest *urlRequest = [_urlRequest urlRequestForVehicles];
+    [self sendRequest:urlRequest handler:handler];
+}
+
+- (void)sendRequestForVehiclesType:(NSDictionary *)params handler:(RequestBALHandler)handler {
+
+    NSString *type = @"Sam";
+   
+    NSURLRequest *urlRequest = [_urlRequest urlRequestForVehiclesType:type];
+    [self sendRequest:urlRequest handler:handler];
+}
+
+- (void)sendRequestForVehicleRoutes:(NSDictionary *)params handler:(RequestBALHandler)handler {
+
+    NSString *type = @"Sam";
+    long long toRoute = 188633982600;
+    long long forRoute = 182440800;
+    NSString *optimization = @"energy";
+    NSUInteger battery = 100;
     
-    [self sendRequest:[_urlRequest urlRequestForTestVerticeNearestSerivce] handler:handler];
-}
-
-- (void)sendTestVehicles:(RequestBALHandler)handler {
+     NSURLRequest *urlRequest = [_urlRequest urlRequestForVehicleRoutes:type toRoute:toRoute forRoute:forRoute optimization:optimization battery:battery];
+    [self sendRequest:urlRequest handler:handler];
     
-    [self sendRequest:[_urlRequest urlRequestForTestVehicles] handler:handler];
 }
 
-- (void)sendTestVehiclesSam:(RequestBALHandler)handler {
-
-    [self sendRequest:[_urlRequest urlRequestForTestVehiclesSam] handler:handler];
+- (void)sendRequestForVehicleRange:(NSDictionary *)params handler:(RequestBALHandler)handler {
+    
+    NSString *type = @"Sam";
+    long long range = 188633982600;
+    NSUInteger battery = 100;
+    
+    NSURLRequest *urlRequest = [_urlRequest urlRequestForVehicleRange:type range:range battery:battery];
+    [self sendRequest:urlRequest handler:handler];
+    
 }
 
-- (void)sendTestVehiclesSamRoutes:(RequestBALHandler)handler {
-
-    [self sendRequest:[_urlRequest urlRequestForTestVehiclesSam] handler:handler];
-}
-
-- (void)sendTestVehiclesSamRoutesRate:(RequestBALHandler)handler {
-
-    [self sendRequest:[_urlRequest urlRequestForTestVehiclesSamRoutesRate] handler:handler];
-}
 @end

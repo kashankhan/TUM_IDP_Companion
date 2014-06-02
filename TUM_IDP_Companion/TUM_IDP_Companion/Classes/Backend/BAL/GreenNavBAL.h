@@ -24,11 +24,9 @@ typedef NS_ENUM(NSUInteger, GreenNavTurnType) {
 
 @interface GreenNavBAL : RequestBAL
 
-- (void)sendTestVerticeSerivce:(RequestBALHandler)handler;
-- (void)sendTestVerticeNearestSerivce:(RequestBALHandler)handler;
-- (void)sendTestVehicles:(RequestBALHandler)handler;
-- (void)sendTestVehiclesSam:(RequestBALHandler)handler;
-- (void)sendTestVehiclesSamRoutes:(RequestBALHandler)handler;
-- (void)sendTestVehiclesSamRoutesRate:(RequestBALHandler)handler;
-
+- (void)sendRequestForNearestVertice:(NSDictionary *)params handler:(RequestBALHandler)handler;
+- (void)sendRequestForVehicles:(RequestBALHandler)handler;
+- (void)sendRequestForVehiclesType:(NSDictionary *)params handler:(RequestBALHandler)handler;
+- (void)sendRequestForVehicleRoutes:(NSDictionary *)params handler:(RequestBALHandler)handler;
+- (void)sendRequestForVehicleRange:(NSDictionary *)params handler:(RequestBALHandler)handler;
 @end

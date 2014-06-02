@@ -17,5 +17,5 @@ typedef NS_ENUM(NSUInteger, RequestType) {
 
 @interface RequestHandler : NSObject
 
-- (void)sendRequest:(RequestType)requestType handler:(RequestBALHandler)handler;
+- (void)sendRequest:(RequestType)requestType params:(NSDictionary *)params handler:(RequestBALHandler)handler;
 @end

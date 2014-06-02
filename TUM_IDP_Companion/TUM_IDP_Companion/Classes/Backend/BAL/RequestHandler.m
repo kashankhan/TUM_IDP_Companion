@@ -35,7 +35,8 @@
     
     return self;
 }
-- (void)sendRequest:(RequestType)requestType handler:(RequestBALHandler)handler {
+
+- (void)sendRequest:(RequestType)requestType params:(NSDictionary *)params handler:(RequestBALHandler)handler; {
     
     switch (requestType) {
 
@@ -49,7 +50,7 @@
             break;
             
             case RequestTypeAccessGreenNavTest:
-            [self sendRequestGreenNav:requestType handler:handler];
+            [self sendRequestGreenNav:requestType params:params handler:handler];
         default:
             break;
     }
@@ -84,17 +85,16 @@
     
 }
 
-- (void)sendRequestGreenNav:(RequestType)requestType handler:(RequestBALHandler)handler {
+- (void)sendRequestGreenNav:(RequestType)requestType params:(NSDictionary *)params handler:(RequestBALHandler)handler {
     
     switch (requestType) {
         default:
-            [_greenNavBAL sendTestVerticeSerivce:handler];
-            [_greenNavBAL sendTestVerticeNearestSerivce:handler];
-            [_greenNavBAL sendTestVehicles:handler];
-            [_greenNavBAL sendTestVehiclesSam:handler];
-            [_greenNavBAL sendTestVehiclesSamRoutes:handler];
-            [_greenNavBAL sendTestVehiclesSamRoutesRate:handler];
-            break;
+            [_greenNavBAL sendRequestForNearestVertice:params handler:handler];
+            [_greenNavBAL sendRequestForVehicles:handler];
+            [_greenNavBAL sendRequestForVehiclesType:params handler:handler];
+            [_greenNavBAL sendRequestForVehicleRoutes:params handler:handler];
+            [_greenNavBAL sendRequestForVehicleRange:params handler:handler];
+            
     }
 
     
