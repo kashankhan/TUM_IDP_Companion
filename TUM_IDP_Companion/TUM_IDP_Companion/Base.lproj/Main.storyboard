@@ -63,6 +63,14 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OMs-Ti-Wic">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </mapView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-3W-Rcq">
+                                <rect key="frame" x="0.0" y="62" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="833-gx-Euk" id="c8y-bT-D1u"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,9 +87,19 @@
                     <connections>
                         <outlet property="mapView" destination="OMs-Ti-Wic" id="iAM-6K-kHC"/>
                         <outlet property="menuBarButton" destination="Udb-uO-YiB" id="6G0-N3-245"/>
+                        <outlet property="searchDisplayController" destination="4Sd-CV-IEG" id="iwA-Bz-ZMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILC-Oe-cku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="4Sd-CV-IEG">
+                    <connections>
+                        <outlet property="delegate" destination="833-gx-Euk" id="5pN-rR-wgn"/>
+                        <outlet property="searchBar" destination="h5b-3W-Rcq" id="J77-oK-fFS"/>
+                        <outlet property="searchContentsController" destination="833-gx-Euk" id="cMp-IR-aaF"/>
+                        <outlet property="searchResultsDataSource" destination="833-gx-Euk" id="sMa-8S-L5t"/>
+                        <outlet property="searchResultsDelegate" destination="833-gx-Euk" id="Lix-I8-hN7"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1219" y="-943"/>
         </scene>

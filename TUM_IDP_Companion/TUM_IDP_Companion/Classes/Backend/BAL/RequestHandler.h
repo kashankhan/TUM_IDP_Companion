@@ -12,10 +12,10 @@
 typedef NS_ENUM(NSUInteger, RequestType) {
     RequestTypeAccessTwitterAccount,
     RequestTypeAccessFacebookAccount,
-    RequestTypeAccessGreenNavTest
+    RequestTypeAccessGreenNearestVertice
 };
 
 @interface RequestHandler : NSObject
 
-- (void)sendRequest:(RequestType)requestType params:(NSDictionary *)params handler:(RequestBALHandler)handler;
+- (void)sendRequest:(RequestType)requestType params:(id)params handler:(RequestBALHandler)handler;
 @end

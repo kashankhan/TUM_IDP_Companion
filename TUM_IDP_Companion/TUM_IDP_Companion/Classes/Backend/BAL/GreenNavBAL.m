@@ -27,10 +27,14 @@
 }
 
 
-- (void)sendRequestForNearestVertice:(NSDictionary *)params handler:(RequestBALHandler)handler {
+- (void)sendRequestForNearestVertice:(id)params handler:(RequestBALHandler)handler {
+//
+//    @{@"latitude": [NSNumber numberWithLong:coordinate.latitude], @"longitude": [NSNumber numberWithLong:coordinate.longitude]}
+//    long latitude = 48.23;
+//    long longitude = 11.68;
 
-    long latitude = 48.23;
-    long longitude = 11.68;
+    long latitude = [[params valueForKey:@"latitude"] longValue];
+    long longitude = [[params valueForKey:@"longitude"] longValue];
     NSURLRequest *urlRequest = [_urlRequest urlRequestForNearestVerticeWithLatitude:latitude longituide:longitude];
     [self sendRequest:urlRequest handler:handler];
 }
@@ -42,32 +46,43 @@
     [self sendRequest:urlRequest handler:handler];
 }
 
-- (void)sendRequestForVehiclesType:(NSDictionary *)params handler:(RequestBALHandler)handler {
+- (void)sendRequestForVehiclesType:(id)params handler:(RequestBALHandler)handler {
 
-    NSString *type = @"Sam";
-   
+//    NSString *type = @"Sam";
+    NSString *type = params;
+
     NSURLRequest *urlRequest = [_urlRequest urlRequestForVehiclesType:type];
     [self sendRequest:urlRequest handler:handler];
 }
 
-- (void)sendRequestForVehicleRoutes:(NSDictionary *)params handler:(RequestBALHandler)handler {
+- (void)sendRequestForVehicleRoutes:(id)params handler:(RequestBALHandler)handler {
 
-    NSString *type = @"Sam";
-    long long toRoute = 188633982600;
-    long long forRoute = 182440800;
-    NSString *optimization = @"energy";
-    NSUInteger battery = 100;
+//    NSString *type = @"Sam";
+//    long long toRoute = 188633982600;
+//    long long forRoute = 182440800;
+//    NSString *optimization = @"energy";
+//    NSUInteger battery = 100;
+    
+    NSString *type = [params valueForKey:@"type"];
+    long long toRoute = [[params valueForKey:@"toRoute"] longLongValue];
+    long long forRoute = [[params valueForKey:@"forRoute"] longLongValue];
+    NSString *optimization = [params valueForKey:@"optimization"];
+    NSUInteger battery = [[params valueForKey:@"battery"] integerValue];
     
      NSURLRequest *urlRequest = [_urlRequest urlRequestForVehicleRoutes:type toRoute:toRoute forRoute:forRoute optimization:optimization battery:battery];
     [self sendRequest:urlRequest handler:handler];
     
 }
 
-- (void)sendRequestForVehicleRange:(NSDictionary *)params handler:(RequestBALHandler)handler {
+- (void)sendRequestForVehicleRange:(id)params handler:(RequestBALHandler)handler {
     
-    NSString *type = @"Sam";
-    long long range = 188633982600;
-    NSUInteger battery = 100;
+//    NSString *type = @"Sam";
+//    long long range = 188633982600;
+//    NSUInteger battery = 100;
+
+    NSString *type = [params valueForKey:@"type"];
+    long long range = [[params valueForKey:@"range"] longLongValue];
+    NSUInteger battery = [[params valueForKey:@"battery"] integerValue];
     
     NSURLRequest *urlRequest = [_urlRequest urlRequestForVehicleRange:type range:range battery:battery];
     [self sendRequest:urlRequest handler:handler];

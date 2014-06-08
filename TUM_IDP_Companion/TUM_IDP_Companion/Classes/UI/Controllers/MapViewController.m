@@ -9,8 +9,12 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
+#import "RequestHandler.h"
 
-@interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
+@interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate> {
+
+    RequestHandler *_reqeustHandler;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -42,16 +46,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-    // Zoom the map to current location.
-    [self.navigationController.navigationBar setHidden:YES];
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserInteractionEnabled:YES];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
     
+    _reqeustHandler = [RequestHandler new];
     [self.searchDisplayController setDelegate:self];
     [self configureNavigationBarItems];
 }
@@ -127,6 +129,13 @@
     }];
 }
 
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self.searchResponse.mapItems count];
@@ -153,12 +162,21 @@
     [self.searchDisplayController setActive:NO animated:YES];
     
     MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
+    CLLocationCoordinate2D coordinate = item.placemark.location.coordinate;
     [self.mapView addAnnotation:item.placemark];
     [self.mapView selectAnnotation:item.placemark animated:YES];
     
-    [self.mapView setCenterCoordinate:item.placemark.location.coordinate animated:YES];
+    [self.mapView setCenterCoordinate:coordinate animated:YES];
     
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
+    
+    NSDictionary *params = @{@"latitude": [NSNumber numberWithLong:coordinate.latitude], @"longitude": [NSNumber numberWithLong:coordinate.longitude]};
+    [_reqeustHandler sendRequest:RequestTypeAccessGreenNearestVertice params:params handler:^(id response, NSError *error) {
+        
+        NSLog(@" response : %@", response);
+        NSLog(@" error : %@", [error description]);
+        
+    } ];
     
 }
 

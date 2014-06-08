@@ -31,7 +31,7 @@
     
     _facebookRequestBAL = [FacebookRequestBAL new];
     _twitterRequestBAL = [TwitterRequestBAL new];
-    _greenNavBAL =  [GreenNavBAL new];
+    _greenNavBAL = [GreenNavBAL new];
     
     return self;
 }
@@ -49,7 +49,7 @@
          [self sendFacebookRequest:requestType handler:handler];
             break;
             
-            case RequestTypeAccessGreenNavTest:
+            case RequestTypeAccessGreenNearestVertice:
             [self sendRequestGreenNav:requestType params:params handler:handler];
         default:
             break;
@@ -60,6 +60,7 @@
 
    
     switch (requestType) {
+            
         case RequestTypeAccessTwitterAccount:
             [_twitterRequestBAL accessAccountWithHandler:handler];
             
@@ -74,6 +75,7 @@
 - (void)sendFacebookRequest:(RequestType)requestType handler:(RequestBALHandler)handler  {
     
     switch (requestType) {
+            
         case RequestTypeAccessFacebookAccount:
             [_facebookRequestBAL accessAccountWithHandler:handler];
             
@@ -85,11 +87,16 @@
     
 }
 
-- (void)sendRequestGreenNav:(RequestType)requestType params:(NSDictionary *)params handler:(RequestBALHandler)handler {
+- (void)sendRequestGreenNav:(RequestType)requestType params:(id)params handler:(RequestBALHandler)handler {
     
     switch (requestType) {
-        default:
+            
+            case RequestTypeAccessGreenNearestVertice:
             [_greenNavBAL sendRequestForNearestVertice:params handler:handler];
+            
+            break;
+        default:
+
             [_greenNavBAL sendRequestForVehicles:handler];
             [_greenNavBAL sendRequestForVehiclesType:params handler:handler];
             [_greenNavBAL sendRequestForVehicleRoutes:params handler:handler];
