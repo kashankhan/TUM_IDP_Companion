@@ -8,10 +8,15 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface MapViewController ()
+@interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (strong, nonatomic) MKLocalSearch *localSearch;
+@property (strong, nonatomic) MKLocalSearchResponse *searchResponse;
 @end
 
 @implementation MapViewController
@@ -41,6 +46,13 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
+    // Zoom the map to current location.
+    [self.navigationController.navigationBar setHidden:YES];
+    [self.mapView setShowsUserLocation:YES];
+    [self.mapView setUserInteractionEnabled:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
+    
+    [self.searchDisplayController setDelegate:self];
     [self configureNavigationBarItems];
 }
 
@@ -70,6 +82,83 @@
         };
         
     }
+    
+}
+
+
+#pragma mark - UISearchBar Delegate Methods
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    // Cancel any previous searches.
+    [self.localSearch cancel];
+    
+    // Perform a new search.
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = searchBar.text;
+    request.region = self.mapView.region;
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    self.localSearch = [[MKLocalSearch alloc] initWithRequest:request];
+    
+    [self.localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        
+        if (error != nil) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Map Error",nil)
+                                        message:[error localizedDescription]
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+            return;
+        }
+        
+        if ([response.mapItems count] == 0) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"No Results",nil)
+                                        message:nil
+                                       delegate:nil
+                              cancelButtonTitle:NSLocalizedString(@"OK",nil) otherButtonTitles:nil] show];
+            return;
+        }
+        
+        [self setSearchResponse:response];
+        
+        [self.searchDisplayController.searchResultsTableView reloadData];
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.searchResponse.mapItems count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *identifierCell = @"IdentifierCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifierCell];
+    }
+    
+    MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
+    
+    cell.textLabel.text = item.name;
+    cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.searchDisplayController setActive:NO animated:YES];
+    
+    MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
+    [self.mapView addAnnotation:item.placemark];
+    [self.mapView selectAnnotation:item.placemark animated:YES];
+    
+    [self.mapView setCenterCoordinate:item.placemark.location.coordinate animated:YES];
+    
+    [self.mapView setUserTrackingMode:MKUserTrackingModeNone];
     
 }
 

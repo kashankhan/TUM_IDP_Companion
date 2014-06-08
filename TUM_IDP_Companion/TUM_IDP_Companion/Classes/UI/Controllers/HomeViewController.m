@@ -43,8 +43,6 @@
 - (void)configureViewSettings {
     
     [self configureNavigationBarItems];
-    
-    [self testBal];
 }
 
 - (void)configureNavigationBarItems {
