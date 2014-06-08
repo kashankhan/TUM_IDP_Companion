@@ -41,16 +41,19 @@
     switch (requestType) {
 
         case RequestTypeAccessTwitterAccount:
-            [self sendTwitterRequest:requestType handler:handler];
             
+            [self sendTwitterRequest:requestType handler:handler];
             break;
             
         case RequestTypeAccessFacebookAccount:
-         [self sendFacebookRequest:requestType handler:handler];
+         
+            [self sendFacebookRequest:requestType handler:handler];
             break;
             
-            case RequestTypeAccessGreenNearestVertice:
+            
+        case RequestTypeAccessGreenNearestVertice:
             [self sendRequestGreenNav:requestType params:params handler:handler];
+        
         default:
             break;
     }
@@ -77,8 +80,8 @@
     switch (requestType) {
             
         case RequestTypeAccessFacebookAccount:
-            [_facebookRequestBAL accessAccountWithHandler:handler];
             
+            [_facebookRequestBAL accessAccountWithHandler:handler];
             break;
             
         default:
@@ -91,9 +94,10 @@
     
     switch (requestType) {
             
-            case RequestTypeAccessGreenNearestVertice:
-            [_greenNavBAL sendRequestForNearestVertice:params handler:handler];
             
+        case RequestTypeAccessGreenNearestVertice:
+            
+            [_greenNavBAL sendRequestForNearestVertice:params handler:handler];
             break;
         default:
 
