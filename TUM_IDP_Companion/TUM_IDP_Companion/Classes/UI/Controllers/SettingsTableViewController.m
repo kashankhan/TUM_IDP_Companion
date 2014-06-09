@@ -8,12 +8,21 @@
 
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
+#import "SelectionTableViewController.h"
 
-@interface SettingsTableViewController ()
+@interface SettingsTableViewController () {
+
+    NSMutableArray *_items;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 
 @end
+
+static NSString * kSettingNameKey = @"SettingName";
+static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
+static NSString * kSettingOptionsKey = @"SettingOptions";
+
 
 @implementation SettingsTableViewController
 
@@ -47,8 +56,31 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-    [self configureNavigationBarItems];
+    _items = [@[]mutableCopy];
+    [self addMusicItem];
     
+    [self configureNavigationBarItems];
+
+}
+
+- (void)addMusicItem {
+    
+    NSString *news = NSLS_NEWS;
+    NSString *artists = NSLS_ARTISTS;
+    NSString *songs = NSLS_SONGS;
+    NSArray *options = @[news , artists, songs];
+    NSString *name = NSLS_MUSIC;
+    
+    [self addItem:name options:options defaultOption:songs];
+}
+- (void)addItem:(NSString *)name options:(NSArray *)options defaultOption:(NSString *)defaultOption {
+
+    NSMutableDictionary *itemInfo = [@{ kSettingNameKey : name,
+                                 kSettingDefualtOptionKey : defaultOption,
+                                 kSettingOptionsKey: options } mutableCopy];
+    
+    [_items addObject:itemInfo];
+
 }
 
 - (void)configureNavigationBarItems {
@@ -65,28 +97,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_items count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *identifierCell = @"IdentifierCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     
-    // Configure the cell...
-    
+    NSMutableDictionary *itemInfo = _items[indexPath.row];
+    cell.textLabel.text = [itemInfo objectForKey:kSettingNameKey];
+    cell.detailTextLabel.text = [itemInfo objectForKey:kSettingDefualtOptionKey];
     return cell;
+    
+    
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -132,9 +164,26 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"SegueIdentiferSelectionTableViewController"]) {
+        
+        SelectionTableViewController *controller = [segue destinationViewController];
+        
+        NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
+        controller.defaultOption = [itemInfo valueForKey:kSettingDefualtOptionKey];
+        controller.options = [itemInfo valueForKey:kSettingOptionsKey];
+        controller.title = [itemInfo valueForKey:kSettingNameKey];
+       
+        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
+             NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+            NSMutableDictionary *itemInfo = _items[indexPath.row];
+            [itemInfo setObject:object forKey:kSettingDefualtOptionKey];
+            
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        };
+    }
 }
-
 
 @end

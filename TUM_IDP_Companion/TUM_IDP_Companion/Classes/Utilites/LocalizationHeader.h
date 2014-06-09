@@ -29,5 +29,8 @@
 #define NSLS_ARTISTS            NSLocalizedString(@"ARTISTS", @"Artists");
 #define NSLS_SONGS              NSLocalizedString(@"SONGS", @"Songs");
 
+#define NSLS_MUSIC              NSLocalizedString(@"MUSIC", @"Music");
+
+
 #endif
 

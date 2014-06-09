@@ -154,7 +154,8 @@ static NSString * kSettingOptionsKey = @"SettingOptions";
         SelectionTableViewController *controller = [segue destinationViewController];
         controller.defaultOption = [self.musicSettingsInfo valueForKey:kSettingDefualtOptionKey];
         controller.options = [self.musicSettingsInfo valueForKey:kSettingOptionsKey];
-       
+        controller.title = self.title;
+        
         controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
             [self.musicSettingsInfo setObject:object forKey:kSettingDefualtOptionKey];
         };
