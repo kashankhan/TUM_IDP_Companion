@@ -19,3 +19,7 @@
 
 "TO"                = "To";
 "FROM"              = "From";
+
+"NEWS"              = "News";
+"ARTISTS"           = "Artists";
+"SONGS"             = "Songs";

@@ -55,7 +55,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    static NSString *identifierCell = @"IdentifierCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     
     cell.accessoryType = (self.defaultOption && [[self.options objectAtIndex:indexPath.row] isEqual:self.defaultOption]) ? UITableViewCellAccessoryCheckmark: UITableViewCellAccessoryNone;
     

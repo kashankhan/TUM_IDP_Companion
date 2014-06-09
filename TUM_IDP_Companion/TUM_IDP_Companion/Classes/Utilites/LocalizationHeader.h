@@ -18,12 +18,16 @@
 #define NSLS_MUSIC              NSLocalizedString(@"MUSIC", @"Music");
 #define NSLS_SETTINGS           NSLocalizedString(@"SETTINGS", @"Settings");
 
-#define NSLS_FACEBOOK          NSLocalizedString(@"FACEBOOK", @"Facebook");
-#define NSLS_TWITTER          NSLocalizedString(@"TWITTER", @"Twitter");
+#define NSLS_FACEBOOK           NSLocalizedString(@"FACEBOOK", @"Facebook");
+#define NSLS_TWITTER            NSLocalizedString(@"TWITTER", @"Twitter");
 
 
-#define NSLS_TO                 NSLocalizedString(@"TO", @"TO");
-#define NSLS_FROM               NSLocalizedString(@"FROM", @"FROM");
+#define NSLS_TO                 NSLocalizedString(@"TO", @"To");
+#define NSLS_FROM               NSLocalizedString(@"FROM", @"From");
+
+#define NSLS_NEWS               NSLocalizedString(@"NEWS", @"News");
+#define NSLS_ARTISTS            NSLocalizedString(@"ARTISTS", @"Artists");
+#define NSLS_SONGS              NSLocalizedString(@"SONGS", @"Songs");
 
 #endif
 
