@@ -35,6 +35,8 @@
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB761931636100222D73 /* SocialAccountRequestBAL.m */; };
 		C0C3D54B1944B35B008E848B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C3D5491944B35B008E848B /* Main.storyboard */; };
+		C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */; };
+		C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */; };
 		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
 		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
@@ -110,6 +112,10 @@
 		C098DB751931636100222D73 /* SocialAccountRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccountRequestBAL.h; sourceTree = "<group>"; };
 		C098DB761931636100222D73 /* SocialAccountRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAccountRequestBAL.m; sourceTree = "<group>"; };
 		C0C3D54A1944B35B008E848B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripPlannerTableViewController.h; sourceTree = "<group>"; };
+		C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTableViewController.m; sourceTree = "<group>"; };
+		C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLocationTableViewController.h; sourceTree = "<group>"; };
+		C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLocationTableViewController.m; sourceTree = "<group>"; };
 		C0E9634A19322565000AE466 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		C0E9634B19322565000AE466 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -318,6 +324,10 @@
 				C0E9636919328496000AE466 /* HomeViewController.m */,
 				C0E9637019328D94000AE466 /* ContactsTableViewController.h */,
 				C0E9637119328D94000AE466 /* ContactsTableViewController.m */,
+				C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */,
+				C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */,
+				C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */,
+				C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -543,9 +553,11 @@
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
+				C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */,
 				C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */,
 				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
 				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
+				C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C098DB631931539800222D73 /* RequestHandler.m in Sources */,

@@ -16,5 +16,8 @@
 #define NSLS_CONTACTS           NSLocalizedString(@"CONTACTS", @"Contants");
 #define NSLS_HOME               NSLocalizedString(@"HOME", @"Home");
 
+#define NSLS_TO                 NSLocalizedString(@"TO", @"TO");
+#define NSLS_FROM               NSLocalizedString(@"FROM", @"FROM");
+
 #endif
 

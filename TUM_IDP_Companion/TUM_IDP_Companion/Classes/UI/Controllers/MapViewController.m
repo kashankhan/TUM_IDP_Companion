@@ -10,17 +10,23 @@
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
 #import "RequestHandler.h"
+#import "SearchLocationTableViewController.h"
+#import "TripPlannerTableViewController.h"
 
 @interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate> {
 
     RequestHandler *_reqeustHandler;
 }
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *menuBarButton;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
-@property (strong, nonatomic) MKLocalSearch *localSearch;
-@property (strong, nonatomic) MKLocalSearchResponse *searchResponse;
+@property (nonatomic, strong) MKLocalSearch *localSearch;
+@property (nonatomic, strong) MKLocalSearchResponse *searchResponse;
+
+@property (nonatomic, strong) NSMutableArray *tripLocations;
+
+@property (nonatomic, weak) NSMutableDictionary *lastSelectedTripInfo;
 @end
 
 @implementation MapViewController
@@ -46,6 +52,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
@@ -53,9 +60,11 @@
     [self.mapView setUserInteractionEnabled:YES];
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
     
+    [self setUpTripPlannerTableViewControllerHandler];
     _reqeustHandler = [RequestHandler new];
-    [self.searchDisplayController setDelegate:self];
+    
     [self configureNavigationBarItems];
+    
 }
 
 - (void)configureNavigationBarItems {
@@ -68,12 +77,44 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
+- (void)setUpTripPlannerTableViewControllerHandler {
+
+    NSString *toKey = NSLS_TO;
+    NSString *fromKey = NSLS_FROM;
+    
+    _tripLocations = [@[[@{toKey: [NSNull null]} mutableCopy],
+                       [ @{fromKey: [NSNull null]} mutableCopy]] mutableCopy];
+    
+   TripPlannerTableViewController *controller = (TripPlannerTableViewController *)[self.childViewControllers lastObject];
+    [controller setTripLocations:_tripLocations];
+    [controller.tableView reloadData];
+    
+    controller.tripPlannerTableViewControllerDidSelectObjectHandler = ^(NSMutableDictionary * object){
+   
+        [self setLastSelectedTripInfo:object];
+        [self performSegueWithIdentifier:@"SegueIdentiferSearchLocationTableViewController" sender:self];
+    };
+}
+
+- (void)setTripInfoInTripLocations:(MKMapItem *)mapItem  {
+
+    NSString *key = [[self.lastSelectedTripInfo allKeys] lastObject];
+    NSInteger index =  [_tripLocations indexOfObject:self.lastSelectedTripInfo];
+    
+    [self.lastSelectedTripInfo setValue:mapItem forKey:key];
+    [_tripLocations replaceObjectAtIndex:index withObject:self.lastSelectedTripInfo];
+    
+    TripPlannerTableViewController *controller = (TripPlannerTableViewController *)[self.childViewControllers lastObject];
+    
+    
+    [controller.tableView reloadData];
+}
 
 #pragma mark - Navigation
 
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender
 {
-    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+    if ([segue isKindOfClass:[SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
         
         swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
@@ -83,8 +124,16 @@
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         };
         
-    }
+    }//if
+    else if ([segue.identifier isEqualToString:@"SegueIdentiferSearchLocationTableViewController"]) {
     
+        SearchLocationTableViewController *controller = (SearchLocationTableViewController *)[segue destinationViewController];
+        [controller setMapView:self.mapView];
+        controller.searchLocationTableViewControllerHandler = ^(MKMapItem *mapItem) {
+        
+            [self setTripInfoInTripLocations:mapItem];
+        };
+    }//else if
 }
 
 
@@ -129,13 +178,6 @@
     }];
 }
 
-
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self.searchResponse.mapItems count];
@@ -159,8 +201,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.searchDisplayController setActive:NO animated:YES];
-    
+  
     MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
     CLLocationCoordinate2D coordinate = item.placemark.location.coordinate;
     [self.mapView addAnnotation:item.placemark];
