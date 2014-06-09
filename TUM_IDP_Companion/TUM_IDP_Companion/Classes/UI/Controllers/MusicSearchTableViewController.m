@@ -1,20 +1,20 @@
 //
-//  AccountsTableViewController.m
+//  MusicSearchTableViewController.m
 //  TUM_IDP_Companion
 //
-//  Created by Kashan Khan on 25/05/2014.
+//  Created by Kashan Khan on 09/06/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
-#import "AccountsTableViewController.h"
+#import "MusicSearchTableViewController.h"
 #import "SWRevealViewController.h"
 
-@interface AccountsTableViewController ()
+@interface MusicSearchTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 @end
 
-@implementation AccountsTableViewController
+@implementation MusicSearchTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self configureViewSettings];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,12 +46,8 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-    NSString *facebook = NSLS_FACEBOOK;
-    NSString *twitter =NSLS_TWITTER;
-    _items = [@[facebook, twitter] mutableCopy];
-    
     [self configureNavigationBarItems];
-
+    
 }
 
 - (void)configureNavigationBarItems {
@@ -62,35 +59,32 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
-
-- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
-
-    return _items[indexPath.row];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_items count];
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentifierDefaultCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [self objectAtIndexPath:indexPath];
+    
     return cell;
 }
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -130,22 +124,15 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
-        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
-        
-        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
-            
-            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
-            [navController setViewControllers: @[dvc] animated: NO ];
-            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
-        };
-        
-    }
-    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end

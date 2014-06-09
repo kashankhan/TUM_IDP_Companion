@@ -117,4 +117,9 @@
     }];
 }
 
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 @end

@@ -1,20 +1,17 @@
 //
-//  AccountsTableViewController.m
+//  SelectionTableViewController.m
 //  TUM_IDP_Companion
 //
-//  Created by Kashan Khan on 25/05/2014.
+//  Created by Kashan Khan on 09/06/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
-#import "AccountsTableViewController.h"
-#import "SWRevealViewController.h"
+#import "SelectionTableViewController.h"
 
-@interface AccountsTableViewController ()
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+@interface SelectionTableViewController () 
 @end
 
-@implementation AccountsTableViewController
+@implementation SelectionTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureViewSettings];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -42,32 +39,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Private methods
-- (void)configureViewSettings {
-    
-    NSString *facebook = NSLS_FACEBOOK;
-    NSString *twitter =NSLS_TWITTER;
-    _items = [@[facebook, twitter] mutableCopy];
-    
-    [self configureNavigationBarItems];
-
-}
-
-- (void)configureNavigationBarItems {
-    
-    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    self.menuBarButton.target = self.revealViewController;
-    self.menuBarButton.action = @selector(revealToggle:);
-    
-    // Set the gesture
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-}
-
-- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
-
-    return _items[indexPath.row];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -79,17 +50,46 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_items count];
+    return [self.options count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentifierDefaultCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = [self objectAtIndexPath:indexPath];
+    cell.accessoryType = (self.defaultOption && [[self.options objectAtIndex:indexPath.row] isEqual:self.defaultOption]) ? UITableViewCellAccessoryCheckmark: UITableViewCellAccessoryNone;
+    
+    cell.textLabel.text = self.options[indexPath.row];
+
     return cell;
+    
+
+}
+
+#pragma mark -UItableView Delegate methods.
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = nil;
+    //get the cell of last selected object.
+    cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.options indexOfObject:self.defaultOption] inSection:0]];
+    // remove the accessory view to last selected object.
+    [cell setAccessoryType:UITableViewCellAccessoryNone];
+    
+    // get the currnet selected cell
+    cell = [tableView cellForRowAtIndexPath:indexPath];
+    // set the currnet selected object to global _defaultText feild.
+    [self setDefaultOption:self.options[indexPath.row]];
+    // set the check mark to the current object.
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    
+    // send the delegate.
+    if (self.selectionTableViewControllerDidSelectObjectHandler) {
+        self.selectionTableViewControllerDidSelectObjectHandler(self.defaultOption);
+    }//if
+    
+    // deselecting the last row
+    [tableView  deselectRowAtIndexPath:indexPath animated:YES];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
@@ -130,22 +130,15 @@
 }
 */
 
-
+/*
 #pragma mark - Navigation
-- (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
-        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
-        
-        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
-            
-            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
-            [navController setViewControllers: @[dvc] animated: NO ];
-            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
-        };
-        
-    }
-    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end

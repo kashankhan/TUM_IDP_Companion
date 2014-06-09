@@ -37,6 +37,9 @@
 		C0C3D54B1944B35B008E848B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C3D5491944B35B008E848B /* Main.storyboard */; };
 		C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */; };
 		C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */; };
+		C0C3D55B19461BC8008E848B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */; };
+		C0C3D55E19461CDA008E848B /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */; };
+		C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */; };
 		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
 		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
@@ -116,6 +119,12 @@
 		C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTableViewController.m; sourceTree = "<group>"; };
 		C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLocationTableViewController.h; sourceTree = "<group>"; };
 		C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLocationTableViewController.m; sourceTree = "<group>"; };
+		C0C3D55919461BC8008E848B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		C0C3D55C19461CDA008E848B /* SelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewController.h; sourceTree = "<group>"; };
+		C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewController.m; sourceTree = "<group>"; };
+		C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchTableViewController.h; sourceTree = "<group>"; };
+		C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchTableViewController.m; sourceTree = "<group>"; };
 		C0E9634A19322565000AE466 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		C0E9634B19322565000AE466 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -328,6 +337,12 @@
 				C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */,
 				C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */,
 				C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */,
+				C0C3D55919461BC8008E848B /* SettingsTableViewController.h */,
+				C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */,
+				C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */,
+				C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */,
+				C0C3D55C19461CDA008E848B /* SelectionTableViewController.h */,
+				C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -549,6 +564,7 @@
 				C098DB66193153C400222D73 /* RequestBAL.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C03D0AB6193B5C6F001DBC3B /* GreenNavUrlRequest.m in Sources */,
+				C0C3D55E19461CDA008E848B /* SelectionTableViewController.m in Sources */,
 				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
@@ -566,12 +582,14 @@
 				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
 				C03D0AB3193B5C51001DBC3B /* UrlRequest.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
+				C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */,
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
 				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,
 				C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */,
 				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
 				C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */,
 				C0E963671932846D000AE466 /* MapViewController.m in Sources */,
+				C0C3D55B19461BC8008E848B /* SettingsTableViewController.m in Sources */,
 				C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
