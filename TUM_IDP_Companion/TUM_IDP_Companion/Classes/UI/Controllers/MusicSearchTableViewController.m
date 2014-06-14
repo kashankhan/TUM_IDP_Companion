@@ -16,11 +16,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
-@property (strong, nonatomic) NSMutableDictionary *musicSettingsInfo;
-@end
 
-static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
-static NSString * kSettingOptionsKey = @"SettingOptions";
+@end
 
 @implementation MusicSearchTableViewController
 
@@ -54,14 +51,6 @@ static NSString * kSettingOptionsKey = @"SettingOptions";
 #pragma mark - Private methods
 - (void)configureViewSettings {
 
-    NSString *news = NSLS_NEWS;
-    NSString *artists = NSLS_ARTISTS;
-    NSString *songs = NSLS_SONGS;
-    NSArray *options = @[news , artists, songs];
-
-    self.musicSettingsInfo = [@{ kSettingDefualtOptionKey : songs,
-                                 kSettingOptionsKey: options } mutableCopy];
-    
     _items = [@[]mutableCopy];
     
     [self configureNavigationBarItems];
@@ -142,25 +131,17 @@ static NSString * kSettingOptionsKey = @"SettingOptions";
 */
 
 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"SegueIdentiferSelectionTableViewController"]) {
-        
-        SelectionTableViewController *controller = [segue destinationViewController];
-        controller.defaultOption = [self.musicSettingsInfo valueForKey:kSettingDefualtOptionKey];
-        controller.options = [self.musicSettingsInfo valueForKey:kSettingOptionsKey];
-        controller.title = self.title;
-        
-        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
-            [self.musicSettingsInfo setObject:object forKey:kSettingDefualtOptionKey];
-        };
-    }
-}
+//#pragma mark - Navigation
+//
+//// In a storyboard-based application, you will often want to do a little preparation before navigation
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//    if ([segue.identifier isEqualToString:@"SegueIdentiferMusicSettingsSelectionTableViewController"]) {
+//        
+//    }
+//}
 
 
 @end

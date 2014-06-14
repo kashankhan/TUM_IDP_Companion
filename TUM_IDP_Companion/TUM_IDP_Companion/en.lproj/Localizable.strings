@@ -25,3 +25,6 @@
 "SONGS"             = "Songs";
 
 "MUSIC"             = "Music";
+"LOCAL_MUSIC"       = "Local Music";
+"DISCOVERY"         = "Discovery";
+"INDIVIDUAL"        = "Individual";

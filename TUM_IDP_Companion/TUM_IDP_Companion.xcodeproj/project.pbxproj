@@ -34,6 +34,8 @@
 		C098DB6C1931542200222D73 /* TwitterRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB6B1931542200222D73 /* TwitterRequestBAL.m */; };
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C098DB771931636100222D73 /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB761931636100222D73 /* SocialAccountRequestBAL.m */; };
+		C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */; };
+		C0AB108D194C81E8008A2D77 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AB108C194C81E8008A2D77 /* Spotify.framework */; };
 		C0C3D54B1944B35B008E848B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C3D5491944B35B008E848B /* Main.storyboard */; };
 		C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */; };
 		C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */; };
@@ -114,6 +116,9 @@
 		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
 		C098DB751931636100222D73 /* SocialAccountRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccountRequestBAL.h; sourceTree = "<group>"; };
 		C098DB761931636100222D73 /* SocialAccountRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAccountRequestBAL.m; sourceTree = "<group>"; };
+		C09C9168194C8F22008439F9 /* MusicSettingsSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSettingsSelectionTableViewController.h; sourceTree = "<group>"; };
+		C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSettingsSelectionTableViewController.m; sourceTree = "<group>"; };
+		C0AB108C194C81E8008A2D77 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		C0C3D54A1944B35B008E848B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripPlannerTableViewController.h; sourceTree = "<group>"; };
 		C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTableViewController.m; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 				C0E963B819339F06000AE466 /* AddressBook.framework in Frameworks */,
 				C0E963781932A0D4000AE466 /* AddressBookUI.framework in Frameworks */,
 				C0E9637619329581000AE466 /* MapKit.framework in Frameworks */,
+				C0AB108D194C81E8008A2D77 /* Spotify.framework in Frameworks */,
 				C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */,
 				C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */,
 				C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */,
@@ -217,6 +223,7 @@
 		C098DAFE19310CDF00222D73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0AB108B194C81E8008A2D77 /* Spotify */,
 				C0E963B719339F06000AE466 /* AddressBook.framework */,
 				C0E963771932A0D4000AE466 /* AddressBookUI.framework */,
 				C0E9637519329581000AE466 /* MapKit.framework */,
@@ -341,6 +348,8 @@
 				C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */,
 				C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */,
 				C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */,
+				C09C9168194C8F22008439F9 /* MusicSettingsSelectionTableViewController.h */,
+				C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */,
 				C0C3D55C19461CDA008E848B /* SelectionTableViewController.h */,
 				C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */,
 			);
@@ -411,6 +420,15 @@
 				C098DB731931581D00222D73 /* RequestQueue.m */,
 			);
 			path = RequestQueue;
+			sourceTree = "<group>";
+		};
+		C0AB108B194C81E8008A2D77 /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB108C194C81E8008A2D77 /* Spotify.framework */,
+			);
+			name = Spotify;
+			path = TUM_IDP_Companion/Classes/Externals/Spotify;
 			sourceTree = "<group>";
 		};
 		C0E9634919322565000AE466 /* ProgressHUD */ = {
@@ -569,6 +587,7 @@
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
+				C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */,
 				C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */,
 				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
@@ -724,6 +743,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TUM_IDP_Companion/Classes/Externals/Spotify",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
 				INFOPLIST_FILE = "TUM_IDP_Companion/TUM_IDP_Companion-Info.plist";
@@ -737,6 +761,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/TUM_IDP_Companion/Classes/Externals/Spotify",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TUM_IDP_Companion/TUM_IDP_Companion-Prefix.pch";
 				INFOPLIST_FILE = "TUM_IDP_Companion/TUM_IDP_Companion-Info.plist";

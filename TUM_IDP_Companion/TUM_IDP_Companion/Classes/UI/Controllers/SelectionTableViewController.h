@@ -13,7 +13,7 @@ typedef void(^SelectionTableViewControllerDidSelectObjectHandler)(NSString * obj
 @interface SelectionTableViewController : UITableViewController
 
 @property (nonatomic, weak) NSString *defaultOption;
-@property (nonatomic, weak) NSArray *options;
+@property (nonatomic, strong) NSArray *options;
 
 
 @property (nonatomic, copy) SelectionTableViewControllerDidSelectObjectHandler selectionTableViewControllerDidSelectObjectHandler;
