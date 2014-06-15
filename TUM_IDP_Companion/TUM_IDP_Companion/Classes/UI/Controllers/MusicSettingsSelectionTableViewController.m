@@ -10,6 +10,8 @@
 
 @interface MusicSettingsSelectionTableViewController ()
 
+@property (nonatomic, weak) NSIndexPath *lastIndexPath;
+
 @end
 
 typedef NS_ENUM(NSInteger, SelectedTab) {
@@ -77,7 +79,10 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     }//if
     
     [self setOptions:musicOptions];
-    self.defaultOption = feeds[0];
+    if (!self.defaultOption) {
+        self.defaultOption = feeds[0];
+    }//if
+
 }
 
 - (void)segmentControlSegmentDidChange:(UISegmentedControl *)segmentControl {
@@ -89,6 +94,33 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
     [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
 }
+
+- (void)selectIndex:(NSIndexPath *)indexPath {
+
+    UITableViewCell *cell = nil;
+    if (self.lastIndexPath) {
+        //get the cell of last selected object.
+        cell = [self.tableView cellForRowAtIndexPath:self.lastIndexPath];
+        // remove the accessory view to last selected object.
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }//if
+    
+    // get the currnet selected cell
+    cell = [self.tableView cellForRowAtIndexPath:indexPath];
+
+    // set the currnet selected object to global _defaultText feild.
+    self.defaultOption = ([cell.detailTextLabel.text length]) ? cell.detailTextLabel.text : cell.textLabel.text;
+    
+
+    // set the check mark to the current object.
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    // deselecting the last row
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.lastIndexPath = indexPath;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -116,30 +148,27 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     NSString *empty = @"";
     NSString *selectedOption = ([objects containsObject:self.defaultOption]) ? self.defaultOption : empty;
     
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    if (![selectedOption isEqual:empty]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        self.lastIndexPath = indexPath;
+    }//if
+    selectedOption = empty;
+    if ([key isEqualToString:NSLS_NEWS]) {
+        selectedOption = ([objects containsObject:self.defaultOption]) ? self.defaultOption : objects[0];
+    }
+    
     cell.textLabel.text = key;
     cell.detailTextLabel.text = selectedOption;
-    cell.accessoryType = ([selectedOption isEqual:empty]) ? UITableViewCellAccessoryNone :UITableViewCellAccessoryCheckmark;
     
     return cell;
 }
 
 #pragma mark -UItableView Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = nil;
-    //get the cell of last selected object.
-    cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.options indexOfObject:self.defaultOption] inSection:0]];
-    // remove the accessory view to last selected object.
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    
-    // get the currnet selected cell
-    cell = [tableView cellForRowAtIndexPath:indexPath];
-    // set the currnet selected object to global _defaultText feild.
-    [self setDefaultOption:self.options[indexPath.row]];
-    // set the check mark to the current object.
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-    
-    // deselecting the last row
-    [tableView  deselectRowAtIndexPath:indexPath animated:YES];
+  
+    [self selectIndex:indexPath];
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
