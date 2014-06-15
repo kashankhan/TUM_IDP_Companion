@@ -7,6 +7,7 @@
 //
 
 #import "MusicSettingsSelectionTableViewController.h"
+#import "SelectionTableViewController.h"
 
 @interface MusicSettingsSelectionTableViewController ()
 
@@ -24,6 +25,7 @@ static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
 static NSString * kSettingOptionsKey = @"SettingOptions";
 static NSUInteger kSelectedSegmentIndex = SelectedTabLocalMusic;
 static CGFloat    kSectionHeaderHeight = 40.0f;
+static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentiferSelectionTableViewController";
 
 @implementation MusicSettingsSelectionTableViewController
 
@@ -149,6 +151,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     NSString *selectedOption = ([objects containsObject:self.defaultOption]) ? self.defaultOption : empty;
     
     cell.accessoryType = UITableViewCellAccessoryNone;
+    
     if (![selectedOption isEqual:empty]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.lastIndexPath = indexPath;
@@ -167,7 +170,15 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 #pragma mark -UItableView Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-    [self selectIndex:indexPath];
+    NSDictionary *itemInfo = self.options[indexPath.row];
+    NSString *key = [[itemInfo allKeys] lastObject];
+    if ([key isEqualToString:NSLS_NEWS]) {
+        [self performSegueWithIdentifier:kSegueIdentiferSelectionTableViewController sender:self];
+    }//if
+    else {
+    
+         [self selectIndex:indexPath];
+    }//else
 
 }
 
@@ -228,7 +239,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -236,7 +247,23 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSDictionary *itemInfo = self.options[[self.tableView indexPathForSelectedRow].row];
+    NSString *key = [[itemInfo allKeys] lastObject];
+    NSArray *objects = [itemInfo valueForKey:key];
+    if ([[segue identifier] isEqualToString:kSegueIdentiferSelectionTableViewController]) {
+        SelectionTableViewController *controller = (SelectionTableViewController *)[segue destinationViewController];
+        [controller setOptions:objects];
+        [controller setDefaultOption:self.defaultOption];
+        [controller setTitle:key];
+        
+        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
+             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+            cell.detailTextLabel.text = object;
+            [self selectIndex:[self.tableView indexPathForSelectedRow]];
+        };
+
+    }
 }
-*/
+
 
 @end
