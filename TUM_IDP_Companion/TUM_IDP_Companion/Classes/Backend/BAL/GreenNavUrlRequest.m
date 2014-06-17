@@ -49,7 +49,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
 - (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle toRoute:(long long)toRoute forRoute:(long long)forRoute optimization:(NSString *)optimization battery:(NSUInteger)battery {
     
     //@"/vehicles/Sam/routes/188633982600-182440800/opt/energy?battery=100
-    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/routes/%lld-%lld/opt/%@?battery=%d", vehicle, toRoute, forRoute, optimization, battery];
+    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/routes/%lld-%lld/opt/%@?battery=%lu", vehicle, toRoute, forRoute, optimization, (unsigned long)battery];
     uri = [kBaseURL stringByAppendingString:uri];
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
@@ -60,7 +60,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
 - (NSURLRequest*)urlRequestForVehicleRange:(NSString *)vehicle range:(long long)range battery:(NSUInteger)battery  {
     
     //@"/vehicles/Sam/ranges/188633982600?battery=2
-    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/ranges/%lld?battery=%d",vehicle, range, battery];
+    NSString *uri = [NSString stringWithFormat:@"/vehicles/%@/ranges/%lld?battery=%lu",vehicle, range, (unsigned long)battery];
     uri = [kBaseURL stringByAppendingString:uri];
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
