@@ -11,7 +11,7 @@
 
 @interface MusicSettingsSelectionTableViewController ()
 
-@property (nonatomic, weak) NSIndexPath *lastIndexPath;
+@property (nonatomic, strong) NSIndexPath *lastIndexPath;
 
 @end
 
@@ -83,6 +83,7 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     [self setOptions:musicOptions];
     if (!self.defaultOption) {
         self.defaultOption = feeds[0];
+        [self setLastIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     }//if
 
 }
