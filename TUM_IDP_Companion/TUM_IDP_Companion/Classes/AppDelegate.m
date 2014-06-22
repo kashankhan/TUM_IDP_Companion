@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
 
 @implementation AppDelegate
@@ -19,8 +18,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+// [self setupSpotify:application];
+    
     return YES;
 }
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

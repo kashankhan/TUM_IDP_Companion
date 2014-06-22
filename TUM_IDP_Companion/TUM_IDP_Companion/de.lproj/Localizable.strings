@@ -11,5 +11,22 @@
 "MAPS"              = "Maps";
 "CONTACTS"          = "Contacts";
 "HOME"              = "Home";
+"MUSIC"             = "Music";
+"SETTINGS"          = "Settings";
+
 "FACEBOOK"          = "Facebook";
 "TWITTER"           = "Twitter";
+
+"TO"                = "To";
+"FROM"              = "From";
+
+"NEWS"              = "News";
+"ARTISTS"           = "Artists";
+"SONGS"             = "Songs";
+
+"MUSIC"             = "Music";
+"LOCAL_MUSIC"       = "Local Music";
+"DISCOVERY"         = "Discovery";
+"INDIVIDUAL"        = "Individual";
+
+"TEMPERATURE"       ="Temperature";

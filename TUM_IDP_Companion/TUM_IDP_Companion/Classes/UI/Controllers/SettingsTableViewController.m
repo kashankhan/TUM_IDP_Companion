@@ -9,6 +9,8 @@
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "SelectionTableViewController.h"
+#import "MusicSettingsSelectionTableViewController.h"
+#import "TemperatureSettingsTableViewController.h"
 
 @interface SettingsTableViewController () {
 
@@ -22,6 +24,7 @@
 static NSString * kSettingNameKey = @"SettingName";
 static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
 static NSString * kSettingOptionsKey = @"SettingOptions";
+static NSString * kSettingSelectorKey = @"SettingSelector";
 
 
 @implementation SettingsTableViewController
@@ -58,26 +61,37 @@ static NSString * kSettingOptionsKey = @"SettingOptions";
     
     _items = [@[]mutableCopy];
     [self addMusicItem];
+    [self addTemperatureItem];
     
     [self configureNavigationBarItems];
 
 }
 
 - (void)addMusicItem {
-    
-    NSString *news = NSLS_NEWS;
-    NSString *artists = NSLS_ARTISTS;
-    NSString *songs = NSLS_SONGS;
-    NSArray *options = @[news , artists, songs];
+
+    NSString *empty = @"";
+    NSArray *options = @[];
     NSString *name = NSLS_MUSIC;
+    NSString *selectorIdenfier = @"openMusicSettings";
     
-    [self addItem:name options:options defaultOption:songs];
+    [self addItem:name options:options defaultOption:empty segueIdentifier:selectorIdenfier];
 }
-- (void)addItem:(NSString *)name options:(NSArray *)options defaultOption:(NSString *)defaultOption {
+
+- (void)addTemperatureItem {
+    
+    NSString *empty = @"";
+    NSArray *options = @[];
+    NSString *name = NSLS_TEMPERATURE;
+    NSString *selectorIdenfier = @"openTemperatureSettings";
+    
+    [self addItem:name options:options defaultOption:empty segueIdentifier:selectorIdenfier];
+}
+- (void)addItem:(NSString *)name options:(NSArray *)options defaultOption:(NSString *)defaultOption segueIdentifier:(NSString *)selectorIdenfier {
 
     NSMutableDictionary *itemInfo = [@{ kSettingNameKey : name,
                                  kSettingDefualtOptionKey : defaultOption,
-                                 kSettingOptionsKey: options } mutableCopy];
+                                 kSettingOptionsKey: options,
+                                        kSettingSelectorKey : selectorIdenfier} mutableCopy];
     
     [_items addObject:itemInfo];
 
@@ -120,70 +134,70 @@ static NSString * kSettingOptionsKey = @"SettingOptions";
     
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+   NSMutableDictionary *itemInfo = _items[indexPath.row];
+    SEL selector = NSSelectorFromString([itemInfo valueForKey:kSettingSelectorKey]);
+    if (selector && [self respondsToSelector:selector]) {
+        
+        NSMethodSignature *signature = [self methodSignatureForSelector:selector];;
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:self];
+        [invocation setSelector:selector];
+        [invocation invoke];
+    }//if
+
+
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//
+//    // Get the new view controller using [segue destinationViewController].
+//    // Pass the selected object to the new view controller.
+//}
 
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"SegueIdentiferSelectionTableViewController"]) {
+- (void)openSelectionTableViewController {
+
+    //MusicSettingsSelectionTableViewController
+    //SelectionTableViewController
+    //TemperatureSettingsTableViewController
+    
+    SelectionTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectionTableViewController"];
+    
+    NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
+    controller.defaultOption = [itemInfo valueForKey:kSettingDefualtOptionKey];
+    controller.options = [itemInfo valueForKey:kSettingOptionsKey];
+    controller.title = [itemInfo valueForKey:kSettingNameKey];
+    
+    controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        NSMutableDictionary *itemInfo = _items[indexPath.row];
+        [itemInfo setObject:object forKey:kSettingDefualtOptionKey];
         
-        SelectionTableViewController *controller = [segue destinationViewController];
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
-        NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
-        controller.defaultOption = [itemInfo valueForKey:kSettingDefualtOptionKey];
-        controller.options = [itemInfo valueForKey:kSettingOptionsKey];
-        controller.title = [itemInfo valueForKey:kSettingNameKey];
-       
-        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
-             NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-            NSMutableDictionary *itemInfo = _items[indexPath.row];
-            [itemInfo setObject:object forKey:kSettingDefualtOptionKey];
-            
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        };
-    }
+    };
 }
 
+- (void)openMusicSettings {
+
+    MusicSettingsSelectionTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MusicSettingsSelectionTableViewController"];
+    NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
+    controller.title = [itemInfo valueForKey:kSettingNameKey];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)openTemperatureSettings {
+    
+    TemperatureSettingsTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"TemperatureSettingsTableViewController"];
+    NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
+    controller.title = [itemInfo valueForKey:kSettingNameKey];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
 @end

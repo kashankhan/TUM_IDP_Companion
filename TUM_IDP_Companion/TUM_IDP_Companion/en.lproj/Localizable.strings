@@ -28,3 +28,5 @@
 "LOCAL_MUSIC"       = "Local Music";
 "DISCOVERY"         = "Discovery";
 "INDIVIDUAL"        = "Individual";
+
+"TEMPERATURE"       ="Temperature";

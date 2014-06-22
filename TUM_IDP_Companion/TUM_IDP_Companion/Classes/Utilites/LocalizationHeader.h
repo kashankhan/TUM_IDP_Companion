@@ -34,5 +34,7 @@
 #define NSLS_DISCOVERY          NSLocalizedString(@"DISCOVERY", @"Discovery")
 #define NSLS_INDIVIDUAL         NSLocalizedString(@"INDIVIDUAL", @"Individual")
 
+#define NSLS_TEMPERATURE        NSLocalizedString(@"TEMPERATURE", @"Temperature")
+
 #endif
 

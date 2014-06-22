@@ -94,9 +94,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Pli-wQ-G93" kind="push" identifier="SegueIdentiferSelectionTableViewController" id="ruj-Mw-gWK"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -119,7 +116,7 @@
         <!--Music Settings Selection Table View Controller-->
         <scene sceneID="Df1-0B-Ryi">
             <objects>
-                <tableViewController id="qQZ-gq-Uqv" customClass="MusicSettingsSelectionTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MusicSettingsSelectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qQZ-gq-Uqv" customClass="MusicSettingsSelectionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FNX-ep-HZ8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +159,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ikr-bq-HKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="-3048"/>
+            <point key="canvasLocation" x="1873" y="-3048"/>
         </scene>
         <!--Selection Table View Controller-->
         <scene sceneID="Pap-e8-fEf">
@@ -200,7 +197,52 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAa-2X-hH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="-2259"/>
+            <point key="canvasLocation" x="2613" y="-2359"/>
+        </scene>
+        <!--Temperature Settings Table View Controller-->
+        <scene sceneID="CmY-Kv-tn1">
+            <objects>
+                <tableViewController storyboardIdentifier="TemperatureSettingsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tc3-FN-gA5" customClass="TemperatureSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eDh-WM-qrj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdentifierCell" textLabel="KgO-rD-PWF" detailTextLabel="IIn-Yt-MAy" style="IBUITableViewCellStyleValue1" id="fc1-Nz-UCe">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fc1-Nz-UCe" id="M8T-PR-6dh">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KgO-rD-PWF">
+                                            <rect key="frame" x="15" y="11" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IIn-Yt-MAy">
+                                            <rect key="frame" x="261" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tc3-FN-gA5" id="rZR-r9-cKV"/>
+                            <outlet property="delegate" destination="tc3-FN-gA5" id="dne-ZZ-KtA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="D7G-c2-oIL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d9U-sM-Bvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2620" y="-1683"/>
         </scene>
         <!--Contacts Table View Controller-->
         <scene sceneID="F9S-Xi-141">
@@ -564,6 +606,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="FU3-we-11n"/>
-        <segue reference="1Ap-6F-yaa"/>
     </inferredMetricsTieBreakers>
 </document>
