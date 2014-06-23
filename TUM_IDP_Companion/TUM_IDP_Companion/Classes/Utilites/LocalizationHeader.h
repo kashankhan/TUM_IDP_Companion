@@ -35,6 +35,14 @@
 #define NSLS_INDIVIDUAL         NSLocalizedString(@"INDIVIDUAL", @"Individual")
 
 #define NSLS_TEMPERATURE        NSLocalizedString(@"TEMPERATURE", @"Temperature")
+#define NSLS_FAN                NSLocalizedString(@"FAN", @"Fan")
+#define NSLS_COOLING            NSLocalizedString(@"COOLING", @"Cooling")
+#define NSLS_RECIRCULATION      NSLocalizedString(@"RECIRCULATION", @"recirculation")
 
+#define NSLS_OFF                NSLocalizedString(@"OFF", "Off")
+#define NSLS_AUTOMATIC          NSLocalizedString(@"AUTOMATIC", "Automatic")
+#define NSLS_ECO                NSLocalizedString(@"ECO","Eco")
+#define NSLS_EMISSION           NSLocalizedString(@"EMISSION","Emission")
+#define NSLS_MANUAL             NSLocalizedString(@"MANUAL", "Manual")
 #endif
 

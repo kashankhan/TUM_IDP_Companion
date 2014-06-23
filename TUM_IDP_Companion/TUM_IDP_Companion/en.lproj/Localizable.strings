@@ -29,4 +29,12 @@
 "DISCOVERY"         = "Discovery";
 "INDIVIDUAL"        = "Individual";
 
-"TEMPERATURE"       ="Temperature";
+"TEMPERATURE"       = "Temperature";
+"FAN"               = "Fan";
+"COOLING"           = "Cooling";
+"RECIRCULATION"     = "Recirculation";
+"OFF"               = "Off";
+"AUTOMATIC"         = "Automatic";
+"ECO"               = "Eco";
+"EMISSION"          = "Emission";
+"MANUAL"            = "Manual";

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TemperatureSettingsTableViewController : UITableViewController
+@interface TemperatureSettingsTableViewController : UITableViewController {
+
+    NSMutableArray *_items;
+}
 
 @end

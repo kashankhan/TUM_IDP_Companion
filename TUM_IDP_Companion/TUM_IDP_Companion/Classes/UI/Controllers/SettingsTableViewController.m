@@ -72,9 +72,9 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
     NSString *empty = @"";
     NSArray *options = @[];
     NSString *name = NSLS_MUSIC;
-    NSString *selectorIdenfier = @"openMusicSettings";
+    NSString *selector = @"openMusicSettings";
     
-    [self addItem:name options:options defaultOption:empty segueIdentifier:selectorIdenfier];
+    [self addItem:name options:options defaultOption:empty selector:selector];
 }
 
 - (void)addTemperatureItem {
@@ -82,16 +82,17 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
     NSString *empty = @"";
     NSArray *options = @[];
     NSString *name = NSLS_TEMPERATURE;
-    NSString *selectorIdenfier = @"openTemperatureSettings";
+    NSString *selector = @"openTemperatureSettings";
     
-    [self addItem:name options:options defaultOption:empty segueIdentifier:selectorIdenfier];
+    [self addItem:name options:options defaultOption:empty selector:selector];
 }
-- (void)addItem:(NSString *)name options:(NSArray *)options defaultOption:(NSString *)defaultOption segueIdentifier:(NSString *)selectorIdenfier {
+
+- (void)addItem:(NSString *)name options:(NSArray *)options defaultOption:(NSString *)defaultOption selector:(NSString *)selector {
 
     NSMutableDictionary *itemInfo = [@{ kSettingNameKey : name,
                                  kSettingDefualtOptionKey : defaultOption,
                                  kSettingOptionsKey: options,
-                                        kSettingSelectorKey : selectorIdenfier} mutableCopy];
+                                        kSettingSelectorKey : selector} mutableCopy];
     
     [_items addObject:itemInfo];
 
@@ -161,10 +162,6 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 //}
 
 - (void)openSelectionTableViewController {
-
-    //MusicSettingsSelectionTableViewController
-    //SelectionTableViewController
-    //TemperatureSettingsTableViewController
     
     SelectionTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"SelectionTableViewController"];
     

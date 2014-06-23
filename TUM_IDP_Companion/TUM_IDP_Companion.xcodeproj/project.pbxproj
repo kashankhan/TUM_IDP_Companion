@@ -10,6 +10,7 @@
 		C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AAF193B573D001DBC3B /* GreenNavBAL.m */; };
 		C03D0AB3193B5C51001DBC3B /* UrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AB2193B5C51001DBC3B /* UrlRequest.m */; };
 		C03D0AB6193B5C6F001DBC3B /* GreenNavUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C03D0AB5193B5C6F001DBC3B /* GreenNavUrlRequest.m */; };
+		C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08CD73919576E80002FE51A /* SwitchTableViewCell.m */; };
 		C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
 		C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0119310CDF00222D73 /* CoreGraphics.framework */; };
 		C098DB0419310CDF00222D73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0319310CDF00222D73 /* UIKit.framework */; };
@@ -82,6 +83,8 @@
 		C03D0AB2193B5C51001DBC3B /* UrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlRequest.m; sourceTree = "<group>"; };
 		C03D0AB4193B5C6F001DBC3B /* GreenNavUrlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenNavUrlRequest.h; sourceTree = "<group>"; };
 		C03D0AB5193B5C6F001DBC3B /* GreenNavUrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavUrlRequest.m; sourceTree = "<group>"; };
+		C08CD73819576E80002FE51A /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
+		C08CD73919576E80002FE51A /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
 		C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUM_IDP_Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C098DAFF19310CDF00222D73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C098DB0119310CDF00222D73 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -364,6 +367,8 @@
 		C098DB4819310DBB00222D73 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C08CD73819576E80002FE51A /* SwitchTableViewCell.h */,
+				C08CD73919576E80002FE51A /* SwitchTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
 				C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */,
+				C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */,
 				C03D0AB0193B573D001DBC3B /* GreenNavBAL.m in Sources */,
 				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
 				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
