@@ -46,6 +46,7 @@
 		C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */; };
 		C0DCDA031960AA2F001373D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963B719339F06000AE466 /* AddressBook.framework */; };
 		C0DCDA041960AA2F001373D7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963771932A0D4000AE466 /* AddressBookUI.framework */; };
+		C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */; };
 		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
 		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
@@ -136,6 +137,8 @@
 		C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewController.m; sourceTree = "<group>"; };
 		C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchTableViewController.h; sourceTree = "<group>"; };
 		C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchTableViewController.m; sourceTree = "<group>"; };
+		C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContantTableViewCell.h; sourceTree = "<group>"; };
+		C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContantTableViewCell.m; sourceTree = "<group>"; };
 		C0E9634A19322565000AE466 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		C0E9634B19322565000AE466 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 			children = (
 				C08CD73819576E80002FE51A /* SwitchTableViewCell.h */,
 				C08CD73919576E80002FE51A /* SwitchTableViewCell.m */,
+				C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */,
+				C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				C098DB691931540500222D73 /* FacebookRequestBAL.m in Sources */,
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
+				C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */,
 				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
 				C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */,
