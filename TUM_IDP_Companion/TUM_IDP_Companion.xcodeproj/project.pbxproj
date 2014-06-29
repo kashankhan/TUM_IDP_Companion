@@ -44,6 +44,8 @@
 		C0C3D55B19461BC8008E848B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */; };
 		C0C3D55E19461CDA008E848B /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */; };
 		C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */; };
+		C0DCDA031960AA2F001373D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963B719339F06000AE466 /* AddressBook.framework */; };
+		C0DCDA041960AA2F001373D7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963771932A0D4000AE466 /* AddressBookUI.framework */; };
 		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
 		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
@@ -55,11 +57,9 @@
 		C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9637119328D94000AE466 /* ContactsTableViewController.m */; };
 		C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637319329577000AE466 /* CoreLocation.framework */; };
 		C0E9637619329581000AE466 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637519329581000AE466 /* MapKit.framework */; };
-		C0E963781932A0D4000AE466 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963771932A0D4000AE466 /* AddressBookUI.framework */; };
 		C0E9638819337770000AE466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E9638A19337770000AE466 /* Localizable.strings */; };
 		C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9638D1933788F000AE466 /* BaseDAL.m */; };
 		C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96390193378C0000AE466 /* ContactsDAL.m */; };
-		C0E963B819339F06000AE466 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963B719339F06000AE466 /* AddressBook.framework */; };
 		C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D41933B7F9000AE466 /* ABContact.m */; };
 		C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D61933B7F9000AE466 /* ABContactsHelper.m */; };
 		C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D81933B7F9000AE466 /* ABGroup.m */; };
@@ -180,9 +180,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DCDA031960AA2F001373D7 /* AddressBook.framework in Frameworks */,
+				C0DCDA041960AA2F001373D7 /* AddressBookUI.framework in Frameworks */,
 				C09C916C194DE6EF008439F9 /* AVFoundation.framework in Frameworks */,
-				C0E963B819339F06000AE466 /* AddressBook.framework in Frameworks */,
-				C0E963781932A0D4000AE466 /* AddressBookUI.framework in Frameworks */,
 				C0E9637619329581000AE466 /* MapKit.framework in Frameworks */,
 				C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */,
 				C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */,

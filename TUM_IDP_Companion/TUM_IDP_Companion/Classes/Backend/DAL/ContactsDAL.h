@@ -7,6 +7,7 @@
 //
 
 #import "BaseDAL.h"
+@import AddressBook;
 #import "ABWrappers.h"
 
 @interface ContactsDAL : BaseDAL
