@@ -283,6 +283,9 @@
                                         <segment title="First"/>
                                         <segment title="Second"/>
                                     </segments>
+                                    <connections>
+                                        <action selector="segmentedControlValueDidChange:" destination="2Ml-LC-EUw" eventType="valueChanged" id="jeq-I8-x7k"/>
+                                    </connections>
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -301,6 +304,9 @@
                                             <state key="normal" image="star-deselected">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="favoriteButtonValueDidChange:" destination="zxZ-re-DTl" eventType="touchUpInside" id="SlU-BS-2eJ"/>
+                                            </connections>
                                         </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQZ-aa-9p9">
                                             <rect key="frame" x="10" y="2" width="40" height="40"/>
@@ -328,6 +334,9 @@
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="C0e-4H-6Tj" id="mH1-z5-oZp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJh-OK-yHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

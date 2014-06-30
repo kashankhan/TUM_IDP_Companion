@@ -7,6 +7,7 @@
 //
 
 #import "ContantTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ContantTableViewCell
 
@@ -19,11 +20,6 @@
     return self;
 }
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
@@ -31,8 +27,19 @@
     // Configure the view for the selected state
 }
 
-- (void)setContent:(id)object {
 
+- (void)setFavoriteButtonSelected:(BOOL)selected {
+
+    NSString *imgName = (selected) ? @"star-selected" : @"star-deselected";
+    UIImage *img = [UIImage imageNamed:imgName];
+    
+    [self.favoriteButton setImage:img forState:UIControlStateNormal];
 }
 
+- (IBAction)favoriteButtonValueDidChange:(id)sender {
+
+    if (self.eventHandler) {
+        self.eventHandler (self, sender);
+    }
+}
 @end

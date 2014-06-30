@@ -44,5 +44,8 @@
 #define NSLS_ECO                NSLocalizedString(@"ECO","Eco")
 #define NSLS_EMISSION           NSLocalizedString(@"EMISSION","Emission")
 #define NSLS_MANUAL             NSLocalizedString(@"MANUAL", "Manual")
+
+#define NSLS_ALL                NSLocalizedString(@"ALL","All")
+#define NSLS_FAVORITES          NSLocalizedString(@"FAVORITES", "Favorites")
 #endif
 

@@ -38,3 +38,6 @@
 "ECO"               = "Eco";
 "EMISSION"          = "Emission";
 "MANUAL"            = "Manual";
+
+"ALL"               = "All";
+"FAVORITES"         = "Favorites";

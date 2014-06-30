@@ -11,8 +11,19 @@
 #import "ContactsDAL.h"
 #import "ContantTableViewCell.h"
 
+
+typedef NS_ENUM(NSUInteger, ContactsType) {
+    
+    ContactsTypeAll                     = 0,
+    ContactsTypeFavorites               = 1
+};
+
 @interface ContactsTableViewController ()
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+@property (strong, nonatomic) NSMutableArray *favoriteContactIdentiiers;
+@property (nonatomic) ContactsType contactsType;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @end
 
@@ -48,9 +59,13 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
+    [self.segmentedControl setTitle:NSLS_ALL forSegmentAtIndex:0];
+    [self.segmentedControl setTitle:NSLS_FAVORITES forSegmentAtIndex:1];
+    
     [self configureNavigationBarItems];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadContacts) name:kAuthorizationUpdateNotification object:nil];
+    
     [self loadContacts];
    
 }
@@ -70,10 +85,41 @@
 
     if (!_contactDal) {
         _contactDal = [ContactsDAL new];
+        _items = [@[] mutableCopy];
+        self.favoriteContactIdentiiers = [@[] mutableCopy];
+        [self setContactsType:ContactsTypeAll];
     }
-    _items = [[_contactDal addressBook] mutableCopy];
+    
+    [_items setArray:[self contacts]];
     
     [self.tableView reloadData];
+}
+
+- (NSArray *)contacts {
+
+    NSArray *allContacts = [_contactDal addressBook];
+    NSMutableArray *favorites = [@[] mutableCopy];
+    NSString *contactIdentifier = nil;
+    if (self.contactsType == ContactsTypeFavorites) {
+        
+        for (ABContact *contact in allContacts) {
+            contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
+            if ([self.favoriteContactIdentiiers containsObject:contactIdentifier]) {
+                
+                [favorites addObject:contact];
+            }
+        }
+        
+        allContacts = favorites;
+    }
+    
+    return allContacts;
+}
+
+- (IBAction)segmentedControlValueDidChange:(id)sender {
+    
+    [self setContactsType:[self.segmentedControl selectedSegmentIndex]];
+    [self loadContacts];
 }
 
 #pragma mark - Table view data source
@@ -103,9 +149,31 @@
     // Configure the cell...
 
     ABContact *contact =  [self objectAtIndexPath:indexPath];
-    cell.textLabel.text = contact.firstname;
-    cell.imageView.image = contact.image;
-    cell.textLabel.backgroundColor = [UIColor redColor];
+    cell.titleLabel.text = contact.firstname;
+    cell.avatarImageView.image = contact.image;
+    
+    NSString *contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
+    BOOL selected = [self.favoriteContactIdentiiers containsObject:contactIdentifier];
+    [cell setFavoriteButtonSelected:selected];
+    
+    cell.eventHandler = ^(ContantTableViewCell *cell, id sender) {
+       
+        BOOL selected = [self.favoriteContactIdentiiers containsObject:contactIdentifier];
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        ABContact *contact =  [self objectAtIndexPath:indexPath];
+
+        NSString *contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
+        selected = [self.favoriteContactIdentiiers containsObject:contactIdentifier];
+        
+        if (selected) {
+            
+            [self.favoriteContactIdentiiers removeObject:contactIdentifier];
+        }
+        else {
+            [self.favoriteContactIdentiiers addObject:contactIdentifier];
+        }
+        [cell setFavoriteButtonSelected:!selected];
+    };
     return cell;
 }
 

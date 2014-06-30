@@ -139,6 +139,7 @@
 		C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchTableViewController.m; sourceTree = "<group>"; };
 		C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContantTableViewCell.h; sourceTree = "<group>"; };
 		C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContantTableViewCell.m; sourceTree = "<group>"; };
+		C0DCDA0F1961D22E001373D7 /* LocalizationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
 		C0E9634A19322565000AE466 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		C0E9634B19322565000AE466 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		C0E963541932392E000AE466 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
 		C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
-		C0E9636019323C0F000AE466 /* LocalizationHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
 		C0E963621932844A000AE466 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
 		C0E963631932844A000AE466 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
 		C0E963651932846D000AE466 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -261,6 +261,7 @@
 		C098DB0819310CDF00222D73 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C0DCDA0F1961D22E001373D7 /* LocalizationHeader.h */,
 				C0C3D5491944B35B008E848B /* Main.storyboard */,
 				C098DB0919310CDF00222D73 /* TUM_IDP_Companion-Info.plist */,
 				C098DB0A19310CDF00222D73 /* InfoPlist.strings */,
@@ -382,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				C0E96356193239BA000AE466 /* Catagories */,
-				C0E9636019323C0F000AE466 /* LocalizationHeader.h */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
