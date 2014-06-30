@@ -60,7 +60,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1284" y="-3048"/>
+            <point key="canvasLocation" x="1226" y="-3064"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="5xy-bD-jYN">
@@ -111,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXo-gA-tKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1244" y="-2359"/>
+            <point key="canvasLocation" x="1219" y="-2359"/>
         </scene>
         <!--Music Settings Selection Table View Controller-->
         <scene sceneID="Df1-0B-Ryi">
