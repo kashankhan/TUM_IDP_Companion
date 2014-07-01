@@ -333,8 +333,12 @@
                             <outlet property="delegate" destination="2Ml-LC-EUw" id="kAl-jQ-hyY"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="cDl-im-WYw">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="cuR-KZ-T2H"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="menuBarButton" destination="cuR-KZ-T2H" id="7Jn-PF-2Gt"/>
                         <outlet property="segmentedControl" destination="C0e-4H-6Tj" id="mH1-z5-oZp"/>
                     </connections>
                 </tableViewController>
