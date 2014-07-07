@@ -7,11 +7,24 @@
 //
 
 #import "SearchLocationTableViewController.h"
+#import "ContactsDAL.h"
 
-@interface SearchLocationTableViewController ()
+typedef NS_ENUM(NSUInteger, ScopeType) {
+    
+    ScopeTypePlaces                     = 0,
+    ScopeTypeContacts                   = 1
+};
+
+@interface SearchLocationTableViewController () {
+
+    ContactsDAL *_contactDal;
+}
     
 @property (strong, nonatomic) MKLocalSearch *localSearch;
 @property (strong, nonatomic) MKLocalSearchResponse *searchResponse;
+@property (strong, nonatomic) NSArray *contacts;
+@property (strong, nonatomic) NSArray *contactsSearch;
+@property (nonatomic) ScopeType scopeType;
 
 @end
 
@@ -29,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self configureViewSettings];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,43 +56,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#pragma mark - Private methods
+- (void)configureViewSettings {
     
-    return [self.searchResponse.mapItems count];
+    _contactDal = [[ContactsDAL alloc] init];
+    self.contacts = [_contactDal addressBook];
+
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)searchPlaces:(UISearchBar *)searchBar {
 
-    MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
-    
-     [self dismissViewControllerAnimated:YES completion:^{
-        if (self.searchLocationTableViewControllerHandler) {
-            self.searchLocationTableViewControllerHandler(item);
-        }
-    }];
-    
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *identifierCell = @"IdentifierCell";
-    
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifierCell];
-
-    MKMapItem *item = self.searchResponse.mapItems[indexPath.row];
-    
-    cell.textLabel.text = item.name;
-    cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
-    
-    return cell;
-}
-
-#pragma mark - UISearchBar Delegate Methods
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    
     // Cancel any previous searches.
     [self.localSearch cancel];
     
@@ -118,8 +104,105 @@
 }
 
 
+- (void)searchAddressBook:(UISearchBar *)searchBar {
+    
+    NSString *searchText = searchBar.text;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@", searchText];
+    self.contactsSearch = [self.contacts filteredArrayUsingPredicate:predicate];
+
+}
+
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
+    
+    id object = nil;
+    if (self.scopeType == ScopeTypePlaces) {
+        object = self.searchResponse.mapItems[indexPath.row];
+    }
+    else {
+        object = self.contactsSearch[indexPath.row];
+    }
+    
+    return object;
+}
+
+#pragma mark - Table view data source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return  (self.scopeType == ScopeTypePlaces)? [self.searchResponse.mapItems count] : [self.contactsSearch count];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    id object = [self objectAtIndexPath:indexPath];
+    
+     [self dismissViewControllerAnimated:YES completion:^{
+        if (self.searchLocationTableViewControllerHandler) {
+            self.searchLocationTableViewControllerHandler(object);
+        }
+    }];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *identifierCell = @"IdentifierCell";
+    
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifierCell];
+
+    id object = [self objectAtIndexPath:indexPath];
+    if (self.scopeType == ScopeTypePlaces) {
+        MKMapItem *item = object;
+        cell.textLabel.text = item.name;
+        cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
+    }
+    else {
+        ABContact *contact = object;
+        cell.textLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+        cell.detailTextLabel.text = nil;
+        NSArray *addresses = contact.addressArray;
+        if (addresses) {
+            id address = [addresses lastObject];
+            cell.detailTextLabel.text = [address valueForKey:@"Street"];
+        }
+
+    }
+    
+    return cell;
+}
+
+#pragma mark - UISearchBar Delegate Methods
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    
+    if (self.scopeType == ScopeTypePlaces) {
+        [self searchPlaces:searchBar];
+    }
+    else {
+        [self searchAddressBook:searchBar];
+    }
+
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+
+    if (self.scopeType == ScopeTypeContacts) {
+        [self searchAddressBook:searchBar];
+    }
+}
+
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    
+    [self setScopeType:selectedScope];
+    [self.localSearch cancel];
+    [searchBar setText:@""];
+    
+    [self.searchDisplayController.searchResultsTableView reloadData];
+
 }
 @end

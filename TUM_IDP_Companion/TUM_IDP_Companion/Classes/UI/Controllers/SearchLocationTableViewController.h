@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-typedef void(^SearchLocationTableViewControllerHandler)(MKMapItem *mapItem);
+typedef void(^SearchLocationTableViewControllerHandler)(id object);
 
 @interface SearchLocationTableViewController : UITableViewController
 
