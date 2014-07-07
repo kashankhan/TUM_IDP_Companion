@@ -90,9 +90,31 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
         [self setContactsType:ContactsTypeAll];
     }
     
-    [_items setArray:[self contacts]];
+    NSArray *contacts = [self contacts];
+    
+    [_items setArray:[self transfromContactsIntoSection:contacts]];
     
     [self.tableView reloadData];
+}
+
+- (NSArray *)transfromContactsIntoSection:(NSArray *)contacts {
+   
+    UILocalizedIndexedCollation *collation = [UILocalizedIndexedCollation currentCollation];
+    NSArray *sectionTitles = [collation sectionTitles];
+    NSMutableArray *sections = [@[] mutableCopy];
+    
+    NSPredicate *predicate = nil;
+    NSArray *filterContacts = nil;
+    for (NSString *title in sectionTitles) {
+        predicate = [NSPredicate predicateWithFormat:@"self.firstname beginswith[c] %@", title];
+        filterContacts = [contacts filteredArrayUsingPredicate:predicate];
+        if (filterContacts) {
+            [sections addObject:filterContacts];
+        }
+    }
+
+    return sections;
+
 }
 
 - (NSArray *)contacts {
@@ -100,6 +122,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     NSArray *allContacts = [_contactDal addressBook];
     NSMutableArray *favorites = [@[] mutableCopy];
     NSString *contactIdentifier = nil;
+
     if (self.contactsType == ContactsTypeFavorites) {
         
         for (ABContact *contact in allContacts) {
@@ -116,6 +139,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     return allContacts;
 }
 
+
 - (IBAction)segmentedControlValueDidChange:(id)sender {
     
     [self setContactsType:[self.segmentedControl selectedSegmentIndex]];
@@ -123,22 +147,38 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
 }
 
 #pragma mark - Table view data source
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    //we use sectionTitles and not sections
+    return [[UILocalizedIndexedCollation currentCollation] sectionTitles];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.
-    return 1;
+    //we use sectionTitles and not sections
+    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [_items count];
+    return [[_items objectAtIndex:section] count];
 }
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    BOOL showSection = [[_items objectAtIndex:section] count] != 0;
+    //only show the section title if there are rows in the section
+    return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
+}
+
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
     
-    return _items[indexPath.row];
+    NSArray *list = _items[indexPath.section];
+    return list[indexPath.row];
 }
 
 
@@ -149,7 +189,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     // Configure the cell...
 
     ABContact *contact =  [self objectAtIndexPath:indexPath];
-    cell.titleLabel.text = contact.firstname;
+    cell.titleLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
     cell.avatarImageView.image = contact.image;
     
     NSString *contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
