@@ -8,11 +8,19 @@
 
 #import "AccountsTableViewController.h"
 #import "SWRevealViewController.h"
+#import "UIImageView+WebCache.h"
+#import "iHasApp.h"
 
 @interface AccountsTableViewController ()
 
+@property (nonatomic, strong) iHasApp *detectionObject;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+
 @end
+
+NSString *kAppIdKey = @"trackId";
+NSString *kAppNameKey = @"trackName";
 
 @implementation AccountsTableViewController
 
@@ -45,9 +53,10 @@
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-    NSString *facebook = NSLS_FACEBOOK;
-    NSString *twitter =NSLS_TWITTER;
-    _items = [@[facebook, twitter] mutableCopy];
+    _items = [@[] mutableCopy];
+    self.detectionObject = [[iHasApp alloc] init];
+    
+    [self detectApps];
     
     [self configureNavigationBarItems];
 
@@ -63,6 +72,31 @@
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
+- (void)addAppsInItems:(NSArray *)apps {
+
+    NSString *facebookIdentifier = @"284882215";
+    NSString *facebookMessengerIdentifier = @"454638411";
+    NSString *whatsappIdentifier = @"310633997";
+    NSString *skypIdentifier = ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? @"442012681" : @"304878510";
+    NSString *appId = @"";
+    
+    NSArray *appIdentifiers = @[facebookIdentifier, facebookMessengerIdentifier, whatsappIdentifier, skypIdentifier];
+ 
+    for (NSDictionary *appInfo in apps) {
+        appId = [[appInfo objectForKey:kAppIdKey] description];
+        if ([appIdentifiers containsObject:appId] && ![_items containsObject:appInfo]) {
+            [_items addObject:appInfo];
+        }
+    }
+
+    [self.tableView reloadData];
+}
+
+- (void)removeAllItems {
+
+    [_items removeAllObjects];
+    [self.tableView reloadData];
+}
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
 
     return _items[indexPath.row];
@@ -88,48 +122,25 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentifierDefaultCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [self objectAtIndexPath:indexPath];
+    NSDictionary *appInfo = [self objectAtIndexPath:indexPath];
+    
+    NSString *trackName = [appInfo objectForKey:kAppNameKey];
+    NSString *trackId = [[appInfo objectForKey:kAppIdKey] description];
+    //NSString *artworkUrl60 = [appDictionary objectForKey:@"artworkUrl60"];
+    
+    NSString *iconUrlString = [appInfo objectForKey:@"artworkUrl512"];
+    NSArray *iconUrlComponents = [iconUrlString componentsSeparatedByString:@"."];
+    NSMutableArray *mutableIconURLComponents = [[NSMutableArray alloc] initWithArray:iconUrlComponents];
+    [mutableIconURLComponents insertObject:@"128x128-75" atIndex:mutableIconURLComponents.count-1];
+    iconUrlString = [mutableIconURLComponents componentsJoinedByString:@"."];
+    
+    cell.textLabel.text = trackName;
+    cell.detailTextLabel.text = trackId;
+    
+    [cell.imageView setImageWithURL:[NSURL URLWithString:iconUrlString]
+                   placeholderImage:[UIImage imageNamed:@"placeholder-icon"]];
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 
 #pragma mark - Navigation
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -146,6 +157,36 @@
         
     }
     
+}
+
+#pragma mark - iHasApp methods
+
+- (void)detectApps
+{
+    if ([UIApplication sharedApplication].networkActivityIndicatorVisible) {
+        return;
+    }
+
+    [self.detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries) {
+        
+        [self addAppsInItems:appDictionaries];
+    } withSuccess:^(NSArray *appDictionaries) {
+        
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [self addAppsInItems:appDictionaries];
+    } withFailure:^(NSError *error) {
+        
+        [self removeAllItems];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:error.localizedDescription
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 @end
