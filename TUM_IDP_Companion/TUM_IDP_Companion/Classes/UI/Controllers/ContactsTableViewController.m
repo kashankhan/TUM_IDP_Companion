@@ -11,7 +11,6 @@
 #import "ContactsDAL.h"
 #import "ContantTableViewCell.h"
 
-
 typedef NS_ENUM(NSUInteger, ContactsType) {
     
     ContactsTypeAll                     = 0,
@@ -163,13 +162,13 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[_items objectAtIndex:section] count];
+    return ([_items count]) ? [[_items objectAtIndex:section] count] : 0;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    BOOL showSection = [[_items objectAtIndex:section] count] != 0;
+    BOOL showSection = ([_items count]) ? [[_items objectAtIndex:section] count] != 0 : NO;
     //only show the section title if there are rows in the section
     return (showSection) ? [[[UILocalizedIndexedCollation currentCollation] sectionTitles] objectAtIndex:section] : nil;
 }
