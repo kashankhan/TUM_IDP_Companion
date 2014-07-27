@@ -12,7 +12,13 @@
 typedef NS_ENUM(NSUInteger, RequestType) {
     RequestTypeAccessTwitterAccount,
     RequestTypeAccessFacebookAccount,
-    RequestTypeAccessGreenNearestVertice
+    RequestTypeAccessGreenNearestVertice,
+    RequestTypeAccessGreenVehicles,
+    RequestTypeAccessGreenVehiclesType,
+    RequestTypeAccessGreenVehicleRoutes,
+    RequestTypeAccessGreenVehicleRange,
+    RequestTypeAccessVisoServices
+
 };
 
 @interface RequestHandler : NSObject

@@ -43,6 +43,7 @@
 - (void)configureViewSettings {
     
     [self configureNavigationBarItems];
+    [self testBal];
 }
 
 - (void)configureNavigationBarItems {
@@ -82,7 +83,7 @@
     static RequestHandler *requestHandler = nil;
     requestHandler = [RequestHandler new];
 
-    [requestHandler sendRequest:RequestTypeAccessGreenNearestVertice params:nil handler:^(id response, NSError *error) {
+    [requestHandler sendRequest:RequestTypeAccessVisoServices params:nil handler:^(id response, NSError *error) {
         
         NSLog(@" response : %@", response);
         NSLog(@" error : %@", [error description]);

@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CoreData+MagicalRecord.h"
 
 @interface BaseDAL : NSObject
 
+- (NSManagedObject*)getObjectWithEntity:(Class)entityClass withPredicate:(NSPredicate*)predicate createNewIfNotFound:(BOOL)create;
+- (void)saveContext;
 @end

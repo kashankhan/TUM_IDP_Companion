@@ -8,7 +8,6 @@
 
 #import "RequestBAL.h"
 
-
 @implementation RequestBAL
 
 - (instancetype)init {
@@ -36,10 +35,13 @@
     RQOperation* operation = [RQOperation operationWithRequest:request];
     operation.completionHandler =  ^(NSURLResponse *response, NSData *data, NSError *error) {
        
-        NSString *responseValue = nil;
+        id responseValue = nil;
         if (!error) {
-            responseValue = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-
+            NSError *parseError = nil;
+            responseValue = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&parseError];
+            if (!responseValue) {
+                responseValue = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            }
         }
         if (handler) {
             handler(responseValue, error);

@@ -11,12 +11,14 @@
 #import "TwitterRequestBAL.h"
 #import "FacebookRequestBAL.h"
 #import "GreenNavBAL.h"
+#import "VMSerivesRequestBAL.h"
 
 @interface RequestHandler() {
 
     GreenNavBAL *_greenNavBAL;
     TwitterRequestBAL *_twitterRequestBAL;
     FacebookRequestBAL *_facebookRequestBAL;
+    VMSerivesRequestBAL *_visoServicesRequestBAL;
 
 }
 
@@ -32,6 +34,7 @@
     _facebookRequestBAL = [FacebookRequestBAL new];
     _twitterRequestBAL = [TwitterRequestBAL new];
     _greenNavBAL = [GreenNavBAL new];
+    _visoServicesRequestBAL = [VMSerivesRequestBAL new];
     
     return self;
 }
@@ -41,19 +44,22 @@
     switch (requestType) {
 
         case RequestTypeAccessTwitterAccount:
-            
             [self sendTwitterRequest:requestType handler:handler];
             break;
             
         case RequestTypeAccessFacebookAccount:
-         
             [self sendFacebookRequest:requestType handler:handler];
             break;
             
-            
         case RequestTypeAccessGreenNearestVertice:
+        case RequestTypeAccessGreenVehicles:
+        case RequestTypeAccessGreenVehiclesType:
+        case RequestTypeAccessGreenVehicleRoutes:
+        case RequestTypeAccessGreenVehicleRange:
             [self sendRequestGreenNav:requestType params:params handler:handler];
         
+        case RequestTypeAccessVisoServices:
+            [self sendRequestVM:requestType params:params handler:handler];
         default:
             break;
     }
@@ -80,7 +86,6 @@
     switch (requestType) {
             
         case RequestTypeAccessFacebookAccount:
-            
             [_facebookRequestBAL accessAccountWithHandler:handler];
             break;
             
@@ -93,21 +98,44 @@
 - (void)sendRequestGreenNav:(RequestType)requestType params:(id)params handler:(RequestBALHandler)handler {
     
     switch (requestType) {
-            
-            
+        
         case RequestTypeAccessGreenNearestVertice:
-            
             [_greenNavBAL sendRequestForNearestVertice:params handler:handler];
             break;
-        default:
-
+            
+        case RequestTypeAccessGreenVehicles:
             [_greenNavBAL sendRequestForVehicles:handler];
+            break;
+            
+        case RequestTypeAccessGreenVehiclesType:
             [_greenNavBAL sendRequestForVehiclesType:params handler:handler];
+            break;
+            
+            case RequestTypeAccessGreenVehicleRoutes:
             [_greenNavBAL sendRequestForVehicleRoutes:params handler:handler];
+            break;
+            
+
+        case RequestTypeAccessGreenVehicleRange:
             [_greenNavBAL sendRequestForVehicleRange:params handler:handler];
+            
+        default:
+            break;
             
     }
 
-    
+}
+
+- (void)sendRequestVM:(RequestType)requestType params:(id)params handler:(RequestBALHandler)handler {
+
+    switch (requestType) {
+        case RequestTypeAccessVisoServices:
+            [_visoServicesRequestBAL sendRequestForServices:handler];
+            break;
+            
+        default:
+            break;
+    }
+
 }
 @end
