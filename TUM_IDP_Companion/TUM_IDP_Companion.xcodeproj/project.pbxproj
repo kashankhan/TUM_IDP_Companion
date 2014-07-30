@@ -23,114 +23,56 @@
 		C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C855198553F8006FBF36 /* TRVSMonitor.m */; };
 		C057C85A198556A0006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
 		C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */; };
-		C057C8611989A574006FBF36 /* RequestHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867F198407CC00D0E18B /* RequestHandler.h */; };
 		C057C8621989A574006FBF36 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08680198407CC00D0E18B /* RequestHandler.m */; };
-		C057C8631989A574006FBF36 /* RequestBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867D198407CC00D0E18B /* RequestBAL.h */; };
 		C057C8641989A574006FBF36 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
-		C057C8651989A574006FBF36 /* UrlRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08688198407CC00D0E18B /* UrlRequest.h */; };
 		C057C8661989A574006FBF36 /* UrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08689198407CC00D0E18B /* UrlRequest.m */; };
-		C057C8671989A574006FBF36 /* VMSerivesRequestBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08676198407CC00D0E18B /* VMSerivesRequestBAL.h */; };
 		C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */; };
-		C057C8691989A574006FBF36 /* VMServiceUrlRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08693198408F200D0E18B /* VMServiceUrlRequest.h */; };
-		C057C86A1989A57C006FBF36 /* BaseParser.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C8401985249D006FBF36 /* BaseParser.h */; };
 		C057C86B1989A57C006FBF36 /* BaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8411985249D006FBF36 /* BaseParser.m */; };
-		C057C86C1989A57C006FBF36 /* VMServiceParser.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C843198524D5006FBF36 /* VMServiceParser.h */; };
 		C057C86D1989A57C006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C86E1989A5A9006FBF36 /* VMServiceUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08694198408F200D0E18B /* VMServiceUrlRequest.m */; };
-		C057C86F1989A5A9006FBF36 /* GreenNavBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08679198407CC00D0E18B /* GreenNavBAL.h */; };
 		C057C8701989A5A9006FBF36 /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867A198407CC00D0E18B /* GreenNavBAL.m */; };
-		C057C8711989A5A9006FBF36 /* GreenNavUrlRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867B198407CC00D0E18B /* GreenNavUrlRequest.h */; };
 		C057C8721989A5A9006FBF36 /* GreenNavUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867C198407CC00D0E18B /* GreenNavUrlRequest.m */; };
-		C057C8731989A5B2006FBF36 /* FacebookRequestBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08682198407CC00D0E18B /* FacebookRequestBAL.h */; };
 		C057C8741989A5B2006FBF36 /* FacebookRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08683198407CC00D0E18B /* FacebookRequestBAL.m */; };
-		C057C8751989A5B2006FBF36 /* SocialAccountRequestBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08684198407CC00D0E18B /* SocialAccountRequestBAL.h */; };
 		C057C8761989A5B2006FBF36 /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08685198407CC00D0E18B /* SocialAccountRequestBAL.m */; };
-		C057C8771989A5B2006FBF36 /* TwitterRequestBAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B08686198407CC00D0E18B /* TwitterRequestBAL.h */; };
 		C057C8781989A5B2006FBF36 /* TwitterRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08687198407CC00D0E18B /* TwitterRequestBAL.m */; };
-		C057C8791989A5C7006FBF36 /* BaseDAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E9638C1933788F000AE466 /* BaseDAL.h */; };
 		C057C87A1989A5C7006FBF36 /* BaseDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9638D1933788F000AE466 /* BaseDAL.m */; };
-		C057C87B1989A5C7006FBF36 /* ContactsDAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E9638F193378C0000AE466 /* ContactsDAL.h */; };
 		C057C87C1989A5C7006FBF36 /* ContactsDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96390193378C0000AE466 /* ContactsDAL.m */; };
-		C057C87D1989A5C7006FBF36 /* VMServiceDAL.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086EE1984292900D0E18B /* VMServiceDAL.h */; };
 		C057C87E1989A5C7006FBF36 /* VMServiceDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086EF1984292900D0E18B /* VMServiceDAL.m */; };
-		C057C87F1989A5C7006FBF36 /* CoreDataPersistanceManager.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C846198526E7006FBF36 /* CoreDataPersistanceManager.h */; };
 		C057C8801989A5C7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
-		C057C8811989A5C7006FBF36 /* Service.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F5198429AC00D0E18B /* Service.h */; };
 		C057C8821989A5C7006FBF36 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F6198429AC00D0E18B /* Service.m */; };
-		C057C8831989A5C7006FBF36 /* Link.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F2198429AB00D0E18B /* Link.h */; };
 		C057C8841989A5C7006FBF36 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F3198429AB00D0E18B /* Link.m */; };
-		C057C8851989A5C7006FBF36 /* Parameter.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C85019854A03006FBF36 /* Parameter.h */; };
 		C057C8861989A5C7006FBF36 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85119854A03006FBF36 /* Parameter.m */; };
-		C057C8871989A5DD006FBF36 /* EventSource.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C858198556A0006FBF36 /* EventSource.h */; };
 		C057C8881989A5DD006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
-		C057C8891989A5DD006FBF36 /* TRVSMonitor.h in Sources */ = {isa = PBXBuildFile; fileRef = C057C854198553F8006FBF36 /* TRVSMonitor.h */; };
 		C057C88A1989A5DD006FBF36 /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C855198553F8006FBF36 /* TRVSMonitor.m */; };
-		C057C88B1989A5DD006FBF36 /* MagicalImportFunctions.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086991984282700D0E18B /* MagicalImportFunctions.h */; };
 		C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869A1984282700D0E18B /* MagicalImportFunctions.m */; };
-		C057C88D1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869B1984282700D0E18B /* NSAttributeDescription+MagicalDataImport.h */; };
 		C057C88E1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869C1984282700D0E18B /* NSAttributeDescription+MagicalDataImport.m */; };
-		C057C88F1989A5DD006FBF36 /* NSEntityDescription+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869D1984282700D0E18B /* NSEntityDescription+MagicalDataImport.h */; };
 		C057C8901989A5DD006FBF36 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869E1984282700D0E18B /* NSEntityDescription+MagicalDataImport.m */; };
-		C057C8911989A5DD006FBF36 /* NSNumber+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869F1984282700D0E18B /* NSNumber+MagicalDataImport.h */; };
 		C057C8921989A5DD006FBF36 /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A01984282700D0E18B /* NSNumber+MagicalDataImport.m */; };
-		C057C8931989A5DD006FBF36 /* NSObject+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A11984282700D0E18B /* NSObject+MagicalDataImport.h */; };
 		C057C8941989A5DD006FBF36 /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A21984282700D0E18B /* NSObject+MagicalDataImport.m */; };
-		C057C8951989A5DD006FBF36 /* NSRelationshipDescription+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A31984282700D0E18B /* NSRelationshipDescription+MagicalDataImport.h */; };
 		C057C8961989A5DD006FBF36 /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A41984282700D0E18B /* NSRelationshipDescription+MagicalDataImport.m */; };
-		C057C8971989A606006FBF36 /* NSString+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A51984282700D0E18B /* NSString+MagicalDataImport.h */; };
-		C057C8981989A606006FBF36 /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A61984282700D0E18B /* NSString+MagicalDataImport.m */; };
-		C057C8991989A616006FBF36 /* NSManagedObject+MagicalAggregation.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A81984282700D0E18B /* NSManagedObject+MagicalAggregation.h */; };
 		C057C89A1989A616006FBF36 /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086A91984282700D0E18B /* NSManagedObject+MagicalAggregation.m */; };
-		C057C89B1989A616006FBF36 /* NSManagedObject+MagicalDataImport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AA1984282700D0E18B /* NSManagedObject+MagicalDataImport.h */; };
 		C057C89C1989A616006FBF36 /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AB1984282700D0E18B /* NSManagedObject+MagicalDataImport.m */; };
-		C057C89D1989A616006FBF36 /* NSManagedObject+MagicalFinders.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AC1984282700D0E18B /* NSManagedObject+MagicalFinders.h */; };
 		C057C89E1989A616006FBF36 /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AD1984282700D0E18B /* NSManagedObject+MagicalFinders.m */; };
-		C057C89F1989A616006FBF36 /* NSManagedObject+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AE1984282800D0E18B /* NSManagedObject+MagicalRecord.h */; };
 		C057C8A01989A616006FBF36 /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086AF1984282800D0E18B /* NSManagedObject+MagicalRecord.m */; };
-		C057C8A11989A616006FBF36 /* NSManagedObject+MagicalRequests.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B01984282800D0E18B /* NSManagedObject+MagicalRequests.h */; };
 		C057C8A21989A616006FBF36 /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B11984282800D0E18B /* NSManagedObject+MagicalRequests.m */; };
-		C057C8A31989A616006FBF36 /* NSManagedObjectContext+MagicalObserving.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B31984282800D0E18B /* NSManagedObjectContext+MagicalObserving.h */; };
 		C057C8A41989A616006FBF36 /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B41984282800D0E18B /* NSManagedObjectContext+MagicalObserving.m */; };
-		C057C8A51989A616006FBF36 /* NSManagedObjectContext+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B51984282800D0E18B /* NSManagedObjectContext+MagicalRecord.h */; };
 		C057C8A61989A616006FBF36 /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B61984282800D0E18B /* NSManagedObjectContext+MagicalRecord.m */; };
-		C057C8A71989A616006FBF36 /* NSManagedObjectContext+MagicalSaves.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B71984282800D0E18B /* NSManagedObjectContext+MagicalSaves.h */; };
 		C057C8A81989A616006FBF36 /* NSManagedObjectContext+MagicalSaves.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B81984282800D0E18B /* NSManagedObjectContext+MagicalSaves.m */; };
-		C057C8A91989A616006FBF36 /* NSManagedObjectContext+MagicalThreading.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086B91984282800D0E18B /* NSManagedObjectContext+MagicalThreading.h */; };
 		C057C8AA1989A616006FBF36 /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BA1984282800D0E18B /* NSManagedObjectContext+MagicalThreading.m */; };
-		C057C8AB1989A616006FBF36 /* NSManagedObjectModel+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BB1984282800D0E18B /* NSManagedObjectModel+MagicalRecord.h */; };
 		C057C8AC1989A616006FBF36 /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BC1984282800D0E18B /* NSManagedObjectModel+MagicalRecord.m */; };
-		C057C8AD1989A616006FBF36 /* NSPersistentStore+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BD1984282800D0E18B /* NSPersistentStore+MagicalRecord.h */; };
 		C057C8AE1989A616006FBF36 /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BE1984282800D0E18B /* NSPersistentStore+MagicalRecord.m */; };
-		C057C8AF1989A616006FBF36 /* NSPersistentStoreCoordinator+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086BF1984282800D0E18B /* NSPersistentStoreCoordinator+MagicalRecord.h */; };
 		C057C8B01989A616006FBF36 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C01984282800D0E18B /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
-		C057C8B11989A616006FBF36 /* MagicalRecord+Actions.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C21984282800D0E18B /* MagicalRecord+Actions.h */; };
 		C057C8B21989A616006FBF36 /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C31984282800D0E18B /* MagicalRecord+Actions.m */; };
-		C057C8B31989A616006FBF36 /* MagicalRecord+ErrorHandling.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C41984282800D0E18B /* MagicalRecord+ErrorHandling.h */; };
 		C057C8B41989A616006FBF36 /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C51984282800D0E18B /* MagicalRecord+ErrorHandling.m */; };
-		C057C8B51989A616006FBF36 /* MagicalRecord+iCloud.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C61984282800D0E18B /* MagicalRecord+iCloud.h */; };
 		C057C8B61989A616006FBF36 /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C71984282800D0E18B /* MagicalRecord+iCloud.m */; };
-		C057C8B71989A616006FBF36 /* MagicalRecord+Options.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C81984282800D0E18B /* MagicalRecord+Options.h */; };
 		C057C8B81989A616006FBF36 /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086C91984282800D0E18B /* MagicalRecord+Options.m */; };
-		C057C8B91989A616006FBF36 /* MagicalRecord+Setup.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CA1984282800D0E18B /* MagicalRecord+Setup.h */; };
 		C057C8BA1989A616006FBF36 /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CB1984282800D0E18B /* MagicalRecord+Setup.m */; };
-		C057C8BB1989A616006FBF36 /* MagicalRecord+ShorthandSupport.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CC1984282800D0E18B /* MagicalRecord+ShorthandSupport.h */; };
 		C057C8BC1989A616006FBF36 /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CD1984282800D0E18B /* MagicalRecord+ShorthandSupport.m */; };
-		C057C8BD1989A616006FBF36 /* MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CE1984282800D0E18B /* MagicalRecord.h */; };
 		C057C8BE1989A616006FBF36 /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086CF1984282800D0E18B /* MagicalRecord.m */; };
-		C057C8BF1989A616006FBF36 /* MagicalRecordDeprecated.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086D01984282800D0E18B /* MagicalRecordDeprecated.h */; };
-		C057C8C01989A616006FBF36 /* MagicalRecordLogging.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086D11984282800D0E18B /* MagicalRecordLogging.h */; };
-		C057C8C11989A616006FBF36 /* MagicalRecordShorthand.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086D21984282800D0E18B /* MagicalRecordShorthand.h */; };
-		C057C8C21989A616006FBF36 /* CoreData+MagicalRecord.h in Sources */ = {isa = PBXBuildFile; fileRef = C0B086D31984282800D0E18B /* CoreData+MagicalRecord.h */; };
-		C057C8C31989A62B006FBF36 /* ABContact.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D31933B7F9000AE466 /* ABContact.h */; };
 		C057C8C41989A62B006FBF36 /* ABContact.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D41933B7F9000AE466 /* ABContact.m */; };
-		C057C8C51989A62B006FBF36 /* ABContactsHelper.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D51933B7F9000AE466 /* ABContactsHelper.h */; };
 		C057C8C61989A62B006FBF36 /* ABContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D61933B7F9000AE466 /* ABContactsHelper.m */; };
-		C057C8C71989A62B006FBF36 /* ABGroup.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D71933B7F9000AE466 /* ABGroup.h */; };
 		C057C8C81989A62B006FBF36 /* ABGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D81933B7F9000AE466 /* ABGroup.m */; };
-		C057C8C91989A62B006FBF36 /* ABStandin.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D91933B7F9000AE466 /* ABStandin.h */; };
 		C057C8CA1989A62B006FBF36 /* ABStandin.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963DA1933B7F9000AE466 /* ABStandin.m */; };
-		C057C8CB1989A62B006FBF36 /* ABWrappers.h in Sources */ = {isa = PBXBuildFile; fileRef = C0E963DB1933B7F9000AE466 /* ABWrappers.h */; };
-		C057C8CC1989A62B006FBF36 /* RequestQueue.h in Sources */ = {isa = PBXBuildFile; fileRef = C098DB721931581D00222D73 /* RequestQueue.h */; };
 		C057C8CD1989A62B006FBF36 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C057C8CE1989A63A006FBF36 /* TUM_IDP_Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */; };
 		C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D61989A7F0006FBF36 /* GreenNavBALTest.m */; };
@@ -1143,116 +1085,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				C057C8CE1989A63A006FBF36 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
-				C057C8C31989A62B006FBF36 /* ABContact.h in Sources */,
 				C057C8C41989A62B006FBF36 /* ABContact.m in Sources */,
-				C057C8C51989A62B006FBF36 /* ABContactsHelper.h in Sources */,
 				C057C8C61989A62B006FBF36 /* ABContactsHelper.m in Sources */,
-				C057C8C71989A62B006FBF36 /* ABGroup.h in Sources */,
 				C057C8C81989A62B006FBF36 /* ABGroup.m in Sources */,
-				C057C8C91989A62B006FBF36 /* ABStandin.h in Sources */,
 				C057C8CA1989A62B006FBF36 /* ABStandin.m in Sources */,
-				C057C8CB1989A62B006FBF36 /* ABWrappers.h in Sources */,
-				C057C8CC1989A62B006FBF36 /* RequestQueue.h in Sources */,
 				C057C8CD1989A62B006FBF36 /* RequestQueue.m in Sources */,
-				C057C8991989A616006FBF36 /* NSManagedObject+MagicalAggregation.h in Sources */,
 				C057C89A1989A616006FBF36 /* NSManagedObject+MagicalAggregation.m in Sources */,
-				C057C89B1989A616006FBF36 /* NSManagedObject+MagicalDataImport.h in Sources */,
 				C057C89C1989A616006FBF36 /* NSManagedObject+MagicalDataImport.m in Sources */,
-				C057C89D1989A616006FBF36 /* NSManagedObject+MagicalFinders.h in Sources */,
 				C057C89E1989A616006FBF36 /* NSManagedObject+MagicalFinders.m in Sources */,
-				C057C89F1989A616006FBF36 /* NSManagedObject+MagicalRecord.h in Sources */,
 				C057C8A01989A616006FBF36 /* NSManagedObject+MagicalRecord.m in Sources */,
-				C057C8A11989A616006FBF36 /* NSManagedObject+MagicalRequests.h in Sources */,
 				C057C8A21989A616006FBF36 /* NSManagedObject+MagicalRequests.m in Sources */,
-				C057C8A31989A616006FBF36 /* NSManagedObjectContext+MagicalObserving.h in Sources */,
 				C057C8A41989A616006FBF36 /* NSManagedObjectContext+MagicalObserving.m in Sources */,
-				C057C8A51989A616006FBF36 /* NSManagedObjectContext+MagicalRecord.h in Sources */,
 				C057C8A61989A616006FBF36 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
-				C057C8A71989A616006FBF36 /* NSManagedObjectContext+MagicalSaves.h in Sources */,
 				C057C8A81989A616006FBF36 /* NSManagedObjectContext+MagicalSaves.m in Sources */,
-				C057C8A91989A616006FBF36 /* NSManagedObjectContext+MagicalThreading.h in Sources */,
 				C057C8AA1989A616006FBF36 /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				C057C8AB1989A616006FBF36 /* NSManagedObjectModel+MagicalRecord.h in Sources */,
 				C057C8AC1989A616006FBF36 /* NSManagedObjectModel+MagicalRecord.m in Sources */,
-				C057C8AD1989A616006FBF36 /* NSPersistentStore+MagicalRecord.h in Sources */,
 				C057C8AE1989A616006FBF36 /* NSPersistentStore+MagicalRecord.m in Sources */,
-				C057C8AF1989A616006FBF36 /* NSPersistentStoreCoordinator+MagicalRecord.h in Sources */,
 				C057C8B01989A616006FBF36 /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
-				C057C8B11989A616006FBF36 /* MagicalRecord+Actions.h in Sources */,
 				C057C8B21989A616006FBF36 /* MagicalRecord+Actions.m in Sources */,
-				C057C8B31989A616006FBF36 /* MagicalRecord+ErrorHandling.h in Sources */,
 				C057C8B41989A616006FBF36 /* MagicalRecord+ErrorHandling.m in Sources */,
-				C057C8B51989A616006FBF36 /* MagicalRecord+iCloud.h in Sources */,
 				C057C8B61989A616006FBF36 /* MagicalRecord+iCloud.m in Sources */,
-				C057C8B71989A616006FBF36 /* MagicalRecord+Options.h in Sources */,
 				C057C8B81989A616006FBF36 /* MagicalRecord+Options.m in Sources */,
-				C057C8B91989A616006FBF36 /* MagicalRecord+Setup.h in Sources */,
 				C057C8BA1989A616006FBF36 /* MagicalRecord+Setup.m in Sources */,
-				C057C8BB1989A616006FBF36 /* MagicalRecord+ShorthandSupport.h in Sources */,
 				C057C8BC1989A616006FBF36 /* MagicalRecord+ShorthandSupport.m in Sources */,
-				C057C8BD1989A616006FBF36 /* MagicalRecord.h in Sources */,
 				C057C8BE1989A616006FBF36 /* MagicalRecord.m in Sources */,
-				C057C8BF1989A616006FBF36 /* MagicalRecordDeprecated.h in Sources */,
-				C057C8C01989A616006FBF36 /* MagicalRecordLogging.h in Sources */,
-				C057C8C11989A616006FBF36 /* MagicalRecordShorthand.h in Sources */,
-				C057C8C21989A616006FBF36 /* CoreData+MagicalRecord.h in Sources */,
-				C057C8971989A606006FBF36 /* NSString+MagicalDataImport.h in Sources */,
-				C057C8981989A606006FBF36 /* NSString+MagicalDataImport.m in Sources */,
-				C057C8871989A5DD006FBF36 /* EventSource.h in Sources */,
 				C057C8881989A5DD006FBF36 /* EventSource.m in Sources */,
-				C057C8891989A5DD006FBF36 /* TRVSMonitor.h in Sources */,
 				C057C88A1989A5DD006FBF36 /* TRVSMonitor.m in Sources */,
 				C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */,
-				C057C88B1989A5DD006FBF36 /* MagicalImportFunctions.h in Sources */,
 				C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */,
-				C057C88D1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.h in Sources */,
 				C057C88E1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
-				C057C88F1989A5DD006FBF36 /* NSEntityDescription+MagicalDataImport.h in Sources */,
 				C057C8901989A5DD006FBF36 /* NSEntityDescription+MagicalDataImport.m in Sources */,
-				C057C8911989A5DD006FBF36 /* NSNumber+MagicalDataImport.h in Sources */,
 				C057C8921989A5DD006FBF36 /* NSNumber+MagicalDataImport.m in Sources */,
-				C057C8931989A5DD006FBF36 /* NSObject+MagicalDataImport.h in Sources */,
 				C057C8941989A5DD006FBF36 /* NSObject+MagicalDataImport.m in Sources */,
-				C057C8951989A5DD006FBF36 /* NSRelationshipDescription+MagicalDataImport.h in Sources */,
 				C057C8961989A5DD006FBF36 /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
-				C057C8791989A5C7006FBF36 /* BaseDAL.h in Sources */,
 				C057C87A1989A5C7006FBF36 /* BaseDAL.m in Sources */,
-				C057C87B1989A5C7006FBF36 /* ContactsDAL.h in Sources */,
 				C057C87C1989A5C7006FBF36 /* ContactsDAL.m in Sources */,
-				C057C87D1989A5C7006FBF36 /* VMServiceDAL.h in Sources */,
 				C057C87E1989A5C7006FBF36 /* VMServiceDAL.m in Sources */,
-				C057C87F1989A5C7006FBF36 /* CoreDataPersistanceManager.h in Sources */,
 				C057C8801989A5C7006FBF36 /* CoreDataPersistanceManager.m in Sources */,
-				C057C8811989A5C7006FBF36 /* Service.h in Sources */,
 				C057C8821989A5C7006FBF36 /* Service.m in Sources */,
-				C057C8831989A5C7006FBF36 /* Link.h in Sources */,
 				C057C8841989A5C7006FBF36 /* Link.m in Sources */,
-				C057C8851989A5C7006FBF36 /* Parameter.h in Sources */,
 				C057C8861989A5C7006FBF36 /* Parameter.m in Sources */,
-				C057C8731989A5B2006FBF36 /* FacebookRequestBAL.h in Sources */,
 				C057C8741989A5B2006FBF36 /* FacebookRequestBAL.m in Sources */,
-				C057C8751989A5B2006FBF36 /* SocialAccountRequestBAL.h in Sources */,
 				C057C8761989A5B2006FBF36 /* SocialAccountRequestBAL.m in Sources */,
-				C057C8771989A5B2006FBF36 /* TwitterRequestBAL.h in Sources */,
 				C057C8781989A5B2006FBF36 /* TwitterRequestBAL.m in Sources */,
 				C057C86E1989A5A9006FBF36 /* VMServiceUrlRequest.m in Sources */,
-				C057C86F1989A5A9006FBF36 /* GreenNavBAL.h in Sources */,
 				C057C8701989A5A9006FBF36 /* GreenNavBAL.m in Sources */,
-				C057C8711989A5A9006FBF36 /* GreenNavUrlRequest.h in Sources */,
 				C057C8721989A5A9006FBF36 /* GreenNavUrlRequest.m in Sources */,
-				C057C86A1989A57C006FBF36 /* BaseParser.h in Sources */,
 				C057C86B1989A57C006FBF36 /* BaseParser.m in Sources */,
-				C057C86C1989A57C006FBF36 /* VMServiceParser.h in Sources */,
 				C057C86D1989A57C006FBF36 /* VMServiceParser.m in Sources */,
-				C057C8611989A574006FBF36 /* RequestHandler.h in Sources */,
 				C057C8621989A574006FBF36 /* RequestHandler.m in Sources */,
-				C057C8631989A574006FBF36 /* RequestBAL.h in Sources */,
 				C057C8641989A574006FBF36 /* RequestBAL.m in Sources */,
-				C057C8651989A574006FBF36 /* UrlRequest.h in Sources */,
 				C057C8661989A574006FBF36 /* UrlRequest.m in Sources */,
-				C057C8671989A574006FBF36 /* VMSerivesRequestBAL.h in Sources */,
 				C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */,
-				C057C8691989A574006FBF36 /* VMServiceUrlRequest.h in Sources */,
 				C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */,
 				C098DB3419310CE000222D73 /* TUM_IDP_CompanionTests.m in Sources */,
 			);
