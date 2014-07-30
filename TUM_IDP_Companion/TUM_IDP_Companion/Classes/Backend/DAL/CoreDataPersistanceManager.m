@@ -28,6 +28,7 @@ static NSString *kStoreName = @"TUM_IDP_Companion.sqlite";
     
     if (self) {
         [self setupPersistanceStore];
+        [self subscribeNotificaitons];
     }
     
     return self;
@@ -38,6 +39,11 @@ static NSString *kStoreName = @"TUM_IDP_Companion.sqlite";
     [self copyDefaultStoreIfNecessary];
     
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:kStoreName];
+}
+
+- (void)subscribeNotificaitons {
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveContext) name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void) copyDefaultStoreIfNecessary {
@@ -59,6 +65,11 @@ static NSString *kStoreName = @"TUM_IDP_Companion.sqlite";
 		}
 	}
     
+}
+
+- (void)saveContext {
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
 @end

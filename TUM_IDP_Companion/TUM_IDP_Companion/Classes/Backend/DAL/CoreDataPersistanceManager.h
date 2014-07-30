@@ -11,4 +11,5 @@
 @interface CoreDataPersistanceManager : NSObject
 
 + (CoreDataPersistanceManager *)sharedManager;
+- (void)saveContext;
 @end

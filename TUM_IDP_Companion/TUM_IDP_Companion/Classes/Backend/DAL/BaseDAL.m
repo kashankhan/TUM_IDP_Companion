@@ -47,7 +47,7 @@
 
 - (void)saveContext {
     
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self.persistanceManager saveContext];
 }
 
 @end

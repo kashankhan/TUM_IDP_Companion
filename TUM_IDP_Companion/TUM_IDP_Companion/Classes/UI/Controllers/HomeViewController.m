@@ -43,7 +43,6 @@
 - (void)configureViewSettings {
     
     [self configureNavigationBarItems];
-    [self testBal];
 }
 
 - (void)configureNavigationBarItems {
@@ -72,27 +71,6 @@
         
     }
     
-}
-
-
-#pragma mark -Test BAL Methods
-
-- (void)testBal {
-
-    
-    static RequestHandler *requestHandler = nil;
-    requestHandler = [RequestHandler new];
-
-    [requestHandler sendRequest:RequestTypeAccessVisoServices params:nil handler:^(id response, NSError *error) {
-        
-        NSLog(@" response : %@", response);
-        NSLog(@" error : %@", [error description]);
-        
-    } ];
-    
-    
-
-
 }
 
 @end
