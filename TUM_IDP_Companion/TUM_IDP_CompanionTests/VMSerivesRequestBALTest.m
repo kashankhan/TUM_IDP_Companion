@@ -31,4 +31,12 @@
     [super tearDown];
 }
 
+- (void)testVMServices {
+    
+    [_serviceRequestBAL sendRequestForServices:^(id response, NSError *error) {
+        NSLog(@" [response description] : %@",  [response description]);
+        NSAssert((response != nil), [response description]);
+    }];
+}
+
 @end
