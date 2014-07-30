@@ -17,6 +17,9 @@
 
 @end
 
+
+static CGFloat TIME_OUT = 30;
+
 @implementation GreenNavBALTest
 
 - (void)setUp
@@ -33,33 +36,59 @@
 }
 
 - (void)testNearestVertice {
+    
+     __block BOOL done = NO;
+    
     //    long latitude = 48.23;
     //    long longitude = 11.68;
     NSDictionary *params = @{@"latitude": @(48.23), @"longitude": @(11.68)};
     [_greenNavBal sendRequestForNearestVertice:params handler:^(id response, NSError *error) {
         
-        NSAssert((response != nil), [response description]);
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
+    
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
 }
 
 - (void)testVehicles {
     
+     __block BOOL done = NO;
+    
     [_greenNavBal sendRequestForVehicles:^(id response, NSError *error) {
-        NSAssert((response != nil), [response description]);
+       
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
+    
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
     
 }
 
 - (void)testVehiclesType {
     
+     __block BOOL done = NO;
+    
     NSString *type = @"Sam";
     id params = type;
     [_greenNavBal sendRequestForVehiclesType:params handler:^(id response, NSError *error) {
-        NSAssert((response != nil), [response description]);
+       
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
+    
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
 }
 
 - (void)testVehicleRoutes {
+    
+     __block BOOL done = NO;
     
     NSString *type = @"Sam";
     long long toRoute = 188633982600;
@@ -73,12 +102,20 @@
                               optimization : @"optimization",
                               @(battery) : @"battery" };
     [_greenNavBal sendRequestForVehicleRoutes:params handler:^(id response, NSError *error) {
-        NSAssert((response != nil), [response description]);
+        
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
+    
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
     
 }
 - (void)testVehicleRange {
 
+     __block BOOL done = NO;
+    
     NSString *type = @"Sam";
     long long range = 188633982600;
     NSUInteger battery = 100;
@@ -87,8 +124,27 @@
                               @(range) : @"range",
                               @(battery) : @"battery" };
     [_greenNavBal sendRequestForVehicleRange:params handler:^(id response, NSError *error) {
-        NSAssert((response != nil), [response description]);
+       
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
     
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
+}
+
+- (BOOL)waitFor:(BOOL *)flag timeout:(NSTimeInterval)timeoutSecs {
+   
+    NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutSecs];
+    
+    do {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
+        if ([timeoutDate timeIntervalSinceNow] < 0.0) {
+            break;
+        }
+    }
+    while (!*flag);
+    return *flag;
 }
 @end

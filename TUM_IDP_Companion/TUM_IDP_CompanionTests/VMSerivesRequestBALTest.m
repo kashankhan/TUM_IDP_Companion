@@ -16,6 +16,7 @@
 
 @end
 
+static CGFloat TIME_OUT = 30;
 @implementation VMSerivesRequestBALTest
 
 - (void)setUp
@@ -32,11 +33,32 @@
 }
 
 - (void)testVMServices {
+   
+    __block BOOL done = NO;
     
     [_serviceRequestBAL sendRequestForServices:^(id response, NSError *error) {
-        NSLog(@" [response description] : %@",  [response description]);
-        NSAssert((response != nil), [response description]);
+        
+        XCTAssertTrue((response!= nil),
+                      @" [response description] : %@", [response description] );
+        done = YES;
     }];
+    
+    XCTAssertTrue([self waitFor:&done timeout:TIME_OUT],
+                  @"Timed out waiting for response asynch method completion");
+}
+
+- (BOOL)waitFor:(BOOL *)flag timeout:(NSTimeInterval)timeoutSecs {
+   
+    NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeoutSecs];
+    
+    do {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
+        if ([timeoutDate timeIntervalSinceNow] < 0.0) {
+            break;
+        }
+    }
+    while (!*flag);
+    return *flag;
 }
 
 @end
