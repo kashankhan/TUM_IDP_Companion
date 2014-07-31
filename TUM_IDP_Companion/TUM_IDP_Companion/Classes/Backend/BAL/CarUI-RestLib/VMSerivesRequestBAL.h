@@ -7,8 +7,13 @@
 //
 
 #import "RequestBAL.h"
+#import "VMServiceUrlRequest.h"
+#import "VMServiceParser.h"
 
 @interface VMSerivesRequestBAL : RequestBAL
+
+@property (nonatomic, strong) VMServiceUrlRequest *urlRequest;
+@property (nonatomic, strong) VMServiceParser *parser;
 
 - (void)sendRequestForServices:(RequestBALHandler)handler;
 @end

@@ -18,4 +18,5 @@ typedef NS_ENUM(NSUInteger, HTTPMethodType) {
 @interface UrlRequest : RequestBAL
 
 - (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data;
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data withRequestContentType:(RequestContentType)contentType;
 @end

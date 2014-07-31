@@ -16,7 +16,8 @@ typedef void(^RequestBALHandler)(id response, NSError *error);
 typedef NS_ENUM(NSUInteger, RequestContentType) {
     RequestContentTypeJSON,
     RequestContentTypePlainText,
-    RequestContentTypeImage
+    RequestContentTypeImage,
+    RequestContentTypeForm
 };
 
 @interface RequestBAL : NSObject {

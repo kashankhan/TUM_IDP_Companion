@@ -8,7 +8,6 @@
 
 #import "HomeViewController.h"
 #import "SWRevealViewController.h"
-#import "RequestHandler.h"
 
 @interface HomeViewController ()
 

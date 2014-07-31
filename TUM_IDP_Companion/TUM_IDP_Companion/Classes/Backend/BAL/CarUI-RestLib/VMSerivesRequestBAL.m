@@ -7,14 +7,9 @@
 //
 
 #import "VMSerivesRequestBAL.h"
-#import "VMServiceUrlRequest.h"
-#import "VMServiceParser.h"
 
-@interface VMSerivesRequestBAL () {
 
-    VMServiceUrlRequest *_urlRequest;
-    VMServiceParser *_parser;
-}
+@interface VMSerivesRequestBAL ()
 
 @end
 
@@ -23,8 +18,8 @@
 - (instancetype)init {
     
     self  = [super init];
-    _urlRequest = [VMServiceUrlRequest new];
-    _parser = [VMServiceParser new];
+    self.urlRequest = [VMServiceUrlRequest new];
+    self.parser = [VMServiceParser new];
     
     return self;
 }

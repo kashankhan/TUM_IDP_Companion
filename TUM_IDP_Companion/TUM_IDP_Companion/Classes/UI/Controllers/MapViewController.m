@@ -9,14 +9,10 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import <MapKit/MapKit.h>
-#import "RequestHandler.h"
 #import "SearchLocationTableViewController.h"
 #import "TripPlannerTableViewController.h"
 
-@interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate> {
-
-    RequestHandler *_reqeustHandler;
-}
+@interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *menuBarButton;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -61,7 +57,6 @@
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollow];
     
     [self setUpTripPlannerTableViewControllerHandler];
-    _reqeustHandler = [RequestHandler new];
     
     [self configureNavigationBarItems];
     

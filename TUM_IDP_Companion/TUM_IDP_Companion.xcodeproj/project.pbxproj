@@ -23,7 +23,6 @@
 		C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C855198553F8006FBF36 /* TRVSMonitor.m */; };
 		C057C85A198556A0006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
 		C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */; };
-		C057C8621989A574006FBF36 /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08680198407CC00D0E18B /* RequestHandler.m */; };
 		C057C8641989A574006FBF36 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
 		C057C8661989A574006FBF36 /* UrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08689198407CC00D0E18B /* UrlRequest.m */; };
 		C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */; };
@@ -76,6 +75,8 @@
 		C057C8CD1989A62B006FBF36 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C057C8CE1989A63A006FBF36 /* TUM_IDP_Companion.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C098DB1619310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld */; };
 		C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D61989A7F0006FBF36 /* GreenNavBALTest.m */; };
+		C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */; };
+		C057C8DB198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */; };
 		C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08CD73919576E80002FE51A /* SwitchTableViewCell.m */; };
 		C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
 		C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0119310CDF00222D73 /* CoreGraphics.framework */; };
@@ -102,7 +103,6 @@
 		C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867A198407CC00D0E18B /* GreenNavBAL.m */; };
 		C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867C198407CC00D0E18B /* GreenNavUrlRequest.m */; };
 		C0B0868D198407CC00D0E18B /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
-		C0B0868E198407CC00D0E18B /* RequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08680198407CC00D0E18B /* RequestHandler.m */; };
 		C0B0868F198407CC00D0E18B /* FacebookRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08683198407CC00D0E18B /* FacebookRequestBAL.m */; };
 		C0B08690198407CC00D0E18B /* SocialAccountRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08685198407CC00D0E18B /* SocialAccountRequestBAL.m */; };
 		C0B08691198407CC00D0E18B /* TwitterRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08687198407CC00D0E18B /* TwitterRequestBAL.m */; };
@@ -212,6 +212,8 @@
 		C057C859198556A0006FBF36 /* EventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
 		C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMSerivesRequestBALTest.m; sourceTree = "<group>"; };
 		C057C8D61989A7F0006FBF36 /* GreenNavBALTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavBALTest.m; sourceTree = "<group>"; };
+		C057C8D8198AC6DB006FBF36 /* VMServiceParameterBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceParameterBAL.h; sourceTree = "<group>"; };
+		C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceParameterBAL.m; sourceTree = "<group>"; };
 		C08CD73819576E80002FE51A /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
 		C08CD73919576E80002FE51A /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
 		C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUM_IDP_Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,8 +252,6 @@
 		C0B0867C198407CC00D0E18B /* GreenNavUrlRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavUrlRequest.m; sourceTree = "<group>"; };
 		C0B0867D198407CC00D0E18B /* RequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBAL.h; sourceTree = "<group>"; };
 		C0B0867E198407CC00D0E18B /* RequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBAL.m; sourceTree = "<group>"; };
-		C0B0867F198407CC00D0E18B /* RequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestHandler.h; sourceTree = "<group>"; };
-		C0B08680198407CC00D0E18B /* RequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestHandler.m; sourceTree = "<group>"; };
 		C0B08682198407CC00D0E18B /* FacebookRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookRequestBAL.h; sourceTree = "<group>"; };
 		C0B08683198407CC00D0E18B /* FacebookRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookRequestBAL.m; sourceTree = "<group>"; };
 		C0B08684198407CC00D0E18B /* SocialAccountRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAccountRequestBAL.h; sourceTree = "<group>"; };
@@ -685,8 +685,6 @@
 		C0B08674198407CC00D0E18B /* BAL */ = {
 			isa = PBXGroup;
 			children = (
-				C0B0867F198407CC00D0E18B /* RequestHandler.h */,
-				C0B08680198407CC00D0E18B /* RequestHandler.m */,
 				C0B0867D198407CC00D0E18B /* RequestBAL.h */,
 				C0B0867E198407CC00D0E18B /* RequestBAL.m */,
 				C0B08688198407CC00D0E18B /* UrlRequest.h */,
@@ -703,6 +701,8 @@
 			children = (
 				C0B08676198407CC00D0E18B /* VMSerivesRequestBAL.h */,
 				C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */,
+				C057C8D8198AC6DB006FBF36 /* VMServiceParameterBAL.h */,
+				C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */,
 				C0B08693198408F200D0E18B /* VMServiceUrlRequest.h */,
 				C0B08694198408F200D0E18B /* VMServiceUrlRequest.m */,
 			);
@@ -1005,6 +1005,7 @@
 				C0B086EC1984282800D0E18B /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C0B086F4198429AB00D0E18B /* Link.m in Sources */,
 				C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */,
+				C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C0B086F01984292900D0E18B /* VMServiceDAL.m in Sources */,
@@ -1039,7 +1040,6 @@
 				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
 				C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */,
 				C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */,
-				C0B0868E198407CC00D0E18B /* RequestHandler.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C0B6A8C41957202100C7FA8F /* TemperatureSettingsTableViewController.m in Sources */,
@@ -1111,6 +1111,7 @@
 				C057C8BE1989A616006FBF36 /* MagicalRecord.m in Sources */,
 				C057C8881989A5DD006FBF36 /* EventSource.m in Sources */,
 				C057C88A1989A5DD006FBF36 /* TRVSMonitor.m in Sources */,
+				C057C8DB198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */,
 				C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */,
 				C057C88E1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
@@ -1133,7 +1134,6 @@
 				C057C8721989A5A9006FBF36 /* GreenNavUrlRequest.m in Sources */,
 				C057C86B1989A57C006FBF36 /* BaseParser.m in Sources */,
 				C057C86D1989A57C006FBF36 /* VMServiceParser.m in Sources */,
-				C057C8621989A574006FBF36 /* RequestHandler.m in Sources */,
 				C057C8641989A574006FBF36 /* RequestBAL.m in Sources */,
 				C057C8661989A574006FBF36 /* UrlRequest.m in Sources */,
 				C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */,

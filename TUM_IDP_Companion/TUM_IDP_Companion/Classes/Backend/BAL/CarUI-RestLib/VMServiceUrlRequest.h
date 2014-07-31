@@ -10,5 +10,10 @@
 
 @interface VMServiceUrlRequest : UrlRequest
 
+
+- (NSURL *)urlForServiceParameterSubscribtion:(NSString *)subscribtionUri;
+
 - (NSURLRequest*)urlRequestForServices;
+- (NSURLRequest *)urlRequestForServiceParameterValue:(NSString *)valueUri;
+- (NSURLRequest *)urlRequestForServiceParameterUpdateValue:(NSString *)valueUri value:(NSString *)value;
 @end
