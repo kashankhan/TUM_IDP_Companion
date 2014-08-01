@@ -20,9 +20,7 @@
 #define NSLS_FACEBOOK           NSLocalizedString(@"FACEBOOK", @"Facebook")
 #define NSLS_TWITTER            NSLocalizedString(@"TWITTER", @"Twitter")
 
-
-#define NSLS_TO                 NSLocalizedString(@"TO", @"To")
-#define NSLS_FROM               NSLocalizedString(@"FROM", @"From")
+#define NSLS_DESTINATION        NSLocalizedString(@"DESTINATION", @"Destination")
 
 #define NSLS_NEWS               NSLocalizedString(@"NEWS", @"News")
 #define NSLS_ARTISTS            NSLocalizedString(@"ARTISTS", @"Artists")

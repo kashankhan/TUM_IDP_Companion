@@ -73,12 +73,10 @@
 }
 
 - (void)setUpTripPlannerTableViewControllerHandler {
-
-    NSString *toKey = NSLS_TO;
-    NSString *fromKey = NSLS_FROM;
+ 
+    NSString *destinationKey = NSLS_DESTINATION;
     
-    _tripLocations = [@[[@{toKey: [NSNull null]} mutableCopy],
-                       [ @{fromKey: [NSNull null]} mutableCopy]] mutableCopy];
+    _tripLocations = [@[[@{destinationKey: [NSNull null]} mutableCopy]] mutableCopy];
     
    TripPlannerTableViewController *controller = (TripPlannerTableViewController *)[self.childViewControllers lastObject];
     [controller setTripLocations:_tripLocations];

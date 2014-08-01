@@ -16,8 +16,7 @@
 "FACEBOOK"          = "Facebook";
 "TWITTER"           = "Twitter";
 
-"TO"                = "To";
-"FROM"              = "From";
+"DESTINATION"       = "Destination";
 
 "NEWS"              = "News";
 "ARTISTS"           = "Artists";
