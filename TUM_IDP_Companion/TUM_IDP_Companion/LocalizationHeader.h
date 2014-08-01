@@ -44,5 +44,7 @@
 
 #define NSLS_ALL                NSLocalizedString(@"ALL","All")
 #define NSLS_FAVORITES          NSLocalizedString(@"FAVORITES", "Favorites")
+
+#define NSLS_SEARCH_LOCATION    NSLocalizedString(@"SEARCH_LOCATION", "Search Location")
 #endif
 

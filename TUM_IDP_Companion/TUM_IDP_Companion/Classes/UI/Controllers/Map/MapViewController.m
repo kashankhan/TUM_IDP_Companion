@@ -27,6 +27,8 @@
 
 @implementation MapViewController
 
+static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueIdentiferPushSearchLocationTableViewController";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -86,7 +88,7 @@
     controller.tripPlannerTableViewControllerDidSelectObjectHandler = ^(NSMutableDictionary * object){
    
         [self setLastSelectedTripInfo:object];
-        [self performSegueWithIdentifier:@"SegueIdentiferSearchLocationTableViewController" sender:self];
+        [self performSegueWithIdentifier:kSegueIdentiferPushSearchLocationTableViewController sender:self];
     };
 }
 
@@ -120,7 +122,7 @@
         };
         
     }//if
-    else if ([segue.identifier isEqualToString:@"SegueIdentiferSearchLocationTableViewController"]) {
+    else if ([segue.identifier isEqualToString:kSegueIdentiferPushSearchLocationTableViewController]) {
     
         SearchLocationTableViewController *controller = (SearchLocationTableViewController *)[segue destinationViewController];
         [controller setMapView:self.mapView];

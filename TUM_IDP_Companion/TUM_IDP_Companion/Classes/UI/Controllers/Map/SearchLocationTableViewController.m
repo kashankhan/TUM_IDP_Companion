@@ -59,6 +59,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
+    [self setTitle:NSLS_SEARCH_LOCATION];
     _contactDal = [[ContactsDAL alloc] init];
     self.contacts = [_contactDal addressBook];
 
@@ -193,7 +194,6 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
 
-    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {

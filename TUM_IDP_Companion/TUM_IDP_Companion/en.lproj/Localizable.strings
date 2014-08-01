@@ -39,3 +39,5 @@
 
 "ALL"               = "All";
 "FAVORITES"         = "Favorites";
+
+"SEARCH_LOCATION"   = "Search Location";
