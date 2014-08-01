@@ -59,6 +59,7 @@
     [self setUpTripPlannerTableViewControllerHandler];
     
     [self configureNavigationBarItems];
+    [self setTitle:NSLS_MAPS];
     
 }
 
@@ -103,9 +104,6 @@
     [controller.tableView reloadData];
 }
 
-
-- (IBAction)performSearchRoute:(id)sender {
-}
 
 #pragma mark - Navigation
 
