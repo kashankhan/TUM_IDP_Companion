@@ -7,7 +7,7 @@
 //
 
 #import "ContactsDAL.h"
-
+@import AddressBook;
 
 @implementation ContactsDAL
 
@@ -15,7 +15,6 @@
 - (NSArray *)addressBook {
 
     NSArray *contacts = nil;
-    
     switch ([ABStandin authorizationStatus]) {
         case kABAuthorizationStatusAuthorized:
             contacts = [ABContactsHelper contacts];
@@ -28,6 +27,7 @@
     case kABAuthorizationStatusNotDetermined:
         default:
             [ABStandin showDeniedAccessAlert];
+             //[ABStandin requestAccess];
             break;
     }
     

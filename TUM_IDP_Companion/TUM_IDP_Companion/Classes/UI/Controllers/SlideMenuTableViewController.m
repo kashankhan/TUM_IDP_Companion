@@ -48,14 +48,12 @@
     NSString *accounts = NSLS_ACCOUNTS;
     NSString *maps = NSLS_MAPS;
     NSString *contants = NSLS_CONTACTS;
-    NSString *home = NSLS_HOME;
     NSString *music = NSLS_MUSIC;
     NSString *settings = NSLS_SETTINGS;
     
     _menuItems =  @[  @{ @"SegueIdentiferPushAccountsViewController" :  accounts},
                       @{ @"SegueIdentiferPushMapsViewController" : maps},
                       @{ @"SegueIdentiferPushContactsViewController" : contants},
-                      @{ @"SegueIdentiferPushHomeViewController" : home},
                       @{ @"SegueIdentiferPushMusicSearhViewController" : music},
                       @{ @"SegueIdentiferPushSettingsViewController" : settings}
                       ];

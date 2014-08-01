@@ -30,7 +30,7 @@
     NSURLRequest *urlRequest = [_urlRequest urlRequestForServices];
     [self sendRequest:urlRequest handler:^(id response, NSError *error) {
         
-        handler([_parser parseServices:response], error);
+        handler([self.parser parseServices:response], error);
     }];
 }
 

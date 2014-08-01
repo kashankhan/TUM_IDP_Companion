@@ -19,8 +19,8 @@ static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:
 
 - (NSURL *)urlForServiceParameterSubscribtion:(NSString *)subscribtionUri {
     
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", subscribtionUri];
-    
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude/subscription"];
+        NSLog(@"url : %@",uri);
     return [NSURL URLWithString:uri];
 }
 
@@ -35,8 +35,10 @@ static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:
 
 - (NSURLRequest *)urlRequestForServiceParameterValue:(NSString *)valueUri {
 
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", valueUri];
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude"];
     NSURL *url = [NSURL URLWithString:uri];
+    
+    NSLog(@"url : %@",url);
     NSData *requestData = nil;
     
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
@@ -45,10 +47,11 @@ static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:
 
 - (NSURLRequest *)urlRequestForServiceParameterUpdateValue:(NSString *)valueUri value:(NSString *)value {
     
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", valueUri];
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude"];
     NSURL *url = [NSURL URLWithString:uri];
+    value = @"12.1212";
     NSData *requestData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];;
-    
+        NSLog(@"url : %@",url);
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePOST withPayLoad:requestData withRequestContentType:RequestContentTypeForm ];
 }
 

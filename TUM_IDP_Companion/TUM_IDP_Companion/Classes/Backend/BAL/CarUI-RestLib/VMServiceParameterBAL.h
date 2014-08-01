@@ -16,5 +16,5 @@ extern NSString* const kParameterUpdatedValueKey;
 
 - (void)sendRequestForParameterValue:(id)params handler:(RequestBALHandler)handler;
 - (void)sendRequestForServiceParameterUpdateValue:(id)params handler:(RequestBALHandler)handler;
-- (void)subscribeEvent:(id)params handler:(RequestBALHandler)handler;
+- (void)sendRequestForSubscribeEvent:(id)params handler:(RequestBALHandler)handler;
 @end

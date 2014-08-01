@@ -154,7 +154,6 @@
 		C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */; };
 		C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963631932844A000AE466 /* AccountsTableViewController.m */; };
 		C0E963671932846D000AE466 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963661932846D000AE466 /* MapViewController.m */; };
-		C0E9636A19328496000AE466 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9636919328496000AE466 /* HomeViewController.m */; };
 		C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9637119328D94000AE466 /* ContactsTableViewController.m */; };
 		C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637319329577000AE466 /* CoreLocation.framework */; };
 		C0E9637619329581000AE466 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637519329581000AE466 /* MapKit.framework */; };
@@ -353,8 +352,6 @@
 		C0E963631932844A000AE466 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
 		C0E963651932846D000AE466 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C0E963661932846D000AE466 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		C0E9636819328496000AE466 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		C0E9636919328496000AE466 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C0E9637019328D94000AE466 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
 		C0E9637119328D94000AE466 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		C0E9637319329577000AE466 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -616,8 +613,6 @@
 				C0E963631932844A000AE466 /* AccountsTableViewController.m */,
 				C0E963651932846D000AE466 /* MapViewController.h */,
 				C0E963661932846D000AE466 /* MapViewController.m */,
-				C0E9636819328496000AE466 /* HomeViewController.h */,
-				C0E9636919328496000AE466 /* HomeViewController.m */,
 				C0E9637019328D94000AE466 /* ContactsTableViewController.h */,
 				C0E9637119328D94000AE466 /* ContactsTableViewController.m */,
 				C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */,
@@ -1026,7 +1021,6 @@
 				C0B0868A198407CC00D0E18B /* VMSerivesRequestBAL.m in Sources */,
 				C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */,
 				C034BD331974553D00419797 /* SDWebImageDecoder.m in Sources */,
-				C0E9636A19328496000AE466 /* HomeViewController.m in Sources */,
 				C0B086DE1984282800D0E18B /* NSManagedObject+MagicalRecord.m in Sources */,
 				C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C034BD351974553D00419797 /* SDWebImageManager.m in Sources */,

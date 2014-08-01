@@ -9,18 +9,26 @@
 #import "VMServiceParameterBAL.h"
 #import "EventSource.h"
 
+@interface VMServiceParameterBAL() {
+    
+    EventSource *_eventSource;
+}
+
+@end
+
 NSString* const kParameterSubcribtionUriKey = @"ParameterSubcribtionUriKey";
 NSString* const kParameterValueUriKey = @"ParameterValueUriKey";
 NSString* const kParameterUpdatedValueKey = @"ParameterUpdatedValueKey";
 
 @implementation VMServiceParameterBAL
 
+
 - (void)sendRequestForParameterValue:(id)params handler:(RequestBALHandler)handler {
     
     NSString *valueUri = [params valueForKey:kParameterValueUriKey];
     NSURLRequest *urlRequest = [self.urlRequest urlRequestForServiceParameterValue:valueUri];
     [self sendRequest:urlRequest handler:^(id response, NSError *error) {
-        
+        NSLog(@"response : %@",response);
         handler(response, error);
     }];
 }
@@ -32,20 +40,25 @@ NSString* const kParameterUpdatedValueKey = @"ParameterUpdatedValueKey";
     NSString *value = [params valueForKey:kParameterUpdatedValueKey];
     NSURLRequest *urlRequest = [self.urlRequest urlRequestForServiceParameterUpdateValue:valueUri value:value];
     [self sendRequest:urlRequest handler:^(id response, NSError *error) {
-        
+        NSLog(@"response : %@",response);
         handler(response, error);
     }];
 }
 
-- (void)subscribeEvent:(id)params handler:(RequestBALHandler)handler {
+- (void)sendRequestForSubscribeEvent:(id)params handler:(RequestBALHandler)handler {
 
-    NSString *subscribtionUri = [params valueForKey:kParameterSubcribtionUriKey];
-    NSURL *url = [self.urlRequest urlForServiceParameterSubscribtion:subscribtionUri];
-    EventSource *eventSource = [EventSource eventSourceWithURL:url];
-    [eventSource addEventListener:@"push-event" handler:^(Event *event) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        NSLog(@"test : %@",event.data);
-        handler(event.data, event.error);
-    }];
+        NSString *subscribtionUri = [params valueForKey:kParameterSubcribtionUriKey];
+        NSURL *url = [self.urlRequest urlForServiceParameterSubscribtion:subscribtionUri];
+        _eventSource = [EventSource eventSourceWithURL:url];
+        [_eventSource addEventListener:@"push-event" handler:^(Event *event) {
+            
+            NSLog(@"test : %@",event.data);
+            handler(event.data, event.error);
+        }];
+    });
+    
+
 }
 @end

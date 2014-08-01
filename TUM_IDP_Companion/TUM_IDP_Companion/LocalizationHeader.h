@@ -14,7 +14,6 @@
 #define NSLS_ACCOUNTS           NSLocalizedString(@"ACCOUNTS", @"Accounts")
 #define NSLS_MAPS               NSLocalizedString(@"MAPS", @"Maps")
 #define NSLS_CONTACTS           NSLocalizedString(@"CONTACTS", @"Contants")
-#define NSLS_HOME               NSLocalizedString(@"HOME", @"Home")
 #define NSLS_MUSIC              NSLocalizedString(@"MUSIC", @"Music")
 #define NSLS_SETTINGS           NSLocalizedString(@"SETTINGS", @"Settings")
 
