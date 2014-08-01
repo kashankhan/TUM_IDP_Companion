@@ -16,6 +16,17 @@
 		C034BD351974553D00419797 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD291974553D00419797 /* SDWebImageManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C034BD361974553D00419797 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD2C1974553D00419797 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD2E1974553D00419797 /* UIImageView+WebCache.m */; };
+		C03BF951198BF348009BDEB0 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF936198BF347009BDEB0 /* AccountsTableViewController.m */; };
+		C03BF952198BF348009BDEB0 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF939198BF347009BDEB0 /* ContactsTableViewController.m */; };
+		C03BF953198BF348009BDEB0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF93C198BF348009BDEB0 /* MapViewController.m */; };
+		C03BF954198BF348009BDEB0 /* SearchLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF93E198BF348009BDEB0 /* SearchLocationTableViewController.m */; };
+		C03BF955198BF348009BDEB0 /* TripPlannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF941198BF348009BDEB0 /* TripPlannerTableViewController.m */; };
+		C03BF956198BF348009BDEB0 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF944198BF348009BDEB0 /* SlideMenuTableViewController.m */; };
+		C03BF957198BF348009BDEB0 /* MusicSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF947198BF348009BDEB0 /* MusicSearchTableViewController.m */; };
+		C03BF958198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94A198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m */; };
+		C03BF959198BF348009BDEB0 /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94C198BF348009BDEB0 /* SelectionTableViewController.m */; };
+		C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */; };
+		C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */; };
 		C057C8421985249D006FBF36 /* BaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8411985249D006FBF36 /* BaseParser.m */; };
 		C057C845198524D5006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
@@ -93,11 +104,8 @@
 		C098DB3219310CE000222D73 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C098DB3019310CE000222D73 /* InfoPlist.strings */; };
 		C098DB3419310CE000222D73 /* TUM_IDP_CompanionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3319310CE000222D73 /* TUM_IDP_CompanionTests.m */; };
 		C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3F19310DBB00222D73 /* AppDelegate.m */; };
-		C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4519310DBB00222D73 /* DetailViewController.m */; };
-		C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB4719310DBB00222D73 /* MasterViewController.m */; };
 		C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB4D19313D5500222D73 /* Twitter.framework */; };
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
-		C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */; };
 		C09C916C194DE6EF008439F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C916B194DE6EF008439F9 /* AVFoundation.framework */; };
 		C0B0868A198407CC00D0E18B /* VMSerivesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */; };
 		C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867A198407CC00D0E18B /* GreenNavBAL.m */; };
@@ -137,24 +145,14 @@
 		C0B086F01984292900D0E18B /* VMServiceDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086EF1984292900D0E18B /* VMServiceDAL.m */; };
 		C0B086F4198429AB00D0E18B /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F3198429AB00D0E18B /* Link.m */; };
 		C0B086F7198429AC00D0E18B /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F6198429AC00D0E18B /* Service.m */; };
-		C0B6A8C41957202100C7FA8F /* TemperatureSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B6A8C31957202100C7FA8F /* TemperatureSettingsTableViewController.m */; };
 		C0C3D54B1944B35B008E848B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C3D5491944B35B008E848B /* Main.storyboard */; };
-		C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */; };
-		C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */; };
-		C0C3D55B19461BC8008E848B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */; };
-		C0C3D55E19461CDA008E848B /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */; };
-		C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */; };
 		C0DCDA031960AA2F001373D7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963B719339F06000AE466 /* AddressBook.framework */; };
 		C0DCDA041960AA2F001373D7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E963771932A0D4000AE466 /* AddressBookUI.framework */; };
 		C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */; };
 		C0E9634D19322565000AE466 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C0E9634A19322565000AE466 /* ProgressHUD.bundle */; };
 		C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9634C19322565000AE466 /* ProgressHUD.m */; };
 		C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96351193228C7000AE466 /* SWRevealViewController.m */; };
-		C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963541932392E000AE466 /* SlideMenuTableViewController.m */; };
 		C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */; };
-		C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963631932844A000AE466 /* AccountsTableViewController.m */; };
-		C0E963671932846D000AE466 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963661932846D000AE466 /* MapViewController.m */; };
-		C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E9637119328D94000AE466 /* ContactsTableViewController.m */; };
 		C0E9637419329577000AE466 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637319329577000AE466 /* CoreLocation.framework */; };
 		C0E9637619329581000AE466 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E9637519329581000AE466 /* MapKit.framework */; };
 		C0E9638819337770000AE466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C0E9638A19337770000AE466 /* Localizable.strings */; };
@@ -197,6 +195,28 @@
 		C034BD2C1974553D00419797 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		C034BD2D1974553D00419797 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		C034BD2E1974553D00419797 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		C03BF935198BF347009BDEB0 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
+		C03BF936198BF347009BDEB0 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
+		C03BF938198BF347009BDEB0 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		C03BF939198BF347009BDEB0 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
+		C03BF93B198BF348009BDEB0 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C03BF93C198BF348009BDEB0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C03BF93D198BF348009BDEB0 /* SearchLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLocationTableViewController.h; sourceTree = "<group>"; };
+		C03BF93E198BF348009BDEB0 /* SearchLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLocationTableViewController.m; sourceTree = "<group>"; };
+		C03BF940198BF348009BDEB0 /* TripPlannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripPlannerTableViewController.h; sourceTree = "<group>"; };
+		C03BF941198BF348009BDEB0 /* TripPlannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTableViewController.m; sourceTree = "<group>"; };
+		C03BF943198BF348009BDEB0 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuTableViewController.h; sourceTree = "<group>"; };
+		C03BF944198BF348009BDEB0 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
+		C03BF946198BF348009BDEB0 /* MusicSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchTableViewController.h; sourceTree = "<group>"; };
+		C03BF947198BF348009BDEB0 /* MusicSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchTableViewController.m; sourceTree = "<group>"; };
+		C03BF949198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSettingsSelectionTableViewController.h; sourceTree = "<group>"; };
+		C03BF94A198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSettingsSelectionTableViewController.m; sourceTree = "<group>"; };
+		C03BF94B198BF348009BDEB0 /* SelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewController.h; sourceTree = "<group>"; };
+		C03BF94C198BF348009BDEB0 /* SelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewController.m; sourceTree = "<group>"; };
+		C03BF94D198BF348009BDEB0 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		C03BF94F198BF348009BDEB0 /* TemperatureSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureSettingsTableViewController.h; sourceTree = "<group>"; };
+		C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureSettingsTableViewController.m; sourceTree = "<group>"; };
 		C057C8401985249D006FBF36 /* BaseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseParser.h; sourceTree = "<group>"; };
 		C057C8411985249D006FBF36 /* BaseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseParser.m; sourceTree = "<group>"; };
 		C057C843198524D5006FBF36 /* VMServiceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceParser.h; sourceTree = "<group>"; };
@@ -233,15 +253,9 @@
 		C098DB3319310CE000222D73 /* TUM_IDP_CompanionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUM_IDP_CompanionTests.m; sourceTree = "<group>"; };
 		C098DB3E19310DBB00222D73 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C098DB3F19310DBB00222D73 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C098DB4419310DBB00222D73 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C098DB4519310DBB00222D73 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		C098DB4619310DBB00222D73 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		C098DB4719310DBB00222D73 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		C098DB4D19313D5500222D73 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		C098DB721931581D00222D73 /* RequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestQueue.h; sourceTree = "<group>"; };
 		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
-		C09C9168194C8F22008439F9 /* MusicSettingsSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSettingsSelectionTableViewController.h; sourceTree = "<group>"; };
-		C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSettingsSelectionTableViewController.m; sourceTree = "<group>"; };
 		C09C916B194DE6EF008439F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C0B08676198407CC00D0E18B /* VMSerivesRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMSerivesRequestBAL.h; sourceTree = "<group>"; };
 		C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMSerivesRequestBAL.m; sourceTree = "<group>"; };
@@ -323,19 +337,7 @@
 		C0B086F3198429AB00D0E18B /* Link.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Link.m; sourceTree = "<group>"; };
 		C0B086F5198429AC00D0E18B /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		C0B086F6198429AC00D0E18B /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
-		C0B6A8C21957202100C7FA8F /* TemperatureSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureSettingsTableViewController.h; sourceTree = "<group>"; };
-		C0B6A8C31957202100C7FA8F /* TemperatureSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureSettingsTableViewController.m; sourceTree = "<group>"; };
 		C0C3D54A1944B35B008E848B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripPlannerTableViewController.h; sourceTree = "<group>"; };
-		C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripPlannerTableViewController.m; sourceTree = "<group>"; };
-		C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchLocationTableViewController.h; sourceTree = "<group>"; };
-		C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchLocationTableViewController.m; sourceTree = "<group>"; };
-		C0C3D55919461BC8008E848B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
-		C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
-		C0C3D55C19461CDA008E848B /* SelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectionTableViewController.h; sourceTree = "<group>"; };
-		C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectionTableViewController.m; sourceTree = "<group>"; };
-		C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchTableViewController.h; sourceTree = "<group>"; };
-		C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchTableViewController.m; sourceTree = "<group>"; };
 		C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContantTableViewCell.h; sourceTree = "<group>"; };
 		C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContantTableViewCell.m; sourceTree = "<group>"; };
 		C0DCDA0F1961D22E001373D7 /* LocalizationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalizationHeader.h; sourceTree = "<group>"; };
@@ -344,16 +346,8 @@
 		C0E9634C19322565000AE466 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		C0E96350193228C7000AE466 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		C0E96351193228C7000AE466 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		C0E963531932392E000AE466 /* SlideMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuTableViewController.h; sourceTree = "<group>"; };
-		C0E963541932392E000AE466 /* SlideMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuTableViewController.m; sourceTree = "<group>"; };
 		C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
-		C0E963621932844A000AE466 /* AccountsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountsTableViewController.h; sourceTree = "<group>"; };
-		C0E963631932844A000AE466 /* AccountsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountsTableViewController.m; sourceTree = "<group>"; };
-		C0E963651932846D000AE466 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		C0E963661932846D000AE466 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		C0E9637019328D94000AE466 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
-		C0E9637119328D94000AE466 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		C0E9637319329577000AE466 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C0E9637519329581000AE466 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C0E963771932A0D4000AE466 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -439,6 +433,91 @@
 				C034BD2E1974553D00419797 /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		C03BF933198BF347009BDEB0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF934198BF347009BDEB0 /* Account */,
+				C03BF937198BF347009BDEB0 /* Contacts */,
+				C03BF93A198BF347009BDEB0 /* Map */,
+				C03BF942198BF348009BDEB0 /* Menu */,
+				C03BF945198BF348009BDEB0 /* Music */,
+				C03BF948198BF348009BDEB0 /* Settings */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C03BF934198BF347009BDEB0 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF935198BF347009BDEB0 /* AccountsTableViewController.h */,
+				C03BF936198BF347009BDEB0 /* AccountsTableViewController.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		C03BF937198BF347009BDEB0 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF938198BF347009BDEB0 /* ContactsTableViewController.h */,
+				C03BF939198BF347009BDEB0 /* ContactsTableViewController.m */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		C03BF93A198BF347009BDEB0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF93B198BF348009BDEB0 /* MapViewController.h */,
+				C03BF93C198BF348009BDEB0 /* MapViewController.m */,
+				C03BF93D198BF348009BDEB0 /* SearchLocationTableViewController.h */,
+				C03BF93E198BF348009BDEB0 /* SearchLocationTableViewController.m */,
+				C03BF93F198BF348009BDEB0 /* Trip */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C03BF93F198BF348009BDEB0 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF940198BF348009BDEB0 /* TripPlannerTableViewController.h */,
+				C03BF941198BF348009BDEB0 /* TripPlannerTableViewController.m */,
+			);
+			path = Trip;
+			sourceTree = "<group>";
+		};
+		C03BF942198BF348009BDEB0 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF943198BF348009BDEB0 /* SlideMenuTableViewController.h */,
+				C03BF944198BF348009BDEB0 /* SlideMenuTableViewController.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		C03BF945198BF348009BDEB0 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF946198BF348009BDEB0 /* MusicSearchTableViewController.h */,
+				C03BF947198BF348009BDEB0 /* MusicSearchTableViewController.m */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		C03BF948198BF348009BDEB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C03BF949198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.h */,
+				C03BF94A198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m */,
+				C03BF94B198BF348009BDEB0 /* SelectionTableViewController.h */,
+				C03BF94C198BF348009BDEB0 /* SelectionTableViewController.m */,
+				C03BF94D198BF348009BDEB0 /* SettingsTableViewController.h */,
+				C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */,
+				C03BF94F198BF348009BDEB0 /* TemperatureSettingsTableViewController.h */,
+				C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		C057C83F1985245B006FBF36 /* Parser */ = {
@@ -594,43 +673,10 @@
 		C098DB4219310DBB00222D73 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				C098DB4319310DBB00222D73 /* Controllers */,
+				C03BF933198BF347009BDEB0 /* Controllers */,
 				C098DB4819310DBB00222D73 /* TableViewCell */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		C098DB4319310DBB00222D73 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C098DB4419310DBB00222D73 /* DetailViewController.h */,
-				C098DB4519310DBB00222D73 /* DetailViewController.m */,
-				C098DB4619310DBB00222D73 /* MasterViewController.h */,
-				C098DB4719310DBB00222D73 /* MasterViewController.m */,
-				C0E963531932392E000AE466 /* SlideMenuTableViewController.h */,
-				C0E963541932392E000AE466 /* SlideMenuTableViewController.m */,
-				C0E963621932844A000AE466 /* AccountsTableViewController.h */,
-				C0E963631932844A000AE466 /* AccountsTableViewController.m */,
-				C0E963651932846D000AE466 /* MapViewController.h */,
-				C0E963661932846D000AE466 /* MapViewController.m */,
-				C0E9637019328D94000AE466 /* ContactsTableViewController.h */,
-				C0E9637119328D94000AE466 /* ContactsTableViewController.m */,
-				C0C3D54F19450F90008E848B /* TripPlannerTableViewController.h */,
-				C0C3D55019450F90008E848B /* TripPlannerTableViewController.m */,
-				C0C3D552194510BF008E848B /* SearchLocationTableViewController.h */,
-				C0C3D553194510BF008E848B /* SearchLocationTableViewController.m */,
-				C0C3D55919461BC8008E848B /* SettingsTableViewController.h */,
-				C0C3D55A19461BC8008E848B /* SettingsTableViewController.m */,
-				C0C3D55F19461D5F008E848B /* MusicSearchTableViewController.h */,
-				C0C3D56019461D5F008E848B /* MusicSearchTableViewController.m */,
-				C09C9168194C8F22008439F9 /* MusicSettingsSelectionTableViewController.h */,
-				C09C9169194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m */,
-				C0C3D55C19461CDA008E848B /* SelectionTableViewController.h */,
-				C0C3D55D19461CDA008E848B /* SelectionTableViewController.m */,
-				C0B6A8C21957202100C7FA8F /* TemperatureSettingsTableViewController.h */,
-				C0B6A8C31957202100C7FA8F /* TemperatureSettingsTableViewController.m */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C098DB4819310DBB00222D73 /* TableViewCell */ = {
@@ -992,14 +1038,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0E96352193228C7000AE466 /* SWRevealViewController.m in Sources */,
-				C0E9637219328D94000AE466 /* ContactsTableViewController.m in Sources */,
 				C098DB0E19310CDF00222D73 /* main.m in Sources */,
 				C0B086E11984282800D0E18B /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				C03BF951198BF348009BDEB0 /* AccountsTableViewController.m in Sources */,
 				C0B086DB1984282800D0E18B /* NSManagedObject+MagicalAggregation.m in Sources */,
 				C0B086EA1984282800D0E18B /* MagicalRecord+Options.m in Sources */,
 				C0B086EC1984282800D0E18B /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C0B086F4198429AB00D0E18B /* Link.m in Sources */,
 				C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */,
+				C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */,
 				C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
@@ -1007,7 +1054,6 @@
 				C0B086E81984282800D0E18B /* MagicalRecord+ErrorHandling.m in Sources */,
 				C0B0868F198407CC00D0E18B /* FacebookRequestBAL.m in Sources */,
 				C0B086DA1984282800D0E18B /* NSString+MagicalDataImport.m in Sources */,
-				C0C3D55E19461CDA008E848B /* SelectionTableViewController.m in Sources */,
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C057C8421985249D006FBF36 /* BaseParser.m in Sources */,
@@ -1018,34 +1064,32 @@
 				C0B08695198408F200D0E18B /* VMServiceUrlRequest.m in Sources */,
 				C0B086D51984282800D0E18B /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				C034BD321974553D00419797 /* SDImageCache.m in Sources */,
+				C03BF958198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C0B0868A198407CC00D0E18B /* VMSerivesRequestBAL.m in Sources */,
+				C03BF953198BF348009BDEB0 /* MapViewController.m in Sources */,
 				C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */,
 				C034BD331974553D00419797 /* SDWebImageDecoder.m in Sources */,
 				C0B086DE1984282800D0E18B /* NSManagedObject+MagicalRecord.m in Sources */,
-				C09C916A194C8F22008439F9 /* MusicSettingsSelectionTableViewController.m in Sources */,
 				C034BD351974553D00419797 /* SDWebImageManager.m in Sources */,
-				C0C3D554194510BF008E848B /* SearchLocationTableViewController.m in Sources */,
 				C0B08691198407CC00D0E18B /* TwitterRequestBAL.m in Sources */,
 				C0B086ED1984282800D0E18B /* MagicalRecord.m in Sources */,
 				C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */,
-				C0E963551932392E000AE466 /* SlideMenuTableViewController.m in Sources */,
 				C0B08690198407CC00D0E18B /* SocialAccountRequestBAL.m in Sources */,
 				C0B086E41984282800D0E18B /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				C0E9638E1933788F000AE466 /* BaseDAL.m in Sources */,
-				C0C3D55119450F90008E848B /* TripPlannerTableViewController.m in Sources */,
+				C03BF957198BF348009BDEB0 /* MusicSearchTableViewController.m in Sources */,
 				C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
+				C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
-				C0B6A8C41957202100C7FA8F /* TemperatureSettingsTableViewController.m in Sources */,
 				C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */,
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C0B086E91984282800D0E18B /* MagicalRecord+iCloud.m in Sources */,
 				C057C85219854A03006FBF36 /* Parameter.m in Sources */,
+				C03BF952198BF348009BDEB0 /* ContactsTableViewController.m in Sources */,
 				C0B086E01984282800D0E18B /* NSManagedObjectContext+MagicalObserving.m in Sources */,
-				C098DB4C19310DBB00222D73 /* MasterViewController.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C0B086F7198429AC00D0E18B /* Service.m in Sources */,
-				C0C3D56119461D5F008E848B /* MusicSearchTableViewController.m in Sources */,
 				C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */,
 				C0B086D61984282800D0E18B /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				C0B086EB1984282800D0E18B /* MagicalRecord+Setup.m in Sources */,
@@ -1053,21 +1097,21 @@
 				C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */,
 				C034BD361974553D00419797 /* SDWebImagePrefetcher.m in Sources */,
 				C0B086E71984282800D0E18B /* MagicalRecord+Actions.m in Sources */,
+				C03BF956198BF348009BDEB0 /* SlideMenuTableViewController.m in Sources */,
+				C03BF954198BF348009BDEB0 /* SearchLocationTableViewController.m in Sources */,
 				C034BD2F1974553D00419797 /* iHasApp.m in Sources */,
+				C03BF955198BF348009BDEB0 /* TripPlannerTableViewController.m in Sources */,
+				C03BF959198BF348009BDEB0 /* SelectionTableViewController.m in Sources */,
 				C0B086D81984282800D0E18B /* NSObject+MagicalDataImport.m in Sources */,
 				C034BD341974553D00419797 /* SDWebImageDownloader.m in Sources */,
 				C057C845198524D5006FBF36 /* VMServiceParser.m in Sources */,
 				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,
-				C098DB4B19310DBB00222D73 /* DetailViewController.m in Sources */,
 				C0B086DD1984282800D0E18B /* NSManagedObject+MagicalFinders.m in Sources */,
 				C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */,
 				C057C85A198556A0006FBF36 /* EventSource.m in Sources */,
-				C0E963671932846D000AE466 /* MapViewController.m in Sources */,
-				C0C3D55B19461BC8008E848B /* SettingsTableViewController.m in Sources */,
 				C0B086E51984282800D0E18B /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C0B086D71984282800D0E18B /* NSNumber+MagicalDataImport.m in Sources */,
 				C0B086D91984282800D0E18B /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
-				C0E963641932844A000AE466 /* AccountsTableViewController.m in Sources */,
 				C0B086E31984282800D0E18B /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				C0B0868D198407CC00D0E18B /* RequestBAL.m in Sources */,
 				C0B086E21984282800D0E18B /* NSManagedObjectContext+MagicalSaves.m in Sources */,
