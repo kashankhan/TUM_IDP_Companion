@@ -22,6 +22,10 @@ NSString* const kParameterUpdatedValueKey = @"ParameterUpdatedValueKey";
 
 @implementation VMServiceParameterBAL
 
+- (void)dealloc {
+    
+    [_eventSource close];
+}
 
 - (void)sendRequestForParameterValue:(id)params handler:(RequestBALHandler)handler {
     
@@ -51,6 +55,9 @@ NSString* const kParameterUpdatedValueKey = @"ParameterUpdatedValueKey";
         
         NSString *subscribtionUri = [params valueForKey:kParameterSubcribtionUriKey];
         NSURL *url = [self.urlRequest urlForServiceParameterSubscribtion:subscribtionUri];
+        
+        [_eventSource close];
+        
         _eventSource = [EventSource eventSourceWithURL:url];
         [_eventSource addEventListener:@"push-event" handler:^(Event *event) {
             
