@@ -490,7 +490,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="OOp-UH-9mC">
+                        <searchBar key="tableHeaderView" contentMode="redraw" showsBookmarkButton="YES" id="OOp-UH-9mC">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -535,7 +535,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="f5Q-PK-63a">
-                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="6QB-BR-mpP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6QB-BR-mpP">
                             <connections>
                                 <segue destination="VGs-Sn-caY" kind="push" identifier="PushSegueIdentifierSaveLocationTableViewController" id="lxR-B8-gdR"/>
                             </connections>
@@ -627,7 +627,13 @@
                             <outlet property="delegate" destination="VGs-Sn-caY" id="5Au-U0-zXj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Hvj-Nf-Oso"/>
+                    <navigationItem key="navigationItem" id="Hvj-Nf-Oso">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hSx-Vf-imN">
+                            <connections>
+                                <action selector="performSaveAction:" destination="VGs-Sn-caY" id="9tZ-1K-7jJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXD-Yj-KpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
