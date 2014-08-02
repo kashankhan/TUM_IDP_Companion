@@ -70,6 +70,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     // Cancel any previous searches.
     [self.localSearch cancel];
     
+    [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
     // Perform a new search.
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
     request.naturalLanguageQuery = searchBar.text;
@@ -101,6 +102,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
         [self setSearchResponse:response];
         
         [self.searchDisplayController.searchResultsTableView reloadData];
+        [self dismissProgressHud];
     }];
 }
 
@@ -108,7 +110,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 - (void)searchAddressBook:(UISearchBar *)searchBar {
     
     NSString *searchText = searchBar.text;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@", searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@ || self.Street CONTAINS %@ ", searchText, searchText];
     self.contactsSearch = [self.contacts filteredArrayUsingPredicate:predicate];
 
 }

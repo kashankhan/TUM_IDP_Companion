@@ -504,11 +504,11 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdentifierCell" textLabel="zBE-Ol-10t" detailTextLabel="Gna-rg-lls" style="IBUITableViewCellStyleSubtitle" id="Ib6-st-sWg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdentifierCell" textLabel="zBE-Ol-10t" detailTextLabel="Gna-rg-lls" style="IBUITableViewCellStyleSubtitle" id="Ib6-st-sWg">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ib6-st-sWg" id="oNz-yn-Ijp">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zBE-Ol-10t">
@@ -534,10 +534,15 @@
                             <outlet property="delegate" destination="q4H-FL-Oem" id="8Ha-Kw-bJX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f5Q-PK-63a"/>
+                    <navigationItem key="navigationItem" id="f5Q-PK-63a">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="6QB-BR-mpP">
+                            <connections>
+                                <segue destination="VGs-Sn-caY" kind="push" identifier="PushSegueIdentifierSaveLocationTableViewController" id="lxR-B8-gdR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="qz4-mI-cNe" id="NBt-3G-Sck"/>
-                        <segue destination="VGs-Sn-caY" kind="push" identifier="PushSegueIdentifierSavLocationTableViewController" id="aVB-iP-Jnh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vL0-bh-Pcf" userLabel="First Responder" sceneMemberID="firstResponder"/>

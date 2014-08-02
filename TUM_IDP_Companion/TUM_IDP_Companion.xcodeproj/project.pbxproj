@@ -11,6 +11,7 @@
 		C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */; };
 		C0234A42198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */; };
 		C0234A46198D51D90090F4F0 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A45198D51D90090F4F0 /* LocationHelper.m */; };
+		C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */; };
 		C034BD2F1974553D00419797 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD1B1974553D00419797 /* iHasApp.m */; };
 		C034BD301974553D00419797 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1C1974553D00419797 /* schemeApps.json */; };
 		C034BD311974553D00419797 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1E1974553D00419797 /* placeholder-icon.png */; };
@@ -35,7 +36,6 @@
 		C057C845198524D5006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
 		C057C85219854A03006FBF36 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85119854A03006FBF36 /* Parameter.m */; };
-		C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C855198553F8006FBF36 /* TRVSMonitor.m */; };
 		C057C85A198556A0006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
 		C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */; };
 		C057C8641989A574006FBF36 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
@@ -57,7 +57,6 @@
 		C057C8841989A5C7006FBF36 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F3198429AB00D0E18B /* Link.m */; };
 		C057C8861989A5C7006FBF36 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85119854A03006FBF36 /* Parameter.m */; };
 		C057C8881989A5DD006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
-		C057C88A1989A5DD006FBF36 /* TRVSMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C855198553F8006FBF36 /* TRVSMonitor.m */; };
 		C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869A1984282700D0E18B /* MagicalImportFunctions.m */; };
 		C057C88E1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869C1984282700D0E18B /* NSAttributeDescription+MagicalDataImport.m */; };
 		C057C8901989A5DD006FBF36 /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869E1984282700D0E18B /* NSEntityDescription+MagicalDataImport.m */; };
@@ -187,6 +186,9 @@
 		C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceMusicParameterBAL.m; sourceTree = "<group>"; };
 		C0234A44198D51D90090F4F0 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
 		C0234A45198D51D90090F4F0 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
+		C0234A47198D59120090F4F0 /* UIViewController+ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressHUD.h"; sourceTree = "<group>"; };
+		C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressHUD.m"; sourceTree = "<group>"; };
+		C0234A4A198D5BCE0090F4F0 /* AppHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHeader.h; sourceTree = "<group>"; };
 		C034BD1A1974553D00419797 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		C034BD1B1974553D00419797 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		C034BD1C1974553D00419797 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
@@ -237,8 +239,6 @@
 		C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataPersistanceManager.m; sourceTree = "<group>"; };
 		C057C85019854A03006FBF36 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		C057C85119854A03006FBF36 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
-		C057C854198553F8006FBF36 /* TRVSMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRVSMonitor.h; sourceTree = "<group>"; };
-		C057C855198553F8006FBF36 /* TRVSMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRVSMonitor.m; sourceTree = "<group>"; };
 		C057C858198556A0006FBF36 /* EventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSource.h; sourceTree = "<group>"; };
 		C057C859198556A0006FBF36 /* EventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
 		C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMSerivesRequestBALTest.m; sourceTree = "<group>"; };
@@ -554,15 +554,6 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
-		C057C853198553F8006FBF36 /* TRVSMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				C057C854198553F8006FBF36 /* TRVSMonitor.h */,
-				C057C855198553F8006FBF36 /* TRVSMonitor.m */,
-			);
-			path = TRVSMonitor;
-			sourceTree = "<group>";
-		};
 		C057C857198556A0006FBF36 /* EventSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -630,6 +621,7 @@
 				C098DB0D19310CDF00222D73 /* main.m */,
 				C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */,
 				C0E9638A19337770000AE466 /* Localizable.strings */,
+				C0234A4A198D5BCE0090F4F0 /* AppHeader.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -681,7 +673,6 @@
 			isa = PBXGroup;
 			children = (
 				C057C857198556A0006FBF36 /* EventSource */,
-				C057C853198553F8006FBF36 /* TRVSMonitor */,
 				C0B086961984282700D0E18B /* MagicalRecord */,
 				C034BD191974553D00419797 /* iHasApp */,
 				C034BD1D1974553D00419797 /* SDWebImage */,
@@ -943,6 +934,8 @@
 			children = (
 				C0E96357193239BA000AE466 /* UIAlertView+Blocks.h */,
 				C0E96358193239BA000AE466 /* UIAlertView+Blocks.m */,
+				C0234A47198D59120090F4F0 /* UIViewController+ProgressHUD.h */,
+				C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */,
 			);
 			path = Catagories;
 			sourceTree = "<group>";
@@ -1113,12 +1106,12 @@
 				C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */,
 				C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
-				C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */,
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C0B086E91984282800D0E18B /* MagicalRecord+iCloud.m in Sources */,
 				C057C85219854A03006FBF36 /* Parameter.m in Sources */,
 				C03BF952198BF348009BDEB0 /* ContactsTableViewController.m in Sources */,
 				C0B086E01984282800D0E18B /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C0B086F7198429AC00D0E18B /* Service.m in Sources */,
 				C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */,
@@ -1180,7 +1173,6 @@
 				C057C8BC1989A616006FBF36 /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C057C8BE1989A616006FBF36 /* MagicalRecord.m in Sources */,
 				C057C8881989A5DD006FBF36 /* EventSource.m in Sources */,
-				C057C88A1989A5DD006FBF36 /* TRVSMonitor.m in Sources */,
 				C057C8DB198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */,
 				C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */,
