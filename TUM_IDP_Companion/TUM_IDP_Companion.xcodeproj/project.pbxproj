@@ -12,6 +12,9 @@
 		C0234A42198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */; };
 		C0234A46198D51D90090F4F0 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A45198D51D90090F4F0 /* LocationHelper.m */; };
 		C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */; };
+		C0234A50198D5E8B0090F4F0 /* LocationBookmarkDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A4F198D5E8B0090F4F0 /* LocationBookmarkDAL.m */; };
+		C0234A53198D5F940090F4F0 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A52198D5F940090F4F0 /* LocationBookmark.m */; };
+		C0234A56198D60500090F4F0 /* LocationBookmarksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */; };
 		C034BD2F1974553D00419797 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD1B1974553D00419797 /* iHasApp.m */; };
 		C034BD301974553D00419797 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1C1974553D00419797 /* schemeApps.json */; };
 		C034BD311974553D00419797 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1E1974553D00419797 /* placeholder-icon.png */; };
@@ -189,6 +192,12 @@
 		C0234A47198D59120090F4F0 /* UIViewController+ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ProgressHUD.h"; sourceTree = "<group>"; };
 		C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ProgressHUD.m"; sourceTree = "<group>"; };
 		C0234A4A198D5BCE0090F4F0 /* AppHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHeader.h; sourceTree = "<group>"; };
+		C0234A4E198D5E8B0090F4F0 /* LocationBookmarkDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmarkDAL.h; sourceTree = "<group>"; };
+		C0234A4F198D5E8B0090F4F0 /* LocationBookmarkDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmarkDAL.m; sourceTree = "<group>"; };
+		C0234A51198D5F940090F4F0 /* LocationBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmark.h; sourceTree = "<group>"; };
+		C0234A52198D5F940090F4F0 /* LocationBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmark.m; sourceTree = "<group>"; };
+		C0234A54198D60500090F4F0 /* LocationBookmarksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmarksTableViewController.h; sourceTree = "<group>"; };
+		C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmarksTableViewController.m; sourceTree = "<group>"; };
 		C034BD1A1974553D00419797 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		C034BD1B1974553D00419797 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		C034BD1C1974553D00419797 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
@@ -496,6 +505,8 @@
 				C03BF93E198BF348009BDEB0 /* SearchLocationTableViewController.m */,
 				C0234A3A198D44D70090F4F0 /* SaveLocationTableViewController.h */,
 				C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */,
+				C0234A54198D60500090F4F0 /* LocationBookmarksTableViewController.h */,
+				C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */,
 				C03BF93F198BF348009BDEB0 /* Trip */,
 			);
 			path = Map;
@@ -614,12 +625,12 @@
 		C098DB0819310CDF00222D73 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0DCDA0F1961D22E001373D7 /* LocalizationHeader.h */,
 				C0C3D5491944B35B008E848B /* Main.storyboard */,
 				C098DB0919310CDF00222D73 /* TUM_IDP_Companion-Info.plist */,
 				C098DB0A19310CDF00222D73 /* InfoPlist.strings */,
 				C098DB0D19310CDF00222D73 /* main.m */,
 				C098DB0F19310CDF00222D73 /* TUM_IDP_Companion-Prefix.pch */,
+				C0DCDA0F1961D22E001373D7 /* LocalizationHeader.h */,
 				C0E9638A19337770000AE466 /* Localizable.strings */,
 				C0234A4A198D5BCE0090F4F0 /* AppHeader.h */,
 			);
@@ -725,6 +736,8 @@
 				C0B086EF1984292900D0E18B /* VMServiceDAL.m */,
 				C057C846198526E7006FBF36 /* CoreDataPersistanceManager.h */,
 				C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */,
+				C0234A4E198D5E8B0090F4F0 /* LocationBookmarkDAL.h */,
+				C0234A4F198D5E8B0090F4F0 /* LocationBookmarkDAL.m */,
 				C0B086F11984294700D0E18B /* Model */,
 			);
 			path = DAL;
@@ -905,6 +918,8 @@
 				C0B086F3198429AB00D0E18B /* Link.m */,
 				C057C85019854A03006FBF36 /* Parameter.h */,
 				C057C85119854A03006FBF36 /* Parameter.m */,
+				C0234A51198D5F940090F4F0 /* LocationBookmark.h */,
+				C0234A52198D5F940090F4F0 /* LocationBookmark.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1070,6 +1085,7 @@
 				C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */,
 				C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */,
+				C0234A53198D5F940090F4F0 /* LocationBookmark.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C0B086F01984292900D0E18B /* VMServiceDAL.m in Sources */,
 				C0B086E81984282800D0E18B /* MagicalRecord+ErrorHandling.m in Sources */,
@@ -1104,6 +1120,7 @@
 				C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
 				C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */,
+				C0234A56198D60500090F4F0 /* LocationBookmarksTableViewController.m in Sources */,
 				C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
@@ -1125,6 +1142,7 @@
 				C03BF954198BF348009BDEB0 /* SearchLocationTableViewController.m in Sources */,
 				C034BD2F1974553D00419797 /* iHasApp.m in Sources */,
 				C03BF955198BF348009BDEB0 /* TripPlannerTableViewController.m in Sources */,
+				C0234A50198D5E8B0090F4F0 /* LocationBookmarkDAL.m in Sources */,
 				C03BF959198BF348009BDEB0 /* SelectionTableViewController.m in Sources */,
 				C0B086D81984282800D0E18B /* NSObject+MagicalDataImport.m in Sources */,
 				C034BD341974553D00419797 /* SDWebImageDownloader.m in Sources */,

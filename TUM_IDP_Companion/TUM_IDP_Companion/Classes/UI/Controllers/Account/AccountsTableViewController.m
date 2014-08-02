@@ -50,6 +50,11 @@ NSString *kAppNameKey = @"trackName";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    [self dismissProgressHud];
+}
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
@@ -166,7 +171,8 @@ NSString *kAppNameKey = @"trackName";
     if ([UIApplication sharedApplication].networkActivityIndicatorVisible) {
         return;
     }
-
+    
+    [self showProgressHud:ProgressHudNormal title:nil interaction:YES];
     [self.detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries) {
         
         [self addAppsInItems:appDictionaries];
@@ -174,6 +180,7 @@ NSString *kAppNameKey = @"trackName";
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [self addAppsInItems:appDictionaries];
+        [self dismissProgressHud];
     } withFailure:^(NSError *error) {
         
         [self removeAllItems];
@@ -184,6 +191,7 @@ NSString *kAppNameKey = @"trackName";
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];
         [alertView show];
+        [self dismissProgressHud];
     }];
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];

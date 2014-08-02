@@ -46,5 +46,8 @@
 #define NSLS_FAVORITES          NSLocalizedString(@"FAVORITES", "Favorites")
 
 #define NSLS_SEARCH_LOCATION    NSLocalizedString(@"SEARCH_LOCATION", "Search Location")
+
+#define NSLS_BOOKMARKS          NSLocalizedString(@"BOOKMARKS", "Bookmarks")
+#define NSLS_ADD_BOOKMARK       NSLocalizedString(@"ADD_BOOKMARK", "Add Bookmark")
 #endif
 

@@ -1,18 +1,18 @@
 //
-//  SaveLocationTableViewController.m
+//  LocationBookmarksTableViewController.m
 //  TUM_IDP_Companion
 //
 //  Created by Kashan Khan on 02/08/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
-#import "SaveLocationTableViewController.h"
+#import "LocationBookmarksTableViewController.h"
 
-@interface SaveLocationTableViewController ()
+@interface LocationBookmarksTableViewController ()
 
 @end
 
-@implementation SaveLocationTableViewController
+@implementation LocationBookmarksTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     [self configureViewSettings];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -40,27 +41,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
-    [self setTitle:NSLS_ADD_BOOKMARK];
+    [self setTitle:NSLS_BOOKMARKS];
     
-}
-
-- (IBAction)performSaveAction:(id)sender {
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }

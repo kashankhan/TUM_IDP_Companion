@@ -8,6 +8,7 @@
 
 #import "SearchLocationTableViewController.h"
 #import "ContactsDAL.h"
+#import "LocationBookmarksTableViewController.h"
 
 typedef NS_ENUM(NSUInteger, ScopeType) {
     
@@ -128,6 +129,11 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     return object;
 }
 
+- (void)openLocationBookmarksViewController {
+
+   LocationBookmarksTableViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationBookmarksTableViewController"];
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -207,4 +213,11 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     [self.searchDisplayController.searchResultsTableView reloadData];
 
 }
+
+- (void)searchBarBookmarkButtonClicked:(UISearchBar *)searchBar {
+
+    [self openLocationBookmarksViewController];
+
+}
+
 @end
