@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
-#import "VMSerivesRequestBAL.h"
+#import "VMServiceRequestBAL.h"
 
 
-@interface VMSerivesRequestBAL ()
+@interface VMServiceRequestBAL ()
 
 @end
 
-@implementation VMSerivesRequestBAL
+@implementation VMServiceRequestBAL
 
 - (instancetype)init {
     

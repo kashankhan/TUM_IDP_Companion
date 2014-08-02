@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "VMSerivesRequestBAL.h"
+#import "VMServiceRequestBAL.h"
 
 @interface VMSerivesRequestBALTest : XCTestCase {
     
-    VMSerivesRequestBAL *_serviceRequestBAL;
+    VMServiceRequestBAL *_serviceRequestBAL;
 }
 
 @end
@@ -23,7 +23,7 @@ static CGFloat TIME_OUT = 30;
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    _serviceRequestBAL = [VMSerivesRequestBAL new];
+    _serviceRequestBAL = [VMServiceRequestBAL new];
 }
 
 - (void)tearDown

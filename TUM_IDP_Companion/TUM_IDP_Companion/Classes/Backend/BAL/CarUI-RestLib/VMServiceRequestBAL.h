@@ -1,5 +1,5 @@
 //
-//  VMSerivesRequestBAL.h
+//  VMServiceRequestBAL.h
 //  TUM_IDP_Companion
 //
 //  Created by Kashan Khan on 26/07/2014.
@@ -10,7 +10,7 @@
 #import "VMServiceUrlRequest.h"
 #import "VMServiceParser.h"
 
-@interface VMSerivesRequestBAL : RequestBAL
+@interface VMServiceRequestBAL : RequestBAL
 
 @property (nonatomic, strong) VMServiceUrlRequest *urlRequest;
 @property (nonatomic, strong) VMServiceParser *parser;

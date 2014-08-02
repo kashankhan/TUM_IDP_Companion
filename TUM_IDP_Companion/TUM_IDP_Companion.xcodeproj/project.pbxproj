@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0234A3C198D44D70090F4F0 /* SaveLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */; };
+		C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */; };
+		C0234A42198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */; };
+		C0234A46198D51D90090F4F0 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A45198D51D90090F4F0 /* LocationHelper.m */; };
 		C034BD2F1974553D00419797 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD1B1974553D00419797 /* iHasApp.m */; };
 		C034BD301974553D00419797 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1C1974553D00419797 /* schemeApps.json */; };
 		C034BD311974553D00419797 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1E1974553D00419797 /* placeholder-icon.png */; };
@@ -36,7 +40,7 @@
 		C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */; };
 		C057C8641989A574006FBF36 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
 		C057C8661989A574006FBF36 /* UrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08689198407CC00D0E18B /* UrlRequest.m */; };
-		C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */; };
+		C057C8681989A574006FBF36 /* VMServiesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */; };
 		C057C86B1989A57C006FBF36 /* BaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8411985249D006FBF36 /* BaseParser.m */; };
 		C057C86D1989A57C006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C86E1989A5A9006FBF36 /* VMServiceUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08694198408F200D0E18B /* VMServiceUrlRequest.m */; };
@@ -107,7 +111,7 @@
 		C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB4D19313D5500222D73 /* Twitter.framework */; };
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
 		C09C916C194DE6EF008439F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C916B194DE6EF008439F9 /* AVFoundation.framework */; };
-		C0B0868A198407CC00D0E18B /* VMSerivesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */; };
+		C0B0868A198407CC00D0E18B /* VMServiesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */; };
 		C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867A198407CC00D0E18B /* GreenNavBAL.m */; };
 		C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867C198407CC00D0E18B /* GreenNavUrlRequest.m */; };
 		C0B0868D198407CC00D0E18B /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
@@ -175,6 +179,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0234A3A198D44D70090F4F0 /* SaveLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveLocationTableViewController.h; sourceTree = "<group>"; };
+		C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveLocationTableViewController.m; sourceTree = "<group>"; };
+		C0234A3D198D45FE0090F4F0 /* InputITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputITableViewCell.h; sourceTree = "<group>"; };
+		C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputITableViewCell.m; sourceTree = "<group>"; };
+		C0234A40198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceMusicParameterBAL.h; sourceTree = "<group>"; };
+		C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceMusicParameterBAL.m; sourceTree = "<group>"; };
+		C0234A44198D51D90090F4F0 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		C0234A45198D51D90090F4F0 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		C034BD1A1974553D00419797 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		C034BD1B1974553D00419797 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		C034BD1C1974553D00419797 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
@@ -257,8 +269,8 @@
 		C098DB721931581D00222D73 /* RequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestQueue.h; sourceTree = "<group>"; };
 		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
 		C09C916B194DE6EF008439F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		C0B08676198407CC00D0E18B /* VMSerivesRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMSerivesRequestBAL.h; sourceTree = "<group>"; };
-		C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMSerivesRequestBAL.m; sourceTree = "<group>"; };
+		C0B08676198407CC00D0E18B /* VMServiceRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceRequestBAL.h; sourceTree = "<group>"; };
+		C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiesRequestBAL.m; sourceTree = "<group>"; };
 		C0B08679198407CC00D0E18B /* GreenNavBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenNavBAL.h; sourceTree = "<group>"; };
 		C0B0867A198407CC00D0E18B /* GreenNavBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavBAL.m; sourceTree = "<group>"; };
 		C0B0867B198407CC00D0E18B /* GreenNavUrlRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenNavUrlRequest.h; sourceTree = "<group>"; };
@@ -401,6 +413,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0234A43198D516A0090F4F0 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				C0234A44198D51D90090F4F0 /* LocationHelper.h */,
+				C0234A45198D51D90090F4F0 /* LocationHelper.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		C034BD191974553D00419797 /* iHasApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +494,8 @@
 				C03BF93C198BF348009BDEB0 /* MapViewController.m */,
 				C03BF93D198BF348009BDEB0 /* SearchLocationTableViewController.h */,
 				C03BF93E198BF348009BDEB0 /* SearchLocationTableViewController.m */,
+				C0234A3A198D44D70090F4F0 /* SaveLocationTableViewController.h */,
+				C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */,
 				C03BF93F198BF348009BDEB0 /* Trip */,
 			);
 			path = Map;
@@ -686,6 +709,8 @@
 				C08CD73919576E80002FE51A /* SwitchTableViewCell.m */,
 				C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */,
 				C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */,
+				C0234A3D198D45FE0090F4F0 /* InputITableViewCell.h */,
+				C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -730,6 +755,7 @@
 				C0B0867E198407CC00D0E18B /* RequestBAL.m */,
 				C0B08688198407CC00D0E18B /* UrlRequest.h */,
 				C0B08689198407CC00D0E18B /* UrlRequest.m */,
+				C0234A43198D516A0090F4F0 /* Location */,
 				C0B08675198407CC00D0E18B /* CarUI-RestLib */,
 				C0B08678198407CC00D0E18B /* GreenNav */,
 				C0B08681198407CC00D0E18B /* Social */,
@@ -740,10 +766,12 @@
 		C0B08675198407CC00D0E18B /* CarUI-RestLib */ = {
 			isa = PBXGroup;
 			children = (
-				C0B08676198407CC00D0E18B /* VMSerivesRequestBAL.h */,
-				C0B08677198407CC00D0E18B /* VMSerivesRequestBAL.m */,
+				C0B08676198407CC00D0E18B /* VMServiceRequestBAL.h */,
+				C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */,
 				C057C8D8198AC6DB006FBF36 /* VMServiceParameterBAL.h */,
 				C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */,
+				C0234A40198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.h */,
+				C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */,
 				C0B08693198408F200D0E18B /* VMServiceUrlRequest.h */,
 				C0B08694198408F200D0E18B /* VMServiceUrlRequest.m */,
 			);
@@ -1057,15 +1085,17 @@
 				C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */,
 				C098DB741931581D00222D73 /* RequestQueue.m in Sources */,
 				C057C8421985249D006FBF36 /* BaseParser.m in Sources */,
+				C0234A42198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m in Sources */,
 				C0B08692198407CC00D0E18B /* UrlRequest.m in Sources */,
 				C0B086D41984282800D0E18B /* MagicalImportFunctions.m in Sources */,
 				C0B086E61984282800D0E18B /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				C0234A3C198D44D70090F4F0 /* SaveLocationTableViewController.m in Sources */,
 				C0B086DC1984282800D0E18B /* NSManagedObject+MagicalDataImport.m in Sources */,
 				C0B08695198408F200D0E18B /* VMServiceUrlRequest.m in Sources */,
 				C0B086D51984282800D0E18B /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				C034BD321974553D00419797 /* SDImageCache.m in Sources */,
 				C03BF958198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m in Sources */,
-				C0B0868A198407CC00D0E18B /* VMSerivesRequestBAL.m in Sources */,
+				C0B0868A198407CC00D0E18B /* VMServiesRequestBAL.m in Sources */,
 				C03BF953198BF348009BDEB0 /* MapViewController.m in Sources */,
 				C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */,
 				C034BD331974553D00419797 /* SDWebImageDecoder.m in Sources */,
@@ -1080,6 +1110,7 @@
 				C03BF957198BF348009BDEB0 /* MusicSearchTableViewController.m in Sources */,
 				C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
+				C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */,
 				C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C057C856198553F8006FBF36 /* TRVSMonitor.m in Sources */,
@@ -1108,6 +1139,7 @@
 				C0E96359193239BA000AE466 /* UIAlertView+Blocks.m in Sources */,
 				C0B086DD1984282800D0E18B /* NSManagedObject+MagicalFinders.m in Sources */,
 				C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */,
+				C0234A46198D51D90090F4F0 /* LocationHelper.m in Sources */,
 				C057C85A198556A0006FBF36 /* EventSource.m in Sources */,
 				C0B086E51984282800D0E18B /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C0B086D71984282800D0E18B /* NSNumber+MagicalDataImport.m in Sources */,
@@ -1174,7 +1206,7 @@
 				C057C86D1989A57C006FBF36 /* VMServiceParser.m in Sources */,
 				C057C8641989A574006FBF36 /* RequestBAL.m in Sources */,
 				C057C8661989A574006FBF36 /* UrlRequest.m in Sources */,
-				C057C8681989A574006FBF36 /* VMSerivesRequestBAL.m in Sources */,
+				C057C8681989A574006FBF36 /* VMServiesRequestBAL.m in Sources */,
 				C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */,
 				C098DB3419310CE000222D73 /* TUM_IDP_CompanionTests.m in Sources */,
 			);
