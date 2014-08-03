@@ -8,14 +8,18 @@
 
 #import "SaveLocationTableViewController.h"
 #import "InputTableViewCell.h"
+#import "LocationBookmarkDAL.h"
 
 typedef NS_ENUM(NSInteger, SectionType) {
     SectionAddress,
     SectionAddressCatagory,
     SectionAddCustomCatagory
 };
-@interface SaveLocationTableViewController ()
 
+@interface SaveLocationTableViewController () {
+
+    LocationBookmarkDAL *_locationBookDAL;
+}
 @end
 
 @implementation SaveLocationTableViewController
@@ -57,32 +61,39 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
 - (void)loadDataSource {
     
+    NSMutableArray *landmarks = nil;
     if (!_items) {
         _items = [@[] mutableCopy];
+        _locationBookDAL = [LocationBookmarkDAL new];
+        landmarks = [[_locationBookDAL landmarks] mutableCopy];
+        if (![landmarks count]) {
+            [_locationBookDAL insertDefaultLandmarks];
+             landmarks = [[_locationBookDAL landmarks] mutableCopy];
+        }
     }
     
-    
     NSMutableDictionary *addressInfo = [@{NSLS_ADDRESS: @""} mutableCopy];
-    NSArray *section = @[addressInfo];
+    NSArray *addressSection = @[addressInfo];
     
-    [_items addObject:section];
-    
-    section = nil;
-    section = [@[NSLS_HOME, NSLS_OFFICE] mutableCopy];
-    [_items addObject:section];
+    [_items addObject:addressSection];
+    [_items addObject:landmarks];
 
-    
-    section = nil;
-    section = @[NSLS_ADD_CUSTOM];
-    [_items addObject:section];
 
-    
+    NSArray *addCustomSection = @[NSLS_ADD_CUSTOM];
+    [_items addObject:addCustomSection];
+
+
 }
 
 
 - (IBAction)performSaveAction:(id)sender {
 
-   
+    NSArray *addressSectionElements = [self objectsInSection:SectionAddress];
+    NSDictionary *addressInfo = [addressSectionElements lastObject];
+    NSString *key = [[addressInfo allKeys] lastObject];
+    NSString *address = [addressInfo valueForKey:key];
+    
+    
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,8 +114,13 @@ typedef NS_ENUM(NSInteger, SectionType) {
         
         NSString *catagory = [[alertView textFieldAtIndex:0] text];
         NSMutableArray *catagories = [self objectsInSection:SectionAddressCatagory];
-        if (![catagories containsObject:catagory]) {
-            [catagories addObject:catagory];
+        
+        if (![self containObject:catagory list:catagories]) {
+            
+            Landmark *landmark = [_locationBookDAL newLandmark];
+            landmark.name = catagory;
+            [catagories addObject:landmark];
+            
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[catagories count] - 1 inSection:SectionAddressCatagory];
             [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
             [self markAddressCatagorySelected:indexPath];
@@ -113,12 +129,25 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
 }
 
+- (BOOL)containObject:(NSString *)object list:(NSArray *)landmarks {
+    
+    BOOL found = NO;
+    for (Landmark *landmark in landmarks) {
+        if ([landmark.name caseInsensitiveCompare:object] == NSOrderedSame) {
+            found = YES;
+            break;
+        }
+    }
+    return found;
+}
+
 - (void)markAddressCatagorySelected:(NSIndexPath *)indexPath {
    
-     NSMutableArray *catagories = [self objectsInSection:SectionAddressCatagory];
+    NSMutableArray *catagories = [self objectsInSection:SectionAddressCatagory];
     NSUInteger index = [catagories indexOfObject:self.selectedAddressType];
     NSIndexPath *lastSelectedIndexPath = [NSIndexPath indexPathForRow:index inSection:SectionAddressCatagory];
-    self.selectedAddressType = [self objectAtIndexPath:indexPath];
+    Landmark *landmark = [self objectAtIndexPath:indexPath];
+    self.selectedAddressType = landmark.name;
     
     NSMutableArray *indexPaths = [@[indexPath] mutableCopy];
     if (![indexPath isEqual:lastSelectedIndexPath]) {
@@ -180,9 +209,10 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
     NSString *identifier = @"IdentifierDefaultCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    NSString *object = [self objectAtIndexPath:indexPath];
-    cell.textLabel.text = object;
-    cell.accessoryType = ([object isEqualToString:self.selectedAddressType]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    id object = [self objectAtIndexPath:indexPath];
+    NSString *landmarkName = ([object isKindOfClass:[Landmark class]]) ? ((Landmark *)object).name : object;
+    cell.textLabel.text = landmarkName;
+    cell.accessoryType = ([landmarkName isEqualToString:self.selectedAddressType]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     
     return cell;

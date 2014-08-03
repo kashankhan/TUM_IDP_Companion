@@ -8,10 +8,14 @@
 
 #import "BaseDAL.h"
 #import "LocationBookmark.h"
+#import "Landmark.h"
 
 @interface LocationBookmarkDAL : BaseDAL
 
 - (NSArray *)locationBookmarks;
 
 - (LocationBookmark *)newLocationBookmark;
+- (Landmark *)newLandmark;
+- (NSArray *)landmarks;
+- (void)insertDefaultLandmarks;
 @end

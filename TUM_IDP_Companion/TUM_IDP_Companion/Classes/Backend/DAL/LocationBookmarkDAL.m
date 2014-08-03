@@ -17,7 +17,26 @@
 
 - (LocationBookmark *)newLocationBookmark {
     
-   return (LocationBookmark*)[self getObjectWithEntity:[LocationBookmark class] withPredicate:nil createNewIfNotFound:YES];
+   return [LocationBookmark MR_createEntity];
+}
+
+- (Landmark *)newLandmark {
+    
+    return [Landmark MR_createEntity];
+}
+
+- (NSArray *)landmarks {
+    
+    return [Landmark MR_findAll];
+}
+
+- (void)insertDefaultLandmarks {
+
+    NSArray *defaulfLandmarks = @[NSLS_HOME, NSLS_OFFICE];
+    for (NSString *option in defaulfLandmarks) {
+        Landmark *landmark = [self newLandmark];
+        [landmark setName:option];
+    }
 }
 
 @end

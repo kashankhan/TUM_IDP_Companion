@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A298i" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Landmark" representedClassName="Landmark" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="locationBookmarks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="LocationBookmark" inverseName="landmark" inverseEntity="LocationBookmark" syncable="YES"/>
+        <relationship name="locationBookmarks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LocationBookmark" inverseName="landmark" inverseEntity="LocationBookmark" syncable="YES"/>
     </entity>
     <entity name="Link" representedClassName="Link" syncable="YES">
         <attribute name="subscription" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,10 +34,10 @@
         <userInfo/>
     </entity>
     <elements>
+        <element name="Landmark" positionX="270" positionY="270" width="128" height="75"/>
         <element name="Link" positionX="270" positionY="207" width="128" height="88"/>
         <element name="LocationBookmark" positionX="270" positionY="270" width="128" height="103"/>
         <element name="Parameter" positionX="261" positionY="198" width="128" height="180"/>
         <element name="Service" positionX="261" positionY="189" width="128" height="73"/>
-        <element name="Landmark" positionX="270" positionY="270" width="128" height="73"/>
     </elements>
 </model>
