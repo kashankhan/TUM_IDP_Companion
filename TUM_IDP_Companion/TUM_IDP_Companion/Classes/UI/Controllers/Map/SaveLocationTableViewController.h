@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SaveLocationTableViewController : UITableViewController
+@interface SaveLocationTableViewController : UITableViewController {
 
+    NSMutableArray *_items;
+}
+
+@property (strong, nonatomic) NSString *selectedAddressType;
 @end

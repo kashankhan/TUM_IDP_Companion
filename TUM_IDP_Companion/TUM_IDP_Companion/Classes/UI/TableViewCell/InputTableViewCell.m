@@ -1,14 +1,14 @@
 //
-//  InputITableViewCell.m
+//  InputTableViewCell.h
 //  TUM_IDP_Companion
 //
 //  Created by Kashan Khan on 02/08/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
-#import "InputITableViewCell.h"
+#import "InputTableViewCell.h"
 
-@implementation InputITableViewCell
+@implementation InputTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -31,11 +31,24 @@
     // Configure the view for the selected state
 }
 
+#pragma mark -UITextField Delegate methods
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 
-    if (self.inputITableViewCellTextDidChangeHandler) {
-        self.inputITableViewCellTextDidChangeHandler(self, textField);
+    if (self.inputTableViewCellTextDidChangeHandler) {
+        self.inputTableViewCellTextDidChangeHandler(self, textField);
     }
 
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    BOOL shouldChange = YES;
+    if([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+        shouldChange =  NO;
+    }
+    
+    return shouldChange;
+}
+
 @end

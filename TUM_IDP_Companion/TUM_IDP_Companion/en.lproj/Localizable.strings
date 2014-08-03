@@ -6,6 +6,7 @@
   Copyright (c) 2014 Kashan Khan. All rights reserved.
 */
 "CANCEL"            = "Cancel";
+"OK"                = "OK";
 
 "ACCOUNTS"          = "Accounts";
 "MAPS"              = "Maps";
@@ -44,3 +45,8 @@
 
 "BOOKMARKS"         = "Bookmarks";
 "ADD_BOOKMARK"      = "Add Bookmark";
+
+"HOME"              = "Home";
+"OFFICE"            = "Office";
+"ADDRESS"           = "Address";
+"ADD_CUSTOM"        = "Add Custom";

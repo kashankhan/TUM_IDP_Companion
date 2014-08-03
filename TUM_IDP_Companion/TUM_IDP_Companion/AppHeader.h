@@ -12,5 +12,6 @@
 #import "UIViewController+ProgressHUD.h"
 #import <CoreData/CoreData.h>
 #import "LocalizationHeader.h"
+#import "UIAlertView+Blocks.h"
 
 #endif

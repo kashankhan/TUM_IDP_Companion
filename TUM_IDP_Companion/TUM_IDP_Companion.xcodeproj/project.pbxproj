@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C0234A3C198D44D70090F4F0 /* SaveLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */; };
-		C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */; };
+		C0234A3F198D45FE0090F4F0 /* InputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A3E198D45FE0090F4F0 /* InputTableViewCell.m */; };
 		C0234A42198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */; };
 		C0234A46198D51D90090F4F0 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A45198D51D90090F4F0 /* LocationHelper.m */; };
 		C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A48198D59120090F4F0 /* UIViewController+ProgressHUD.m */; };
 		C0234A50198D5E8B0090F4F0 /* LocationBookmarkDAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A4F198D5E8B0090F4F0 /* LocationBookmarkDAL.m */; };
-		C0234A53198D5F940090F4F0 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A52198D5F940090F4F0 /* LocationBookmark.m */; };
 		C0234A56198D60500090F4F0 /* LocationBookmarksTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */; };
 		C034BD2F1974553D00419797 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C034BD1B1974553D00419797 /* iHasApp.m */; };
 		C034BD301974553D00419797 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = C034BD1C1974553D00419797 /* schemeApps.json */; };
@@ -35,6 +34,8 @@
 		C03BF959198BF348009BDEB0 /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94C198BF348009BDEB0 /* SelectionTableViewController.m */; };
 		C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */; };
 		C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */; };
+		C0498F9B198E83C60002F8D1 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0498F9A198E83C60002F8D1 /* LocationBookmark.m */; };
+		C0498F9E198E83C70002F8D1 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0498F9D198E83C70002F8D1 /* Landmark.m */; };
 		C057C8421985249D006FBF36 /* BaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8411985249D006FBF36 /* BaseParser.m */; };
 		C057C845198524D5006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
@@ -183,8 +184,8 @@
 /* Begin PBXFileReference section */
 		C0234A3A198D44D70090F4F0 /* SaveLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveLocationTableViewController.h; sourceTree = "<group>"; };
 		C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveLocationTableViewController.m; sourceTree = "<group>"; };
-		C0234A3D198D45FE0090F4F0 /* InputITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputITableViewCell.h; sourceTree = "<group>"; };
-		C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputITableViewCell.m; sourceTree = "<group>"; };
+		C0234A3D198D45FE0090F4F0 /* InputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputTableViewCell.h; sourceTree = "<group>"; };
+		C0234A3E198D45FE0090F4F0 /* InputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputTableViewCell.m; sourceTree = "<group>"; };
 		C0234A40198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceMusicParameterBAL.h; sourceTree = "<group>"; };
 		C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceMusicParameterBAL.m; sourceTree = "<group>"; };
 		C0234A44198D51D90090F4F0 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
@@ -194,8 +195,6 @@
 		C0234A4A198D5BCE0090F4F0 /* AppHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHeader.h; sourceTree = "<group>"; };
 		C0234A4E198D5E8B0090F4F0 /* LocationBookmarkDAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmarkDAL.h; sourceTree = "<group>"; };
 		C0234A4F198D5E8B0090F4F0 /* LocationBookmarkDAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmarkDAL.m; sourceTree = "<group>"; };
-		C0234A51198D5F940090F4F0 /* LocationBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmark.h; sourceTree = "<group>"; };
-		C0234A52198D5F940090F4F0 /* LocationBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmark.m; sourceTree = "<group>"; };
 		C0234A54198D60500090F4F0 /* LocationBookmarksTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmarksTableViewController.h; sourceTree = "<group>"; };
 		C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmarksTableViewController.m; sourceTree = "<group>"; };
 		C034BD1A1974553D00419797 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
@@ -240,6 +239,10 @@
 		C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		C03BF94F198BF348009BDEB0 /* TemperatureSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureSettingsTableViewController.h; sourceTree = "<group>"; };
 		C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureSettingsTableViewController.m; sourceTree = "<group>"; };
+		C0498F99198E83C60002F8D1 /* LocationBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmark.h; sourceTree = "<group>"; };
+		C0498F9A198E83C60002F8D1 /* LocationBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationBookmark.m; sourceTree = "<group>"; };
+		C0498F9C198E83C70002F8D1 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
+		C0498F9D198E83C70002F8D1 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
 		C057C8401985249D006FBF36 /* BaseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseParser.h; sourceTree = "<group>"; };
 		C057C8411985249D006FBF36 /* BaseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseParser.m; sourceTree = "<group>"; };
 		C057C843198524D5006FBF36 /* VMServiceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceParser.h; sourceTree = "<group>"; };
@@ -711,8 +714,8 @@
 				C08CD73919576E80002FE51A /* SwitchTableViewCell.m */,
 				C0DCDA051960B53E001373D7 /* ContantTableViewCell.h */,
 				C0DCDA061960B53E001373D7 /* ContantTableViewCell.m */,
-				C0234A3D198D45FE0090F4F0 /* InputITableViewCell.h */,
-				C0234A3E198D45FE0090F4F0 /* InputITableViewCell.m */,
+				C0234A3D198D45FE0090F4F0 /* InputTableViewCell.h */,
+				C0234A3E198D45FE0090F4F0 /* InputTableViewCell.m */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -918,8 +921,10 @@
 				C0B086F3198429AB00D0E18B /* Link.m */,
 				C057C85019854A03006FBF36 /* Parameter.h */,
 				C057C85119854A03006FBF36 /* Parameter.m */,
-				C0234A51198D5F940090F4F0 /* LocationBookmark.h */,
-				C0234A52198D5F940090F4F0 /* LocationBookmark.m */,
+				C0498F9C198E83C70002F8D1 /* Landmark.h */,
+				C0498F9D198E83C70002F8D1 /* Landmark.m */,
+				C0498F99198E83C60002F8D1 /* LocationBookmark.h */,
+				C0498F9A198E83C60002F8D1 /* LocationBookmark.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1085,7 +1090,6 @@
 				C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */,
 				C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */,
 				C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */,
-				C0234A53198D5F940090F4F0 /* LocationBookmark.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C0B086F01984292900D0E18B /* VMServiceDAL.m in Sources */,
 				C0B086E81984282800D0E18B /* MagicalRecord+ErrorHandling.m in Sources */,
@@ -1111,6 +1115,7 @@
 				C0B086DE1984282800D0E18B /* NSManagedObject+MagicalRecord.m in Sources */,
 				C034BD351974553D00419797 /* SDWebImageManager.m in Sources */,
 				C0B08691198407CC00D0E18B /* TwitterRequestBAL.m in Sources */,
+				C0498F9E198E83C70002F8D1 /* Landmark.m in Sources */,
 				C0B086ED1984282800D0E18B /* MagicalRecord.m in Sources */,
 				C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */,
 				C0B08690198407CC00D0E18B /* SocialAccountRequestBAL.m in Sources */,
@@ -1119,7 +1124,7 @@
 				C03BF957198BF348009BDEB0 /* MusicSearchTableViewController.m in Sources */,
 				C034BD371974553D00419797 /* UIImageView+WebCache.m in Sources */,
 				C0E96391193378C0000AE466 /* ContactsDAL.m in Sources */,
-				C0234A3F198D45FE0090F4F0 /* InputITableViewCell.m in Sources */,
+				C0234A3F198D45FE0090F4F0 /* InputTableViewCell.m in Sources */,
 				C0234A56198D60500090F4F0 /* LocationBookmarksTableViewController.m in Sources */,
 				C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */,
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
@@ -1129,6 +1134,7 @@
 				C03BF952198BF348009BDEB0 /* ContactsTableViewController.m in Sources */,
 				C0B086E01984282800D0E18B /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */,
+				C0498F9B198E83C60002F8D1 /* LocationBookmark.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C0B086F7198429AC00D0E18B /* Service.m in Sources */,
 				C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */,

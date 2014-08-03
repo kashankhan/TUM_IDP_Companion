@@ -1,19 +1,18 @@
 //
-//  LocationBookmark.m
+//  Landmark.m
 //  TUM_IDP_Companion
 //
 //  Created by Kashan Khan on 03/08/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
+#import "Landmark.h"
 #import "LocationBookmark.h"
 
 
-@implementation LocationBookmark
+@implementation Landmark
 
-@dynamic latitude;
-@dynamic longitude;
 @dynamic name;
-@dynamic landmark;
+@dynamic locationBookmarks;
 
 @end

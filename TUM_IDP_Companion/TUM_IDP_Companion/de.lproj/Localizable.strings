@@ -41,3 +41,11 @@
 "FAVORITES"         = "Favorites";
 
 "SEARCH_LOCATION"   = "Search Location";
+
+"BOOKMARKS"         = "Bookmarks";
+"ADD_BOOKMARK"      = "Add Bookmark";
+
+"HOME"              = "Home";
+"OFFICE"            = "Office";
+"ADDRESS"           = "Address";
+"ADD_CUSTOM"        = "Add Custom";

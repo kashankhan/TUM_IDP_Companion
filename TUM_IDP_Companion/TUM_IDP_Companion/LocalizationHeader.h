@@ -10,6 +10,7 @@
 #define TUM_IDP_Companion_LocalizationHeader_h
 
 #define NSLS_CANCEL             NSLocalizedString(@"CANCEL", @"Cancel")
+#define NSLS_OK                 NSLocalizedString(@"OK", @"OK")
 
 #define NSLS_ACCOUNTS           NSLocalizedString(@"ACCOUNTS", @"Accounts")
 #define NSLS_MAPS               NSLocalizedString(@"MAPS", @"Maps")
@@ -49,5 +50,11 @@
 
 #define NSLS_BOOKMARKS          NSLocalizedString(@"BOOKMARKS", "Bookmarks")
 #define NSLS_ADD_BOOKMARK       NSLocalizedString(@"ADD_BOOKMARK", "Add Bookmark")
+
+#define NSLS_HOME               NSLocalizedString(@"HOME", "Home")
+#define NSLS_OFFICE             NSLocalizedString(@"OFFICE", "Office")
+#define NSLS_ADDRESS            NSLocalizedString(@"ADDRESS", "Address")
+#define NSLS_ADD_CUSTOM         NSLocalizedString(@"ADD_CUSTOM", "Add Custom")
+
 #endif
 
