@@ -30,10 +30,14 @@
         }
         
         if (locationHelperHandler) {
-            CLLocationCoordinate2D center;
-            center.latitude = latitude;
-            center.longitude = longitude;
-            locationHelperHandler (center);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CLLocationCoordinate2D center;
+                center.latitude = latitude;
+                center.longitude = longitude;
+                locationHelperHandler (center);
+            });
+
         }
    });
     

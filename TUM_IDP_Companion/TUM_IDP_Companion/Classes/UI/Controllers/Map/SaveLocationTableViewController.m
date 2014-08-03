@@ -102,16 +102,23 @@ typedef NS_ENUM(NSInteger, SectionType) {
         [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
         
         [LocationHelper locationFromAddressString:address handler:^(CLLocationCoordinate2D coordinate) {
+            [self dismissProgressHud];
+            
+            ProgressHudType progressHudType = ProgressHudError;
             
             if (coordinate.latitude > 0 &&  coordinate.longitude > 0) {
+                
                 LocationBookmark *locationBookmark = [_locationBookDAL newLocationBookmark];
                 locationBookmark.name = address;
                 locationBookmark.landmarkType = self.selectedLandmark.name;
                 locationBookmark.latitude = @(coordinate.latitude);
                 locationBookmark.longitude = @(coordinate.longitude);
                 
+                progressHudType = ProgressHudSuccess;
+                
             }
-            [self dismissProgressHud];
+            
+            [self showProgressHud:progressHudType title:nil interaction:YES];
         }];
     }
 }
