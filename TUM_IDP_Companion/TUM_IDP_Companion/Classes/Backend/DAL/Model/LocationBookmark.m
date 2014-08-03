@@ -14,6 +14,6 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
-@dynamic landmark;
+@dynamic landmarkType;
 
 @end

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InputTableViewCell.h"
+#import "LocationBookmarkDAL.h"
+#import "LocationHelper.h"
 
 @interface SaveLocationTableViewController : UITableViewController {
 
     NSMutableArray *_items;
 }
 
-@property (strong, nonatomic) NSString *selectedAddressType;
+@property (strong, nonatomic) Landmark *selectedLandmark;
 @end

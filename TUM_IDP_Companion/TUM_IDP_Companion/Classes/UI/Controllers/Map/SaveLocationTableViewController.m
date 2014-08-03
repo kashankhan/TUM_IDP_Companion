@@ -7,8 +7,7 @@
 //
 
 #import "SaveLocationTableViewController.h"
-#import "InputTableViewCell.h"
-#import "LocationBookmarkDAL.h"
+
 
 typedef NS_ENUM(NSInteger, SectionType) {
     SectionAddress,
@@ -20,6 +19,8 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
     LocationBookmarkDAL *_locationBookDAL;
 }
+
+@property (strong, nonatomic) UITextField *textField;
 @end
 
 @implementation SaveLocationTableViewController
@@ -50,6 +51,12 @@ typedef NS_ENUM(NSInteger, SectionType) {
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    [self dismissProgressHud];
+    [_locationBookDAL saveContext];
+}
 
 #pragma mark - Private methods
 - (void)configureViewSettings {
@@ -88,12 +95,25 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
 - (IBAction)performSaveAction:(id)sender {
 
-    NSArray *addressSectionElements = [self objectsInSection:SectionAddress];
-    NSDictionary *addressInfo = [addressSectionElements lastObject];
-    NSString *key = [[addressInfo allKeys] lastObject];
-    NSString *address = [addressInfo valueForKey:key];
+    [self.textField resignFirstResponder];
+    NSString *address = _textField.text;
     
-    
+    if ([address length] && [self.selectedLandmark.name length]) {
+        [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
+        
+        [LocationHelper locationFromAddressString:address handler:^(CLLocationCoordinate2D coordinate) {
+            
+            if (coordinate.latitude > 0 &&  coordinate.longitude > 0) {
+                LocationBookmark *locationBookmark = [_locationBookDAL newLocationBookmark];
+                locationBookmark.name = address;
+                locationBookmark.landmarkType = self.selectedLandmark.name;
+                locationBookmark.latitude = @(coordinate.latitude);
+                locationBookmark.longitude = @(coordinate.longitude);
+                
+            }
+            [self dismissProgressHud];
+        }];
+    }
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,10 +164,10 @@ typedef NS_ENUM(NSInteger, SectionType) {
 - (void)markAddressCatagorySelected:(NSIndexPath *)indexPath {
    
     NSMutableArray *catagories = [self objectsInSection:SectionAddressCatagory];
-    NSUInteger index = [catagories indexOfObject:self.selectedAddressType];
+    NSUInteger index = [catagories indexOfObject:self.selectedLandmark.name];
     NSIndexPath *lastSelectedIndexPath = [NSIndexPath indexPathForRow:index inSection:SectionAddressCatagory];
     Landmark *landmark = [self objectAtIndexPath:indexPath];
-    self.selectedAddressType = landmark.name;
+    self.selectedLandmark = landmark;
     
     NSMutableArray *indexPaths = [@[indexPath] mutableCopy];
     if (![indexPath isEqual:lastSelectedIndexPath]) {
@@ -198,6 +218,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
         NSMutableDictionary *contentInfo = [self objectAtIndexPath:indexPath];
         NSString *key = [[contentInfo allKeys] lastObject];
         [contentInfo setObject:textField.text forKey:key];
+        self.textField = textField;
     
     };
     
@@ -212,7 +233,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
     id object = [self objectAtIndexPath:indexPath];
     NSString *landmarkName = ([object isKindOfClass:[Landmark class]]) ? ((Landmark *)object).name : object;
     cell.textLabel.text = landmarkName;
-    cell.accessoryType = ([landmarkName isEqualToString:self.selectedAddressType]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    cell.accessoryType = ([landmarkName isEqualToString:self.selectedLandmark.name]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     
     return cell;

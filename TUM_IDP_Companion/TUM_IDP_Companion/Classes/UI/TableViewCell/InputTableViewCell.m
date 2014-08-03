@@ -32,6 +32,13 @@
 }
 
 #pragma mark -UITextField Delegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+
+    if (self.inputTableViewCellTextDidChangeHandler) {
+        self.inputTableViewCellTextDidChangeHandler(self, textField);
+    }
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 
     if (self.inputTableViewCellTextDidChangeHandler) {

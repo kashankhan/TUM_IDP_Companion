@@ -7,12 +7,10 @@
 //
 
 #import "Landmark.h"
-#import "LocationBookmark.h"
 
 
 @implementation Landmark
 
 @dynamic name;
-@dynamic locationBookmarks;
 
 @end

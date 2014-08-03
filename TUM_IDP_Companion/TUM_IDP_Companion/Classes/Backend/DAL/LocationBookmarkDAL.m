@@ -27,7 +27,7 @@
 
 - (NSArray *)landmarks {
     
-    return [Landmark MR_findAll];
+    return [Landmark MR_findAllSortedBy:@"name" ascending:YES];
 }
 
 - (void)insertDefaultLandmarks {
