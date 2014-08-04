@@ -11,7 +11,7 @@
 @implementation LocationHelper
 
 
-+ (void)locationFromAddressString:(NSString*)address handler:(LocationHelperHandler)locationHelperHandler {
++ (void)locationFromAddress:(NSString*)address handler:(LocationHelperHandler)locationHelperHandler {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         

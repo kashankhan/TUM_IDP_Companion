@@ -14,5 +14,5 @@ typedef void(^LocationHelperHandler)(CLLocationCoordinate2D coordinate);
 
 @interface LocationHelper : NSObject
 
-+ (void)locationFromAddressString:(NSString*)address handler:(LocationHelperHandler)locationHelperHandler;
++ (void)locationFromAddress:(NSString*)address handler:(LocationHelperHandler)locationHelperHandler;
 @end

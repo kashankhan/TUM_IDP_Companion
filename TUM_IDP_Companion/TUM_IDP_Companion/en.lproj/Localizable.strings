@@ -49,4 +49,6 @@
 "HOME"              = "Home";
 "OFFICE"            = "Office";
 "ADDRESS"           = "Address";
+"OTHER"             = "Other";
 "ADD_CUSTOM"        = "Add Custom";
+"ADDRESS_NOT_FOUNT" = "Address not found";

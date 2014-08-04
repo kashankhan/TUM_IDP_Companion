@@ -11,14 +11,13 @@
 #import <MapKit/MapKit.h>
 #import "SearchLocationTableViewController.h"
 #import "TripPlannerTableViewController.h"
+#import "LocationBookmark.h"
+
 
 @interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *menuBarButton;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
-
-@property (nonatomic, strong) MKLocalSearch *localSearch;
-@property (nonatomic, strong) MKLocalSearchResponse *searchResponse;
 
 @property (nonatomic, strong) NSMutableArray *tripLocations;
 
@@ -85,6 +84,7 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 - (void)setUpTripPlannerTableViewControllerHandler {
  
     NSString *destinationKey = NSLS_DESTINATION;
+    
     
     _tripLocations = [@[[@{destinationKey: [NSNull null]} mutableCopy]] mutableCopy];
     

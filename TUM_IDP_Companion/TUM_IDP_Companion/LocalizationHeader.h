@@ -55,6 +55,7 @@
 #define NSLS_OFFICE             NSLocalizedString(@"OFFICE", "Office")
 #define NSLS_ADDRESS            NSLocalizedString(@"ADDRESS", "Address")
 #define NSLS_ADD_CUSTOM         NSLocalizedString(@"ADD_CUSTOM", "Add Custom")
-
+#define NSLS_OTHER              NSLocalizedString(@"OTHER", "Other")
+#define NSLS_ADDRESS_NOT_FOUNT  NSLocalizedString(@"ADDRESS_NOT_FOUNT", "Address not found")
 #endif
 

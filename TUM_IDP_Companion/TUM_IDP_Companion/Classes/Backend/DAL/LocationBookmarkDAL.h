@@ -18,4 +18,5 @@
 - (Landmark *)newLandmark;
 - (NSArray *)landmarks;
 - (void)insertDefaultLandmarks;
+- (void)deleteUnFavoriteLocationBookmarks;
 @end

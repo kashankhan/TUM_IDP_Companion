@@ -7,24 +7,32 @@
 //
 
 #import "SearchLocationTableViewController.h"
-#import "ContactsDAL.h"
 #import "LocationBookmarksTableViewController.h"
+#import "ContactsDAL.h"
+#import "LocationBookmarkDAL.h"
+#import "LocationHelper.h"
 
 typedef NS_ENUM(NSUInteger, ScopeType) {
     
     ScopeTypePlaces                     = 0,
-    ScopeTypeContacts                   = 1
+    ScopeTypeContacts                   = 1,
+    ScopeTypeBookmarks                  = 2
 };
 
 @interface SearchLocationTableViewController () {
 
     ContactsDAL *_contactDal;
+    LocationBookmarkDAL *_locationBookmarkDAL;
 }
     
 @property (strong, nonatomic) MKLocalSearch *localSearch;
 @property (strong, nonatomic) MKLocalSearchResponse *searchResponse;
 @property (strong, nonatomic) NSArray *contacts;
 @property (strong, nonatomic) NSArray *contactsSearch;
+
+@property (strong, nonatomic) NSArray *locationBookmarks;
+@property (strong, nonatomic) NSArray *locationBookmarksSearch;
+
 @property (nonatomic) ScopeType scopeType;
 
 @end
@@ -57,15 +65,28 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    [self dismissProgressHud];
+}
+
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
     [self setTitle:NSLS_SEARCH_LOCATION];
-    _contactDal = [[ContactsDAL alloc] init];
-    self.contacts = [_contactDal addressBook];
-
+    [self initializeDataSources];
 }
 
+- (void)initializeDataSources {
+    
+    _contactDal = [ContactsDAL new];
+    self.contacts = [_contactDal addressBook];
+    
+    _locationBookmarkDAL = [LocationBookmarkDAL new];
+    self.locationBookmarks = [_locationBookmarkDAL locationBookmarks];
+
+}
 - (void)searchPlaces:(UISearchBar *)searchBar {
 
     // Cancel any previous searches.
@@ -111,19 +132,37 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 - (void)searchAddressBook:(UISearchBar *)searchBar {
     
     NSString *searchText = searchBar.text;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@ || self.Street CONTAINS %@ ", searchText, searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@ || self.lastname CONTAINS %@", searchText, searchText];
     self.contactsSearch = [self.contacts filteredArrayUsingPredicate:predicate];
+
+}
+
+- (void)searchLocationBookmark:(UISearchBar *)searchBar {
+   
+    NSString *searchText = searchBar.text;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name CONTAINS %@ || self.landmarkType CONTAINS %@", searchText, searchText];
+    self.locationBookmarksSearch = [self.locationBookmarks filteredArrayUsingPredicate:predicate];
 
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
     
     id object = nil;
-    if (self.scopeType == ScopeTypePlaces) {
-        object = self.searchResponse.mapItems[indexPath.row];
-    }
-    else {
-        object = self.contactsSearch[indexPath.row];
+    
+    switch (self.scopeType) {
+        
+        case ScopeTypePlaces:
+            object = self.searchResponse.mapItems[indexPath.row];
+            break;
+            
+        case ScopeTypeContacts:
+             object = self.contactsSearch[indexPath.row];
+            break;
+            
+        case ScopeTypeBookmarks:
+        default:
+            object = self.locationBookmarksSearch[indexPath.row];
+            break;
     }
     
     return object;
@@ -134,18 +173,89 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
    LocationBookmarksTableViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"LocationBookmarksTableViewController"];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+- (void)sendNotificationForSelectedLocationBookmark:(LocationBookmark *)locationBookmark {
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
+}
+
+- (void)sendNotificationForSelectedMapItem:(MKMapItem *)mapItem {
+    
+    LocationBookmark *locationBookmark = [_locationBookmarkDAL newLocationBookmark];
+    locationBookmark.name = mapItem.name;
+    locationBookmark.landmarkType = NSLS_OTHER;
+    locationBookmark.latitude = @(mapItem.placemark.coordinate.latitude);
+    locationBookmark.longitude = @(mapItem.placemark.coordinate.longitude);
+    
+    [self sendNotificationForSelectedLocationBookmark:locationBookmark];
+}
+
+- (void)sendNotificationForSelectedContact:(ABContact *)contact {
+    
+    NSLog(@"contact ; %@",contact.addressArray);
+    
+    NSArray *addresses = contact.addressArray;
+   
+    if (addresses) {
+        id addressInfo = [addresses lastObject];
+        NSString *city = [addressInfo valueForKey:@"City"];
+        NSString *country = [addressInfo valueForKey:@"Country"];
+        NSString *state = [addressInfo valueForKey:@"State"];
+        NSString *street = [addressInfo valueForKey:@"Street"];
+        NSString *address = [NSString stringWithFormat:@"%@ %@ %@ %@", street, city, state, country];
+        
+        [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
+        
+        [LocationHelper locationFromAddress:address handler:^(CLLocationCoordinate2D coordinate) {
+            [self dismissProgressHud];
+            
+            ProgressHudType progressHudType = ProgressHudError;
+            
+            if (coordinate.latitude > 0 &&  coordinate.longitude > 0) {
+                
+                LocationBookmark *locationBookmark = [_locationBookmarkDAL newLocationBookmark];
+                locationBookmark.name = address;
+                locationBookmark.landmarkType = NSLS_OTHER;
+                locationBookmark.latitude = @(coordinate.latitude);
+                locationBookmark.longitude = @(coordinate.longitude);
+                locationBookmark.favourite = @(YES);
+                
+                progressHudType = ProgressHudSuccess;
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
+                
+            }
+            
+            [self showProgressHud:progressHudType title:nil interaction:YES];
+        }];
+    }
+    else {
+        [self showProgressHud:ProgressHudError title:NSLS_ADDRESS_NOT_FOUNT interaction:YES];
+    }
+}
+
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return  (self.scopeType == ScopeTypePlaces)? [self.searchResponse.mapItems count] : [self.contactsSearch count];
+    NSUInteger rows = 0;
+    switch (self.scopeType) {
+            
+        case ScopeTypePlaces:
+            rows = [self.searchResponse.mapItems count];
+            break;
+            
+        case ScopeTypeContacts:
+             rows = [self.contactsSearch count];
+            break;
+            
+        case ScopeTypeBookmarks:
+        default:
+            rows = [self.locationBookmarksSearch count];
+            break;
+    }
+    
+    return rows;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    id object = [self objectAtIndexPath:indexPath];
-
-}
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -154,43 +264,101 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifierCell];
 
     id object = [self objectAtIndexPath:indexPath];
-    if (self.scopeType == ScopeTypePlaces) {
-        MKMapItem *item = object;
-        cell.textLabel.text = item.name;
-        cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
-    }
-    else {
-        ABContact *contact = object;
-        cell.textLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-        cell.detailTextLabel.text = nil;
-        NSArray *addresses = contact.addressArray;
-        if (addresses) {
-            id address = [addresses lastObject];
-            cell.detailTextLabel.text = [address valueForKey:@"Street"];
+    
+    
+    switch (self.scopeType) {
+            
+        case ScopeTypePlaces:
+        {
+            MKMapItem *item = object;
+            cell.textLabel.text = item.name;
+            cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
         }
-
+            break;
+            
+        case ScopeTypeContacts:
+        {
+            ABContact *contact = object;
+            cell.textLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+            cell.detailTextLabel.text = nil;
+            NSArray *addresses = contact.addressArray;
+            if (addresses) {
+                id address = [addresses lastObject];
+                cell.detailTextLabel.text = [address valueForKey:@"Street"];
+            }
+        }
+            break;
+            
+        case ScopeTypeBookmarks:
+        default:
+        {
+            LocationBookmark *locationBookmark = object;
+            cell.textLabel.text = locationBookmark.name;
+            cell.detailTextLabel.text = locationBookmark.landmarkType;
+        }
+            break;
     }
     
     return cell;
 }
 
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    id object = [self objectAtIndexPath:indexPath];
+    switch (self.scopeType) {
+            
+        case ScopeTypePlaces:
+            [self sendNotificationForSelectedMapItem:object];
+            break;
+            
+        case ScopeTypeContacts:
+            [self sendNotificationForSelectedContact:object];
+            break;
+        
+        default:
+            break;
+    }
+}
+
 #pragma mark - UISearchBar Delegate Methods
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    
-    if (self.scopeType == ScopeTypePlaces) {
-        [self searchPlaces:searchBar];
-    }
-    else {
-        [self searchAddressBook:searchBar];
+  
+    switch (self.scopeType) {
+            
+        case ScopeTypePlaces:
+            [self searchPlaces:searchBar];
+            break;
+            
+        case ScopeTypeContacts:
+            [self searchAddressBook:searchBar];
+            break;
+            
+        case ScopeTypeBookmarks:
+        default:
+            [self searchLocationBookmark:searchBar];
+            break;
     }
 
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
 
-    if (self.scopeType == ScopeTypeContacts) {
-        [self searchAddressBook:searchBar];
+    switch (self.scopeType) {
+            
+        case ScopeTypePlaces:
+            [self searchPlaces:searchBar];
+            break;
+            
+        case ScopeTypeContacts:
+            [self searchAddressBook:searchBar];
+            break;
+            
+        case ScopeTypeBookmarks:
+        default:
+            [self searchLocationBookmark:searchBar];
+            break;
     }
 }
 

@@ -102,10 +102,11 @@ typedef NS_ENUM(NSInteger, SectionType) {
     if ([address length] && [self.selectedLandmark.name length]) {
         [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
         
-        [LocationHelper locationFromAddressString:address handler:^(CLLocationCoordinate2D coordinate) {
+        [LocationHelper locationFromAddress:address handler:^(CLLocationCoordinate2D coordinate) {
             [self dismissProgressHud];
             
             ProgressHudType progressHudType = ProgressHudError;
+            NSString *title = NSLS_ADDRESS_NOT_FOUNT;
             
             if (coordinate.latitude > 0 &&  coordinate.longitude > 0) {
                 
@@ -118,11 +119,13 @@ typedef NS_ENUM(NSInteger, SectionType) {
                 
                 progressHudType = ProgressHudSuccess;
                 
+                title = nil;
+                
                 [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
                 
             }
             
-            [self showProgressHud:progressHudType title:nil interaction:YES];
+            [self showProgressHud:progressHudType title:title interaction:YES];
         }];
     }
 }
