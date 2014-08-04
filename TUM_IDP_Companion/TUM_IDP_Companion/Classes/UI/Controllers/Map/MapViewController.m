@@ -61,6 +61,8 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     [self setUpTripPlannerTableViewControllerHandler];
     
     [self configureNavigationBarItems];
+    [self subscribteNotifications];
+    
     [self setTitle:NSLS_MAPS];
     
 }
@@ -73,6 +75,11 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+}
+
+- (void)subscribteNotifications {
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocationDidSelectNotification:) name:UIUserLocationDidSelectNotification object:nil];
 }
 
 - (void)setUpTripPlannerTableViewControllerHandler {
@@ -126,10 +133,12 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     
         SearchLocationTableViewController *controller = (SearchLocationTableViewController *)[segue destinationViewController];
         [controller setMapView:self.mapView];
-        controller.searchLocationTableViewControllerHandler = ^(MKMapItem *mapItem) {
-        
-            [self setTripInfoInTripLocations:mapItem];
-        };
     }//else if
+}
+
+#pragma mark -Notification
+- (void)userLocationDidSelectNotification:(NSNotification *)notificaiton {
+
+    [self.navigationController popToViewController:self animated:YES];
 }
 @end

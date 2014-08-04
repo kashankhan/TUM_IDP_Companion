@@ -12,7 +12,8 @@
 
 - (NSArray *)locationBookmarks {
 
-    return [LocationBookmark MR_findAllSortedBy:@"name" ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"favourite = 1"];
+    return [LocationBookmark MR_findAllSortedBy:@"name" ascending:YES withPredicate:predicate];
 }
 
 - (LocationBookmark *)newLocationBookmark {

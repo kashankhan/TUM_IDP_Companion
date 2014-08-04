@@ -61,6 +61,7 @@
     return [_items objectAtIndex:indexPath.row];
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -88,6 +89,12 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    LocationBookmark *locationBookmark = [self objectAtIndexPath:indexPath];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
+}
 
 /*
 // Override to support conditional editing of the table view.

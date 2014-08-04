@@ -143,13 +143,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     id object = [self objectAtIndexPath:indexPath];
-    
-     [self dismissViewControllerAnimated:YES completion:^{
-        if (self.searchLocationTableViewControllerHandler) {
-            self.searchLocationTableViewControllerHandler(object);
-        }
-    }];
-    
+
 }
 
 

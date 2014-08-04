@@ -14,6 +14,5 @@ typedef void(^SearchLocationTableViewControllerHandler)(id object);
 @interface SearchLocationTableViewController : UITableViewController
 
 @property (nonatomic, weak) MKMapView *mapView;
-@property (nonatomic, copy) SearchLocationTableViewControllerHandler searchLocationTableViewControllerHandler;
 
 @end

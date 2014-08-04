@@ -51,12 +51,13 @@ typedef NS_ENUM(NSInteger, SectionType) {
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     [self dismissProgressHud];
     [_locationBookDAL saveContext];
 }
+
 
 #pragma mark - Private methods
 - (void)configureViewSettings {
@@ -113,8 +114,11 @@ typedef NS_ENUM(NSInteger, SectionType) {
                 locationBookmark.landmarkType = self.selectedLandmark.name;
                 locationBookmark.latitude = @(coordinate.latitude);
                 locationBookmark.longitude = @(coordinate.longitude);
+                locationBookmark.favourite = @(YES);
                 
                 progressHudType = ProgressHudSuccess;
+                
+                [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
                 
             }
             
