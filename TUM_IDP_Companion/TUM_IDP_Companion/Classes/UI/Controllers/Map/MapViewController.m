@@ -26,7 +26,6 @@
 @implementation MapViewController
 
 static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueIdentiferPushSearchLocationTableViewController";
-#define METERS_PER_MILE 1609.344
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -118,8 +117,18 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     MapViewAnnotation *annotationView = [self locationBookmarkToMapAnnotationView:self.selectedLocationBookmark];
     [self.mapView removeAnnotation:annotationView];
     annotationView = [self locationBookmarkToMapAnnotationView:locationBookmark];
+  
     [self setTripInfoInTripLocation:locationBookmark];
-    [self.mapView addAnnotation:annotationView];
+    
+    NSMutableArray *annotations = [@[] mutableCopy];
+    [annotations addObject:self.mapView.userLocation];
+    
+    if (locationBookmark) {
+        [annotations addObject:annotationView];
+    }
+    
+    [self.mapView addAnnotations:annotations];
+    [self zoomToLocation];
 }
 
 - (MapViewAnnotation *)locationBookmarkToMapAnnotationView:(LocationBookmark *)locationBookmark {
@@ -135,14 +144,14 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 }
 - (void)zoomToLocation {
     
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 13.03297;
-    zoomLocation.longitude= 80.26518;
-    
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*METERS_PER_MILE,7.5*METERS_PER_MILE);
-    [self.mapView setRegion:viewRegion animated:YES];
-    
-    [self.mapView regionThatFits:viewRegion];
+    MKMapRect zoomRect = MKMapRectNull;
+    for (id <MKAnnotation> annotation in self.mapView.annotations)
+    {
+        MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+        MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0.1, 0.1);
+        zoomRect = MKMapRectUnion(zoomRect, pointRect);
+    }
+    [self.mapView setVisibleMapRect:zoomRect animated:YES];
 }
 #pragma mark - Navigation
 
