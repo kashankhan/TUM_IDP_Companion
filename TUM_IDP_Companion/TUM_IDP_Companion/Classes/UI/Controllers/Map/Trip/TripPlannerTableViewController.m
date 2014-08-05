@@ -7,7 +7,7 @@
 //
 
 #import "TripPlannerTableViewController.h"
-#import <MapKit/MapKit.h>
+#import "LocationBookmark.h"
 
 @interface TripPlannerTableViewController ()
 
@@ -53,13 +53,13 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.tripLocations count];
+    return [self.locationBookmarks count];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (self.tripPlannerTableViewControllerDidSelectObjectHandler) {
-        self.tripPlannerTableViewControllerDidSelectObjectHandler(self.tripLocations[indexPath.row]);
+        self.tripPlannerTableViewControllerDidSelectObjectHandler(self.locationBookmarks[indexPath.row]);
     }
 }
 
@@ -70,14 +70,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     
     // Configure the cell...
-    NSDictionary *itemInfo = self.tripLocations[indexPath.row];
+    NSDictionary *itemInfo = self.locationBookmarks[indexPath.row];
     NSString *key = [[itemInfo allKeys] lastObject];
     cell.textLabel.text = key;
     
-    MKMapItem *item = [itemInfo valueForKey:key];
-    if ([item isKindOfClass:[MKMapItem class]]) {
-        cell.detailTextLabel.text = item.placemark.addressDictionary[@"Street"];
-    }
+    LocationBookmark *location = [itemInfo valueForKey:key];
+    cell.detailTextLabel.text = ([location isKindOfClass:[LocationBookmark class]]) ? location.name : @"";
 
     
     return cell;

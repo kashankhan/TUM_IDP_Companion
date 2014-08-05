@@ -12,7 +12,7 @@ typedef void(^TripPlannerTableViewControllerDidSelectObjectHandler)(NSMutableDic
 
 @interface TripPlannerTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *tripLocations;
+@property (nonatomic, strong) NSArray *locationBookmarks;
 
 @property (nonatomic, copy) TripPlannerTableViewControllerDidSelectObjectHandler tripPlannerTableViewControllerDidSelectObjectHandler;
 

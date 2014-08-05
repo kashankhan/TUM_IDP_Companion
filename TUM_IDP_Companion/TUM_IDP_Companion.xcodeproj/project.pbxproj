@@ -96,6 +96,7 @@
 		C057C8D71989A7F0006FBF36 /* GreenNavBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D61989A7F0006FBF36 /* GreenNavBALTest.m */; };
 		C057C8DA198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */; };
 		C057C8DB198AC6DB006FBF36 /* VMServiceParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */; };
+		C075541119915A3F003D796D /* MapViewAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C075541019915A3F003D796D /* MapViewAnnotation.m */; };
 		C08CD73A19576E80002FE51A /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08CD73919576E80002FE51A /* SwitchTableViewCell.m */; };
 		C098DB0019310CDF00222D73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DAFF19310CDF00222D73 /* Foundation.framework */; };
 		C098DB0219310CDF00222D73 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB0119310CDF00222D73 /* CoreGraphics.framework */; };
@@ -260,6 +261,8 @@
 		C057C8D61989A7F0006FBF36 /* GreenNavBALTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GreenNavBALTest.m; sourceTree = "<group>"; };
 		C057C8D8198AC6DB006FBF36 /* VMServiceParameterBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceParameterBAL.h; sourceTree = "<group>"; };
 		C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceParameterBAL.m; sourceTree = "<group>"; };
+		C075540F19915A3F003D796D /* MapViewAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewAnnotation.h; sourceTree = "<group>"; };
+		C075541019915A3F003D796D /* MapViewAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewAnnotation.m; sourceTree = "<group>"; };
 		C08CD73819576E80002FE51A /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
 		C08CD73919576E80002FE51A /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
 		C098DAFC19310CDF00222D73 /* TUM_IDP_Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TUM_IDP_Companion.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -514,6 +517,8 @@
 				C0234A54198D60500090F4F0 /* LocationBookmarksTableViewController.h */,
 				C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */,
 				C03BF93F198BF348009BDEB0 /* Trip */,
+				C075540F19915A3F003D796D /* MapViewAnnotation.h */,
+				C075541019915A3F003D796D /* MapViewAnnotation.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -1165,6 +1170,7 @@
 				C057C85A198556A0006FBF36 /* EventSource.m in Sources */,
 				C0B086E51984282800D0E18B /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C0B086D71984282800D0E18B /* NSNumber+MagicalDataImport.m in Sources */,
+				C075541119915A3F003D796D /* MapViewAnnotation.m in Sources */,
 				C0B086D91984282800D0E18B /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				C0B086E31984282800D0E18B /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				C0498FAD1990160F0002F8D1 /* LocationBookmark.m in Sources */,

@@ -12,21 +12,21 @@
 #import "SearchLocationTableViewController.h"
 #import "TripPlannerTableViewController.h"
 #import "LocationBookmark.h"
-
+#import "MapViewAnnotation.h"
 
 @interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *menuBarButton;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
-
 @property (nonatomic, strong) NSMutableArray *tripLocations;
-
 @property (nonatomic, weak) NSMutableDictionary *lastSelectedTripInfo;
+@property (nonatomic, strong) LocationBookmark *selectedLocationBookmark;
 @end
 
 @implementation MapViewController
 
 static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueIdentiferPushSearchLocationTableViewController";
+#define METERS_PER_MILE 1609.344
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -84,12 +84,11 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 - (void)setUpTripPlannerTableViewControllerHandler {
  
     NSString *destinationKey = NSLS_DESTINATION;
-    
-    
-    _tripLocations = [@[[@{destinationKey: [NSNull null]} mutableCopy]] mutableCopy];
+    id object = (self.selectedLocationBookmark) ? self.selectedLocationBookmark : [NSNull null];
+    _tripLocations = [@[[@{destinationKey: object} mutableCopy]] mutableCopy];
     
    TripPlannerTableViewController *controller = (TripPlannerTableViewController *)[self.childViewControllers lastObject];
-    [controller setTripLocations:_tripLocations];
+    [controller setLocationBookmarks:_tripLocations];
     [controller.tableView reloadData];
     
     controller.tripPlannerTableViewControllerDidSelectObjectHandler = ^(NSMutableDictionary * object){
@@ -99,12 +98,12 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     };
 }
 
-- (void)setTripInfoInTripLocations:(MKMapItem *)mapItem  {
+- (void)setTripInfoInTripLocation:(LocationBookmark *)locationBookmark  {
 
     NSString *key = [[self.lastSelectedTripInfo allKeys] lastObject];
     NSInteger index =  [_tripLocations indexOfObject:self.lastSelectedTripInfo];
     
-    [self.lastSelectedTripInfo setValue:mapItem forKey:key];
+    [self.lastSelectedTripInfo setValue:locationBookmark forKey:key];
     [_tripLocations replaceObjectAtIndex:index withObject:self.lastSelectedTripInfo];
     
     TripPlannerTableViewController *controller = (TripPlannerTableViewController *)[self.childViewControllers lastObject];
@@ -114,6 +113,37 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 }
 
 
+- (void)addLocationToMapView:(LocationBookmark *)locationBookmark {
+
+    MapViewAnnotation *annotationView = [self locationBookmarkToMapAnnotationView:self.selectedLocationBookmark];
+    [self.mapView removeAnnotation:annotationView];
+    annotationView = [self locationBookmarkToMapAnnotationView:locationBookmark];
+    [self setTripInfoInTripLocation:locationBookmark];
+    [self.mapView addAnnotation:annotationView];
+}
+
+- (MapViewAnnotation *)locationBookmarkToMapAnnotationView:(LocationBookmark *)locationBookmark {
+
+    //Create coordinates from the latitude and longitude values
+    CLLocationCoordinate2D coord;
+    coord.latitude = locationBookmark.latitude.doubleValue;
+    coord.longitude = locationBookmark.longitude.doubleValue;
+    
+    MapViewAnnotation *annotation = [[MapViewAnnotation alloc] initWithTitle:locationBookmark.name coordinate:coord];
+    
+    return annotation;
+}
+- (void)zoomToLocation {
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 13.03297;
+    zoomLocation.longitude= 80.26518;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 7.5*METERS_PER_MILE,7.5*METERS_PER_MILE);
+    [self.mapView setRegion:viewRegion animated:YES];
+    
+    [self.mapView regionThatFits:viewRegion];
+}
 #pragma mark - Navigation
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender
@@ -139,6 +169,8 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 #pragma mark -Notification
 - (void)userLocationDidSelectNotification:(NSNotification *)notificaiton {
 
+    [self addLocationToMapView:notificaiton.object];
     [self.navigationController popToViewController:self animated:YES];
+
 }
 @end
