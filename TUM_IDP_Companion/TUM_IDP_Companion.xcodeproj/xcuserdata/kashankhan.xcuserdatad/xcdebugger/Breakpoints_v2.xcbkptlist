@@ -20,22 +20,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TUM_IDP_Companion/Classes/UI/Controllers/Settings/TemperatureSettingsTableViewController.m"
-            timestampString = "429043147.483133"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
-            landmarkName = "-openSelectionTableViewController"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TUM_IDP_Companion/Classes/UI/Controllers/Settings/TemperatureSettingsTableViewController.m"
             timestampString = "429043161.616416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
