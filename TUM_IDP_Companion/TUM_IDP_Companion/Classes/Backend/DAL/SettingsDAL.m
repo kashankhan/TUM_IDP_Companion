@@ -12,7 +12,21 @@
 
 - (MusicSetting *)musicSetting {
 
-    return nil;
+    NSArray *musicSettings = [MusicSetting MR_findAll];
+    MusicSetting *musicSetting = nil;
+    
+    if (![musicSettings count]) {
+        musicSetting = [MusicSetting MR_createEntity];
+        musicSetting.feedSelection = NSLS_DISCOVERY;
+        musicSetting.channelSelection = NSLS_ARTISTS;
+        musicSetting.choice = NSLS_ARTISTS;
+    }
+    else {
+        musicSetting = [musicSettings lastObject];
+    }
+    
+    return musicSetting;
+
 }
 
 - (TemperatureSetting *)temperatureSetting {

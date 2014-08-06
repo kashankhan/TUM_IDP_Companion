@@ -70,6 +70,7 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
     
     _settingsDAL = [SettingsDAL new];
     _temperatureSetting = [_settingsDAL temperatureSetting];
+    
     [self addTemperatureItem];
     [self addCoolingItem];
     [self addRecirculationItem];
@@ -196,8 +197,6 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
         [invocation setSelector:selector];
         [invocation invoke];
     }//if
-    
-    
 }
 
 

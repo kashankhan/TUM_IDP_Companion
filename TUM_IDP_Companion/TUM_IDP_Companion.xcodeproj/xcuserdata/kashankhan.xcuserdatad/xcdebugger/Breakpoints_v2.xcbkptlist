@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TUM_IDP_Companion/Classes/UI/Controllers/Settings/TemperatureSettingsTableViewController.m"
-            timestampString = "429043161.616416"
+            filePath = "TUM_IDP_Companion/Classes/Backend/DAL/SettingsDAL.m"
+            timestampString = "429047186.31501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "-musicSetting"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

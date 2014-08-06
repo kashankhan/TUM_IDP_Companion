@@ -8,8 +8,14 @@
 
 #import "MusicSettingsSelectionTableViewController.h"
 #import "SelectionTableViewController.h"
+#import "SettingsDAL.h"
 
-@interface MusicSettingsSelectionTableViewController ()
+@interface MusicSettingsSelectionTableViewController (){
+    
+    SettingsDAL *_settingsDAL;
+    MusicSetting *_musicSetting;
+    
+}
 
 @property (nonatomic, strong) NSIndexPath *lastIndexPath;
 
@@ -23,7 +29,7 @@ typedef NS_ENUM(NSInteger, SelectedTab) {
 
 static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
 static NSString * kSettingOptionsKey = @"SettingOptions";
-static NSUInteger kSelectedSegmentIndex = SelectedTabLocalMusic;
+static NSUInteger kSelectedSegmentIndex;
 static CGFloat    kSectionHeaderHeight = 40.0f;
 static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentiferSelectionTableViewController";
 
@@ -56,14 +62,32 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    [_settingsDAL saveContext];
+}
+
 #pragma mark - Private methods
+
+- (NSArray *)feedTypes {
+    
+    return  @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
+}
 - (void)configureViewSettings {
+    
+    if (!_settingsDAL) {
+        _settingsDAL = [SettingsDAL new];
+        _musicSetting = [_settingsDAL musicSetting];
+        kSelectedSegmentIndex = [[ self feedTypes] indexOfObject:_musicSetting.feedSelection];
+    }
     
     NSString *newsTitle = NSLS_NEWS;
     NSString *artistsTitle = NSLS_ARTISTS;
     NSString *songsTitle = NSLS_SONGS;
     
-   
+    _musicSetting.feedSelection = [[self feedTypes] objectAtIndex:kSelectedSegmentIndex];
+    
     NSArray *feeds = @[@"Feed 1", @"Feed 2", @"Feed 3", @"Feed 4", @"Feed 5", @"Feed 6", @"Feed 7"];
     NSDictionary *newsInfo = @{newsTitle : feeds};
     
@@ -81,8 +105,9 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     }//if
     
     [self setOptions:musicOptions];
+    
     if (!self.defaultOption) {
-        self.defaultOption = feeds[0];
+        self.defaultOption = _musicSetting.choice;
         [self setLastIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     }//if
 
@@ -113,7 +138,8 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 
     // set the currnet selected object to global _defaultText feild.
     self.defaultOption = ([cell.detailTextLabel.text length]) ? cell.detailTextLabel.text : cell.textLabel.text;
-    
+    _musicSetting.channelSelection = cell.textLabel.text;
+    _musicSetting.choice = self.defaultOption;
 
     // set the check mark to the current object.
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -190,13 +216,13 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
 
-    NSArray *items = @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
+    NSArray *items = [self feedTypes];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:items];
     
     [segmentControl setFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.frame), kSectionHeaderHeight)];
     [segmentControl addTarget:self action:@selector(segmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
     
-    segmentControl.selectedSegmentIndex = kSelectedSegmentIndex;
+    segmentControl.selectedSegmentIndex = [items indexOfObject:_musicSetting.feedSelection];
     
     return segmentControl;
 }
