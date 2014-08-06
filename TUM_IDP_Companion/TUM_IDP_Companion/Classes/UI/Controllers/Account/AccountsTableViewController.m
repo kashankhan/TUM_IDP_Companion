@@ -55,6 +55,7 @@ NSString *kAppNameKey = @"trackName";
     [super viewWillDisappear:animated];
     [self dismissProgressHud];
 }
+
 #pragma mark - Private methods
 - (void)configureViewSettings {
     

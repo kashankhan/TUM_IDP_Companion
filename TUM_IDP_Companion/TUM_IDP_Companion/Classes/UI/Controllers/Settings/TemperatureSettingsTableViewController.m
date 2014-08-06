@@ -9,8 +9,14 @@
 #import "TemperatureSettingsTableViewController.h"
 #import "SelectionTableViewController.h"
 #import "SwitchTableViewCell.h"
+#import "SettingsDAL.h"
 
-@interface TemperatureSettingsTableViewController ()
+@interface TemperatureSettingsTableViewController () {
+
+    SettingsDAL *_settingsDAL;
+    TemperatureSetting *_temperatureSetting;
+    
+}
 
 @end
 
@@ -51,11 +57,19 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    [_settingsDAL saveContext];
+}
 
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
     _items = [@[] mutableCopy];
+    
+    _settingsDAL = [SettingsDAL new];
+    _temperatureSetting = [_settingsDAL temperatureSetting];
     [self addTemperatureItem];
     [self addCoolingItem];
     [self addRecirculationItem];
@@ -73,7 +87,8 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
         [options addObject:option];
     }//for
     
-    NSString *defaultOption = [options objectAtIndex:[options count]/2];
+    NSString *defaultOption = (_temperatureSetting.temperature) ? _temperatureSetting.temperature : [options objectAtIndex:[options count]/2];
+    _temperatureSetting.temperature = defaultOption;
     
     [self addItem:name options:options defaultOption:defaultOption selector:selector cellIdentifier:cellIdentifier];
 
@@ -86,7 +101,8 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
     NSString *selector = @"openSelectionTableViewController";
     NSString *cellIdentifier = kIdentifierCell;
     
-    NSString *defaultOption = [options objectAtIndex:[options count]/2];
+    NSString *defaultOption = (_temperatureSetting.cooling) ? _temperatureSetting.cooling : [options objectAtIndex:[options count]/2];
+    _temperatureSetting.cooling = defaultOption;
     
     [self addItem:name options:options defaultOption:defaultOption selector:selector cellIdentifier:cellIdentifier];
     
@@ -99,9 +115,9 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
     NSString *name = NSLS_RECIRCULATION;
     NSString *selector = @"";
     NSString *cellIdentifier = kIdentifierSwitchCell;
-    NSString *defaultOption = [options objectAtIndex:[options count]/2];
-    
-    [self addItem:name options:options defaultOption:defaultOption selector:selector cellIdentifier:cellIdentifier];
+    NSNumber *defaultOption = (_temperatureSetting.recirculation) ? _temperatureSetting.recirculation : [options lastObject];
+    _temperatureSetting.recirculation = defaultOption;
+    [self addItem:name options:options defaultOption:[defaultOption stringValue] selector:selector cellIdentifier:cellIdentifier];
     
 }
 
@@ -155,7 +171,9 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
             NSMutableDictionary *itemInfo = _items[indexPath.row];
             NSNumber *switchValue = [NSNumber numberWithBool:switchControl.on];
             [itemInfo setValue:switchValue forKey:kSettingDefualtOptionKey];
-            
+            if ([[itemInfo valueForKey:kSettingNameKey] isEqualToString:NSLS_RECIRCULATION]) {
+                [_temperatureSetting setRecirculation:switchValue];
+            }
         };
         
     }//else if
@@ -195,11 +213,18 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
      controller.title = [itemInfo valueForKey:kSettingNameKey];
      
      controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
-     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-     NSMutableDictionary *itemInfo = _items[indexPath.row];
-     [itemInfo setObject:object forKey:kSettingDefualtOptionKey];
      
-     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+         NSMutableDictionary *itemInfo = _items[indexPath.row];
+         [itemInfo setObject:object forKey:kSettingDefualtOptionKey];
+         
+         if ([[itemInfo valueForKey:kSettingNameKey] isEqualToString:NSLS_TEMPERATURE]) {
+             [_temperatureSetting setTemperature:object];
+         }
+         else if ([[itemInfo valueForKey:kSettingNameKey] isEqualToString:NSLS_COOLING]) {
+             [_temperatureSetting setCooling:object];
+         }
+         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
      
      };
      
