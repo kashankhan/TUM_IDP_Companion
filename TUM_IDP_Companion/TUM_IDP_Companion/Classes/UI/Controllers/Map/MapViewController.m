@@ -114,9 +114,8 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
 
 - (void)addLocationToMapView:(LocationBookmark *)locationBookmark {
 
-    MapViewAnnotation *annotationView = [self locationBookmarkToMapAnnotationView:self.selectedLocationBookmark];
-    [self.mapView removeAnnotation:annotationView];
-    annotationView = [self locationBookmarkToMapAnnotationView:locationBookmark];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    MapViewAnnotation *annotationView = [self locationBookmarkToMapAnnotationView:locationBookmark];
   
     [self setTripInfoInTripLocation:locationBookmark];
     

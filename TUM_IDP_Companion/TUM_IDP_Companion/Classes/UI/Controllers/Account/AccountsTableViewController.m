@@ -53,6 +53,7 @@ NSString *kAppNameKey = @"trackName";
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self dismissProgressHud];
 }
 

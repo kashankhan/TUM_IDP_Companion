@@ -26,8 +26,8 @@
             break;
     case kABAuthorizationStatusNotDetermined:
         default:
-            [ABStandin showDeniedAccessAlert];
-             //[ABStandin requestAccess];
+            //[ABStandin showDeniedAccessAlert];
+             [ABStandin requestAccess];
             break;
     }
     
