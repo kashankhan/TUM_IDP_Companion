@@ -9,7 +9,6 @@
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "SelectionTableViewController.h"
-#import "MusicSettingsSelectionTableViewController.h"
 #import "TemperatureSettingsTableViewController.h"
 
 @interface SettingsTableViewController () {
@@ -60,21 +59,10 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 - (void)configureViewSettings {
     
     _items = [@[]mutableCopy];
-    [self addMusicItem];
-    [self addTemperatureItem];
     
+    [self addTemperatureItem];
     [self configureNavigationBarItems];
 
-}
-
-- (void)addMusicItem {
-
-    NSString *empty = @"";
-    NSArray *options = @[];
-    NSString *name = NSLS_MUSIC;
-    NSString *selector = @"openMusicSettings";
-    
-    [self addItem:name options:options defaultOption:empty selector:selector];
 }
 
 - (void)addTemperatureItem {
@@ -178,15 +166,6 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
         
     };
-}
-
-- (void)openMusicSettings {
-
-    MusicSettingsSelectionTableViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"MusicSettingsSelectionTableViewController"];
-    NSDictionary *itemInfo = _items[self.tableView.indexPathForSelectedRow.row];
-    controller.title = [itemInfo valueForKey:kSettingNameKey];
-    
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)openTemperatureSettings {

@@ -14,19 +14,18 @@
 @interface MusicSettingsSelectionTableViewController (){
     
     SettingsDAL *_settingsDAL;
-    MusicSetting *_musicSetting;
+    NSMutableArray *_items;
     
 }
 
-@property (nonatomic, strong) NSIndexPath *lastIndexPath;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 
 @end
 
 typedef NS_ENUM(NSInteger, SelectedTab) {
-    SelectedTabLocalMusic       = 0,
-    SelectedTabDiscover         = 1,
-    SelectedTabIndividual       = 2
+    SelectedTabDiscover         = 0,
+    SelectedTabIndividual       = 1,
+    SelectedTabLocalMusic       = 2
 };
 
 static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
@@ -80,100 +79,116 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
-- (NSArray *)feedTypes {
+
+- (NSArray *)musicChannels {
     
-    return  @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
+    return  [_settingsDAL musicChannels];
 }
+
 - (void)configureViewSettings {
     
     [self configureNavigationBarItems];
-    
+    [self initializeDAL];
+    [self addTableHeader];
+}
+
+- (void)initializeDAL {
+
     if (!_settingsDAL) {
+        _items = [@[] mutableCopy];
         _settingsDAL = [SettingsDAL new];
-        _musicSetting = [_settingsDAL musicSetting];
-        kSelectedSegmentIndex = [[ self feedTypes] indexOfObject:_musicSetting.feedSelection];
     }
     
-    NSString *newsTitle = NSLS_NEWS;
-    NSString *artistsTitle = NSLS_ARTISTS;
-    NSString *songsTitle = NSLS_SONGS;
-    
-    _musicSetting.feedSelection = [[self feedTypes] objectAtIndex:kSelectedSegmentIndex];
-    
-    NSArray *feeds = @[@"Feed 1", @"Feed 2", @"Feed 3", @"Feed 4", @"Feed 5", @"Feed 6", @"Feed 7"];
-    NSDictionary *newsInfo = @{newsTitle : feeds};
-    
-    NSArray *artists = @[artistsTitle];
-    NSDictionary *artistsInfo = @{artistsTitle: artists};
-    
-    NSArray *songs = @[songsTitle];
-    NSDictionary *songsInfo = @{songsTitle: songs};
-    
-    NSMutableArray *musicOptions = [@[newsInfo , artistsInfo, songsInfo] mutableCopy];
-    
-    if (kSelectedSegmentIndex == SelectedTabLocalMusic) {
-        [musicOptions removeObject:artistsInfo];
-        [musicOptions removeObject:songsInfo];
-    }//if
-    
-    [self setOptions:musicOptions];
-    
-    if (!self.defaultOption) {
-        self.defaultOption = _musicSetting.choice;
-        [self setLastIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    }//if
+    [self configureDAL];
+}
 
+- (void)configureDAL {
+    
+    [_items removeAllObjects];
+    
+    NSArray *musicFeeds = [_settingsDAL musicFeeds];
+    [_items addObject:@{NSLS_NEWS:musicFeeds}];
+    
+    if (kSelectedSegmentIndex != SelectedTabLocalMusic) {
+        
+        MusicSong *musicSong = [_settingsDAL musicSong];
+        NSArray *musicSongs = @[musicSong];
+        [_items addObject:@{NSLS_SONGS:musicSongs}];
+        
+        MusicArtist *musicArtist = [_settingsDAL musicArtist];
+        NSArray *musicArtists = @[musicArtist];
+        [_items addObject:@{NSLS_ARTISTS:musicArtists}];
+        
+    }
 }
 
 - (void)segmentControlSegmentDidChange:(UISegmentedControl *)segmentControl {
     
     kSelectedSegmentIndex = segmentControl.selectedSegmentIndex;
+    NSArray *musicChannels = [self musicChannels];
+    for (MusicChannel *musicChannel in musicChannels) {
+        [musicChannel setSelected:@(NO)];
+    }
     
-    [self configureViewSettings];
+    MusicChannel *musicChannel = [musicChannels objectAtIndex:kSelectedSegmentIndex];
+    [musicChannel setSelected:@(YES)];
     
-    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
-    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationFade];
+    [self configureDAL];
+    
+    [self.tableView reloadData];
 }
 
-- (void)selectIndex:(NSIndexPath *)indexPath {
+- (void)addTableHeader {
 
-    UITableViewCell *cell = nil;
-    if (self.lastIndexPath) {
-        //get the cell of last selected object.
-        cell = [self.tableView cellForRowAtIndexPath:self.lastIndexPath];
-        // remove the accessory view to last selected object.
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }//if
+    NSArray *musicChannels = [self musicChannels];
+    NSMutableArray *channels = [@[] mutableCopy];
     
-    // get the currnet selected cell
-    cell = [self.tableView cellForRowAtIndexPath:indexPath];
-
-    // set the currnet selected object to global _defaultText feild.
-    self.defaultOption = ([cell.detailTextLabel.text length]) ? cell.detailTextLabel.text : cell.textLabel.text;
-    _musicSetting.channelSelection = cell.textLabel.text;
-    _musicSetting.choice = self.defaultOption;
-
-    // set the check mark to the current object.
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    for (MusicChannel *musicChannel in musicChannels) {
+        [channels addObject:musicChannel.name];
+    }
     
-    // deselecting the last row
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:channels];
     
-    self.lastIndexPath = indexPath;
+    [segmentControl setFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), kSectionHeaderHeight)];
+    [segmentControl addTarget:self action:@selector(segmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
+    
+    segmentControl.selectedSegmentIndex = kSelectedSegmentIndex;
+    
+    [self.tableView setTableHeaderView:segmentControl];
 }
 
+- (NSArray *)objectsInSection:(NSInteger)section {
+    
+   NSDictionary *itemInfo = [_items objectAtIndex:section];
+   NSString *key = [[itemInfo allKeys] lastObject];
+    NSArray *items = [itemInfo objectForKey:key];
+    
+    return items;
+}
+
+- (id)objectAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSArray *items = [self objectsInSection:indexPath.section];
+    id object = nil;
+    if (items && [items count]) {
+        object = [items objectAtIndex:indexPath.row];
+    }
+    
+    return object;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [_items count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.options count];
+    NSArray *items = [self objectsInSection:section];
+    return (items && [items count]) ? [items count] : 0;
 }
 
 
@@ -182,42 +197,28 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     static NSString *identifier = @"IdentifierCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    // Configure the cell...
-    NSDictionary *itemInfo = self.options[indexPath.row];
-    NSString *key = [[itemInfo allKeys] lastObject];
-    NSArray *objects = [itemInfo valueForKey:key];
-    NSString *empty = @"";
-    NSString *selectedOption = ([objects containsObject:self.defaultOption]) ? self.defaultOption : empty;
-    
-    cell.accessoryType = UITableViewCellAccessoryNone;
-    
-    if (![selectedOption isEqual:empty]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.lastIndexPath = indexPath;
-    }//if
-    selectedOption = empty;
-    if ([key isEqualToString:NSLS_NEWS]) {
-        selectedOption = ([objects containsObject:self.defaultOption]) ? self.defaultOption : objects[0];
-    }
-    
-    cell.textLabel.text = key;
-    cell.detailTextLabel.text = selectedOption;
-    
+
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+
+    NSDictionary *itemInfo = [_items objectAtIndex:section];
+    NSString *key = [[itemInfo allKeys] lastObject];
+    return key;
+}
 #pragma mark -UItableView Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-    NSDictionary *itemInfo = self.options[indexPath.row];
-    NSString *key = [[itemInfo allKeys] lastObject];
-    if ([key isEqualToString:NSLS_NEWS]) {
-        [self performSegueWithIdentifier:kSegueIdentiferSelectionTableViewController sender:self];
-    }//if
-    else {
-    
-         [self selectIndex:indexPath];
-    }//else
+//    NSDictionary *itemInfo = self.options[indexPath.row];
+//    NSString *key = [[itemInfo allKeys] lastObject];
+//    if ([key isEqualToString:NSLS_NEWS]) {
+//        [self performSegueWithIdentifier:kSegueIdentiferSelectionTableViewController sender:self];
+//    }//if
+//    else {
+//    
+//         [self selectIndex:indexPath];
+//    }//else
 
 }
 
@@ -225,20 +226,6 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     
     return kSectionHeaderHeight;
 }
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
-    NSArray *items = [self feedTypes];
-    UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:items];
-    
-    [segmentControl setFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.frame), kSectionHeaderHeight)];
-    [segmentControl addTarget:self action:@selector(segmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
-    
-    segmentControl.selectedSegmentIndex = [items indexOfObject:_musicSetting.feedSelection];
-    
-    return segmentControl;
-}
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -286,22 +273,21 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSDictionary *itemInfo = self.options[[self.tableView indexPathForSelectedRow].row];
-    NSString *key = [[itemInfo allKeys] lastObject];
-    NSArray *objects = [itemInfo valueForKey:key];
-    if ([[segue identifier] isEqualToString:kSegueIdentiferSelectionTableViewController]) {
-        SelectionTableViewController *controller = (SelectionTableViewController *)[segue destinationViewController];
-        [controller setOptions:objects];
-        [controller setDefaultOption:self.defaultOption];
-        [controller setTitle:key];
-        
-        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
-             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
-            cell.detailTextLabel.text = object;
-            [self selectIndex:[self.tableView indexPathForSelectedRow]];
-        };
-
-    }
+//    NSDictionary *itemInfo = self.options[[self.tableView indexPathForSelectedRow].row];
+//    NSString *key = [[itemInfo allKeys] lastObject];
+//    NSArray *objects = [itemInfo valueForKey:key];
+//    if ([[segue identifier] isEqualToString:kSegueIdentiferSelectionTableViewController]) {
+//        SelectionTableViewController *controller = (SelectionTableViewController *)[segue destinationViewController];
+//        [controller setOptions:objects];
+//        [controller setDefaultOption:self.defaultOption];
+//        [controller setTitle:key];
+//        
+//        controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
+//             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+//            cell.detailTextLabel.text = object;
+//        };
+//
+//    }
 }
 
 

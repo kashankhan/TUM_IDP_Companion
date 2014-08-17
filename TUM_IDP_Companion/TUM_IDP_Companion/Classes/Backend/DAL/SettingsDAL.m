@@ -10,25 +10,6 @@
 
 @implementation SettingsDAL
 
-- (MusicSetting *)musicSetting {
-
-    NSArray *musicSettings = [MusicSetting MR_findAll];
-    MusicSetting *musicSetting = nil;
-    
-    if (![musicSettings count]) {
-        musicSetting = [self createNeeEntity:[MusicSetting class]];
-        musicSetting.feedSelection = NSLS_DISCOVERY;
-        musicSetting.channelSelection = NSLS_ARTISTS;
-        musicSetting.choice = NSLS_ARTISTS;
-    }
-    else {
-        musicSetting = [musicSettings lastObject];
-    }
-    
-    return musicSetting;
-
-}
-
 - (TemperatureSetting *)temperatureSetting {
 
     NSArray *temperatureSettings = [TemperatureSetting MR_findAll];
@@ -44,4 +25,100 @@
     return temperatureSetting;
 }
 
+- (NSArray *)musicChannels {
+    
+    NSArray *channels = [MusicChannel MR_findAllSortedBy:@"name" ascending:YES];
+    if (![channels count]) {
+        NSArray *musicChannels = @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
+        for (NSString *name in musicChannels) {
+            
+            BOOL selected = ([[musicChannels objectAtIndex:0] isEqualToString:name]);
+
+            MusicChannel *musicChannel = [self musicChannel:name];
+            [musicChannel setName:name];
+            [musicChannel setSelected:@(selected)];
+        }
+        
+        channels = [self musicChannels];
+    }
+    
+    return channels;
+}
+
+- (MusicChannel *)musicChannel:(NSString *)name {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+   
+    MusicChannel *musicChannel = (MusicChannel *)[self objectWithEntity:[MusicChannel class] withPredicate:predicate createNewIfNotFound:YES];
+    
+    return musicChannel;
+}
+
+
+- (NSArray *)musicFeeds {
+
+    NSArray *feeds = [MusicFeed MR_findAllSortedBy:@"name" ascending:YES];
+    if (![feeds count]) {
+        NSArray *feeds = @[@"http://rss2.focus.de/c/32191/f/443312/index.rss",
+                            @"http://www.spiegel.de/schlagzeilen/index.rss",
+                            @"http://www.sportschau.de/sportschauindex100_type-rss.feed",
+                            @"http://www.n-tv.de/sport/rss",
+                            @"http://rss2.focus.de/c/32191/f/443319/index.rss",
+                            @"http://www.spiegel.de/sport/index.rss"];
+        
+        for (NSString *uri in feeds) {
+            
+            NSArray *nameComponents = [uri componentsSeparatedByString:@"."];
+            NSString *name = [NSString stringWithFormat:@"%@.%@", [nameComponents objectAtIndex:1], [nameComponents objectAtIndex:2]];
+            BOOL selected = ([[feeds objectAtIndex:0] isEqualToString:uri]);
+            
+            MusicFeed *musicFeed = [self musicFeed:uri];
+            [musicFeed setSelected:@(selected)];
+            [musicFeed setName:name];
+            [musicFeed setType:NSLS_NEWS];
+            [musicFeed setUri:uri];
+        }
+        
+        feeds = [self musicFeeds];
+    }
+    
+    return feeds;
+}
+
+- (MusicFeed *)musicFeed:(NSString *)uri {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"uri = %@", uri];
+    
+    MusicFeed *musicFeed = (MusicFeed *)[self objectWithEntity:[MusicFeed class] withPredicate:predicate createNewIfNotFound:YES];
+    
+    return musicFeed;
+}
+
+- (MusicSong *)musicSong {
+    
+    NSArray *musicSongs = [MusicSong MR_findAll];
+    MusicSong *musicSong = nil;
+    if (![musicSongs count]) {
+        musicSong = (MusicSong *)[self objectWithEntity:[MusicSong class] withPredicate:nil createNewIfNotFound:YES];
+    }
+    else {
+        musicSong = [musicSongs lastObject];
+    }
+
+    return musicSong;
+}
+
+- (MusicArtist *)musicArtist {
+
+    NSArray *musicArtists = [MusicArtist MR_findAll];
+    MusicArtist *musicArtist = nil;
+    if (![musicArtists count]) {
+        musicArtist = (MusicArtist *)[self objectWithEntity:[MusicArtist class] withPredicate:nil createNewIfNotFound:YES];
+    }
+    else {
+        musicArtist = [musicArtists lastObject];
+    }
+    
+    return musicArtist;
+}
 @end

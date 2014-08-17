@@ -7,11 +7,18 @@
 //
 
 #import "BaseDAL.h"
-#import "MusicSetting.h"
+#import "MusicChannel.h"
+#import "MusicSong.h"
+#import "MusicArtist.h"
+#import "MusicFeed.h"
 #import "TemperatureSetting.h"
 
 @interface SettingsDAL : BaseDAL
 
-- (MusicSetting *)musicSetting;
 - (TemperatureSetting *)temperatureSetting;
+- (NSArray *)musicChannels;
+- (NSArray *)musicFeeds;
+- (MusicSong *)musicSong;
+- (MusicArtist *)musicArtist;
+
 @end

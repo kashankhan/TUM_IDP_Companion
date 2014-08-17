@@ -19,10 +19,21 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="MusicSetting" representedClassName="MusicSetting" syncable="YES">
-        <attribute name="channelSelection" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="choice" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="feedSelection" optional="YES" attributeType="String" syncable="YES"/>
+    <entity name="MusicArtist" representedClassName="MusicArtist" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MusicChannel" representedClassName="MusicChannel" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="MusicFeed" representedClassName="MusicFeed" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="uri" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MusicSong" representedClassName="MusicSong" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Parameter" representedClassName="Parameter" syncable="YES">
         <attribute name="lowerBound" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -51,10 +62,13 @@
         <element name="Landmark" positionX="270" positionY="270" width="128" height="58"/>
         <element name="Link" positionX="270" positionY="207" width="128" height="88"/>
         <element name="LocationBookmark" positionX="270" positionY="270" width="128" height="118"/>
-        <element name="MusicSetting" positionX="270" positionY="270" width="128" height="88"/>
         <element name="Parameter" positionX="261" positionY="198" width="128" height="180"/>
         <element name="Service" positionX="261" positionY="189" width="128" height="73"/>
         <element name="TemperatureSetting" positionX="279" positionY="279" width="128" height="90"/>
         <element name="Contact" positionX="270" positionY="270" width="128" height="75"/>
+        <element name="MusicChannel" positionX="279" positionY="279" width="128" height="73"/>
+        <element name="MusicFeed" positionX="288" positionY="288" width="128" height="103"/>
+        <element name="MusicSong" positionX="297" positionY="297" width="128" height="60"/>
+        <element name="MusicArtist" positionX="315" positionY="306" width="128" height="60"/>
     </elements>
 </model>

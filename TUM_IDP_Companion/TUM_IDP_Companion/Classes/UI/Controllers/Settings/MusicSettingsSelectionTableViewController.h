@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SelectionTableViewController.h"
 
-@interface MusicSettingsSelectionTableViewController : SelectionTableViewController
+@interface MusicSettingsSelectionTableViewController : UITableViewController
 
 @end

@@ -59,13 +59,13 @@
         <scene sceneID="Df1-0B-Ryi">
             <objects>
                 <tableViewController storyboardIdentifier="MusicSettingsSelectionTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qQZ-gq-Uqv" customClass="MusicSettingsSelectionTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FNX-ep-HZ8">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="FNX-ep-HZ8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="IdentifierCell" textLabel="szV-LX-57R" detailTextLabel="lb8-dU-kUr" style="IBUITableViewCellStyleValue1" id="Fb1-lU-mJm">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb1-lU-mJm" id="GQc-tg-HVo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -87,6 +87,25 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell appearanceType="aqua" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IdentifierInputCell" id="CBA-1l-cN6" customClass="InputTableViewCell">
+                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CBA-1l-cN6" id="Yxo-E8-QIm">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-cH-ryB">
+                                            <rect key="frame" x="9" y="7" width="302" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="CYz-cH-ryB" id="0Qu-3s-H4p"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
