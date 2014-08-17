@@ -55,6 +55,11 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [_contactDal saveContext];
+}
+
 #pragma mark - Private methods
 - (void)configureViewSettings {
     
@@ -117,25 +122,25 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
 }
 
 - (NSArray *)contacts {
+    
+    [self.favoriteContactIdentiiers removeAllObjects];
 
     NSArray *allContacts = [_contactDal addressBook];
     NSMutableArray *favorites = [@[] mutableCopy];
     NSString *contactIdentifier = nil;
+    Contact *saveContact = nil;
 
-    if (self.contactsType == ContactsTypeFavorites) {
-        
-        for (ABContact *contact in allContacts) {
-            contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
-            if ([self.favoriteContactIdentiiers containsObject:contactIdentifier]) {
-                
-                [favorites addObject:contact];
-            }
+    for (ABContact *contact in allContacts) {
+        contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
+        saveContact = [_contactDal contact:contactIdentifier createNewIfNotFound:YES];
+       
+        if ([saveContact.favorite boolValue]) {
+            [favorites addObject:contact];
+            [self.favoriteContactIdentiiers addObject:contactIdentifier];
         }
-        
-        allContacts = favorites;
     }
-    
-    return allContacts;
+
+    return (self.contactsType == ContactsTypeFavorites) ? favorites : allContacts;
 }
 
 
@@ -143,6 +148,21 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     
     [self setContactsType:[self.segmentedControl selectedSegmentIndex]];
     [self loadContacts];
+}
+
+- (void)markContactAsFavorite:(BOOL)favorite identifier:(NSString *)identifier {
+
+    Contact *contact =  [_contactDal contact:identifier createNewIfNotFound:YES];
+    [contact setFavorite:@(favorite)];
+    [contact setIdentifier:identifier];
+    
+    if (favorite) {
+        [self.favoriteContactIdentiiers addObject:identifier];
+    }
+    else {
+        [self.favoriteContactIdentiiers removeObject:identifier];
+    }
+
 }
 
 #pragma mark - Table view data source
@@ -197,21 +217,12 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     
     cell.eventHandler = ^(ContantTableViewCell *cell, id sender) {
        
-        BOOL selected = [self.favoriteContactIdentiiers containsObject:contactIdentifier];
+        BOOL selected = ![self.favoriteContactIdentiiers containsObject:contactIdentifier];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         ABContact *contact =  [self objectAtIndexPath:indexPath];
-
         NSString *contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
-        selected = [self.favoriteContactIdentiiers containsObject:contactIdentifier];
-        
-        if (selected) {
-            
-            [self.favoriteContactIdentiiers removeObject:contactIdentifier];
-        }
-        else {
-            [self.favoriteContactIdentiiers addObject:contactIdentifier];
-        }
-        [cell setFavoriteButtonSelected:!selected];
+        [self markContactAsFavorite:selected identifier:contactIdentifier];
+        [cell setFavoriteButtonSelected:selected];
     };
     return cell;
 }
