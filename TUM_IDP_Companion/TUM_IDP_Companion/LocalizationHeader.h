@@ -24,8 +24,9 @@
 #define NSLS_DESTINATION        NSLocalizedString(@"DESTINATION", @"Destination")
 
 #define NSLS_NEWS               NSLocalizedString(@"NEWS", @"News")
-#define NSLS_ARTISTS            NSLocalizedString(@"ARTISTS", @"Artists")
-#define NSLS_SONGS              NSLocalizedString(@"SONGS", @"Songs")
+#define NSLS_ARTIST             NSLocalizedString(@"ARTIST", @"Artist")
+#define NSLS_SONG               NSLocalizedString(@"SONG", @"Song")
+#define NSLS_PLEASE_INSERT      NSLocalizedString(@"PLEASE_INSERT", @"Please Insert")
 
 #define NSLS_MUSIC              NSLocalizedString(@"MUSIC", @"Music")
 #define NSLS_LOCAL_MUSIC        NSLocalizedString(@"LOCAL_MUSIC", @"Local Music")

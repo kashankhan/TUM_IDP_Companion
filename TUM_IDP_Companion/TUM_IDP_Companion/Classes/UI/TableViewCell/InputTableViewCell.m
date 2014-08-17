@@ -22,6 +22,7 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [self.textField setDelegate:self];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

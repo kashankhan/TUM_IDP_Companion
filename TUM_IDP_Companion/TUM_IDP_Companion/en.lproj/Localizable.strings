@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  TUM_IDP_Companion
-
-  Created by Kashan Khan on 26/05/2014.
-  Copyright (c) 2014 Kashan Khan. All rights reserved.
-*/
+/*
+ Localizable.strings
+ TUM_IDP_Companion
+ 
+ Created by Kashan Khan on 26/05/2014.
+ Copyright (c) 2014 Kashan Khan. All rights reserved.
+ */
 "CANCEL"            = "Cancel";
 "OK"                = "OK";
 
@@ -20,8 +20,9 @@
 "DESTINATION"       = "Destination";
 
 "NEWS"              = "News";
-"ARTISTS"           = "Artists";
-"SONGS"             = "Songs";
+"ARTIST"            = "Artist";
+"SONG"              = "Song";
+"PLEASE_INSERT"     = "Please Insert";
 
 "MUSIC"             = "Music";
 "LOCAL_MUSIC"       = "Local Music";

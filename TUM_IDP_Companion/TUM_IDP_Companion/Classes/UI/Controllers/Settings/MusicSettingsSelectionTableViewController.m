@@ -10,6 +10,7 @@
 #import "SelectionTableViewController.h"
 #import "SettingsDAL.h"
 #import "SWRevealViewController.h"
+#import "InputTableViewCell.h"
 
 @interface MusicSettingsSelectionTableViewController (){
     
@@ -19,6 +20,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
+@property (strong, nonatomic) UITextField *textField;
 
 @end
 
@@ -64,6 +66,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
+    [self.textField resignFirstResponder];
     [_settingsDAL saveContext];
 }
 
@@ -111,11 +114,11 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
         
         MusicSong *musicSong = [_settingsDAL musicSong];
         NSArray *musicSongs = @[musicSong];
-        [_items addObject:@{NSLS_SONGS:musicSongs}];
+        [_items addObject:@{NSLS_SONG:musicSongs}];
         
         MusicArtist *musicArtist = [_settingsDAL musicArtist];
         NSArray *musicArtists = @[musicArtist];
-        [_items addObject:@{NSLS_ARTISTS:musicArtists}];
+        [_items addObject:@{NSLS_ARTIST:musicArtists}];
         
     }
 }
@@ -235,6 +238,38 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 }
 
 - (void)configureInputTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+  
+    InputTableViewCell *inputCell = (InputTableViewCell *)cell;
+    id object = [self objectAtIndexPath:indexPath];
+    NSString *placeholder = NSLS_PLEASE_INSERT;
+    NSString *text = nil;
+    
+    if ([object isKindOfClass:[MusicArtist class]]) {
+        text = ((MusicArtist *)object).name;
+        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, NSLS_ARTIST];
+    
+    }
+    else if ([object isKindOfClass:[MusicSong class]]) {
+        text = ((MusicSong *)object).name;
+        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, NSLS_SONG];
+    }
+    
+    inputCell.textField.placeholder = placeholder;
+    inputCell.textField.text = text;
+    
+    inputCell.inputTableViewCellTextDidChangeHandler = ^(InputTableViewCell *cell, UITextField *textField) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        self.textField = textField;
+        id object = [self objectAtIndexPath:indexPath];
+        if ([object isKindOfClass:[MusicArtist class]]) {
+            ((MusicArtist *)object).name = textField.text;
+            
+        }
+        else if ([object isKindOfClass:[MusicSong class]]) {
+            ((MusicSong *)object).name = textField.text;
+        }
+    };
 }
 
 - (void)configureDefaultTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
