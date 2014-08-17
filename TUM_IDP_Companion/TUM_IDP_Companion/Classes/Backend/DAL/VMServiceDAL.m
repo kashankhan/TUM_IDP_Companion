@@ -16,21 +16,21 @@
 - (Service *)service:(NSString *)name {
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-    return (Service *)[self getObjectWithEntity:[Service class] withPredicate:predicate createNewIfNotFound:YES];
+    return (Service *)[self objectWithEntity:[Service class] withPredicate:predicate createNewIfNotFound:YES];
     
 }
 
 - (Parameter *)parameter:(NSString *)name {
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-    return (Parameter *)[self getObjectWithEntity:[Parameter class] withPredicate:predicate createNewIfNotFound:YES];
+    return (Parameter *)[self objectWithEntity:[Parameter class] withPredicate:predicate createNewIfNotFound:YES];
     
 }
 
 - (Link *)link:(NSString *)subscription {
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"subscription = %@", subscription];
-    return (Link *)[self getObjectWithEntity:[Link class] withPredicate:predicate createNewIfNotFound:YES];
+    return (Link *)[self objectWithEntity:[Link class] withPredicate:predicate createNewIfNotFound:YES];
     
 }
 

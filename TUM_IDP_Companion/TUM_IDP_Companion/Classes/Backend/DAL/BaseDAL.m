@@ -27,14 +27,14 @@
     return self;
 }
 
-- (NSManagedObject*)getObjectWithEntity:(Class)entityClass withPredicate:(NSPredicate*)predicate createNewIfNotFound:(BOOL)create {
+- (NSManagedObject*)objectWithEntity:(Class)entityClass withPredicate:(NSPredicate*)predicate createNewIfNotFound:(BOOL)create {
     
     NSManagedObject *manageObject = nil;
     NSArray *list = [entityClass MR_findAllWithPredicate:predicate];
     // check if the user info is no exist create the new one.
     if (![list count]) {
         if (create) {
-            manageObject = [entityClass MR_createEntity];
+            manageObject = [self createNeeEntity:entityClass];
         }
     }
     else {
@@ -43,6 +43,11 @@
     
     return manageObject;
     
+}
+
+- (id)createNeeEntity:(Class)entityClass {
+
+    return [entityClass MR_createEntity];
 }
 
 - (void)saveContext {

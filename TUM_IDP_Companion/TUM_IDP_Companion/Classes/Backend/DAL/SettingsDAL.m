@@ -16,7 +16,7 @@
     MusicSetting *musicSetting = nil;
     
     if (![musicSettings count]) {
-        musicSetting = [MusicSetting MR_createEntity];
+        musicSetting = [self createNeeEntity:[MusicSetting class]];
         musicSetting.feedSelection = NSLS_DISCOVERY;
         musicSetting.channelSelection = NSLS_ARTISTS;
         musicSetting.choice = NSLS_ARTISTS;
@@ -35,7 +35,7 @@
     TemperatureSetting *temperatureSetting = nil;
     
     if (![temperatureSettings count]) {
-        temperatureSetting = [TemperatureSetting MR_createEntity];
+        temperatureSetting = [self createNeeEntity:[TemperatureSetting class]];
     }
     else {
         temperatureSetting = [temperatureSettings lastObject];

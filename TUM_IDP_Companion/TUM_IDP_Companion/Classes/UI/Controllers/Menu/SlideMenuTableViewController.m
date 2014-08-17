@@ -54,7 +54,7 @@
     _menuItems =  @[  @{ @"SegueIdentiferPushAccountsViewController" :  accounts},
                       @{ @"SegueIdentiferPushMapsViewController" : maps},
                       @{ @"SegueIdentiferPushContactsViewController" : contants},
-                      @{ @"SegueIdentiferPushMusicSearhViewController" : music},
+                      @{ @"SegueIdentiferSelectionTableViewController" : music},
                       @{ @"SegueIdentiferPushSettingsViewController" : settings}
                       ];
 }

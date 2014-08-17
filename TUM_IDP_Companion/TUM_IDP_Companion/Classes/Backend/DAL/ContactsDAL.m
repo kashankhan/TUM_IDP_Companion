@@ -35,4 +35,15 @@
 
 }
 
+- (NSArray *)contacts {
+
+    return [Contact MR_findAll];
+}
+
+- (Contact *)contact:(NSString *)identifier createNewIfNotFound:(BOOL)create {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", identifier];
+    return (Contact *)[self objectWithEntity:[Contact class] withPredicate:predicate createNewIfNotFound:create];
+}
+
 @end

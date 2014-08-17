@@ -8,8 +8,11 @@
 
 #import "BaseDAL.h"
 #import "ABWrappers.h"
+#import "Contact.h"
 
 @interface ContactsDAL : BaseDAL
 
 - (NSArray *)addressBook;
+- (NSArray *)contacts;
+- (Contact *)contact:(NSString *)identifier createNewIfNotFound:(BOOL)create;
 @end

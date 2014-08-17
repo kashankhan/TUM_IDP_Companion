@@ -11,6 +11,7 @@
 
 @interface BaseDAL : NSObject
 
-- (NSManagedObject*)getObjectWithEntity:(Class)entityClass withPredicate:(NSPredicate*)predicate createNewIfNotFound:(BOOL)create;
+- (NSManagedObject*)objectWithEntity:(Class)entityClass withPredicate:(NSPredicate*)predicate createNewIfNotFound:(BOOL)create;
+- (id)createNeeEntity:(Class)entityClass;
 - (void)saveContext;
 @end

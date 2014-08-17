@@ -29,12 +29,12 @@
 
 - (LocationBookmark *)newLocationBookmark {
     
-   return [LocationBookmark MR_createEntity];
+    return [self createNeeEntity:[LocationBookmark class]];
 }
 
 - (Landmark *)newLandmark {
     
-    return [Landmark MR_createEntity];
+    return [self createNeeEntity:[Landmark class]];
 }
 
 - (NSArray *)landmarks {

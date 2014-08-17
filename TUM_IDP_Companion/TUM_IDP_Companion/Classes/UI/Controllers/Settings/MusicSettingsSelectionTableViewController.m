@@ -9,6 +9,7 @@
 #import "MusicSettingsSelectionTableViewController.h"
 #import "SelectionTableViewController.h"
 #import "SettingsDAL.h"
+#import "SWRevealViewController.h"
 
 @interface MusicSettingsSelectionTableViewController (){
     
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic, strong) NSIndexPath *lastIndexPath;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 
 @end
 
@@ -69,12 +71,22 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 }
 
 #pragma mark - Private methods
-
+- (void)configureNavigationBarItems {
+    
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    self.menuBarButton.target = self.revealViewController;
+    self.menuBarButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+}
 - (NSArray *)feedTypes {
     
     return  @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
 }
 - (void)configureViewSettings {
+    
+    [self configureNavigationBarItems];
     
     if (!_settingsDAL) {
         _settingsDAL = [SettingsDAL new];
