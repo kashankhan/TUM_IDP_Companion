@@ -58,25 +58,27 @@
 - (NSArray *)musicFeeds {
 
     NSArray *feeds = [MusicFeed MR_findAllSortedBy:@"name" ascending:YES];
+    
     if (![feeds count]) {
-        NSArray *feeds = @[@"http://rss2.focus.de/c/32191/f/443312/index.rss",
-                            @"http://www.spiegel.de/schlagzeilen/index.rss",
-                            @"http://www.sportschau.de/sportschauindex100_type-rss.feed",
-                            @"http://www.n-tv.de/sport/rss",
-                            @"http://rss2.focus.de/c/32191/f/443319/index.rss",
-                            @"http://www.spiegel.de/sport/index.rss"];
-        
+        feeds = @[@"http://rss2.focus.de/c/32191/f/443312/index.rss",
+                  @"http://www.spiegel.de/schlagzeilen/index.rss",
+                  @"http://www.sportschau.de/sportschauindex100_type-rss.feed",
+                  @"http://www.n-tv.de/sport/rss",
+                  @"http://rss2.focus.de/c/32191/f/443319/index.rss",
+                  @"http://www.spiegel.de/sport/index.rss"];
+       
+        NSUInteger count = 1;
         for (NSString *uri in feeds) {
-            
-            NSArray *nameComponents = [uri componentsSeparatedByString:@"."];
-            NSString *name = [NSString stringWithFormat:@"%@.%@", [nameComponents objectAtIndex:1], [nameComponents objectAtIndex:2]];
+           
             BOOL selected = ([[feeds objectAtIndex:0] isEqualToString:uri]);
-            
+            NSString *name = [NSString stringWithFormat:@"Feed %d", count];
             MusicFeed *musicFeed = [self musicFeed:uri];
             [musicFeed setSelected:@(selected)];
             [musicFeed setName:name];
             [musicFeed setType:NSLS_NEWS];
             [musicFeed setUri:uri];
+            count++;
+
         }
         
         feeds = [self musicFeeds];

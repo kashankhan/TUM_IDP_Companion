@@ -28,11 +28,9 @@ typedef NS_ENUM(NSInteger, SelectedTab) {
     SelectedTabLocalMusic       = 2
 };
 
-static NSString * kSettingDefualtOptionKey = @"SettingDefaultOption";
-static NSString * kSettingOptionsKey = @"SettingOptions";
 static NSUInteger kSelectedSegmentIndex;
 static CGFloat    kSectionHeaderHeight = 40.0f;
-static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentiferSelectionTableViewController";
+
 
 @implementation MusicSettingsSelectionTableViewController
 
@@ -161,9 +159,9 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     
    NSDictionary *itemInfo = [_items objectAtIndex:section];
    NSString *key = [[itemInfo allKeys] lastObject];
-    NSArray *items = [itemInfo objectForKey:key];
+   NSArray *items = [itemInfo objectForKey:key];
     
-    return items;
+   return items;
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {
@@ -175,6 +173,33 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
     }
     
     return object;
+}
+
+- (void)markFeedAsSelected:(NSIndexPath *)indexPath {
+    
+    NSArray *musicFeeds = [self objectsInSection:indexPath.section];
+    NSIndexPath *lastSelectedIndexPath = nil;
+    MusicFeed *selectedMusicFeed = [self objectAtIndexPath:indexPath];
+    NSUInteger row = 0;
+    for (MusicFeed *musicFeed in musicFeeds) {
+        if ([musicFeed.selected boolValue]) {
+            lastSelectedIndexPath = [NSIndexPath indexPathForRow:row inSection:indexPath.section];
+        }
+        [musicFeed setSelected:@(NO)];
+        if ([selectedMusicFeed.uri isEqualToString:musicFeed.uri]) {
+           [musicFeed setSelected:@(YES)];
+        }
+        
+        row++;
+    }
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    if (lastSelectedIndexPath) {
+        cell = [self.tableView cellForRowAtIndexPath:lastSelectedIndexPath];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
 }
 #pragma mark - Table view data source
 
@@ -194,12 +219,32 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identifier = @"IdentifierCell";
+
+    NSString *identifier = (indexPath.section == 0) ? @"IdentifierCell": @"IdentifierInputCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
 
+    if ((indexPath.section == 0)) {
+        [self configureDefaultTableViewCell:cell indexPath:indexPath];
+    }
+    else {
+        [self configureInputTableViewCell:cell indexPath:indexPath];
+    }
+    
     return cell;
 }
+
+- (void)configureInputTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+}
+
+- (void)configureDefaultTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+    
+    MusicFeed *musicFeed = [self objectAtIndexPath:indexPath];
+    cell.textLabel.text = musicFeed.name;
+    cell.detailTextLabel.text = musicFeed.uri;
+    cell.accessoryType = ([musicFeed.selected boolValue]) ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+}
+
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 
@@ -210,16 +255,11 @@ static NSString * kSegueIdentiferSelectionTableViewController = @"SegueIdentifer
 #pragma mark -UItableView Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-//    NSDictionary *itemInfo = self.options[indexPath.row];
-//    NSString *key = [[itemInfo allKeys] lastObject];
-//    if ([key isEqualToString:NSLS_NEWS]) {
-//        [self performSegueWithIdentifier:kSegueIdentiferSelectionTableViewController sender:self];
-//    }//if
-//    else {
-//    
-//         [self selectIndex:indexPath];
-//    }//else
+    if (indexPath.section == 0) {
+        [self markFeedAsSelected:indexPath];
+    }
 
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
