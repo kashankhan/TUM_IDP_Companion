@@ -13,6 +13,8 @@
 #import "TripPlannerTableViewController.h"
 #import "LocationBookmark.h"
 #import "MapViewAnnotation.h"
+#import "MapRouteSettingViewController.h"
+#import "SettingsDAL.h"
 
 @interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
@@ -21,11 +23,14 @@
 @property (nonatomic, strong) NSMutableArray *tripLocations;
 @property (nonatomic, weak) NSMutableDictionary *lastSelectedTripInfo;
 @property (nonatomic, strong) LocationBookmark *selectedLocationBookmark;
+@property (nonatomic, strong) RouteEnergySetting *routeSetting;
 @end
 
 @implementation MapViewController
 
 static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueIdentiferPushSearchLocationTableViewController";
+
+static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdentiferPushMapRouteSettingViewController";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,6 +67,9 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     [self subscribteNotifications];
     
     [self setTitle:NSLS_MAPS];
+    
+    SettingsDAL *settingDAL = [SettingsDAL new];
+    self.routeSetting = [settingDAL selectedRouteEnergySetting];
     
 }
 
@@ -171,6 +179,14 @@ static NSString *kSegueIdentiferPushSearchLocationTableViewController = @"SegueI
     
         SearchLocationTableViewController *controller = (SearchLocationTableViewController *)[segue destinationViewController];
         [controller setMapView:self.mapView];
+    }//else if
+    else if ([segue.identifier isEqualToString:kSegueIdentiferPushMapRouteSettingViewController]) {
+        
+        MapRouteSettingViewController *controller = (MapRouteSettingViewController *)[segue destinationViewController];
+        controller.defaultOption = self.routeSetting;
+        controller.selectionTableViewControllerDidSelectObjectHandler = ^(id object) {
+            self.routeSetting = object;
+        };
     }//else if
 }
 

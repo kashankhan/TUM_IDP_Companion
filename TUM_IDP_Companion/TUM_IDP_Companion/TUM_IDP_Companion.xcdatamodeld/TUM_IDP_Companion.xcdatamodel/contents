@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A314h" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="14A329f" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Contact" representedClassName="Contact" syncable="YES">
         <attribute name="favorite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
@@ -46,6 +46,11 @@
         <relationship name="link" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Link" inverseName="parameter" inverseEntity="Link" syncable="YES"/>
         <relationship name="service" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Service" inverseName="parameters" inverseEntity="Service" syncable="YES"/>
     </entity>
+    <entity name="RouteEnergySetting" representedClassName="RouteEnergySetting" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parameter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <entity name="Service" representedClassName="Service">
         <attribute name="name" optional="YES" attributeType="String">
             <userInfo/>
@@ -59,16 +64,17 @@
         <attribute name="temperature" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Contact" positionX="270" positionY="270" width="128" height="75"/>
         <element name="Landmark" positionX="270" positionY="270" width="128" height="58"/>
         <element name="Link" positionX="270" positionY="207" width="128" height="88"/>
         <element name="LocationBookmark" positionX="270" positionY="270" width="128" height="118"/>
-        <element name="Parameter" positionX="261" positionY="198" width="128" height="180"/>
-        <element name="Service" positionX="261" positionY="189" width="128" height="73"/>
-        <element name="TemperatureSetting" positionX="279" positionY="279" width="128" height="90"/>
-        <element name="Contact" positionX="270" positionY="270" width="128" height="75"/>
+        <element name="MusicArtist" positionX="315" positionY="306" width="128" height="60"/>
         <element name="MusicChannel" positionX="279" positionY="279" width="128" height="73"/>
         <element name="MusicFeed" positionX="288" positionY="288" width="128" height="103"/>
         <element name="MusicSong" positionX="297" positionY="297" width="128" height="60"/>
-        <element name="MusicArtist" positionX="315" positionY="306" width="128" height="60"/>
+        <element name="Parameter" positionX="261" positionY="198" width="128" height="180"/>
+        <element name="Service" positionX="261" positionY="189" width="128" height="73"/>
+        <element name="TemperatureSetting" positionX="279" positionY="279" width="128" height="90"/>
+        <element name="RouteEnergySetting" positionX="288" positionY="270" width="128" height="90"/>
     </elements>
 </model>

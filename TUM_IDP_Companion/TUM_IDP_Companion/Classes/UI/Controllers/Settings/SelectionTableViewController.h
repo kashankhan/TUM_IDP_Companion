@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^SelectionTableViewControllerDidSelectObjectHandler)(NSString * object);
+typedef void(^SelectionTableViewControllerDidSelectObjectHandler)(id  object);
 
 @interface SelectionTableViewController : UITableViewController
 
-@property (nonatomic, weak) NSString *defaultOption;
+@property (nonatomic, weak) id defaultOption;
 @property (nonatomic, strong) NSArray *options;
 
 

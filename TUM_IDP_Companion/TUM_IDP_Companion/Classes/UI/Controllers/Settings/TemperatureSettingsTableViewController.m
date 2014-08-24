@@ -211,7 +211,7 @@ static NSString * kIdentifierSwitchCell = @"IdentifierSwitchCell";
      controller.options = [itemInfo valueForKey:kSettingOptionsKey];
      controller.title = [itemInfo valueForKey:kSettingNameKey];
      
-     controller.selectionTableViewControllerDidSelectObjectHandler = ^(NSString * object) {
+     controller.selectionTableViewControllerDidSelectObjectHandler = ^(id object) {
      
          NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
          NSMutableDictionary *itemInfo = _items[indexPath.row];

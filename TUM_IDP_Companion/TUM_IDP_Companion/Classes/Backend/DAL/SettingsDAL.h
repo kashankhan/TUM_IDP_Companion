@@ -12,6 +12,7 @@
 #import "MusicArtist.h"
 #import "MusicFeed.h"
 #import "TemperatureSetting.h"
+#import "RouteEnergySetting.h"
 
 @interface SettingsDAL : BaseDAL
 
@@ -20,5 +21,6 @@
 - (NSArray *)musicFeeds;
 - (MusicSong *)musicSong;
 - (MusicArtist *)musicArtist;
-
+- (NSArray *)routeSettings;
+- (RouteEnergySetting *)selectedRouteEnergySetting;
 @end

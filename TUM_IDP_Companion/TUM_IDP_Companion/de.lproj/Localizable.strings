@@ -53,3 +53,8 @@
 "OTHER"             = "Other";
 "ADD_CUSTOM"        = "Add Custom";
 "ADDRESS_NOT_FOUNT" = "Address not found";
+
+"ENERGY_EFFICIENT"  = "Energy Efficient";
+"TRAFFIC"           = "Traffic";
+"FASTEST"           = "Fastest";
+"ROUTE_SETTINGS"    = "Route Settings";

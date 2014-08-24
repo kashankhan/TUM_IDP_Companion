@@ -123,4 +123,56 @@
     
     return musicArtist;
 }
+
+- (RouteEnergySetting *)selectedRouteEnergySetting {
+    
+    NSArray *routeSettings = [self routeSettings];
+    RouteEnergySetting *routeSetting = nil;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"selected = 1"];
+    NSArray *settings = [routeSettings filteredArrayUsingPredicate:predicate];
+    if ([settings count]) {
+        routeSetting = [settings lastObject];
+    }
+    else {
+        routeSetting = routeSettings[0];
+        routeSetting.selected = @(YES);
+        [self saveContext];
+    }
+    
+    return routeSetting;
+}
+
+- (NSArray *)routeSettings {
+    
+    NSArray *parameters = @[@{@"Energy-Efficient": NSLS_ENERGY_EFFICIENT},
+                            @{@"Traffic": NSLS_TRAFFIC},
+                            @{@"Fastest": NSLS_FASTEST}];
+    NSString *parameter = nil;
+    NSString *name = nil;
+    
+    NSMutableArray *routes = [@[] mutableCopy];
+  
+    for (NSDictionary *routeInfo in parameters) {
+  
+        parameter = [[routeInfo allKeys] lastObject];
+        name = [routeInfo valueForKey:parameter];
+        
+        RouteEnergySetting *routeEnergySetting = [self routeEnergySetting:parameter];
+        [routeEnergySetting setParameter:parameter];
+        [routeEnergySetting setName:name];
+        
+        [routes addObject:routeEnergySetting];
+    }
+    
+    return routes;
+
+}
+- (RouteEnergySetting *)routeEnergySetting:(NSString *)parameter {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parameter = %@", parameter];
+    
+    RouteEnergySetting *routeEnergySetting = (RouteEnergySetting *)[self objectWithEntity:[RouteEnergySetting class] withPredicate:predicate createNewIfNotFound:YES];
+    
+    return routeEnergySetting;
+}
 @end

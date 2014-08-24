@@ -58,5 +58,11 @@
 #define NSLS_ADD_CUSTOM         NSLocalizedString(@"ADD_CUSTOM", "Add Custom")
 #define NSLS_OTHER              NSLocalizedString(@"OTHER", "Other")
 #define NSLS_ADDRESS_NOT_FOUNT  NSLocalizedString(@"ADDRESS_NOT_FOUNT", "Address not found")
+#define NSLS_ENERGY_EFFICIENT   NSLocalizedString(@"ENERGY_EFFICIENT", "Energy Efficient")
+#define NSLS_TRAFFIC            NSLocalizedString(@"TRAFFIC", "Traffic")
+#define NSLS_FASTEST            NSLocalizedString(@"FASTEST", "Fastest")
+#define NSLS_ROUTE_SETTINGS     NSLocalizedString(@"ROUTE_SETTINGS", "Route Settings")
+
+
 #endif
 

@@ -115,6 +115,8 @@
 		C098DB4A19310DBB00222D73 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB3F19310DBB00222D73 /* AppDelegate.m */; };
 		C098DB4E19313D5500222D73 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C098DB4D19313D5500222D73 /* Twitter.framework */; };
 		C098DB741931581D00222D73 /* RequestQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C098DB731931581D00222D73 /* RequestQueue.m */; };
+		C09B846D19AA1C5C00137D01 /* MapRouteSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09B846C19AA1C5C00137D01 /* MapRouteSettingViewController.m */; };
+		C09B847319AA2B2E00137D01 /* RouteEnergySetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C09B847219AA2B2E00137D01 /* RouteEnergySetting.m */; };
 		C09C916C194DE6EF008439F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09C916B194DE6EF008439F9 /* AVFoundation.framework */; };
 		C0B0868A198407CC00D0E18B /* VMServiesRequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */; };
 		C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867A198407CC00D0E18B /* GreenNavBAL.m */; };
@@ -292,6 +294,10 @@
 		C098DB4D19313D5500222D73 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		C098DB721931581D00222D73 /* RequestQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestQueue.h; sourceTree = "<group>"; };
 		C098DB731931581D00222D73 /* RequestQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestQueue.m; sourceTree = "<group>"; };
+		C09B846B19AA1C5C00137D01 /* MapRouteSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapRouteSettingViewController.h; sourceTree = "<group>"; };
+		C09B846C19AA1C5C00137D01 /* MapRouteSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapRouteSettingViewController.m; sourceTree = "<group>"; };
+		C09B847119AA2B2E00137D01 /* RouteEnergySetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteEnergySetting.h; sourceTree = "<group>"; };
+		C09B847219AA2B2E00137D01 /* RouteEnergySetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteEnergySetting.m; sourceTree = "<group>"; };
 		C09C916B194DE6EF008439F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C0B08676198407CC00D0E18B /* VMServiceRequestBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMServiceRequestBAL.h; sourceTree = "<group>"; };
 		C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiesRequestBAL.m; sourceTree = "<group>"; };
@@ -533,9 +539,11 @@
 				C0234A3B198D44D70090F4F0 /* SaveLocationTableViewController.m */,
 				C0234A54198D60500090F4F0 /* LocationBookmarksTableViewController.h */,
 				C0234A55198D60500090F4F0 /* LocationBookmarksTableViewController.m */,
-				C03BF93F198BF348009BDEB0 /* Trip */,
 				C075540F19915A3F003D796D /* MapViewAnnotation.h */,
 				C075541019915A3F003D796D /* MapViewAnnotation.m */,
+				C09B846B19AA1C5C00137D01 /* MapRouteSettingViewController.h */,
+				C09B846C19AA1C5C00137D01 /* MapRouteSettingViewController.m */,
+				C03BF93F198BF348009BDEB0 /* Trip */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -957,6 +965,8 @@
 				C0CAC7AD19A10D5D009C3AC2 /* MusicArtist.m */,
 				C0CAC7B519A117AD009C3AC2 /* MusicFeed.h */,
 				C0CAC7B619A117AD009C3AC2 /* MusicFeed.m */,
+				C09B847119AA2B2E00137D01 /* RouteEnergySetting.h */,
+				C09B847219AA2B2E00137D01 /* RouteEnergySetting.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1116,6 +1126,7 @@
 				C03BF951198BF348009BDEB0 /* AccountsTableViewController.m in Sources */,
 				C0B086DB1984282800D0E18B /* NSManagedObject+MagicalAggregation.m in Sources */,
 				C0498FA4198EDF670002F8D1 /* Landmark.m in Sources */,
+				C09B847319AA2B2E00137D01 /* RouteEnergySetting.m in Sources */,
 				C0B086EA1984282800D0E18B /* MagicalRecord+Options.m in Sources */,
 				C0B086EC1984282800D0E18B /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C0B086F4198429AB00D0E18B /* Link.m in Sources */,
@@ -1139,6 +1150,7 @@
 				C0234A3C198D44D70090F4F0 /* SaveLocationTableViewController.m in Sources */,
 				C0B086DC1984282800D0E18B /* NSManagedObject+MagicalDataImport.m in Sources */,
 				C0B08695198408F200D0E18B /* VMServiceUrlRequest.m in Sources */,
+				C09B846D19AA1C5C00137D01 /* MapRouteSettingViewController.m in Sources */,
 				C0B086D51984282800D0E18B /* NSAttributeDescription+MagicalDataImport.m in Sources */,
 				C034BD321974553D00419797 /* SDImageCache.m in Sources */,
 				C03BF958198BF348009BDEB0 /* MusicSettingsSelectionTableViewController.m in Sources */,
