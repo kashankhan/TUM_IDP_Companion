@@ -26,8 +26,7 @@
 
 typedef NS_ENUM(NSInteger, SelectedTab) {
     SelectedTabDiscover         = 0,
-    SelectedTabIndividual       = 1,
-    SelectedTabLocalMusic       = 2
+    SelectedTabLocalMusic       = 1
 };
 
 static NSUInteger kSelectedSegmentIndex;

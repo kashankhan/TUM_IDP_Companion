@@ -29,7 +29,7 @@
     
     NSArray *channels = [MusicChannel MR_findAllSortedBy:@"name" ascending:YES];
     if (![channels count]) {
-        NSArray *musicChannels = @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY, NSLS_INDIVIDUAL];
+        NSArray *musicChannels = @[NSLS_LOCAL_MUSIC, NSLS_DISCOVERY];
         for (NSString *name in musicChannels) {
             
             BOOL selected = ([[musicChannels objectAtIndex:0] isEqualToString:name]);
