@@ -29,9 +29,16 @@ typedef NS_ENUM(NSInteger, SelectedTab) {
     SelectedTabLocalMusic       = 1
 };
 
-static NSUInteger kSelectedSegmentIndex;
-static CGFloat    kSectionHeaderHeight = 40.0f;
+typedef NS_ENUM(NSInteger, MusicInfoSelectedTab) {
+    MusicInfoSelectedTabSong            = 0,
+    MusicInfoSelectedTabArtist          = 1
+};
 
+static NSUInteger kSelectedSegmentIndex;
+static NSUInteger kMusicInfoSelectedSegmentIndex;
+static CGFloat    kSectionHeaderHeight = 40.0f;
+static CGFloat    kPadding             = 10.0f;
+static NSString  *kMusicInoKey         = @"MusicInfoKey";
 
 @implementation MusicSettingsSelectionTableViewController
 
@@ -110,19 +117,15 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     [_items addObject:@{NSLS_NEWS:musicFeeds}];
     
     if (kSelectedSegmentIndex != SelectedTabLocalMusic) {
-        
-        MusicSong *musicSong = [_settingsDAL musicSong];
-        NSArray *musicSongs = @[musicSong];
-        [_items addObject:@{NSLS_SONG:musicSongs}];
-        
-        MusicArtist *musicArtist = [_settingsDAL musicArtist];
-        NSArray *musicArtists = @[musicArtist];
-        [_items addObject:@{NSLS_ARTIST:musicArtists}];
-        
+        NSMutableArray *music = [@[[self songInfo]] mutableCopy];
+        if (kMusicInfoSelectedSegmentIndex == MusicInfoSelectedTabArtist) {
+            [music addObject:[self artistInfo]];
+        }
+        [_items addObject:@{kMusicInoKey:music}];
     }
 }
 
-- (void)segmentControlSegmentDidChange:(UISegmentedControl *)segmentControl {
+- (void)headerSegmentControlSegmentDidChange:(UISegmentedControl *)segmentControl {
     
     kSelectedSegmentIndex = segmentControl.selectedSegmentIndex;
     NSArray *musicChannels = [self musicChannels];
@@ -138,6 +141,15 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     [self.tableView reloadData];
 }
 
+- (void)musicInfoSegmentControlSegmentDidChange:(UISegmentedControl *)segmentControl {
+    
+    kMusicInfoSelectedSegmentIndex = segmentControl.selectedSegmentIndex;
+
+    [self configureDAL];
+    
+    [self.tableView reloadData];
+}
+
 - (void)addTableHeader {
 
     NSArray *musicChannels = [self musicChannels];
@@ -147,11 +159,11 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
         [channels addObject:musicChannel.name];
     }
     
-    CGFloat padding = 10.0f;
+
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), kSectionHeaderHeight)];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:channels];
-    [segmentControl setFrame:CGRectMake(padding, padding/2, CGRectGetWidth(self.tableView.frame) - padding*2, kSectionHeaderHeight - padding/2)];
-    [segmentControl addTarget:self action:@selector(segmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
+    [segmentControl setFrame:CGRectMake(kPadding, kPadding/2, CGRectGetWidth(self.tableView.frame) - kPadding*2, kSectionHeaderHeight - kPadding/2)];
+    [segmentControl addTarget:self action:@selector(headerSegmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
     
     segmentControl.selectedSegmentIndex = kSelectedSegmentIndex;
     [headerView addSubview:segmentControl];
@@ -205,6 +217,18 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     
 }
 
+- (NSDictionary *)artistInfo {
+    
+    MusicArtist *musicArtist = [_settingsDAL musicArtist];
+    return  @{NSLS_ARTIST:musicArtist};
+}
+
+- (NSDictionary *)songInfo {
+    
+    MusicSong *musicSong = [_settingsDAL musicSong];
+    return  @{NSLS_SONG:musicSong};
+    
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -241,7 +265,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 - (void)configureInputTableViewCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
   
     InputTableViewCell *inputCell = (InputTableViewCell *)cell;
-    id object = [self objectAtIndexPath:indexPath];
+    id object = [[[self objectAtIndexPath:indexPath] allObjects] lastObject];
     NSString *placeholder = NSLS_PLEASE_INSERT;
     NSString *text = nil;
     NSString *title = nil;
@@ -266,7 +290,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         self.textField = textField;
-        id object = [self objectAtIndexPath:indexPath];
+        id object = [[[self objectAtIndexPath:indexPath] allObjects] lastObject];
         if ([object isKindOfClass:[MusicArtist class]]) {
             ((MusicArtist *)object).name = textField.text;
             
@@ -305,7 +329,24 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    return kSectionHeaderHeight;
+    return kSectionHeaderHeight + kPadding;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+   
+    UIView *sectionView = nil;
+    if (section == 1) {
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), kSectionHeaderHeight)];
+        UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:@[NSLS_SONG, NSLS_ARTIST]];
+        [segmentControl setFrame:CGRectMake(kPadding, kPadding/2, CGRectGetWidth(self.tableView.frame) - kPadding*2, kSectionHeaderHeight - kPadding/2)];
+        [segmentControl addTarget:self action:@selector(musicInfoSegmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
+        
+        segmentControl.selectedSegmentIndex = kMusicInfoSelectedSegmentIndex;
+        [headerView addSubview:segmentControl];
+        sectionView = headerView;
+    }
+    
+    return sectionView;
 }
 
 /*

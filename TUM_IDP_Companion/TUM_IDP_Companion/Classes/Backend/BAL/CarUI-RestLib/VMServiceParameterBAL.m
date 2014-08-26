@@ -17,8 +17,8 @@
 @end
 
 NSString* const kParameterSubcribtionUriKey = @"ParameterSubcribtionUriKey";
-NSString* const kParameterValueUriKey = @"ParameterValueUriKey";
-NSString* const kParameterUpdatedValueKey = @"ParameterUpdatedValueKey";
+NSString* const kParameterValueUriKey       = @"ParameterValueUriKey";
+NSString* const kParameterUpdatedValueKey   = @"ParameterUpdatedValueKey";
 
 @implementation VMServiceParameterBAL
 

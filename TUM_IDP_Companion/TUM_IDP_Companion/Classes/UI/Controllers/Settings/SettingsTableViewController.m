@@ -10,10 +10,12 @@
 #import "SWRevealViewController.h"
 #import "SelectionTableViewController.h"
 #import "TemperatureSettingsTableViewController.h"
+#import "VMServiceRequestBAL.h"
 
 @interface SettingsTableViewController () {
 
     NSMutableArray *_items;
+    VMServiceRequestBAL *_serviceRequestBAL;
 }
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
@@ -62,9 +64,23 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
     
     [self addTemperatureItem];
     [self configureNavigationBarItems];
+    [self syncServices];
 
 }
 
+- (void)syncServices {
+
+    if (!_serviceRequestBAL) {
+        _serviceRequestBAL = [VMServiceRequestBAL new];
+    }
+    [_serviceRequestBAL sendRequestForServices:^(id response, NSError *error) {
+        
+        NSLog(@"response : %@",response);
+        [self.tableView reloadData];
+    }];
+
+
+}
 - (void)addTemperatureItem {
     
     NSString *empty = @"";

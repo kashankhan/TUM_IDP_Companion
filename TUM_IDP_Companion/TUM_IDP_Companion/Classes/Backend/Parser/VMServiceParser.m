@@ -28,6 +28,11 @@
     return self;
 }
 
+- (void)dealloc {
+    
+    [_serviceDAL saveContext];
+}
+
 - (id)parseServices:(id)object {
     
     NSString *servicesKey = @"services";
