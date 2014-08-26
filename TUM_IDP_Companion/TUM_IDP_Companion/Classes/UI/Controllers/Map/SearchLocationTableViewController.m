@@ -104,6 +104,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     [self.localSearch startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error){
         
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self dismissProgressHud];
         
         if (error != nil) {
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Map Error",nil)
@@ -124,7 +125,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
         [self setSearchResponse:response];
         
         [self.searchDisplayController.searchResultsTableView reloadData];
-        [self dismissProgressHud];
+ 
     }];
 }
 
@@ -191,8 +192,6 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 }
 
 - (void)sendNotificationForSelectedContact:(ABContact *)contact {
-    
-    NSLog(@"contact ; %@",contact.addressArray);
     
     NSArray *addresses = contact.addressArray;
    
