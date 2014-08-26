@@ -60,13 +60,15 @@
     NSArray *feeds = [MusicFeed MR_findAllSortedBy:@"name" ascending:YES];
     
     if (![feeds count]) {
-        feeds = @[@"http://rss2.focus.de/c/32191/f/443312/index.rss",
+        feeds = @[@"http://www.n-tv.de/rss</state>",
+                  @"http://www.tagesschau.de/xml/rss2</state>",
+                  @"http://rss2.focus.de/c/32191/f/443312/index.rss",
                   @"http://www.spiegel.de/schlagzeilen/index.rss",
                   @"http://www.sportschau.de/sportschauindex100_type-rss.feed",
                   @"http://www.n-tv.de/sport/rss",
                   @"http://rss2.focus.de/c/32191/f/443319/index.rss",
                   @"http://www.spiegel.de/sport/index.rss"];
-       
+
         NSUInteger count = 1;
         for (NSString *uri in feeds) {
            
