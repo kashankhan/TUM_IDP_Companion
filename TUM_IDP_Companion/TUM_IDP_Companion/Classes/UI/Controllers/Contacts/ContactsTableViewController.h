@@ -13,6 +13,7 @@
 @interface ContactsTableViewController : UITableViewController {
 
     ContactsDAL *_contactDal;
+    NSMutableArray *_addressBookContacts;
     NSMutableArray *_items;
 }
 

@@ -87,18 +87,28 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
 
 - (void)loadContacts {
 
-    if (!_contactDal) {
-        _contactDal = [ContactsDAL new];
-        _items = [@[] mutableCopy];
-        self.favoriteContactIdentiiers = [@[] mutableCopy];
-        [self setContactsType:ContactsTypeAll];
-    }
+    [self showProgressHud:ProgressHudNormal title:nil interaction:YES];
     
-    NSArray *contacts = [self contacts];
-    
-    [_items setArray:[self transfromContactsIntoSection:contacts]];
-    
-    [self.tableView reloadData];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Background work
+        if (!_contactDal) {
+            _contactDal = [ContactsDAL new];
+            _items = [@[] mutableCopy];
+            self.favoriteContactIdentiiers = [@[] mutableCopy];
+            _addressBookContacts = [[_contactDal addressBook] mutableCopy];
+            
+            [self setContactsType:ContactsTypeAll];
+        }
+        
+        NSArray *contacts = [self contacts];
+        
+        [_items setArray:[self transfromContactsIntoSection:contacts]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            // Update UI
+            [self dismissProgressHud];
+            [self.tableView reloadData];
+        });
+    });
 }
 
 - (NSArray *)transfromContactsIntoSection:(NSArray *)contacts {
@@ -125,7 +135,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     
     [self.favoriteContactIdentiiers removeAllObjects];
 
-    NSArray *allContacts = [_contactDal addressBook];
+    NSArray *allContacts = _addressBookContacts;
     NSMutableArray *favorites = [@[] mutableCopy];
     NSString *contactIdentifier = nil;
     Contact *saveContact = nil;
@@ -208,7 +218,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
     // Configure the cell...
 
     ABContact *contact =  [self objectAtIndexPath:indexPath];
-    cell.titleLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
+    cell.titleLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, ([contact.lastname isKindOfClass:[NSString class]] ? contact.lastname : @"")];
     cell.avatarImageView.image = contact.image;
     
     NSString *contactIdentifier = [NSString stringWithFormat:@"%d", contact.recordID];
