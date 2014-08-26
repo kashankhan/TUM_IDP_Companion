@@ -147,14 +147,15 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
         [channels addObject:musicChannel.name];
     }
     
+    CGFloat padding = 10.0f;
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), kSectionHeaderHeight)];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:channels];
-    
-    [segmentControl setFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.tableView.frame), kSectionHeaderHeight)];
+    [segmentControl setFrame:CGRectMake(padding, padding/2, CGRectGetWidth(self.tableView.frame) - padding*2, kSectionHeaderHeight - padding/2)];
     [segmentControl addTarget:self action:@selector(segmentControlSegmentDidChange:) forControlEvents:UIControlEventValueChanged];
     
     segmentControl.selectedSegmentIndex = kSelectedSegmentIndex;
-    
-    [self.tableView setTableHeaderView:segmentControl];
+    [headerView addSubview:segmentControl];
+    [self.tableView setTableHeaderView:headerView];
 }
 
 - (NSArray *)objectsInSection:(NSInteger)section {
@@ -203,6 +204,7 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     }
     
 }
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -242,19 +244,23 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     id object = [self objectAtIndexPath:indexPath];
     NSString *placeholder = NSLS_PLEASE_INSERT;
     NSString *text = nil;
+    NSString *title = nil;
     
     if ([object isKindOfClass:[MusicArtist class]]) {
+        title = NSLS_ARTIST;
         text = ((MusicArtist *)object).name;
-        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, NSLS_ARTIST];
+        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, title];
     
     }
     else if ([object isKindOfClass:[MusicSong class]]) {
+        title = NSLS_SONG;
         text = ((MusicSong *)object).name;
-        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, NSLS_SONG];
+        placeholder = [NSString stringWithFormat:@"%@ %@", placeholder, title];
     }
     
     inputCell.textField.placeholder = placeholder;
     inputCell.textField.text = text;
+    inputCell.titleLabel.text = title;
     
     inputCell.inputTableViewCellTextDidChangeHandler = ^(InputTableViewCell *cell, UITextField *textField) {
         
@@ -286,7 +292,8 @@ static CGFloat    kSectionHeaderHeight = 40.0f;
     NSString *key = [[itemInfo allKeys] lastObject];
     return key;
 }
-#pragma mark -UItableView Delegate methods.
+
+#pragma mark - Table view  Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
     if (indexPath.section == 0) {

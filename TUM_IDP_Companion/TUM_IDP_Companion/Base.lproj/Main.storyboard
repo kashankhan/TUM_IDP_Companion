@@ -96,15 +96,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-cH-ryB">
-                                            <rect key="frame" x="9" y="7" width="302" height="30"/>
+                                            <rect key="frame" x="78" y="7" width="233" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn0-P3-Xpx">
+                                            <rect key="frame" x="15" y="11" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textField" destination="CYz-cH-ryB" id="0Qu-3s-H4p"/>
+                                    <outlet property="titleLabel" destination="Vn0-P3-Xpx" id="1DU-jQ-UiB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -164,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAa-2X-hH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2613" y="-2359"/>
+            <point key="canvasLocation" x="1765" y="-3015"/>
         </scene>
         <!--Temperature Settings Table View Controller-->
         <scene sceneID="CmY-Kv-tn1">
@@ -229,7 +237,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9U-sM-Bvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="-1683"/>
+            <point key="canvasLocation" x="1765" y="-2243"/>
         </scene>
         <!--Contacts Table View Controller-->
         <scene sceneID="F9S-Xi-141">
@@ -400,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbM-Kh-Nnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663" y="-995"/>
+            <point key="canvasLocation" x="1711" y="-999"/>
         </scene>
         <!--Trip Planner Table View Controller-->
         <scene sceneID="R55-Tx-Wbw">
@@ -446,7 +454,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wpc-ps-xFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="-362"/>
+            <point key="canvasLocation" x="1721" y="-334"/>
         </scene>
         <!--Accounts Table View Controller-->
         <scene sceneID="B89-8A-Y2y">
