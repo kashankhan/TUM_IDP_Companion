@@ -133,15 +133,16 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
 - (void)searchAddressBook:(UISearchBar *)searchBar {
     
     NSString *searchText = searchBar.text;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname CONTAINS %@ || self.lastname CONTAINS %@", searchText, searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.firstname contains[cd] %@ || self.lastname CONTAINS[cd] %@", searchText, searchText];
     self.contactsSearch = [self.contacts filteredArrayUsingPredicate:predicate];
+    
 
 }
 
 - (void)searchLocationBookmark:(UISearchBar *)searchBar {
    
     NSString *searchText = searchBar.text;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name CONTAINS %@ || self.landmarkType CONTAINS %@", searchText, searchText];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.name contains[cd] %@ || self.landmarkType contains[cd] %@", searchText, searchText];
     self.locationBookmarksSearch = [self.locationBookmarks filteredArrayUsingPredicate:predicate];
 
 }
