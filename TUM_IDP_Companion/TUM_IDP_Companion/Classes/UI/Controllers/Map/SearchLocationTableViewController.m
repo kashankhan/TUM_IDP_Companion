@@ -278,8 +278,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
         case ScopeTypeContacts:
         {
             ABContact *contact = object;
-            cell.textLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, contact.lastname];
-            cell.detailTextLabel.text = nil;
+            cell.textLabel.text = [NSString  stringWithFormat:@"%@ %@", contact.firstname, ([contact.lastname isKindOfClass:[NSString class]] ? contact.lastname : @"")];            cell.detailTextLabel.text = nil;
             NSArray *addresses = contact.addressArray;
             if (addresses) {
                 id address = [addresses lastObject];

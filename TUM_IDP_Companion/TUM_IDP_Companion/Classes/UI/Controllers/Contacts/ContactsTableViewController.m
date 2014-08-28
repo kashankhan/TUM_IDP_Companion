@@ -57,6 +57,7 @@ typedef NS_ENUM(NSUInteger, ContactsType) {
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    [self dismissProgressHud];
     [_contactDal saveContext];
 }
 
