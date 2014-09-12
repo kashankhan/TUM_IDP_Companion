@@ -5,56 +5,56 @@
  Created by Kashan Khan on 26/05/2014.
  Copyright (c) 2014 Kashan Khan. All rights reserved.
  */
-"CANCEL"            = "Cancel";
+"CANCEL"            = "Abbrechen";
 "OK"                = "OK";
 
-"ACCOUNTS"          = "Accounts";
-"MAPS"              = "Maps";
-"CONTACTS"          = "Contacts";
-"MUSIC"             = "Music";
-"SETTINGS"          = "Settings";
+"ACCOUNTS"          = "Konten";
+"MAPS"              = "Karten";
+"CONTACTS"          = "Kontakte";
+"MUSIC"             = "Musik";
+"SETTINGS"          = "Einstellungen";
 
 "FACEBOOK"          = "Facebook";
 "TWITTER"           = "Twitter";
 
-"DESTINATION"       = "Destination";
+"DESTINATION"       = "Ziel";
 
-"NEWS"              = "News";
-"ARTIST"            = "Artist";
-"SONG"              = "Song";
-"PLEASE_INSERT"     = "Please Insert";
+"NEWS"              = "Neuigkeiten";
+"ARTIST"            = "Künstler";
+"SONG"              = "Lied";
+"PLEASE_INSERT"     = "Bitte einlegen";
 
-"MUSIC"             = "Music";
-"LOCAL_MUSIC"       = "Local Music";
-"DISCOVERY"         = "Discovery";
+"MUSIC"             = "Musik";
+"LOCAL_MUSIC"       = "Lokale Musik";
+"DISCOVERY"         = "Entdeckung";
 "INDIVIDUAL"        = "Individual";
 
-"TEMPERATURE"       = "Temperature";
+"TEMPERATURE"       = "Temperatur";
 "FAN"               = "Fan";
-"COOLING"           = "Cooling";
-"RECIRCULATION"     = "Recirculation";
-"OFF"               = "Off";
-"AUTOMATIC"         = "Automatic";
+"COOLING"           = "Kühlung";
+"RECIRCULATION"     = "Umluft";
+"OFF"               = "Aus";
+"AUTOMATIC"         = "Automatik";
 "ECO"               = "Eco";
 "EMISSION"          = "Emission";
-"MANUAL"            = "Manual";
+"MANUAL"            = "Anleitung";
 
-"ALL"               = "All";
-"FAVORITES"         = "Favorites";
+"ALL"               = "Alles";
+"FAVORITES"         = "Favoriten";
 
-"SEARCH_LOCATION"   = "Search Location";
+"SEARCH_LOCATION"   = "Suchbereich";
 
 "BOOKMARKS"         = "Bookmarks";
-"ADD_BOOKMARK"      = "Add Bookmark";
+"ADD_BOOKMARK"      = "Bookmark einfügen";
 
 "HOME"              = "Home";
-"OFFICE"            = "Office";
-"ADDRESS"           = "Address";
-"OTHER"             = "Other";
-"ADD_CUSTOM"        = "Add Custom";
-"ADDRESS_NOT_FOUNT" = "Address not found";
+"OFFICE"            = "Büro";
+"ADDRESS"           = "Adresse";
+"OTHER"             = "Sonstiges";
+"ADD_CUSTOM"        = "Eigene Einstellung1";
+"ADDRESS_NOT_FOUNT" = "Adresse nicht gefunden";
 
-"ENERGY_EFFICIENT"  = "Energy Efficient";
-"TRAFFIC"           = "Traffic";
-"FASTEST"           = "Fastest";
-"ROUTE_SETTINGS"    = "Route Settings";
+"ENERGY_EFFICIENT"  = "Energie Effizienz";
+"TRAFFIC"           = "Verkehr";
+"FASTEST"           = "Schnellstes";
+"ROUTE_SETTINGS"    = "Routen Einstellungen";
