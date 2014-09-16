@@ -22,16 +22,16 @@
 "NEWS"              = "Neuigkeiten";
 "ARTIST"            = "Künstler";
 "SONG"              = "Lied";
-"PLEASE_INSERT"     = "Bitte einlegen";
+"PLEASE_INSERT"     = "Bitte eingeben";
 
 "MUSIC"             = "Musik";
 "LOCAL_MUSIC"       = "Lokale Musik";
-"DISCOVERY"         = "Entdeckung";
-"INDIVIDUAL"        = "Individual";
+"DISCOVERY"         = "Entdecken";
+"INDIVIDUAL"        = "Individuell";
 
 "TEMPERATURE"       = "Temperatur";
-"FAN"               = "Fan";
-"COOLING"           = "Kühlung";
+"FAN"               = "Lüftung";
+"COOLING"           = "Kühlen";
 "RECIRCULATION"     = "Umluft";
 "OFF"               = "Aus";
 "AUTOMATIC"         = "Automatik";
@@ -44,17 +44,17 @@
 
 "SEARCH_LOCATION"   = "Suchbereich";
 
-"BOOKMARKS"         = "Bookmarks";
-"ADD_BOOKMARK"      = "Bookmark einfügen";
+"BOOKMARKS"         = "Markierungen";
+"ADD_BOOKMARK"      = "Markieren";
 
-"HOME"              = "Home";
+"HOME"              = "Zuhause";
 "OFFICE"            = "Büro";
 "ADDRESS"           = "Adresse";
 "OTHER"             = "Sonstiges";
-"ADD_CUSTOM"        = "Eigene Einstellung1";
+"ADD_CUSTOM"        = "Eigene Einstellung";
 "ADDRESS_NOT_FOUNT" = "Adresse nicht gefunden";
 
-"ENERGY_EFFICIENT"  = "Energie Effizienz";
+"ENERGY_EFFICIENT"  = "Energieeffizienz";
 "TRAFFIC"           = "Verkehr";
-"FASTEST"           = "Schnellstes";
+"FASTEST"           = "Schnellste";
 "ROUTE_SETTINGS"    = "Routen Einstellungen";
