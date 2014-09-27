@@ -53,9 +53,9 @@ NSString *const HTTPResponseErrorDomain = @"HTTPResponseErrorDomain";
 @property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, strong) NSURLResponse *responseReceived;
 @property (nonatomic, strong) NSMutableData *accumulatedData;
-@property (nonatomic, getter = isExecuting) BOOL executing;
-@property (nonatomic, getter = isFinished) BOOL finished;
-@property (nonatomic, getter = isCancelled) BOOL cancelled;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic) BOOL isCancelled;
 
 @end
 
@@ -90,7 +90,7 @@ NSString *const HTTPResponseErrorDomain = @"HTTPResponseErrorDomain";
         if (!self.executing && !self.cancelled)
         {
             [self willChangeValueForKey:@"isExecuting"];
-            self.executing = YES;
+            self.isExecuting = YES;
             [self.connection scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
             [self.connection start];
             [self didChangeValueForKey:@"isExecuting"];
@@ -105,7 +105,7 @@ NSString *const HTTPResponseErrorDomain = @"HTTPResponseErrorDomain";
         if (!self.cancelled)
         {
             [self willChangeValueForKey:@"isCancelled"];
-            self.cancelled = YES;
+            self.isCancelled = YES;
             [self.connection cancel];
             [self didChangeValueForKey:@"isCancelled"];
             
@@ -124,8 +124,8 @@ NSString *const HTTPResponseErrorDomain = @"HTTPResponseErrorDomain";
         {
             [self willChangeValueForKey:@"isExecuting"];
             [self willChangeValueForKey:@"isFinished"];
-            self.executing = NO;
-            self.finished = YES;
+            self.isExecuting = NO;
+            self.isFinished = YES;
             [self didChangeValueForKey:@"isFinished"];
             [self didChangeValueForKey:@"isExecuting"];
         }
