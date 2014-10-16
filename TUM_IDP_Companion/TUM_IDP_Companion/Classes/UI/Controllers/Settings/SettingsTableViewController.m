@@ -64,10 +64,10 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 - (void)configureViewSettings {
     
     _items = [@[]mutableCopy];
-      //  [self addTemperatureItem];
+    
     [self configureNavigationBarItems];
     [self loadSettings];
-    [self syncServices];
+    //[self syncServices];
 
 }
 
@@ -88,13 +88,16 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 }
 - (void)loadSettings {
 
-    if (!_serviceDAL) {
-         _serviceDAL = [VMServiceDAL new];
-    }
-    
-    [_items removeAllObjects];
-    
-    [_items addObjectsFromArray:[_serviceDAL services]];
+    [self addTemperatureItem];
+//    if (!_serviceDAL) {
+//         _serviceDAL = [VMServiceDAL new];
+//    }
+//    
+//    [_items removeAllObjects];
+//    
+//
+//    
+//    [_items addObjectsFromArray:[_serviceDAL services]];
     [self.tableView reloadData];
 }
 
@@ -148,10 +151,12 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
     static NSString *identifierCell = @"IdentifierCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     
-   // NSMutableDictionary *itemInfo = _items[indexPath.row];
-    Service *service = _items[indexPath.row];
-    cell.textLabel.text = service.name;// [itemInfo objectForKey:kSettingNameKey];
-   // cell.detailTextLabel.text = [itemInfo objectForKey:kSettingDefualtOptionKey];
+    NSMutableDictionary *itemInfo = _items[indexPath.row];
+   // Service *service = _items[indexPath.row];
+   // cell.textLabel.text = service.name;// [itemInfo objectForKey:kSettingNameKey];
+    cell.textLabel.text = [itemInfo objectForKey:kSettingNameKey];
+    cell.detailTextLabel.text = [itemInfo objectForKey:kSettingDefualtOptionKey];
+   
     return cell;
     
     
@@ -160,16 +165,16 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-//   NSMutableDictionary *itemInfo = _items[indexPath.row];
-//    SEL selector = NSSelectorFromString([itemInfo valueForKey:kSettingSelectorKey]);
-//    if (selector && [self respondsToSelector:selector]) {
-//        
-//        NSMethodSignature *signature = [self methodSignatureForSelector:selector];;
-//        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-//        [invocation setTarget:self];
-//        [invocation setSelector:selector];
-//        [invocation invoke];
-//    }//if
+   NSMutableDictionary *itemInfo = _items[indexPath.row];
+    SEL selector = NSSelectorFromString([itemInfo valueForKey:kSettingSelectorKey]);
+    if (selector && [self respondsToSelector:selector]) {
+        
+        NSMethodSignature *signature = [self methodSignatureForSelector:selector];;
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setTarget:self];
+        [invocation setSelector:selector];
+        [invocation invoke];
+    }//if
 
 
 }
