@@ -36,7 +36,7 @@
 
 - (NSArray *)services {
     
-    return [Service MR_findAll];
+    return [Service MR_findAllSortedBy:@"name" ascending:YES];
 }
 
 @end

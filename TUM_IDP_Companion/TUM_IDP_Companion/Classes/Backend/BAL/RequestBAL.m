@@ -46,9 +46,6 @@
         if (handler) {
             handler(responseValue, error);
         }
-
-        NSLog(@" response : %@", responseValue);
-        NSLog(@" error : %@", [error localizedDescription]);
     };
     [self addOperation:operation];
 }

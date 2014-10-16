@@ -63,6 +63,7 @@
 #define NSLS_FASTEST            NSLocalizedString(@"FASTEST", "Fastest")
 #define NSLS_ROUTE_SETTINGS     NSLocalizedString(@"ROUTE_SETTINGS", "Route Settings")
 
+#define NSLS_PLEASE_WAIT        NSLocalizedString(@"PLEASE_WAIT", "Please wait")
 
 #endif
 
