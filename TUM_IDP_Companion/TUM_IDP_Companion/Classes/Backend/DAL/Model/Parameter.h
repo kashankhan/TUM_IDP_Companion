@@ -2,14 +2,14 @@
 //  Parameter.h
 //  TUM_IDP_Companion
 //
-//  Created by Kashan Khan on 27/07/2014.
+//  Created by Kashan Khan on 15/11/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Link, Service;
+@class Link, Service, State;
 
 @interface Parameter : NSManagedObject
 
@@ -22,5 +22,14 @@
 @property (nonatomic, retain) NSNumber * upperBound;
 @property (nonatomic, retain) Link *link;
 @property (nonatomic, retain) Service *service;
+@property (nonatomic, retain) NSSet *states;
+@end
+
+@interface Parameter (CoreDataGeneratedAccessors)
+
+- (void)addStatesObject:(State *)value;
+- (void)removeStatesObject:(State *)value;
+- (void)addStates:(NSSet *)values;
+- (void)removeStates:(NSSet *)values;
 
 @end

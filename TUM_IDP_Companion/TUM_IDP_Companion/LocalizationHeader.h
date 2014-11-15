@@ -54,6 +54,11 @@
 
 #define NSLS_HOME               NSLocalizedString(@"HOME", "Home")
 #define NSLS_OFFICE             NSLocalizedString(@"OFFICE", "Office")
+#define NSLS_FAVORTE_1          NSLocalizedString(@"FAVORTE_1", "Favorite 1")
+#define NSLS_FAVORTE_2          NSLocalizedString(@"FAVORTE_2", "Favorite 2")
+#define NSLS_FAVORTE_3          NSLocalizedString(@"FAVORTE_3", "Favorite 3")
+#define NSLS_FAVORTE_4          NSLocalizedString(@"FAVORTE_4", "Favorite 4")
+#define NSLS_FAVORTE_5          NSLocalizedString(@"FAVORTE_5", "Favorite 5")
 #define NSLS_ADDRESS            NSLocalizedString(@"ADDRESS", "Address")
 #define NSLS_ADD_CUSTOM         NSLocalizedString(@"ADD_CUSTOM", "Add Custom")
 #define NSLS_OTHER              NSLocalizedString(@"OTHER", "Other")

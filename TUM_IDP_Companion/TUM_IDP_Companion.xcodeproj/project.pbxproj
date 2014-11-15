@@ -33,13 +33,11 @@
 		C03BF959198BF348009BDEB0 /* SelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94C198BF348009BDEB0 /* SelectionTableViewController.m */; };
 		C03BF95A198BF348009BDEB0 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */; };
 		C03BF95B198BF348009BDEB0 /* TemperatureSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */; };
-		C0498FA4198EDF670002F8D1 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0498FA3198EDF670002F8D1 /* Landmark.m */; };
 		C0498FAA19900C4B0002F8D1 /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C0498FA919900C4B0002F8D1 /* AppConstants.m */; };
 		C0498FAD1990160F0002F8D1 /* LocationBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0498FAC1990160F0002F8D1 /* LocationBookmark.m */; };
 		C057C8421985249D006FBF36 /* BaseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C8411985249D006FBF36 /* BaseParser.m */; };
 		C057C845198524D5006FBF36 /* VMServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C844198524D5006FBF36 /* VMServiceParser.m */; };
 		C057C848198526E7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
-		C057C85219854A03006FBF36 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85119854A03006FBF36 /* Parameter.m */; };
 		C057C85A198556A0006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
 		C057C8601989A527006FBF36 /* VMSerivesRequestBALTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */; };
 		C057C8641989A574006FBF36 /* RequestBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0867E198407CC00D0E18B /* RequestBAL.m */; };
@@ -59,7 +57,6 @@
 		C057C8801989A5C7006FBF36 /* CoreDataPersistanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */; };
 		C057C8821989A5C7006FBF36 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F6198429AC00D0E18B /* Service.m */; };
 		C057C8841989A5C7006FBF36 /* Link.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B086F3198429AB00D0E18B /* Link.m */; };
-		C057C8861989A5C7006FBF36 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C85119854A03006FBF36 /* Parameter.m */; };
 		C057C8881989A5DD006FBF36 /* EventSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C057C859198556A0006FBF36 /* EventSource.m */; };
 		C057C88C1989A5DD006FBF36 /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869A1984282700D0E18B /* MagicalImportFunctions.m */; };
 		C057C88E1989A5DD006FBF36 /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B0869C1984282700D0E18B /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -179,6 +176,9 @@
 		C0E963DD1933B7F9000AE466 /* ABContactsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D61933B7F9000AE466 /* ABContactsHelper.m */; };
 		C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963D81933B7F9000AE466 /* ABGroup.m */; };
 		C0E963DF1933B7F9000AE466 /* ABStandin.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E963DA1933B7F9000AE466 /* ABStandin.m */; };
+		C0F3A0261A17F77E00496860 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A0251A17F77E00496860 /* Landmark.m */; };
+		C0F3A02C1A17FADC00496860 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A02B1A17FADC00496860 /* State.m */; };
+		C0F3A02F1A17FB3000496860 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A02E1A17FB3000496860 /* Parameter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,8 +247,6 @@
 		C03BF94E198BF348009BDEB0 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		C03BF94F198BF348009BDEB0 /* TemperatureSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureSettingsTableViewController.h; sourceTree = "<group>"; };
 		C03BF950198BF348009BDEB0 /* TemperatureSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureSettingsTableViewController.m; sourceTree = "<group>"; };
-		C0498FA2198EDF670002F8D1 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
-		C0498FA3198EDF670002F8D1 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
 		C0498FA819900C4B0002F8D1 /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		C0498FA919900C4B0002F8D1 /* AppConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
 		C0498FAB1990160F0002F8D1 /* LocationBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationBookmark.h; sourceTree = "<group>"; };
@@ -259,8 +257,6 @@
 		C057C844198524D5006FBF36 /* VMServiceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMServiceParser.m; sourceTree = "<group>"; };
 		C057C846198526E7006FBF36 /* CoreDataPersistanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataPersistanceManager.h; sourceTree = "<group>"; };
 		C057C847198526E7006FBF36 /* CoreDataPersistanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataPersistanceManager.m; sourceTree = "<group>"; };
-		C057C85019854A03006FBF36 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
-		C057C85119854A03006FBF36 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 		C057C858198556A0006FBF36 /* EventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventSource.h; sourceTree = "<group>"; };
 		C057C859198556A0006FBF36 /* EventSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventSource.m; sourceTree = "<group>"; };
 		C057C85F1989A527006FBF36 /* VMSerivesRequestBALTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMSerivesRequestBALTest.m; sourceTree = "<group>"; };
@@ -421,6 +417,12 @@
 		C0E963D91933B7F9000AE466 /* ABStandin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABStandin.h; sourceTree = "<group>"; };
 		C0E963DA1933B7F9000AE466 /* ABStandin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABStandin.m; sourceTree = "<group>"; };
 		C0E963DB1933B7F9000AE466 /* ABWrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABWrappers.h; sourceTree = "<group>"; };
+		C0F3A0241A17F77E00496860 /* Landmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Landmark.h; sourceTree = "<group>"; };
+		C0F3A0251A17F77E00496860 /* Landmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Landmark.m; sourceTree = "<group>"; };
+		C0F3A02A1A17FADC00496860 /* State.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = State.h; sourceTree = "<group>"; };
+		C0F3A02B1A17FADC00496860 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
+		C0F3A02D1A17FB3000496860 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
+		C0F3A02E1A17FB3000496860 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -947,10 +949,6 @@
 				C0B086F6198429AC00D0E18B /* Service.m */,
 				C0B086F2198429AB00D0E18B /* Link.h */,
 				C0B086F3198429AB00D0E18B /* Link.m */,
-				C057C85019854A03006FBF36 /* Parameter.h */,
-				C057C85119854A03006FBF36 /* Parameter.m */,
-				C0498FA2198EDF670002F8D1 /* Landmark.h */,
-				C0498FA3198EDF670002F8D1 /* Landmark.m */,
 				C0498FAB1990160F0002F8D1 /* LocationBookmark.h */,
 				C0498FAC1990160F0002F8D1 /* LocationBookmark.m */,
 				C0CAC79A19A0E104009C3AC2 /* TemperatureSetting.h */,
@@ -967,6 +965,12 @@
 				C0CAC7B619A117AD009C3AC2 /* MusicFeed.m */,
 				C09B847119AA2B2E00137D01 /* RouteEnergySetting.h */,
 				C09B847219AA2B2E00137D01 /* RouteEnergySetting.m */,
+				C0F3A0241A17F77E00496860 /* Landmark.h */,
+				C0F3A0251A17F77E00496860 /* Landmark.m */,
+				C0F3A02A1A17FADC00496860 /* State.h */,
+				C0F3A02B1A17FADC00496860 /* State.m */,
+				C0F3A02D1A17FB3000496860 /* Parameter.h */,
+				C0F3A02E1A17FB3000496860 /* Parameter.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1125,7 +1129,6 @@
 				C0B086E11984282800D0E18B /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				C03BF951198BF348009BDEB0 /* AccountsTableViewController.m in Sources */,
 				C0B086DB1984282800D0E18B /* NSManagedObject+MagicalAggregation.m in Sources */,
-				C0498FA4198EDF670002F8D1 /* Landmark.m in Sources */,
 				C09B847319AA2B2E00137D01 /* RouteEnergySetting.m in Sources */,
 				C0B086EA1984282800D0E18B /* MagicalRecord+Options.m in Sources */,
 				C0B086EC1984282800D0E18B /* MagicalRecord+ShorthandSupport.m in Sources */,
@@ -1136,6 +1139,7 @@
 				C0B0868C198407CC00D0E18B /* GreenNavUrlRequest.m in Sources */,
 				C0E963DE1933B7F9000AE466 /* ABGroup.m in Sources */,
 				C0B086F01984292900D0E18B /* VMServiceDAL.m in Sources */,
+				C0F3A0261A17F77E00496860 /* Landmark.m in Sources */,
 				C0B086E81984282800D0E18B /* MagicalRecord+ErrorHandling.m in Sources */,
 				C0B0868F198407CC00D0E18B /* FacebookRequestBAL.m in Sources */,
 				C0B086DA1984282800D0E18B /* NSString+MagicalDataImport.m in Sources */,
@@ -1157,6 +1161,7 @@
 				C0B0868A198407CC00D0E18B /* VMServiesRequestBAL.m in Sources */,
 				C03BF953198BF348009BDEB0 /* MapViewController.m in Sources */,
 				C0DCDA071960B53E001373D7 /* ContantTableViewCell.m in Sources */,
+				C0F3A02C1A17FADC00496860 /* State.m in Sources */,
 				C034BD331974553D00419797 /* SDWebImageDecoder.m in Sources */,
 				C0B086DE1984282800D0E18B /* NSManagedObject+MagicalRecord.m in Sources */,
 				C034BD351974553D00419797 /* SDWebImageManager.m in Sources */,
@@ -1179,13 +1184,13 @@
 				C098DB1819310CDF00222D73 /* TUM_IDP_Companion.xcdatamodeld in Sources */,
 				C0E9634E19322565000AE466 /* ProgressHUD.m in Sources */,
 				C0B086E91984282800D0E18B /* MagicalRecord+iCloud.m in Sources */,
-				C057C85219854A03006FBF36 /* Parameter.m in Sources */,
 				C0CAC7AE19A10D5D009C3AC2 /* MusicArtist.m in Sources */,
 				C03BF952198BF348009BDEB0 /* ContactsTableViewController.m in Sources */,
 				C0B086E01984282800D0E18B /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				C0234A49198D59120090F4F0 /* UIViewController+ProgressHUD.m in Sources */,
 				C0E963DC1933B7F9000AE466 /* ABContact.m in Sources */,
 				C0B086F7198429AC00D0E18B /* Service.m in Sources */,
+				C0F3A02F1A17FB3000496860 /* Parameter.m in Sources */,
 				C0B0868B198407CC00D0E18B /* GreenNavBAL.m in Sources */,
 				C0B086D61984282800D0E18B /* NSEntityDescription+MagicalDataImport.m in Sources */,
 				C0B086EB1984282800D0E18B /* MagicalRecord+Setup.m in Sources */,
@@ -1263,7 +1268,6 @@
 				C057C8801989A5C7006FBF36 /* CoreDataPersistanceManager.m in Sources */,
 				C057C8821989A5C7006FBF36 /* Service.m in Sources */,
 				C057C8841989A5C7006FBF36 /* Link.m in Sources */,
-				C057C8861989A5C7006FBF36 /* Parameter.m in Sources */,
 				C057C8741989A5B2006FBF36 /* FacebookRequestBAL.m in Sources */,
 				C057C8761989A5B2006FBF36 /* SocialAccountRequestBAL.m in Sources */,
 				C057C8781989A5B2006FBF36 /* TwitterRequestBAL.m in Sources */,

@@ -74,6 +74,8 @@
     NSString *readOnlyKey = @"readOnly";//":true,
     NSString *nameKey = @"name";//:"Distanz",
     NSString *linksKey = @"links";
+    NSString *statesKey = @"states";
+    NSUInteger index = 1;
     
     NSString *type = [object valueForKey:typeKey];
     NSNumber *lowerBound = [object valueForKey:lowerBoundKey];
@@ -83,6 +85,7 @@
     NSNumber *readOnly = [object valueForKey:readOnlyKey];
     NSString *name = [object valueForKey:nameKey];
     NSDictionary *linkInfo = [object valueForKey:linksKey];
+    NSArray *states = [object valueForKey:statesKey];
     
     Parameter *parameter = [_serviceDAL parameter:name];
     parameter.type = type;
@@ -94,6 +97,11 @@
     parameter.name = name;
     
     parameter.link = [self parseLink:linkInfo];
+    
+    for (NSString *name in states) {
+        [parameter addStatesObject:[self parseState:name index:index]];
+        index ++;
+    }
     
     return parameter;
 }
@@ -111,5 +119,15 @@
     link.value = value;
     
     return link;
+}
+
+- (id)parseState:(id)name index:(NSUInteger)index {
+    
+    State *state = [_serviceDAL state:name];
+    state.name = name;
+    state.index = @(index);
+    
+    return state;
+
 }
 @end

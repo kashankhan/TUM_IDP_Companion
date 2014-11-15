@@ -66,8 +66,7 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
     _items = [@[]mutableCopy];
     
     [self configureNavigationBarItems];
-    [self loadSettings];
-    //[self syncServices];
+    [self syncServices];
 
 }
 
@@ -86,6 +85,7 @@ static NSString * kSettingSelectorKey = @"SettingSelector";
 
 
 }
+
 - (void)loadSettings {
 
     [self addTemperatureItem];

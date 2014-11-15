@@ -10,6 +10,7 @@
 #import "Parameter.h"
 #import "Service.h"
 #import "Link.h"
+#import "State.h"
 
 @implementation VMServiceDAL
 
@@ -34,6 +35,11 @@
     
 }
 
+- (State *)state:(NSString *)name {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+    return (State *)[self objectWithEntity:[State class] withPredicate:predicate createNewIfNotFound:YES];
+
+}
 - (NSArray *)services {
     
     return [Service MR_findAllSortedBy:@"name" ascending:YES];

@@ -39,15 +39,18 @@
 
 - (NSArray *)landmarks {
     
-    return [Landmark MR_findAllSortedBy:@"name" ascending:YES];
+    return [Landmark MR_findAllSortedBy:@"index" ascending:YES];
 }
 
 - (void)insertDefaultLandmarks {
 
-    NSArray *defaulfLandmarks = @[NSLS_HOME, NSLS_OFFICE];
+    NSArray *defaulfLandmarks = @[NSLS_HOME, NSLS_OFFICE, NSLS_FAVORTE_1, NSLS_FAVORTE_2,NSLS_FAVORTE_3, NSLS_FAVORTE_4, NSLS_FAVORTE_5];
+    NSUInteger index = 1;
     for (NSString *option in defaulfLandmarks) {
         Landmark *landmark = [self newLandmark];
         [landmark setName:option];
+        [landmark setIndex:@(index)];
+        index++;
     }
 }
 

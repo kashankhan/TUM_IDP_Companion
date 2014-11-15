@@ -7,7 +7,7 @@
 //
 
 #import "SaveLocationTableViewController.h"
-
+#import "VMServiceRequestBAL.h"
 
 typedef NS_ENUM(NSInteger, SectionType) {
     SectionAddress,
@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, SectionType) {
 @interface SaveLocationTableViewController () {
 
     LocationBookmarkDAL *_locationBookDAL;
+    VMServiceRequestBAL *_serviceRequestBAL;
+
 }
 
 @property (strong, nonatomic) UITextField *textField;
@@ -64,7 +66,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
     
     [self setTitle:NSLS_ADD_BOOKMARK];
     [self loadDataSource];
-    
+    [self syncServices];
 }
 
 - (void)loadDataSource {
@@ -87,11 +89,27 @@ typedef NS_ENUM(NSInteger, SectionType) {
     [_items addObject:landmarks];
 
 
-    NSArray *addCustomSection = @[NSLS_ADD_CUSTOM];
-    [_items addObject:addCustomSection];
-
+   // NSArray *addCustomSection = @[NSLS_ADD_CUSTOM];
+   // [_items addObject:addCustomSection];
 
 }
+
+- (void)syncServices {
+    
+    if (!_serviceRequestBAL) {
+        _serviceRequestBAL = [VMServiceRequestBAL new];
+    }
+    
+    [self showProgressHud:ProgressHudNormal title:NSLS_PLEASE_WAIT interaction:YES];
+    [_serviceRequestBAL sendRequestForServices:^(id response, NSError *error) {
+        
+        [self dismissProgressHud];
+    }];
+    
+    
+}
+
+
 
 
 - (IBAction)performSaveAction:(id)sender {
@@ -128,6 +146,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
             [self showProgressHud:progressHudType title:title interaction:YES];
         }];
     }
+   
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {

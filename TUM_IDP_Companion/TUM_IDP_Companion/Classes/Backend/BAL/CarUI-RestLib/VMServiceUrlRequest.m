@@ -10,7 +10,8 @@
 
 @implementation VMServiceUrlRequest
 
-static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:8080";
+//static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:8080";
+static const NSString *kBaseURL = @"http://192.168.0.101:8080";
 
 - (NSString *)servicesUri {
     

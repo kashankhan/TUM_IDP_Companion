@@ -49,6 +49,11 @@
 
 "HOME"              = "Home";
 "OFFICE"            = "Office";
+"FAVORTE_1"         = "Favorite 1";
+"FAVORTE_2"         = "Favorite 2";
+"FAVORTE_3"         = "Favorite 3";
+"FAVORTE_4"         = "Favorite 4";
+"FAVORTE_5"         = "Favorite 5";
 "ADDRESS"           = "Address";
 "OTHER"             = "Other";
 "ADD_CUSTOM"        = "Add Custom";
