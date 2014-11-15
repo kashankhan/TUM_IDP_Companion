@@ -20,8 +20,8 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
 
 - (NSURL *)urlForServiceParameterSubscribtion:(NSString *)subscribtionUri {
     
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude/subscription"];
-        NSLog(@"url : %@",uri);
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", subscribtionUri];
+    NSLog(@"url : %@",uri);
     return [NSURL URLWithString:uri];
 }
 
@@ -36,7 +36,7 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
 
 - (NSURLRequest *)urlRequestForServiceParameterValue:(NSString *)valueUri {
 
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude"];
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", valueUri];
     NSURL *url = [NSURL URLWithString:uri];
     
     NSLog(@"url : %@",url);
@@ -48,11 +48,10 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
 
 - (NSURLRequest *)urlRequestForServiceParameterUpdateValue:(NSString *)valueUri value:(NSString *)value {
     
-    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", @"navigation/parameters/currentLongitude"];
+    NSString *uri = [[self servicesUri] stringByAppendingFormat:@"/%@", valueUri];
     NSURL *url = [NSURL URLWithString:uri];
-    value = @"12.1212";
     NSData *requestData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];;
-        NSLog(@"url : %@",url);
+    NSLog(@"url : %@",url);
     return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePOST withPayLoad:requestData withRequestContentType:RequestContentTypeForm ];
 }
 
