@@ -81,7 +81,7 @@ static const NSString *kBoundary = @"0xKhTmLbOuNdArY";
 
     NSURLRequest *request = nil;
     if (httpMethodType == HTTPMethodTypePOST) {
-        [self urlRequestForPostURL:url withPayLoad:data withRequestContentType:contentType];
+       request = [self urlRequestForPostURL:url withPayLoad:data withRequestContentType:contentType];
         
     }//if
     else {

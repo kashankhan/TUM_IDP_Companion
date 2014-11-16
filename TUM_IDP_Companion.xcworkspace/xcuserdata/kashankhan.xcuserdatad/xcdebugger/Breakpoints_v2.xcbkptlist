@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TUM_IDP_Companion/TUM_IDP_Companion/Classes/Backend/BAL/CarUI-RestLib/VMServiceUrlRequest.m"
-            timestampString = "437835276.804444"
+            filePath = "TUM_IDP_Companion/TUM_IDP_Companion/Classes/Backend/BAL/RequestBAL.m"
+            timestampString = "437867412.224827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-urlRequestForServiceParameterUpdateValue:value:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-sendRequest:manager:handler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TUM_IDP_Companion/TUM_IDP_Companion/Classes/UI/Controllers/Map/SaveLocationTableViewController.m"
+            timestampString = "437867597.056368"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-updateLandmarkToServer:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

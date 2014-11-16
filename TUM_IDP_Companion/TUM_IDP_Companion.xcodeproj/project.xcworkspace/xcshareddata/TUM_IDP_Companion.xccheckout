@@ -10,31 +10,31 @@
 	<string>TUM_IDP_Companion</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>E93B2BC8-11AF-441F-9420-C2C572B035F0</key>
-		<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
+		<key>4029A8130BA6009A9FBAAA265721E026F237BC40</key>
+		<string>https://github.com/kashankhan/TUM_IDP_Companion</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TUM_IDP_Companion/TUM_IDP_Companion.xcodeproj/project.xcworkspace</string>
+	<string>TUM_IDP_Companion/TUM_IDP_Companion.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>E93B2BC8-11AF-441F-9420-C2C572B035F0</key>
+		<key>4029A8130BA6009A9FBAAA265721E026F237BC40</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kashankhan/TUM_IDP_Companion.git</string>
+	<string>https://github.com/kashankhan/TUM_IDP_Companion</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>E93B2BC8-11AF-441F-9420-C2C572B035F0</string>
+	<string>4029A8130BA6009A9FBAAA265721E026F237BC40</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>E93B2BC8-11AF-441F-9420-C2C572B035F0</string>
+			<string>4029A8130BA6009A9FBAAA265721E026F237BC40</string>
 			<key>IDESourceControlWCCName</key>
-			<string>TUM_IDP_Companion</string>
+			<string>Project</string>
 		</dict>
 	</array>
 </dict>

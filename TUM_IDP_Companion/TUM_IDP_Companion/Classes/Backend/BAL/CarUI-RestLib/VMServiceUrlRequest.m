@@ -52,7 +52,7 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSLog(@"url : %@",url);
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePOST withPayLoad:requestData withRequestContentType:RequestContentTypeForm ];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePOST withPayLoad:requestData withRequestContentType:RequestContentTypeForm];
 }
 
 @end
