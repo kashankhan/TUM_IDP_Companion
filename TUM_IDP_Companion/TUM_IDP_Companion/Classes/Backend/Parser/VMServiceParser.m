@@ -75,7 +75,7 @@
     NSString *nameKey = @"name";//:"Distanz",
     NSString *linksKey = @"links";
     NSString *statesKey = @"states";
-    NSUInteger index = 1;
+    NSUInteger index = 0;
     
     NSString *type = [object valueForKey:typeKey];
     NSNumber *lowerBound = [object valueForKey:lowerBoundKey];

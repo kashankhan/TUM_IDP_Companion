@@ -73,7 +73,7 @@
         for (NSString *uri in feeds) {
            
             BOOL selected = ([[feeds objectAtIndex:0] isEqualToString:uri]);
-            NSString *name = [NSString stringWithFormat:@"Feed %d", count];
+            NSString *name = [NSString stringWithFormat:@"Feed %lu", (unsigned long)count];
             MusicFeed *musicFeed = [self musicFeed:uri];
             [musicFeed setSelected:@(selected)];
             [musicFeed setName:name];

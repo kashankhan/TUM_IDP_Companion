@@ -8,6 +8,7 @@
 
 #import "SaveLocationTableViewController.h"
 #import "VMServiceRequestBAL.h"
+#import "VMAddressServiceParameterBAL.h"
 
 typedef NS_ENUM(NSInteger, SectionType) {
     SectionAddress,
@@ -19,6 +20,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
     LocationBookmarkDAL *_locationBookDAL;
     VMServiceRequestBAL *_serviceRequestBAL;
+    VMAddressServiceParameterBAL *_addressServiceParameterBAL;
 
 }
 
@@ -139,7 +141,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
                 
                 title = nil;
                 
-                [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
+                [self updateLandmarkToServer:locationBookmark];
                 
             }
             
@@ -147,6 +149,19 @@ typedef NS_ENUM(NSInteger, SectionType) {
         }];
     }
    
+}
+
+- (void)updateLandmarkToServer:(LocationBookmark *)locationBookmark {
+
+    if (!_addressServiceParameterBAL) {
+        _addressServiceParameterBAL = [VMAddressServiceParameterBAL new];
+    }
+    [_addressServiceParameterBAL updateAddress:locationBookmark.name addressType:[self.selectedLandmark.index integerValue] handler:^(id response, NSError *error) {
+        
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:UIUserLocationDidSelectNotification object:locationBookmark];
+    }];
+
 }
 
 - (id)objectAtIndexPath:(NSIndexPath *)indexPath {

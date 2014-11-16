@@ -31,10 +31,7 @@ NSString* const kParameterUpdatedValueKey   = @"ParameterUpdatedValueKey";
     
     NSString *valueUri = [params valueForKey:kParameterValueUriKey];
     NSURLRequest *urlRequest = [self.urlRequest urlRequestForServiceParameterValue:valueUri];
-    [self sendRequest:urlRequest handler:^(id response, NSError *error) {
-        NSLog(@"response : %@",response);
-        handler(response, error);
-    }];
+    [self sendRequest:urlRequest handler:handler];
 }
 
 
@@ -43,10 +40,7 @@ NSString* const kParameterUpdatedValueKey   = @"ParameterUpdatedValueKey";
     NSString *valueUri = [params valueForKey:kParameterValueUriKey];
     NSString *value = [params valueForKey:kParameterUpdatedValueKey];
     NSURLRequest *urlRequest = [self.urlRequest urlRequestForServiceParameterUpdateValue:valueUri value:value];
-    [self sendRequest:urlRequest handler:^(id response, NSError *error) {
-        NSLog(@"response : %@",response);
-        handler(response, error);
-    }];
+    [self sendRequest:urlRequest handler:handler];
 }
 
 - (void)sendRequestForSubscribeEvent:(id)params handler:(RequestBALHandler)handler {

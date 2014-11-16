@@ -179,6 +179,7 @@
 		C0F3A0261A17F77E00496860 /* Landmark.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A0251A17F77E00496860 /* Landmark.m */; };
 		C0F3A02C1A17FADC00496860 /* State.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A02B1A17FADC00496860 /* State.m */; };
 		C0F3A02F1A17FB3000496860 /* Parameter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A02E1A17FB3000496860 /* Parameter.m */; };
+		C0F3A0321A1804FA00496860 /* VMAddressServiceParameterBAL.m in Sources */ = {isa = PBXBuildFile; fileRef = C0F3A0311A1804FA00496860 /* VMAddressServiceParameterBAL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +424,8 @@
 		C0F3A02B1A17FADC00496860 /* State.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = State.m; sourceTree = "<group>"; };
 		C0F3A02D1A17FB3000496860 /* Parameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parameter.h; sourceTree = "<group>"; };
 		C0F3A02E1A17FB3000496860 /* Parameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parameter.m; sourceTree = "<group>"; };
+		C0F3A0301A1804FA00496860 /* VMAddressServiceParameterBAL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAddressServiceParameterBAL.h; sourceTree = "<group>"; };
+		C0F3A0311A1804FA00496860 /* VMAddressServiceParameterBAL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAddressServiceParameterBAL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -807,6 +810,8 @@
 				C0B08677198407CC00D0E18B /* VMServiesRequestBAL.m */,
 				C057C8D8198AC6DB006FBF36 /* VMServiceParameterBAL.h */,
 				C057C8D9198AC6DB006FBF36 /* VMServiceParameterBAL.m */,
+				C0F3A0301A1804FA00496860 /* VMAddressServiceParameterBAL.h */,
+				C0F3A0311A1804FA00496860 /* VMAddressServiceParameterBAL.m */,
 				C0234A40198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.h */,
 				C0234A41198D4B3B0090F4F0 /* VMServiceMusicParameterBAL.m */,
 				C0B08693198408F200D0E18B /* VMServiceUrlRequest.h */,
@@ -1199,6 +1204,7 @@
 				C034BD361974553D00419797 /* SDWebImagePrefetcher.m in Sources */,
 				C0B086E71984282800D0E18B /* MagicalRecord+Actions.m in Sources */,
 				C03BF956198BF348009BDEB0 /* SlideMenuTableViewController.m in Sources */,
+				C0F3A0321A1804FA00496860 /* VMAddressServiceParameterBAL.m in Sources */,
 				C03BF954198BF348009BDEB0 /* SearchLocationTableViewController.m in Sources */,
 				C034BD2F1974553D00419797 /* iHasApp.m in Sources */,
 				C03BF955198BF348009BDEB0 /* TripPlannerTableViewController.m in Sources */,
