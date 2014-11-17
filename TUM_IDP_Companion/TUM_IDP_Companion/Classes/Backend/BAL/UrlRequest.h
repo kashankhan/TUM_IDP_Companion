@@ -11,12 +11,13 @@
 
 typedef NS_ENUM(NSUInteger, HTTPMethodType) {
     HTTPMethodTypeGET,
-    HTTPMethodTypePOST
+    HTTPMethodTypePOST,
+    HTTPMethodTypePUT
 };
 
 
 @interface UrlRequest : RequestBAL
 
-- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data;
-- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data withRequestContentType:(RequestContentType)contentType;
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType payload:(NSData*)data;
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType payload:(NSData*)data requestContentType:(RequestContentType)contentType;
 @end

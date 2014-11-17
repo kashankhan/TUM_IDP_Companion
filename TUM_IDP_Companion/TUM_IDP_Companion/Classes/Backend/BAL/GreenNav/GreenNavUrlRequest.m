@@ -23,7 +23,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 - (NSURLRequest*)urlRequestForVehicles {
@@ -32,7 +32,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 
@@ -43,7 +43,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 - (NSURLRequest*)urlRequestForVehicleRoutes:(NSString *)vehicle toRoute:(long long)toRoute forRoute:(long long)forRoute optimization:(NSString *)optimization battery:(NSUInteger)battery {
@@ -54,7 +54,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 - (NSURLRequest*)urlRequestForVehicleRange:(NSString *)vehicle range:(long long)range battery:(NSUInteger)battery  {
@@ -65,7 +65,7 @@ static const NSString *kBaseURL = @"https://greennav.isp.uni-luebeck.de/greennav
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 @end

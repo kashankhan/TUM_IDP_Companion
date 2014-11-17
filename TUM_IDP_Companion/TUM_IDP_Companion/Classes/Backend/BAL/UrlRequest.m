@@ -25,7 +25,7 @@ static const NSString *kBoundary = @"0xKhTmLbOuNdArY";
     return request;
 }
 
-- (NSURLRequest*)urlRequestForPostURL:(NSURL*)url withPayLoad:(NSData*)data withRequestContentType:(RequestContentType)contentTye {
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url payload:(NSData*)data httpMethod:(NSString *)httpMethod requestContentType:(RequestContentType)contentTye {
     
     NSMutableURLRequest *request = [self request:url];
     NSMutableDictionary* headerWithCookies = [NSMutableDictionary dictionary];
@@ -56,7 +56,7 @@ static const NSString *kBoundary = @"0xKhTmLbOuNdArY";
     
     [self setHeaderInDictionary:headerWithCookies];
     [request setAllHTTPHeaderFields:headerWithCookies];
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:httpMethod];
     [request setHTTPBody:data];
     return request;
 }
@@ -72,18 +72,22 @@ static const NSString *kBoundary = @"0xKhTmLbOuNdArY";
 }
 
 
-- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data {
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType payload:(NSData*)data {
 
-    return [self urlRequestForURL:url httpMethodType:httpMethodType  withPayLoad:data withRequestContentType:RequestContentTypeJSON];
+    return [self urlRequestForURL:url httpMethodType:httpMethodType  payload:data requestContentType:RequestContentTypeJSON];
 }
 
-- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType withPayLoad:(NSData*)data withRequestContentType:(RequestContentType)contentType {
+- (NSURLRequest*)urlRequestForURL:(NSURL*)url httpMethodType:(HTTPMethodType)httpMethodType payload:(NSData*)data requestContentType:(RequestContentType)contentType {
 
     NSURLRequest *request = nil;
     if (httpMethodType == HTTPMethodTypePOST) {
-       request = [self urlRequestForPostURL:url withPayLoad:data withRequestContentType:contentType];
+        request = [self urlRequestForURL:url payload:data httpMethod:@"POST" requestContentType:contentType];
         
     }//if
+    else if (httpMethodType == HTTPMethodTypePUT) {
+        request = [self urlRequestForURL:url payload:data httpMethod:@"PUT" requestContentType:contentType];
+        
+    }//if else
     else {
         request = [self urlRequestForGetURL:url];
         

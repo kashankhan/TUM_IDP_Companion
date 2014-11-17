@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPRequestOperationManager.h"
-#import "AFURLSessionManager.h"
+#import "RequestQueue.h"
 
 // Completion block for performRequestWithHandler.
 typedef void(^RequestBALHandler)(id response, NSError *error);
@@ -21,14 +20,14 @@ typedef NS_ENUM(NSUInteger, RequestContentType) {
     RequestContentTypeForm
 };
 
-@interface RequestBAL : NSObject
+@interface RequestBAL : NSObject {
+
+    RequestQueue *_requestQueue;
+    
+}
 
 - (void)cancelAllOperations;
-
-- (AFURLSessionManager*)sessionManager;
+- (void)addOperation:(RQOperation *)operation;
 
 - (void)sendRequest:(NSURLRequest *)request handler:(RequestBALHandler)handler;
-
-- (void)sendRequest:(NSURLRequest *)request manager:(AFURLSessionManager *)manager handler:(RequestBALHandler)handler;
-
 @end

@@ -11,7 +11,7 @@
 @implementation VMServiceUrlRequest
 
 //static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:8080";
-static const NSString *kBaseURL = @"http://192.168.0.101:8080";
+static const NSString *kBaseURL = @"http://localhost:8080";
 
 - (NSString *)servicesUri {
     
@@ -31,7 +31,7 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 - (NSURLRequest *)urlRequestForServiceParameterValue:(NSString *)valueUri {
@@ -42,7 +42,7 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
     NSLog(@"url : %@",url);
     NSData *requestData = nil;
     
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypeGET payload:requestData];
 }
 
 
@@ -52,7 +52,7 @@ static const NSString *kBaseURL = @"http://192.168.0.101:8080";
     NSURL *url = [NSURL URLWithString:uri];
     NSData *requestData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSLog(@"url : %@",url);
-    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePOST withPayLoad:requestData];
+    return [self urlRequestForURL:url httpMethodType:HTTPMethodTypePUT payload:requestData];
 }
 
 @end
