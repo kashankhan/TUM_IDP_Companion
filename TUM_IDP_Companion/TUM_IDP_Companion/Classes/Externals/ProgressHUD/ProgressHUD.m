@@ -350,6 +350,7 @@
 			hud.transform = CGAffineTransformScale(hud.transform, 0.7, 0.7);
 			hud.alpha = 0;
 		}
+         
 		completion:^(BOOL finished) {
 			[self hudDestroy];
 			self.alpha = 0;

@@ -37,6 +37,8 @@
     
     NSString *servicesKey = @"services";
 
+    NSLog(@"object : %@",object);
+    
     NSMutableArray *services = [@[] mutableCopy];
     for (NSDictionary *serviceInfo in [object valueForKey:servicesKey]) {
        [services addObject:[self parseService:serviceInfo]];

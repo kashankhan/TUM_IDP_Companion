@@ -7,6 +7,7 @@
 //
 
 #import "VMServiceParameterBAL.h"
+#import "LocationBookmark.h"
 
 typedef NS_ENUM(NSUInteger, AddressType) {
     AddressTypeHome,
@@ -20,5 +21,5 @@ typedef NS_ENUM(NSUInteger, AddressType) {
 
 @interface VMAddressServiceParameterBAL : VMServiceParameterBAL
 
-- (void)updateAddress:(NSString *)address addressType:(AddressType)addressType handler:(RequestBALHandler)handler;
+- (void)updateAddress:(LocationBookmark *)locationBookmark addressType:(AddressType)addressType handler:(RequestBALHandler)handler;
 @end

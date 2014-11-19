@@ -56,7 +56,8 @@
 "FAVORTE_5"         = "Favorite 5";
 "ADDRESS"           = "Address";
 "OTHER"             = "Other";
-"ADD_CUSTOM"        = "Add Custom";
+"NAME"              = "Name";
+
 "ADDRESS_NOT_FOUNT" = "Address not found";
 
 "ENERGY_EFFICIENT"  = "Energy Efficient";

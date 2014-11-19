@@ -60,7 +60,8 @@
 #define NSLS_FAVORTE_4          NSLocalizedString(@"FAVORTE_4", "Favorite 4")
 #define NSLS_FAVORTE_5          NSLocalizedString(@"FAVORTE_5", "Favorite 5")
 #define NSLS_ADDRESS            NSLocalizedString(@"ADDRESS", "Address")
-#define NSLS_ADD_CUSTOM         NSLocalizedString(@"ADD_CUSTOM", "Add Custom")
+#define NSLS_NAME               NSLocalizedString(@"NAME", "Name")
+
 #define NSLS_OTHER              NSLocalizedString(@"OTHER", "Other")
 #define NSLS_ADDRESS_NOT_FOUNT  NSLocalizedString(@"ADDRESS_NOT_FOUNT", "Address not found")
 #define NSLS_ENERGY_EFFICIENT   NSLocalizedString(@"ENERGY_EFFICIENT", "Energy Efficient")

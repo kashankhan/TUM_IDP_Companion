@@ -14,6 +14,7 @@
         <relationship name="parameter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Parameter" inverseName="link" inverseEntity="Parameter" syncable="YES"/>
     </entity>
     <entity name="LocationBookmark" representedClassName="LocationBookmark" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="favourite" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="landmarkType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -74,7 +75,7 @@
         <element name="Contact" positionX="270" positionY="270" width="128" height="75"/>
         <element name="Landmark" positionX="270" positionY="270" width="128" height="73"/>
         <element name="Link" positionX="270" positionY="207" width="128" height="88"/>
-        <element name="LocationBookmark" positionX="270" positionY="270" width="128" height="118"/>
+        <element name="LocationBookmark" positionX="270" positionY="270" width="128" height="135"/>
         <element name="MusicArtist" positionX="315" positionY="306" width="128" height="60"/>
         <element name="MusicChannel" positionX="279" positionY="279" width="128" height="73"/>
         <element name="MusicFeed" positionX="288" positionY="288" width="128" height="103"/>
@@ -82,7 +83,7 @@
         <element name="Parameter" positionX="261" positionY="198" width="128" height="193"/>
         <element name="RouteEnergySetting" positionX="288" positionY="270" width="128" height="90"/>
         <element name="Service" positionX="261" positionY="189" width="128" height="73"/>
-        <element name="TemperatureSetting" positionX="279" positionY="279" width="128" height="90"/>
         <element name="State" positionX="297" positionY="279" width="128" height="88"/>
+        <element name="TemperatureSetting" positionX="279" positionY="279" width="128" height="90"/>
     </elements>
 </model>

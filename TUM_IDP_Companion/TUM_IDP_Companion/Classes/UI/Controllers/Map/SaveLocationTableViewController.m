@@ -84,14 +84,11 @@ typedef NS_ENUM(NSInteger, SectionType) {
     }
     
     NSMutableDictionary *addressInfo = [@{NSLS_ADDRESS: @""} mutableCopy];
-    NSArray *addressSection = @[addressInfo];
+    NSMutableDictionary *nameInfo = [@{NSLS_NAME: @""} mutableCopy];
+    NSArray *addressSection = @[addressInfo, nameInfo];
     
     [_items addObject:addressSection];
     [_items addObject:landmarks];
-
-
-   // NSArray *addCustomSection = @[NSLS_ADD_CUSTOM];
-   // [_items addObject:addCustomSection];
 
 }
 
@@ -116,7 +113,19 @@ typedef NS_ENUM(NSInteger, SectionType) {
 - (IBAction)performSaveAction:(id)sender {
 
     [self.textField resignFirstResponder];
-    NSString *address = _textField.text;
+    
+    NSUInteger section = 0;
+    NSUInteger row = 0;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:section];
+    NSDictionary *contentInfo = [self objectAtIndexPath:indexPath];
+    NSString *key = [[contentInfo allKeys] lastObject];
+    NSString *address = [contentInfo valueForKey:key];
+    
+    row = 1;
+    indexPath = [NSIndexPath indexPathForItem:row inSection:section];
+    contentInfo = [self objectAtIndexPath:indexPath];
+    key = [[contentInfo allKeys] lastObject];
+    NSString *name = [contentInfo valueForKey:key];
     
     if ([address length] && [self.selectedLandmark.name length]) {
         [self showProgressHud:ProgressHudNormal title:nil interaction:NO];
@@ -130,7 +139,8 @@ typedef NS_ENUM(NSInteger, SectionType) {
             if (coordinate.latitude > 0 &&  coordinate.longitude > 0) {
                 
                 LocationBookmark *locationBookmark = [_locationBookDAL newLocationBookmark];
-                locationBookmark.name = address;
+                locationBookmark.name = (name && [name length]) ? name : address;
+                locationBookmark.address = address;
                 locationBookmark.landmarkType = self.selectedLandmark.name;
                 locationBookmark.latitude = @(coordinate.latitude);
                 locationBookmark.longitude = @(coordinate.longitude);
@@ -152,7 +162,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
 - (void)updateLandmarkToServer:(LocationBookmark *)locationBookmark {
 
-    [_addressServiceParameterBAL updateAddress:locationBookmark.name addressType:[self.selectedLandmark.index integerValue] handler:^(id response, NSError *error) {
+    [_addressServiceParameterBAL updateAddress:locationBookmark addressType:[self.selectedLandmark.index integerValue] handler:^(id response, NSError *error) {
         
         
         NSLog(@"response : %@", response);
@@ -276,6 +286,7 @@ typedef NS_ENUM(NSInteger, SectionType) {
 - (UITableViewCell *)configureDefaultTableViewCellForTableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     NSString *identifier = @"IdentifierDefaultCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     id object = [self objectAtIndexPath:indexPath];
     NSString *landmarkName = ([object isKindOfClass:[Landmark class]]) ? ((Landmark *)object).name : object;

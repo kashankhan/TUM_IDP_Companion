@@ -2,7 +2,7 @@
 //  LocationBookmark.m
 //  TUM_IDP_Companion
 //
-//  Created by Kashan Khan on 04/08/2014.
+//  Created by Kashan Khan on 19/11/2014.
 //  Copyright (c) 2014 Kashan Khan. All rights reserved.
 //
 
@@ -11,10 +11,11 @@
 
 @implementation LocationBookmark
 
+@dynamic favourite;
+@dynamic landmarkType;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
-@dynamic landmarkType;
-@dynamic favourite;
+@dynamic address;
 
 @end

@@ -10,64 +10,105 @@
 
 @implementation VMAddressServiceParameterBAL
 
-- (NSString *)subscriptionUri:(AddressType)addressType {
+static NSString *const kAddressUriKey           = @"AddressUriKey";
+static NSString *const kAddressAliasUriKey      = @"AddressAliasUriKey";
+static NSString *const kAddressLatitudeUriKey   = @"AddressLatitudeUriKey";
+static NSString *const kAddressLongitudeUriKey  = @"AddressLongitudeUriKey";
 
-    NSString *uri = [NSString stringWithFormat:@"navigation/parameters/%@/subscription", [self valueForAddressType:addressType]];
-    return uri;
-}
-
-- (NSString *)updateValueUri:(AddressType)addressType {
+- (NSString *)subscriptionUri:(NSString *)uri {
     
-    NSString *uri = [NSString stringWithFormat:@"navigation/parameters/%@", [self valueForAddressType:addressType]];
+    uri = [NSString stringWithFormat:@"navigation/parameters/%@/subscription", uri];
     return uri;
 }
 
-- (NSString *)valueForAddressType:(AddressType)addressType {
- 
-    NSString *value = @"";
+- (NSString *)updateValueUri:(NSString *)uri {
+    
+    uri = [NSString stringWithFormat:@"navigation/parameters/%@", uri];
+    return uri;
+}
+
+
+- (NSDictionary *)updateValueUriInfo:(AddressType)addressType {
+    
+    NSString *value = nil;
     
     switch (addressType) {
             
         case AddressTypeHome:
-            value = @"homeAddress";
+            value = @"home";
             break;
             
         case AddressTypeOffice:
-            value = @"workAddress";
+            value = @"work";
             break;
             
         case AddressTypeFavorite1:
-            value = @"favorite1Address";
+            value = @"favorite1";
             break;
             
         case AddressTypeFavorite2:
-            value = @"favorite2Address";
+            value = @"favorite2";
             break;
             
         case AddressTypeFavorite3:
-            value = @"favorite3Address";
+            value = @"favorite3";
             break;
-        
+            
         case AddressTypeFavorite4:
-            value = @"favorite4Address";
+            value = @"favorite4";
             break;
             
         case AddressTypeFavorite5:
-            value = @"favorite5Address";
+            value = @"favorite5";
             break;
             
         default:
             break;
     }
     
-    return value;
+    
+    NSString *addressUri = [value stringByAppendingString:@"Address"];
+    NSString *aliasUri = [value stringByAppendingString:@"Name"];
+    NSString *latitudeUri = [value stringByAppendingString:@"Latitude"];
+    NSString *longitudeUri = [value stringByAppendingString:@"Longitude"];
+    
+    NSDictionary *uriInfo = @{kAddressUriKey : addressUri,
+                              kAddressAliasUriKey : aliasUri,
+                              kAddressLatitudeUriKey : latitudeUri,
+                              kAddressLongitudeUriKey : longitudeUri};
+    
+    return uriInfo;
 }
 
-- (void)updateAddress:(NSString *)address addressType:(AddressType)addressType handler:(RequestBALHandler)handler {
+- (void)updateAddress:(LocationBookmark *)locationBookmark addressType:(AddressType)addressType handler:(RequestBALHandler)handler {
     
-    NSDictionary *params =  @{kParameterUpdatedValueKey : address ,
-                              kParameterValueUriKey : [self updateValueUri:addressType]};
+    NSDictionary *uriInfo = [self updateValueUriInfo:addressType];
+    NSString *uri = nil;
+    NSString *value = @"";
     
-    [self sendRequestForServiceParameterUpdateValue:params handler:handler];
+    for (NSString *uriKey in [uriInfo allKeys]) {
+        
+        uri = [self updateValueUri:[uriInfo valueForKey:uriKey]];
+        
+        if ([uriKey isEqualToString:kAddressUriKey]) {
+            value = locationBookmark.address;
+        }
+        else if ([uriKey isEqualToString:kAddressAliasUriKey]) {
+            value = locationBookmark.name;
+        }
+        else if ([uriKey isEqualToString:kAddressLatitudeUriKey]) {
+             value = [locationBookmark.latitude stringValue];
+        }
+        else if ([uriKey isEqualToString:kAddressLongitudeUriKey]) {
+            value = [locationBookmark.longitude stringValue];
+        }
+        
+        NSDictionary *params =  @{kParameterUpdatedValueKey : value,
+                                  kParameterValueUriKey : uri};
+        
+        [self sendRequestForServiceParameterUpdateValue:params handler:handler];
+    }
+    
+
 }
 @end
