@@ -22,4 +22,9 @@ typedef NS_ENUM(NSUInteger, AddressType) {
 @interface VMAddressServiceParameterBAL : VMServiceParameterBAL
 
 - (void)updateAddress:(LocationBookmark *)locationBookmark addressType:(AddressType)addressType handler:(RequestBALHandler)handler;
+
+- (void)updateDestination:(LocationBookmark *)locationBookmark handler:(RequestBALHandler)handler;
+
+- (void)updateRouteSetting:(NSString *)routeSetting handler:(RequestBALHandler)handler;
+
 @end

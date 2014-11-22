@@ -10,8 +10,10 @@
 
 @implementation VMServiceUrlRequest
 
+//http://vmkrcmar59.informatik.tu-muenchen.de/visiom2GetIp.php for getting server IP
 //static const NSString *kBaseURL = @"http://vmkrcmar59.informatik.tu-muenchen.de:8080";
-static const NSString *kBaseURL = @"http://localhost:8080";
+static const NSString * kBaseURL = @"http://131.159.195.229:8080";
+//static const NSString *kBaseURL = @"http://localhost:8080";
 
 - (NSString *)servicesUri {
     

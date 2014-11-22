@@ -111,4 +111,28 @@ static NSString *const kAddressLongitudeUriKey  = @"AddressLongitudeUriKey";
     
 
 }
+
+- (void)updateDestination:(LocationBookmark *)locationBookmark handler:(RequestBALHandler)handler {
+    
+    NSString *value = [NSString stringWithFormat:@"{address:%@, latitude:%@, longitude:%@, name:%@}", locationBookmark.address, locationBookmark.latitude, locationBookmark.longitude, locationBookmark.name];
+    NSString *uri = @"navigation/parameters/destinationAddress";
+    
+    NSDictionary *params =  @{kParameterUpdatedValueKey : value,
+                              kParameterValueUriKey : uri};
+    
+    [self sendRequestForServiceParameterUpdateValue:params handler:handler];
+
+}
+
+- (void)updateRouteSetting:(NSString *)routeSetting handler:(RequestBALHandler)handler {
+
+    NSString *value = routeSetting;
+    NSString *uri = @"navigation/parameters/routingType";
+    
+    NSDictionary *params =  @{kParameterUpdatedValueKey : value,
+                              kParameterValueUriKey : uri};
+    
+    [self sendRequestForServiceParameterUpdateValue:params handler:handler];
+
+}
 @end

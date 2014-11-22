@@ -11,6 +11,7 @@
 #import "ContactsDAL.h"
 #import "LocationBookmarkDAL.h"
 #import "LocationHelper.h"
+#import "VMAddressServiceParameterBAL.h"
 
 typedef NS_ENUM(NSUInteger, ScopeType) {
     
@@ -87,6 +88,7 @@ typedef NS_ENUM(NSUInteger, ScopeType) {
     self.locationBookmarks = [_locationBookmarkDAL locationBookmarks];
 
 }
+
 - (void)searchPlaces:(UISearchBar *)searchBar {
 
     // Cancel any previous searches.

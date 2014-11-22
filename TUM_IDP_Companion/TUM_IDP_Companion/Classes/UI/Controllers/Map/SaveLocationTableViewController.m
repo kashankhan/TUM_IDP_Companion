@@ -67,7 +67,6 @@ typedef NS_ENUM(NSInteger, SectionType) {
     
     [self setTitle:NSLS_ADD_BOOKMARK];
     [self loadDataSource];
-    [self syncServices];
 }
 
 - (void)loadDataSource {
@@ -91,24 +90,6 @@ typedef NS_ENUM(NSInteger, SectionType) {
     [_items addObject:landmarks];
 
 }
-
-- (void)syncServices {
-    
-    if (!_addressServiceParameterBAL) {
-        _addressServiceParameterBAL = [VMAddressServiceParameterBAL new];
-    }
-    
-    [self showProgressHud:ProgressHudNormal title:NSLS_PLEASE_WAIT interaction:YES];
-    [_addressServiceParameterBAL sendRequestForServices:^(id response, NSError *error) {
-        
-        [self dismissProgressHud];
-    }];
-    
-    
-}
-
-
-
 
 - (IBAction)performSaveAction:(id)sender {
 
@@ -162,6 +143,10 @@ typedef NS_ENUM(NSInteger, SectionType) {
 
 - (void)updateLandmarkToServer:(LocationBookmark *)locationBookmark {
 
+    if (!_addressServiceParameterBAL) {
+        _addressServiceParameterBAL = [VMAddressServiceParameterBAL new];
+    }
+    
     [_addressServiceParameterBAL updateAddress:locationBookmark addressType:[self.selectedLandmark.index integerValue] handler:^(id response, NSError *error) {
         
         

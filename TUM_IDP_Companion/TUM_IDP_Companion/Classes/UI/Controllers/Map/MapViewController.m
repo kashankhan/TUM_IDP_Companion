@@ -15,6 +15,8 @@
 #import "MapViewAnnotation.h"
 #import "MapRouteSettingViewController.h"
 #import "SettingsDAL.h"
+#import "VMAddressServiceParameterBAL.h"
+
 
 @interface MapViewController () <UISearchDisplayDelegate, UISearchBarDelegate>
 
@@ -24,6 +26,8 @@
 @property (nonatomic, weak) NSMutableDictionary *lastSelectedTripInfo;
 @property (nonatomic, strong) LocationBookmark *selectedLocationBookmark;
 @property (nonatomic, strong) RouteEnergySetting *routeSetting;
+@property (nonatomic, strong) VMAddressServiceParameterBAL *addressServiceParameterBAL;
+
 @end
 
 @implementation MapViewController
@@ -67,6 +71,8 @@ static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdent
     [self subscribteNotifications];
     
     [self setTitle:NSLS_MAPS];
+    
+    [self syncServices];
     
     SettingsDAL *settingDAL = [SettingsDAL new];
     self.routeSetting = [settingDAL selectedRouteEnergySetting];
@@ -126,6 +132,7 @@ static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdent
     MapViewAnnotation *annotationView = [self locationBookmarkToMapAnnotationView:locationBookmark];
   
     [self setTripInfoInTripLocation:locationBookmark];
+    [self updateAdress:locationBookmark];
     
     NSMutableArray *annotations = [@[] mutableCopy];
     [annotations addObject:self.mapView.userLocation];
@@ -149,6 +156,7 @@ static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdent
     
     return annotation;
 }
+
 - (void)zoomToLocation {
     
     MKMapRect zoomRect = MKMapRectNull;
@@ -160,6 +168,40 @@ static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdent
     }
     [self.mapView setVisibleMapRect:zoomRect animated:YES];
 }
+
+
+#pragma mark - Address Service BAL methods
+- (void)syncServices {
+    
+    if (!self.addressServiceParameterBAL) {
+        self.addressServiceParameterBAL = [VMAddressServiceParameterBAL new];
+    }
+    
+    [self showProgressHud:ProgressHudNormal title:NSLS_PLEASE_WAIT interaction:YES];
+    [self.addressServiceParameterBAL sendRequestForServices:^(id response, NSError *error) {
+        
+        [self dismissProgressHud];
+    }];
+}
+
+- (void)updateAdress:(LocationBookmark *)locationBookmark {
+
+    [self showProgressHud:ProgressHudNormal title:NSLS_PLEASE_WAIT interaction:YES];
+    [self.addressServiceParameterBAL updateDestination:locationBookmark handler:^(id response, NSError *error) {
+        
+        [self dismissProgressHud];
+    }];
+}
+
+- (void)updateRouteSetting:(RouteEnergySetting *)routeSetting {
+    
+    [self showProgressHud:ProgressHudNormal title:NSLS_PLEASE_WAIT interaction:YES];
+    [self.addressServiceParameterBAL updateRouteSetting:routeSetting.parameter handler:^(id response, NSError *error) {
+        
+        [self dismissProgressHud];
+    }];
+}
+
 #pragma mark - Navigation
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender
@@ -185,7 +227,9 @@ static NSString *kSegueIdentiferPushMapRouteSettingViewController = @"SegueIdent
         MapRouteSettingViewController *controller = (MapRouteSettingViewController *)[segue destinationViewController];
         controller.defaultOption = self.routeSetting;
         controller.selectionTableViewControllerDidSelectObjectHandler = ^(id object) {
+            
             self.routeSetting = object;
+            [self updateRouteSetting:self.routeSetting];
         };
     }//else if
 }

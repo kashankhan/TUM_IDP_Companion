@@ -81,6 +81,7 @@
 
 #pragma mark -UItableView Delegate methods.
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = nil;
     //get the cell of last selected object.
     cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.options indexOfObject:self.defaultOption] inSection:0]];
